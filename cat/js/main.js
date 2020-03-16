@@ -70,15 +70,15 @@ $(document).ready(function () {
       let prodOptions = "";
       for (let x in arrProd[key].options) {
         if (arrProd[key].options[x] == 1) {
-          prodOptions += `<img src="/img/opt${x}.svg" alt="">`
+          prodOptions += `<img src="./img/opt${x}.svg" alt="">`
         }
         if (prodOptions == '') {
-          prodOptions += `<img src="/img/optNone.svg" alt="">`
+          prodOptions += `<img src="./img/optNone.svg" alt="">`
         }
       }
       products += `
       <div class="product">
-        <img src="/img/${arrProd[key].img}" alt="" class="product__img">
+        <img src="./img/${arrProd[key].img}" alt="" class="product__img">
         <div class="product__body">
           <h3 class="product__title">${arrProd[key].title}</h3>
           <p class="product__text">Размеры (ШхГхВ) - ${arrProd[key].size} см</p>

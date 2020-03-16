@@ -24,7 +24,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .logo {
   width: 63px;
   height: 52px;
-  background-image: url(/img/logo.svg);
+  background-image: url(../img/logo.svg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,7 +70,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
     width: 40px;
     height: 40px;
-    background-image: url(/img/menu-open.svg);
+    background-image: url(../img/menu-open.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -83,7 +83,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 30px;
     top: 20px;
     right: 20px;
-    background-image: url(/img/menu-close.svg);
+    background-image: url(../img/menu-close.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -175,7 +175,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
     width: 40px;
     height: 40px;
-    background-image: url(/img/filter.svg);
+    background-image: url(../img/filter.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -188,7 +188,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 30px;
     top: 20px;
     right: 20px;
-    background-image: url(/img/menu-close.svg);
+    background-image: url(../img/menu-close.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -222,7 +222,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   &__input:checked + &__label::before {
     content: "";
-    background-image: url(/img/ok.svg);
+    background-image: url(../img/ok.svg);
     background-position: center;
     background-size: 60%;
     background-repeat: no-repeat;
@@ -273,7 +273,7 @@ input[type="number"]::-webkit-outer-spin-button {
       height: 34px;
       border-radius: 34px;
       background-color: $white;
-      background-image: url(/img/btn_img.svg);
+      background-image: url(../img/btn_img.svg);
       background-size: 60%;
       background-position: center;
       background-repeat: no-repeat;
