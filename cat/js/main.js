@@ -12,7 +12,7 @@ $(document).ready(function () {
       "size": "90х70х180",
       "area": "0.63",
       "cost": "100",
-      "options": [0, 0, 0, 0]
+      "options": [1, 0, 0, 0, 0]
     },
     {
       "productId": "0002",
@@ -21,7 +21,7 @@ $(document).ready(function () {
       "size": "90х100х180",
       "area": "0.90",
       "cost": "200",
-      "options": [1, 1, 0, 0]
+      "options": [0, 1, 1, 0, 0]
     },
     {
       "productId": "0003",
@@ -30,7 +30,7 @@ $(document).ready(function () {
       "size": "100х125х180",
       "area": "1.13",
       "cost": "250",
-      "options": [1, 1, 1, 0]
+      "options": [0, 1, 1, 1, 0]
     },
     {
       "productId": "0004",
@@ -39,7 +39,7 @@ $(document).ready(function () {
       "size": "125х125х180",
       "area": "1.56",
       "cost": "350",
-      "options": [1, 1, 1, 0]
+      "options": [0, 1, 1, 1, 0]
     },
     {
       "productId": "0005",
@@ -48,7 +48,7 @@ $(document).ready(function () {
       "size": "160х160х180",
       "area": "2.56",
       "cost": "500",
-      "options": [1, 1, 1, 1]
+      "options": [0, 1, 1, 1, 1]
     },
     {
       "productId": "0006",
@@ -57,23 +57,20 @@ $(document).ready(function () {
       "size": "180х160х180 ",
       "area": "2.88",
       "cost": "600",
-      "options": [1, 1, 1, 1]
+      "options": [0, 1, 1, 1, 1]
     },
   ]
   let roomRender = [];
   let sortOptions = ''
   
-
   function render(arrProd) {
+    arrProd = sortAll(arrProd)
     let products = "";
     for (let key in arrProd) {
       let prodOptions = "";
       for (let x in arrProd[key].options) {
         if (arrProd[key].options[x] == 1) {
           prodOptions += `<img src="./img/opt${x}.svg" alt="">`
-        }
-        if (prodOptions == '') {
-          prodOptions += `<img src="./img/optNone.svg" alt="">`
         }
       }
       products += `
@@ -126,8 +123,11 @@ $(document).ready(function () {
   renderOptions()
 
   $(".sort-menu").selectmenu({
-    change: sortAll
+    change: (function(){
+      render(roomRender);
+    })
   });
+  
 
   $(".check__label").click(function () {
     $(".btnFilterRes").removeClass("button_none")
@@ -143,43 +143,45 @@ $(document).ready(function () {
     render(room);
   });
 
-  function sortAll() {
+  function sortAll(arrSort) {
     sortOptions = $(".sort-menu").find('option:selected').attr('value');
     if (sortOptions == 1) {
-      sortArea(roomRender);
+      sortArea(arrSort);
     }
     if (sortOptions == 2) {
-      sortAreaR(roomRender);
+      sortAreaR(arrSort);
     }
     if (sortOptions == 3) {
-      sortCost(roomRender);
+      sortCost(arrSort);
     }
     if (sortOptions == 4) {
-      sortCostR(roomRender);
+      sortCostR(arrSort);
     }
+    return arrSort;
   }
   function sortCost(arrSort) {
     arrSort.sort(function (a, b) {
       return a.cost - b.cost
     })
-    render(arrSort)
+    return arrSort
   }
   function sortCostR(arrSort) {
     arrSort.sort(function (a, b) {
       return b.cost - a.cost
     })
-    render(arrSort)
+    return arrSort
   }
   function sortArea(arrSort) {
     arrSort.sort(function (a, b) {
       return a.area - b.area
     })
-    render(arrSort)
+    return arrSort
   }
   function sortAreaR(arrSort) {
     arrSort.sort(function (a, b) {
       return b.area - a.area
     })
-    render(arrSort)
+    return arrSort
   }
 });
+
