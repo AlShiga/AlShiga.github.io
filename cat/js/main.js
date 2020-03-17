@@ -198,7 +198,7 @@ function filterAll (arr){
 function filterCost(arr){
   let costMax = $(".costMax").val();
   let costMin = $(".costMin").val();
-  if (costMin > costMax){
+  if (costMin > costMax && costMin !='' && costMax!=''){
     let temp = costMin;
     costMin = costMax;
     costMax = temp;
