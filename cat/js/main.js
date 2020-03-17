@@ -61,7 +61,7 @@ $(document).ready(function () {
     },
   ]
   let roomRender = [];
-  let sortOptions = ''
+  let sortOptions = '';
   
   function render(arrProd) {
     arrProd = sortAll(arrProd)
@@ -70,7 +70,7 @@ $(document).ready(function () {
       let prodOptions = "";
       for (let x in arrProd[key].options) {
         if (arrProd[key].options[x] == 1) {
-          prodOptions += `<img src="./img/opt${x}.svg" alt="">`
+          prodOptions += `<img src="./img/opt${x}.svg" alt="">`;
         }
       }
       products += `
@@ -89,7 +89,7 @@ $(document).ready(function () {
       </div>`
     }
     roomRender = arrProd;
-    $(".page-product__content").html(products)
+    $(".page-product__content").html(products);
   }
   render(room);
 
@@ -104,9 +104,9 @@ $(document).ready(function () {
               </div>
               `
     }
-    $(".filter__area").html(outFilter)
+    $(".filter__area").html(outFilter);
   }
-  renderArea()
+  renderArea();
 
   function renderOptions() {
     let outFilter = "";
@@ -120,7 +120,7 @@ $(document).ready(function () {
     }
     $(".filter__room").html(outFilter)
   }
-  renderOptions()
+  renderOptions();
 
   $(".sort-menu").selectmenu({
     change: (function(){
@@ -128,12 +128,11 @@ $(document).ready(function () {
     })
   });
   
-
   $(".check__label").click(function () {
-    $(".btnFilterRes").removeClass("button_none")
+    $(".btnFilterRes").removeClass("button_none");
   });
   $('.filter__input').keyup(function (eventObject) {
-    $(".btnFilterRes").removeClass("button_none")
+    $(".btnFilterRes").removeClass("button_none");
   });
 
   $(".btnFilterRes").click(function () {
@@ -141,6 +140,10 @@ $(document).ready(function () {
     $(".filter__input").val('');
     $(".btnFilterRes").addClass("button_none");
     render(room);
+  });
+
+  $(".btnFilter").click(function () {
+    filterAll(room);
   });
 
   function sortAll(arrSort) {
@@ -161,27 +164,101 @@ $(document).ready(function () {
   }
   function sortCost(arrSort) {
     arrSort.sort(function (a, b) {
-      return a.cost - b.cost
+      return a.cost - b.cost;
     })
-    return arrSort
+    return arrSort;
   }
   function sortCostR(arrSort) {
     arrSort.sort(function (a, b) {
-      return b.cost - a.cost
+      return b.cost - a.cost;
     })
-    return arrSort
+    return arrSort;
   }
   function sortArea(arrSort) {
     arrSort.sort(function (a, b) {
-      return a.area - b.area
+      return a.area - b.area;
     })
-    return arrSort
+    return arrSort;
   }
   function sortAreaR(arrSort) {
     arrSort.sort(function (a, b) {
-      return b.area - a.area
+      return b.area - a.area;
     })
-    return arrSort
+    return arrSort;
   }
-});
 
+
+function filterAll (arr){
+  arr = filterCost(arr);
+  arr = filterArea(arr);
+  arr = filterOpions(arr);
+  render(arr);
+};
+
+function filterCost(arr){
+  let costMax = $(".costMax").val();
+  let costMin = $(".costMin").val();
+  if (costMin > costMax){
+    let temp = costMin;
+    costMin = costMax;
+    costMax = temp;
+  }
+  if (costMin != '') {
+    arr = arr.filter(function (e) {
+      return (e.cost >= costMin);
+    });
+  }
+  if (costMax != '') {
+    arr = arr.filter(function (e) {
+      return (e.cost <= costMax);
+    });
+  }
+  return arr;
+};
+function filterArea(arr){
+  let i = 0;
+  let areaCheck = [];
+  while (i < filter.area.length) {
+    let x = $("#area" + i + "").prop("checked");
+    if (x) {
+      areaCheck.push(room[i].area);
+    }
+    i++;
+  }
+  arr = arr.filter(function (e) {
+    let z = false;
+    let i = 0;
+    while (i < filter.area.length) {
+      if (e.area == areaCheck[i]) {
+        z = true;
+      }
+      i++;
+    }
+    return (z);
+  });
+  return arr;
+}
+
+function filterOpions(arr) {
+  let i = 0;
+  let optionsCheck = [];
+  while (i < filter.options.length) {
+    let x = $("#room" + i + "").prop("checked");
+    optionsCheck.push(x);
+    i++;
+  }
+  arr = arr.filter(function (e) {
+    let z = false;
+    let i = 0;
+    while (i <= e.options.length) {
+      if (e.options[i] && optionsCheck[i]) {
+        z = true;
+      }
+      i++
+    }
+    return (z);
+  });
+  return (arr);
+};
+
+});
