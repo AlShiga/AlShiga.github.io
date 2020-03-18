@@ -89,7 +89,12 @@ $(document).ready(function () {
       </div>`
     }
     roomRender = arrProd;
-    $(".page-product__content").html(products);
+    if(products == ''){
+    $(".page-product__content").html('<p class="product__none">Нет товаров, расширьте параметры поиска</p>');
+    }
+    else{
+      $(".page-product__content").html(products);
+    };
   }
   render(room);
 
