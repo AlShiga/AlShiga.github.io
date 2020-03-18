@@ -196,8 +196,8 @@ function filterAll (arr){
 };
 
 function filterCost(arr){
-  let costMax = $(".costMax").val();
-  let costMin = $(".costMin").val();
+  let costMax = Number($(".costMax").val());
+  let costMin = Number($(".costMin").val());
   if (costMin > costMax && costMin !='' && costMax!=''){
     let temp = costMin;
     costMin = costMax;
@@ -205,12 +205,12 @@ function filterCost(arr){
   }
   if (costMin != '') {
     arr = arr.filter(function (e) {
-      return (e.cost >= costMin);
+      return (Number(e.cost) >= costMin);
     });
   }
   if (costMax != '') {
     arr = arr.filter(function (e) {
-      return (e.cost <= costMax);
+      return (Number(e.cost) <= costMax);
     });
   }
   return arr;
