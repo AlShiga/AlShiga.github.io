@@ -24,9 +24,12 @@ input::-webkit-inner-spin-button {
 
 body{
   background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 .mainImg{
-  width: 100%;
+  width: 100vw;
+  height: 39.6875vw;
 }
 .news{
   margin: 150px auto;
