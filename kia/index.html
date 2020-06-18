@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KIA официальный диллер</title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="container">
+        <header class="header">
+          <a href="" class="logo__wrap">
+            <img src="img/kia.png" alt="" class="logo__img" />
+            <img src="img/kia1.png" alt="" class="logo__img" />
+            <img src="img/kia2.png" alt="" class="logo__img" />
+          </a>
+          <ul class="menu">
+            <li onclick="scrollPage('.diagnostics')" class="menu__item">
+              Записаться
+            </li>
+            <li onclick="scrollPage('.offers')" class="menu__item">
+              Спецпредложения
+            </li>
+            <li onclick="scrollPage('.footer')" class="menu__item">Контакты</li>
+          </ul>
+          <div class="buttonContacts">
+            <div
+              onclick="document.querySelectorAll('.buttonContacts')[0].classList.toggle('open')"
+              class="buttonContacts__item"
+            >
+              <p class="buttonContacts__href">
+                Связаться
+                <span class="buttonContacts__icon">
+                  <svg><use xlink:href="img/sprite.svg#phone"></use></svg>
+                </span>
+              </p>
+            </div>
+            <div class="buttonContacts__item">
+              <a href="tel:+73812905809" class="buttonContacts__href"
+                >+7 (3812) 90-58-09
+                <span class="buttonContacts__icon">
+                  <svg><use xlink:href="img/sprite.svg#phone"></use></svg>
+                </span>
+              </a>
+            </div>
+            <div class="buttonContacts__item">
+              <a
+                href="mailto:info@kia-bars.ru"
+                class="buttonContacts__href buttonContacts__href_none"
+              >
+                <span class="buttonContacts__icon">
+                  <svg><use xlink:href="img/sprite.svg#mail"></use></svg>
+                </span>
+              </a>
+            </div>
+            <div class="buttonContacts__item">
+              <p
+                onclick="document.querySelectorAll('.buttonContacts')[0].classList.toggle('open')"
+                class="buttonContacts__href buttonContacts__href_none"
+              >
+                <span class="buttonContacts__icon">
+                  <svg><use xlink:href="img/sprite.svg#close"></use></svg>
+                </span>
+              </p>
+            </div>
+          </div>
+        </header>
+        <section class="main__inner">
+          <h1 class="site-title">
+            <span>Ремонт</span><br />
+            у официального диллера KIA
+          </h1>
+          <p class="site-subtitle"><span></span></p>
+          <button onclick="scrollPage('.diagnostics')" class="button">Записаться</button>
+        </section>
+      </div>
+    </div>
+    <section class="advantages">
+      <div class="container">
+        <div class="advantages__inner">
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv1.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Тех обслуживание</p>
+              <p class="advantage__subtitle">Плановое ТО автомобиля</p>
+            </div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv2.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Доп оборудование</p>
+              <p class="advantage__subtitle">Доснощение автомобиля</p>
+            </div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv3.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Диагностика</p>
+              <p class="advantage__subtitle">
+                Подробная диагностика всех узлов автомобиля
+              </p>
+            </div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv4.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Шиномонтаж</p>
+              <p class="advantage__subtitle">
+                Ремонт проколов и порезов, балансировка колес
+              </p>
+            </div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv5.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Ремонт ДВС</p>
+              <p class="advantage__subtitle">
+                Ремонт двигателя и навесныз агрегатов
+              </p>
+            </div>
+          </div>
+          <div class="advantage">
+            <div class="advantage__inner">
+              <img src="img/adv6.svg" alt="" class="advantage__img" />
+              <p class="advantage__title">Замена масла</p>
+              <p class="advantage__subtitle">Замена масла в двигателе и КПП</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="steps">
+      <div class="container">
+        <h2 class="sectionTitle sectionTitle_white">Как мы работаем</h2>
+        <div class="steps__inner">
+          <div class="step">
+            <div class="step__inner">
+              <img src="img/step1.svg" alt="" class="step__img" />
+              <p class="step__title">Заявка</p>
+              <p class="step__subtitle">
+                По телефону мы выбираем удодное для вас время
+              </p>
+            </div>
+          </div>
+          <img src="img/next.svg" alt="" class="step__arrow" />
+          <div class="step">
+            <div class="step__inner">
+              <img src="img/step2.svg" alt="" class="step__img" />
+              <p class="step__title">Диагностика</p>
+              <p class="step__subtitle">
+                Проводим диагностику всех узлов и агрегатов автомобиля
+              </p>
+            </div>
+          </div>
+          <img src="img/next.svg" alt="" class="step__arrow" />
+          <div class="step">
+            <div class="step__inner">
+              <img src="img/step3.svg" alt="" class="step__img" />
+              <p class="step__title">Ремонт</p>
+              <p class="step__subtitle">
+                Осуществляем ремонт в соотвествии требованиями компании КИА
+              </p>
+            </div>
+          </div>
+          <img src="img/next.svg" alt="" class="step__arrow" />
+          <div class="step">
+            <div class="step__inner">
+              <img src="img/step4.svg" alt="" class="step__img" />
+              <p class="step__title">Все готово</p>
+              <p class="step__subtitle">
+                Вы забираете свой исправный автомобиль
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="diagnostics">
+      <div class="container">
+        <h2 class="sectionTitle sectionTitle_white">
+          Записаться на диагностику
+        </h2>
+        <form action="" class="formDiag">
+          <div class="formDiag__col">
+            <input placeholder="Модель" type="text" class="formDiag__input" />
+            <input placeholder="Телефон" type="text" class="formDiag__input" />
+          </div>
+          <div class="formDiag__col">
+            <input placeholder="Имя" type="text" class="formDiag__input" />
+            <button type="submit" class="formDiag__button">
+              Отправить заявку
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="plus">
+      <div class="container">
+        <h2 class="sectionTitle">Официально не всега дорого</h2>
+        <p class="sectionSubtitle">но всегда качественно и с гарантией</p>
+        <div class="plus__inner">
+          <div class="plus__item">
+            <div class="plus__itemInner">
+              <p class="plus__num">10</p>
+              <p class="plus__text">тыс</p>
+              <p class="plus__title">Довольных<br />клиентов</p>
+            </div>
+          </div>
+          <div class="plus__line"></div>
+          <div class="plus__item">
+            <div class="plus__itemInner">
+              <p class="plus__num">30</p>
+              <p class="plus__text"></p>
+              <p class="plus__title">Мастеров</p>
+            </div>
+          </div>
+          <div class="plus__line"></div>
+
+          <div class="plus__item">
+            <div class="plus__itemInner">
+              <p class="plus__num">0</p>
+              <p class="plus__text">руб</p>
+              <p class="plus__title">Такси&nbsp;до<br />дома</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offers">
+      <div class="container">
+        <h2 class="sectionTitle">Спецпредложения</h2>
+        <p class="sectionSubtitle">Всегда можно сэкономить</p>
+        <div class="offers__inner">
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="offer">
+                  <img src="img/offer1.jpg" alt="" class="offer__img" />
+                  <p class="offer__date">16 марта - 31 декабря</p>
+                  <p class="offer__title">
+                    Комплексная проверка автомобиля перед покупкой
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="offer">
+                  <img src="img/offer2.jpg" alt="" class="offer__img" />
+                  <p class="offer__date">15 мая - 31 августа</p>
+                  <p class="offer__title">Сезонные работы по комфортной цене</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="offer">
+                  <img src="img/offer3.jpg" alt="" class="offer__img" />
+                  <p class="offer__date">10 марта - 31 декабря</p>
+                  <p class="offer__title">Официально не значит дорого</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="offer">
+                  <img src="img/offer2.jpg" alt="" class="offer__img" />
+                  <p class="offer__date">15 мая - 31 августа</p>
+                  <p class="offer__title">Сезонные работы по комфортной цене</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="offer">
+                  <img src="img/offer3.jpg" alt="" class="offer__img" />
+                  <p class="offer__date">10 марта - 31 декабря</p>
+                  <p class="offer__title">Официально не значит дорого</p>
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <div class="contacts__inner">
+          <div class="contacts__col">
+            <h2 class="contacts__title">Остались вопросы?</h2>
+            <p class="contacts__subtitle">Мы с радостью на них ответим</p>
+            <form action="" class="formPhone">
+              <input placeholder="8 9.." type="text" class="formPhone__input" />
+              <button type="submit" class="formPhone__button">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footerCard">
+            <div class="footerCard__inner">
+              <h2 class="sectionTitle">Контакты</h2>
+              <a href="" class="footerCard__href footerCard__href_adress">
+                <svg><use xlink:href="img/sprite.svg#marker"></use></svg>
+                KIA БАРС г. Омск, ул. Волгоградская 61/1
+              </a>
+              <a
+                href="tel:+73812905809"
+                class="footerCard__href footerCard__href_phone"
+              >
+                <svg><use xlink:href="img/sprite.svg#phone1"></use></svg>
+                +7 (3812) 90-58-09</a
+              >
+              <a
+                href="mailto:info@kia-bars.ru"
+                class="footerCard__href footerCard__href_mail"
+              >
+                <svg><use xlink:href="img/sprite.svg#mail1"></use></svg>
+                info@kia-bars.ru</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+   </body>
+</html>
