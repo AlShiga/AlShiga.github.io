@@ -1,0 +1,255 @@
+*,
+*:active,
+*:focus {
+  outline: none !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 50px;
+  margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+section,
+header {
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+header {
+  padding: 50px 100px;
+}
+
+section {
+  min-height: 420px;
+  padding: 100px;
+}
+
+body {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.cart {
+  width: 100%;
+  background-color: #343434;
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45);
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+}
+
+.cart_small {
+  height: 100px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1.25;
+  color: #ff6700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.greeting {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.title {
+  color: #ff6700;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.25;
+  margin: 12px 0 30px;
+}
+
+.button {
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.25;
+  padding: 15px 45px;
+  background: linear-gradient(96.2deg, #ff6700 -19.11%, #ff0600 103.35%);
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 3px;
+}
+
+.col {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: auto;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.about__text {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.25;
+  text-align: justify;
+  width: 90%;
+  padding: 100px 0 100px 100px;
+}
+
+.about__img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: right;
+}
+
+.sectionTitle {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.25;
+  color: #ff6700;
+  margin-bottom: 20px;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.25;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.cases, .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media screen and (max-width: 1000px) {
+  .greeting {
+    font-size: 30px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  section {
+    padding: 50px;
+    min-height: 320px;
+  }
+  .about__text {
+    font-size: 18px;
+    padding: 50px 0 50px 50px;
+  }
+  .link {
+    font-size: 18px;
+  }
+  .sectionTitle {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section {
+    min-height: 320px;
+  }
+  .about__text {
+    font-size: 18px;
+  }
+  .col {
+    min-width: 220px;
+    max-width: 500px;
+  }
+  .about, .cases, .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    font-size: 30px;
+  }
+  .greeting {
+    font-size: 25px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .button {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  section {
+    padding: 20px;
+  }
+  .about__text {
+    padding: 20px 0 20px 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
