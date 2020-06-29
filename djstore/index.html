@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="/" class="logo">
+            <img src="img/logo.svg" alt="" class="logo__img" />
+          </a>
+          <ul class="menu">
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link menu__link-active">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#home"></use>
+                </svg>
+                Главная</a
+              >
+            </li>
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#project"></use>
+                </svg>
+                Проекты</a
+              >
+            </li>
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#secvices"></use>
+                </svg>
+                Услуги</a
+              >
+            </li>
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#about"></use>
+                </svg>
+                О компании</a
+              >
+            </li>
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#solutions"></use>
+                </svg>
+                Готовые решения</a
+              >
+            </li>
+            <li class="menu__item menu__item-menu">
+              <a href="#" class="menu__link">
+                <svg class="menu__icon">
+                  <use xlink:href="img/sprite.svg#map"></use>
+                </svg>
+                Контакты</a
+              >
+            </li>
+            <li class="menu__item menu__item-noPS">
+              <button class="button button__blue button__menu">
+                Заполнить бриф
+              </button>
+            </li>
+            <li class="menu__item">
+              <p class="mailHeader">Напишите нам</p>
+              <div class="contact">
+                <svg class="contact__img">
+                  <use xlink:href="img/sprite.svg#mail"></use>
+                </svg>
+                <div class="contact__inner">
+                  <a
+                    href="mailto:info@sld-store.ru"
+                    class="contact__link contact__link-menu"
+                    >info@sld-store.ru</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="menu__item menu__item-noMobile">
+              <div class="contact">
+                <svg class="contact__img">
+                  <use xlink:href="img/sprite.svg#phone"></use>
+                </svg>
+                <div class="contact__inner">
+                  <button class="contact__button modalOpen">Обратный звонок</button>
+                  <a href="tel:+78126156279" class="contact__link"
+                    >8 812 615-62-79</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+          <button class="buttonMenu">
+            <svg class="contact__img">
+              <use
+                class="buttonMenu__open"
+                xlink:href="img/sprite.svg#menuOpen"
+              ></use>
+              <use
+                class="buttonMenu__close"
+                xlink:href="img/sprite.svg#menuClose"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="main">
+      <div class="slider">
+        <div class="swiper-wrapper">
+          <div
+            class="slide swiper-slide"
+            style="background-image: url(img/main_bg.jpg);"
+          >
+            <div class="container">
+              <div class="content">
+                <p class="siteSubtitle">Оснащение конференц-залов</p>
+                <h1 class="siteTitle">Видео конференции</h1>
+                <p class="siteText">
+                  Профессиональное оборудование для конференц-залов
+                  предназначено для проведения и организации презентаций,
+                  совещаний, бизнес-тренингов и онлайн-трансляции контента.
+                </p>
+                <div class="buttonWrap">
+                  <button class="button modalOpen">Обратный звонок</button>
+                  <button class="button button__blue modalOpen">Обратный звонок</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide swiper-slide"
+          style="background-image: url(img/main_bg1.jpg);">
+            <div class="container">
+              <div class="content">
+                <p class="siteSubtitle">Оснащение конференц-залов</p>
+                <h1 class="siteTitle">Видео конференц2</h1>
+                <p class="siteText">
+                  Профессиональное оборудование для конференц-залов
+                  предназначено для проведения и организации презентаций,
+                  совещаний, бизнес-тренингов и онлайн-трансляции контента.
+                </p>
+                <div class="buttonWrap">
+                  <button class="button">Обратный звонок</button>
+                  <button class="button button__blue">Обратный звонок</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide swiper-slide"
+          style="background-image: url(img/main_bg.jpg);">
+            <div class="container">
+              <div class="content">
+                <p class="siteSubtitle">Оснащение конференц-залов</p>
+                <h1 class="siteTitle">Видео конференц3</h1>
+                <p class="siteText">
+                  Профессиональное оборудование для конференц-залов
+                  предназначено для проведения и организации презентаций,
+                  совещаний, бизнес-тренингов и онлайн-трансляции контента.
+                </p>
+                <div class="buttonWrap">
+                  <button class="button">Обратный звонок</button>
+                  <button class="button button__blue">Обратный звонок</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide swiper-slide"
+          style="background-image: url(img/main_bg1.jpg);">
+            <div class="container">
+              <div class="content">
+                <p class="siteSubtitle">Оснащение конференц-залов</p>
+                <h1 class="siteTitle">Видео конференц4</h1>
+                <p class="siteText">
+                  Профессиональное оборудование для конференц-залов
+                  предназначено для проведения и организации презентаций,
+                  совещаний, бизнес-тренингов и онлайн-трансляции контента.
+                </p>
+                <div class="buttonWrap">
+                  <button class="button modalOpen">Обратный звонок</button>
+                  <button class="button button__blue modalOpen">Обратный звонок</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sliderLeft">
+        <div class="sliderLeft__inner">
+          <div class="sliderLeft__content">
+            <div class="swiper-wrapper">
+              <div class="slideLeft swiper-slide">
+                <p class="slideLeft__num">01</p>
+                <p class="slideLeft__text">
+                  Простота использования оснащения позволяет решать
+                  функциональные и организационные задачи, оптимизировать
+                  работу, проводить мероприятия различного масштаба.
+                </p>
+              </div>
+              <div class="slideLeft swiper-slide">
+                <p class="slideLeft__num">02</p>
+                <p class="slideLeft__text">
+                  Применение инновационных решений для демонстрации культурных и
+                  исторических реликвий – актуальная тенденция, которая успешно
+                  применяется в музеях и на площадках альтернативного искусства.
+                </p>
+              </div>
+              <div class="slideLeft swiper-slide">
+                <p class="slideLeft__num">03</p>
+                <p class="slideLeft__text">
+                  Простота использования оснащения позволяет решать
+                  функциональные и организационные задачи, оптимизировать
+                  работу, проводить мероприятия различного масштаба.
+                </p>
+              </div>
+              <div class="slideLeft swiper-slide">
+                <p class="slideLeft__num">04</p>
+                <p class="slideLeft__text">
+                  Применение инновационных решений для демонстрации культурных и
+                  исторических реликвий – актуальная тенденция, которая успешно
+                  применяется в музеях и на площадках альтернативного искусства.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sliderButton sliderButton-prev">
+          <svg class="sliderButton__img">
+            <use xlink:href="img/sprite.svg#arrowL"></use>
+          </svg>
+        </div>
+        <div class="sliderButton sliderButton-next">
+          <svg class="sliderButton__img">
+            <use xlink:href="img/sprite.svg#arrowR"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="galery">
+      <div class="galery__item">
+        <img src="img/prod1.jpg" alt="" class="image" />
+      </div>
+      <div class="galery__item">
+        <img src="img/prod2.jpg" alt="" class="image" />
+        <div class="voice voiceR" data-template="tooltip">
+          <div class="voice__inner">
+            <img src="img/voiceR.png" alt="" class="voice__img" />
+            <div class="voice__cirkleBig"></div>
+            <div class="voice__cirkleSmall"></div>
+          </div>
+        </div>
+        <div class="tooltip" id="tooltip" style="display: none;" role="tooltip">
+          <div class="tooltip__inner">
+            <div class="tooltip__head">
+              <h4 class="tooltip__title">Electro-Voice<br />EVID 4.2</h4>
+              <img class="tooltip__img" src="img/speak.png" alt="" />
+            </div>
+            <ul class="tooltip__body">
+              <li class="tooltip__item">
+                <svg class="tooltip__icon">
+                  <use xlink:href="img/sprite.svg#point"></use>
+                </svg>
+                Очень мягкое звучание.
+              </li>
+              <li class="tooltip__item">
+                <svg class="tooltip__icon">
+                  <use xlink:href="img/sprite.svg#point"></use>
+                </svg>
+                Чувствительность — 89 дБ.
+              </li>
+              <li class="tooltip__item">
+                <svg class="tooltip__icon">
+                  <use xlink:href="img/sprite.svg#point"></use>
+                </svg>
+                Пиковая мощность — 400 Вт.
+              </li>
+              <li class="tooltip__item">
+                <svg class="tooltip__icon">
+                  <use xlink:href="img/sprite.svg#point"></use>
+                </svg>
+                Степень влагозащищенности IP34.
+              </li>
+            </ul>
+            <button class="tooltip__close">
+              <svg>
+                <use xlink:href="img/sprite.svg#menuClose"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="voice voiceL" data-template="tooltip">
+          <div class="voice__inner">
+            <img src="img/voiceL.png" alt="" class="voice__img" />
+            <div class="voice__cirkleBig"></div>
+            <div class="voice__cirkleSmall"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal modalForm">
+      <div class="modal__overlay modalOverlay"></div>
+      <div class="modal__content">
+        <form action="" class="form">
+          <h3 class="form__title">Готовы обсудить проект?</h3>
+          <p class="form__subtitle">
+            Заполните форму ниже и мы свяжемся с вами.
+          </p>
+          <input placeholder="Имя*" type="text" class="form__input inputForm" />
+          <input placeholder="Телефон*" type="text" class="form__input inputForm" />
+          <div class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" id="cb3" checked disabled>
+            <label class="form__checkboxLabel checkbox__label"for="cb3">Я согласен с условиями обработки
+              <a class="form__checkboxLink" href="#"
+                >персональных данных</a
+              ></label>
+            </div>
+          <button class="form__button sendForm" type="submit">Отправить</button>
+          <div class="form__sucсess">
+            <svg class="form__successImg">
+              <use xlink:href="img/sprite.svg#success"></use>
+            </svg>
+            <p class="form__successText">
+              Ваша заявка успешно отправлена.<br>Ожидайте звонка в ближайшее время!
+            </p>
+            <button class="form__button sendForm modalClose" >Ок</button>
+          </div>
+        </form>
+
+        <div class="modal__close modalClose">
+          <svg class="modal__closeImg">
+            <use
+              xlink:href="img/sprite.svg#menuClose"
+            ></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      var mySwiper = new Swiper(".slider", {
+        spaceBetween: 30,
+        effect: "fade",
+        slideClass: "slide",
+        // loop: true,
+        longSwipes: false,
+        shortSwipes: false,
+        simulateTouch: false,
+        navigation: {
+          nextEl: ".sliderButton-next",
+          prevEl: ".sliderButton-prev",
+        },
+      });
+    </script>
+
+    <script>
+      var swiper = new Swiper(".sliderLeft__content", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        slideClass: "slideLeft",
+        // loop: true,
+        longSwipes: false,
+        shortSwipes: false,
+        simulateTouch: false,
+        navigation: {
+          nextEl: ".sliderButton-next",
+          prevEl: ".sliderButton-prev",
+          disabledClass: "sliderButton-disable",
+        },
+      });
+    </script>
+
+    <script>
+      tippy(".voice", {
+        content(reference) {
+          const id = reference.getAttribute("data-template");
+          const template = document.getElementById(id);
+          return template.innerHTML;
+        },
+        allowHTML: true,
+        trigger: "click",
+        theme: "white",
+        //  interactive: true,
+        // trigger: "manual",
+      });
+    </script>
+  </body>
+</html>
