@@ -1,20 +1,23 @@
-const leftTop = document.querySelector(".leftTop");
-const leftTopY = leftTop.getBoundingClientRect().top + window.pageYOffset;
-const leftTopH = leftTop.getBoundingClientRect().height;
-const leftBottom = document.querySelector(".leftBottom");
-const leftBottomY = leftBottom.getBoundingClientRect().top + window.pageYOffset;
 const products = document.querySelector(".products");
 function addProduct() {
   let product = document.createElement("div");
   product.className = "product block block_gray";
-  product.innerHTML ="<svg class='product__icon'><use xlink:href='img/basket.svg#asd'></use></svg>";
+  product.innerHTML =
+    "<svg class='product__icon'><use xlink:href='img/basket.svg#asd'></use></svg>";
   products.append(product);
 }
-function removeProduct(){
-    let prod = document.querySelectorAll(".product");
-    prod[prod.length-1].remove();
+function removeProduct() {
+  let prod = document.querySelectorAll(".product");
+  prod[prod.length - 1].remove();
 }
 window.addEventListener("scroll", function () {
+  const leftTop = document.querySelector(".leftTop");
+  const leftTopY = leftTop.getBoundingClientRect().top + window.pageYOffset;
+  const leftTopH = leftTop.getBoundingClientRect().height;
+  const leftBottom = document.querySelector(".leftBottom");
+  const leftBottomY =
+    leftBottom.getBoundingClientRect().top + window.pageYOffset;
+
   if (window.pageYOffset + leftTopH + 180 > leftBottomY) {
     leftTop.style.width = "";
     leftTop.style.position = "";
@@ -29,4 +32,3 @@ window.addEventListener("scroll", function () {
     leftBottom.style.marginTop = "auto";
   }
 });
-
