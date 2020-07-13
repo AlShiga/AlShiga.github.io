@@ -483,6 +483,9 @@ h4,
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    overflow-x: hidden;
+  }
   .header__topMenuItem-nonePhone {
     display: none;
   }
