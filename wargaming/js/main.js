@@ -1,7 +1,6 @@
-body = document.querySelector('body');
-menu = document.querySelector('.header__menuBottom');
-btnOpenMenu = document.querySelector('.burger');
-console.log(body);
+var body = document.querySelector('body');
+var menu = document.querySelector('.header__menuBottom');
+var btnOpenMenu = document.querySelector('.burger');
 function openMenu(){
     menu.classList.toggle("open");
     if (menu.classList.contains("open")){

@@ -32,7 +32,8 @@ body {
   overflow-x: hidden;
 }
 body.no-scroll {
-  overflow: hidden;
+  position: relative;
+  overflow-y: hidden;
 }
 body:before {
   content: "";
