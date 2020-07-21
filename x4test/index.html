@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="" class="logo">
+            <img src="img/logo.svg" alt="" class="logo__img" />
+          </a>
+          <nav class="header__menu">
+            <ul class="header__menuInner">
+              <li class="header__menuItem header__menuItem_active">
+                <a href="#">Новости</a>
+              </li>
+              <li class="header__menuItem"><a href="#">Архив</a></li>
+              <li class="header__menuItem"><a href="">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="login">
+            <a href="" class="login__href">Войти</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="content">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb__item"><a href="#">Главная</a></li>
+          <li class="breadcrumb__item"><a href="#">Новости</a></li>
+          <li class="breadcrumb__item breadcrumb__item_active">
+            Очень интересная новость
+          </li>
+        </ul>
+        <h1 class="title">Очень интересная новость</h1>
+        <p class="text text_smallWidth">
+          Идейные соображения высшего порядка, а также укрепление и развитие
+          структуры обеспечивает широкому кругу (специалистов) участие в
+          формировании новых предложений. Задача организации, в особенности же
+          реализация намеченных плановых заданий обеспечивает широкому кругу
+          (специалистов) участие в формировании направлений прогрессивного
+          развития. Таким образом сложившаяся
+          <a href="/">структура организации</a> требуют определения и уточнения
+          систем массового участия. Не следует, однако забывать, что укрепление
+          и развитие структуры позволяет оценить значение систем массового
+          участия.
+        </p>
+      </div>
+      <svg
+        class="rect rectContent"
+        width="360"
+        height="360"
+        viewBox="0 0 360 360"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle class="rectContent__cirkl" cx="179.5" cy="138.5" r="27" />
+        <path d="M24.9815 269.5L180 1L335.019 269.5H24.9815Z" stroke="black" />
+      </svg>
+    </section>
+    <div class="feedback">
+      <div class="container">
+        <form action="" class="form">
+          <h3 class="form__title">Написать отзыв</h3>
+          <p class="form__label">Ваше имя</p>
+          <input class="form__input" name="Имя" type="text" required/>
+          <p class="form__label">Почта</p>
+          <input class="form__input" name="Email" type="email"/>
+          <p class="form__label">Телефон</p>
+          <input class="form__input" name="Телефон" type="tel" required/>
+          <p class="form__label">Текст</p>
+          <textarea class="form__textarea" name="Вопрос"></textarea>
+          <button class="form__button" type="submit"></button>
+        </form>
+        <object class="rect rectFeed1" type="image/svg+xml" data="img/r2.svg">
+          <img src="img/r2.svg" />
+        </object>
+        <object class="rect rectFeed2" type="image/svg+xml" data="img/r3.svg">
+          <img src="img/r3.svg" />
+        </object>
+      </div>
+    </div>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
