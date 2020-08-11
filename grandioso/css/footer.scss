@@ -1,0 +1,198 @@
+.formSubscription {
+    border-top: 1px solid $greyLight2;
+    &__inner {
+        padding: 110px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 840px;
+        margin: 0 auto;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    &__input {
+        margin: 0;
+        padding: 20px 20px 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        // text-transform: uppercase;
+        border: 1px solid $greyLight2;
+        width: 45%;
+        &::placeholder {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    }
+    &__button {
+        margin: 0 0 0 -1px;
+        padding: 20px 20px 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background-color: $grayLight1;
+        border: 1px solid $greyLight2;
+        width: 45%;
+    }
+    @media (max-width: 767px) {
+        &__inner {
+            padding: 60px 0;
+        }
+        &__title {
+            font-size: 24px;
+            margin: 0 auto 40px;
+        }
+        &__form {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        &__button {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.footer {
+    background-color: $violet;
+    color: white;
+    &__top {
+        padding: 80px 0;
+    }
+    &__bottom {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 21px 0 31px;
+    }
+    &__logo {
+        &-sm {
+            display: none;
+        }
+        &-md {
+            display: block;
+        }
+        @media (max-width: 991px) {
+            &-sm {
+                display: block;
+            }
+            &-md {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        &__logo {
+            margin: auto;
+        }
+    }
+    @media (max-width: 991px) and (min-width: 768px) {
+        &__top-md-bottom {
+            padding-top: 75px;
+        }
+    }
+}
+
+.social {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    &_footer {
+        margin-bottom: 44px;
+        max-width: 100px;
+    }
+    @media (max-width: 767px) {
+        &_footer {
+            margin: 30px auto;
+        }
+    }
+}
+
+.footerMenu {
+    margin-top: -10px;
+    &__title {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        margin-bottom: 23px;
+        @media (max-width: 1199px) {
+            font-size: 21px;
+        }
+    }
+    &__list {
+        margin: 0;
+        padding: 0;
+        & li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 13px;
+        }
+        & a {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: $white;
+            &:hover,
+            &:active,
+            &:focus {
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.contacts {
+    &__link {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 154%;
+        color: #FFFFFF;
+        display: block;
+        &:hover,
+        &:active,
+        &:focus {
+            color: #FFFFFF;
+        }
+    }
+    @media (max-width: 767px) {
+        &__link {
+            text-align: center;
+        }
+    }
+}
+
+.avaLink {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+    }
+}

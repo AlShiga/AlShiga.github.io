@@ -1,0 +1,41 @@
+.pageAbout {
+    // background: red;
+    &__block {
+        padding: 90px 0;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+    }
+    @media (max-width: 991px) {
+        &__row {
+            display: block;
+            &>*+* {
+                margin-top: 90px;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        &__block {
+            padding: 60px 0;
+        }
+        &__row {
+            display: block;
+            &>*+* {
+                margin-top: 60px;
+            }
+        }
+    }
+}
+
+.slogan {
+    background-color: $greyLight1;
+    padding: 90px 0;
+    &__text {
+        text-align: center;
+    }
+}

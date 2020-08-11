@@ -1,0 +1,186 @@
+$violet: #5A3D6C;
+$black: #323236;
+$white: #fff;
+$grey: #848486;
+$gray: $grey;
+$blueLight:#DFEDF4;
+$greyLight1: #F2F2F2;
+$grayLight1: $greyLight1;
+$greyLight2: #D1D1D1;
+$grayLight2: $greyLight2;
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p,
+span,
+a,
+button,
+input,
+textarea,
+label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.h1 {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: -0.015em;
+    // color: #C4C4C4;
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
+}
+
+.h2 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 119.02%;
+    // color: #C4C4C4;
+}
+
+.h3 {
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    // color: #C4C4C4;
+}
+
+.h4 {
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    // color: #C4C4C4;
+}
+
+.h5 {
+    font-family: Ubuntu;
+    font-weight: normal;
+    font-size: 46px;
+    line-height: 53px;
+    letter-spacing: -0.015em;
+    // color: #C4C4C4;
+    @media (max-width: 767px) {
+        font-size: 32px;
+        line-height: 130%;
+    }
+}
+
+.h6 {
+    font-family: Ubuntu;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 153.52%;
+    // color: #C4C4C4;
+}
+
+.p1 {
+    font-family: Open Sans;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 154%;
+    // color: #C4C4C4;
+}
+
+.btn1 {
+    color: $black;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: transparent;
+    // color: #C4C4C4;
+    margin: 0;
+    padding: 0;
+    border: none;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $black;
+    }
+}
+
+.btn2 {
+    color: $black;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: transparent;
+    // color: #C4C4C4;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -2px;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $black;
+        transition: 0.4s ease-in-out;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        color: $black;
+    }
+    &:hover::after,
+    &:active::after,
+    &:focus::after {
+        width: 0;
+    }
+    &_white {
+        color: $white;
+        &:hover,
+        &:active,
+        &:focus {
+            color: $white;
+        }
+        &::after {
+            background-color: $white;
+        }
+    }
+}
+
+@import "header.scss";
+@import "pageNews.scss";
+@import "pageAbout.scss";
+@import "pageContacts.scss";
+@import "footer.scss";
