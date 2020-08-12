@@ -8,6 +8,7 @@ $greyLight1: #F2F2F2;
 $grayLight1: $greyLight1;
 $greyLight2: #D1D1D1;
 $grayLight2: $greyLight2;
+$border: 1px solid $greyLight2;
 * {
     box-sizing: border-box;
     outline: none;
@@ -47,6 +48,10 @@ label {
     font-size: 32px;
     line-height: 130%;
     letter-spacing: -0.015em;
+    @media (max-width: 991px) {
+        font-size: 28px;
+        line-height: 130%;
+    }
     @media (max-width: 767px) {
         font-size: 24px;
     }
@@ -94,6 +99,10 @@ label {
     line-height: 153.52%;
 }
 
+p,
+span,
+a,
+li,
 .p1 {
     font-family: Open Sans;
     font-weight: normal;
@@ -102,6 +111,7 @@ label {
 }
 
 .btn1 {
+    display: inline-block;
     color: $black;
     font-family: Open Sans;
     font-style: normal;
@@ -123,6 +133,7 @@ label {
 }
 
 .btn2 {
+    display: inline-block;
     color: $black;
     font-family: Open Sans;
     font-style: normal;
@@ -174,4 +185,9 @@ label {
 @import "pageNews.scss";
 @import "pageAbout.scss";
 @import "pageContacts.scss";
+@import "pageServices.scss";
+@import "pageServiceCategory.scss";
+@import "pagePortfolio.scss";
+@import "pageCase.scss";
+@import "pageArticle.scss";
 @import "footer.scss";

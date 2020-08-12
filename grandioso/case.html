@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="pageCase">
+        <div class="pageCase__titleWrap">
+            <div class="container">
+                <a class="pageCase__close">
+                    <img src="./img/close.svg" alt="" class="">
+                </a>
+                <p class="btn1 pageCase__date">2019</p>
+                <h1 class="h5 pageCase__title">Квартира на Петроградке</h1>
+            </div>
+        </div>
+        <div class="pageCase__galeryWrap">
+            <div class="container">
+                <div class="pageCase__galery">
+                    <img class="pageCase__galeryItem" src="./img/case/c1.jpg" alt="">
+                    <img class="pageCase__galeryItem" src="./img/case/c2.jpg" alt="">
+                    <img class="pageCase__galeryItem" src="./img/case/c3.jpg" alt="">
+                    <img class="pageCase__galeryItem" src="./img/case/c4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="pageCase__descriptionWrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h3 class="h1 pageCase__descriptionTitle">О проекте</h3>
+                        <p class="p1 pageCase__descriptionText">Интересный проект в стиле модерн: стекло с монохромным узором, пилястры и нежные ручки-розетты из мурманского стекла перемежаются с современными фасадами кофейного цвета, с декором в тон.</p>
+                        <p class="p1 pageCase__descriptionText">Интересная часть истории: клиентка заказывала аналогичную мебель дважды! При продаже первой квартиры покупатели отказались заключать договор без дизайнерской мебели, делавшей помещение таким стильным. Пришлось уступить гарнитур
+                            новым владельцам и сделать повторный заказ.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a class="pageCase__close">
+            <img src="./img/close.svg" alt="" class="">
+        </a>
+    </section>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $('.pageCase__galery').slick({
+            autoplay: true,
+            arrows: false,
+            dots: true,
+            dotsClass: "pageCase__galeryDots"
+        });
+    </script>
+</body>
+
+</html>

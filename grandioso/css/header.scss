@@ -5,7 +5,7 @@
     width: 100%;
     height: 87px;
     background-color: $white;
-    border-bottom: 1px solid $greyLight2;
+    border-bottom: $border;
     &_transparent {
         background-color: transparent;
         border-bottom: none;
@@ -71,15 +71,43 @@
         &_blue {
             background-color: $blueLight;
         }
+        &_gray {
+            background-color: $greyLight1;
+        }
     }
     &__topInner {
         padding-top: 167px;
         padding-bottom: 70px;
     }
+    &__date {
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+        color: $gray;
+    }
+    &__text {
+        max-width: 635px;
+        margin: 28px auto 0;
+        padding: 0;
+        text-align: center;
+    }
     &__menu {
         color: $black;
         &_blue {
             background-color: $blueLight;
+        }
+        &_gray {
+            background-color: $greyLight1;
+        }
+    }
+    &__menuItem {
+        font-weight: 600;
+        color: $black;
+        & a {
+            font-weight: 600;
+            color: $black;
         }
     }
     @media (min-width: 768px) {

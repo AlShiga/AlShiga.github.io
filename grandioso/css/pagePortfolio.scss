@@ -1,0 +1,42 @@
+.pagePortfolio {
+    &__description {
+        padding: 80px 0;
+    }
+    &__descriptionTitle {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 29px;
+    }
+    &__descriptionText {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 47px;
+    }
+    &__descriptionLink {}
+    &__cases {
+        padding: 40px 0;
+    }
+    &__case {
+        padding-bottom: 70px;
+    }
+    &__caseImg {
+        width: 100%;
+        height: auto;
+        margin-bottom: 18px;
+    }
+    &__caseTitle {
+        margin: 0;
+        padding: 0;
+    }
+    @media (max-width: 767px) {
+        &__description {
+            padding: 60px 0;
+        }
+        &__cases {
+            padding: 20px 0;
+        }
+        &__case {
+            padding-bottom: 40px;
+        }
+    }
+}

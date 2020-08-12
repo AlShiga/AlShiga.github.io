@@ -51,7 +51,7 @@
             border: none;
             margin: 0;
             padding: 20px 10px;
-            border-bottom: 1px solid $greyLight2;
+            border-bottom: $border;
             width: 100%;
             margin-bottom: 15px;
             &::placeholder {
@@ -64,7 +64,7 @@
             border: none;
             margin: 0;
             padding: 20px 10px;
-            border: 1px solid $greyLight2;
+            border: $border;
             width: 100%;
             margin-top: 40px;
             margin-bottom: 15px;
@@ -89,6 +89,7 @@
         }
         & label {
             margin-bottom: 50px;
+            display: inline-block;
             & input {
                 //скрываем старый чекбок
                 position: absolute;
@@ -114,7 +115,7 @@
                 min-width: 22px;
                 height: 22px;
                 min-height: 22px;
-                border: 1px solid $greyLight2;
+                border: $border;
                 background-color: transparent;
                 margin-right: 10px;
                 position: relative;
