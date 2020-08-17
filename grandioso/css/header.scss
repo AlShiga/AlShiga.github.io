@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: start;
     cursor: pointer;
+    user-select: none;
     &__text {
         margin: 0;
         padding: 0;
@@ -56,6 +57,7 @@
     &__img * {
         transition: 0.3s ease-in-out;
     }
+    .open1 &__img,
     .open2 &__img,
     .open3 &__img {
         & *:first-child {

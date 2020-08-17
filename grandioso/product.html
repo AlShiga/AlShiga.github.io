@@ -46,7 +46,17 @@
                     <div class="pageProduct__description">
                         <p class="btn1 pageProduct__collection">Arketipo</p>
                         <h1 class="h5 pageProduct__title">Herman Chair</h1>
-                        <p class="p1pageProduct__category">Диван</p>
+                        <p class="p1 pageProduct__category">Диван</p>
+                        <div class="pageProduct__filter">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                        </div>
                         <button class="btn1 pageProduct__button">ДОБАВИТЬ В КОРЗИНУ</button>
                         <p class="p1 pageProduct__message">Товар доступен только по предзаказу</p>
                         <div class="accordion">
@@ -100,7 +110,7 @@
     <div class="pageProduct__more">
         <div class="container">
             <h3 class="h1 pageProduct__moreTitle">Вам может понравиться</h3>
-            <div class="row">
+            <div class="row pageProduct__moreSlider">
                 <div class="col-sm-6 col-md-3">
                     <div class="cartProduct">
                         <div class="cartProduct__tags">
@@ -290,9 +300,35 @@
                 autoplay: true,
                 arrows: false,
                 dots: true,
-                dotsClass: "pageCase__galeryDots"
+                dotsClass: "sliderDots pageProduct__galeryDots"
             });
         }
+        $('.pageProduct__moreSlider').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            dotsClass: "sliderDots",
+            responsive: [{
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            }]
+        });
     </script>
 
 

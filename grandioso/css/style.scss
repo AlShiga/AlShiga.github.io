@@ -12,6 +12,7 @@ $border: 1px solid $greyLight2;
 * {
     box-sizing: border-box;
     outline: none !important;
+    -webkit-appearance: none !important;
 }
 
 a {
@@ -39,8 +40,17 @@ a,
 button,
 input,
 textarea,
-label {
+label,
+li {
     font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
 }
 
 .h1 {
@@ -203,4 +213,5 @@ li,
 @import "pageArticle.scss";
 @import "pageProduct.scss";
 @import "pageCategory.scss";
+@import "pageBrands.scss";
 @import "footer.scss";

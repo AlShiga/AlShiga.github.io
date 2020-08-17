@@ -17,6 +17,9 @@
             }
         }
     }
+    &__galeryDots {
+        margin-top: 20px;
+    }
     &__description {
         position: sticky;
         top: 0px;
@@ -30,6 +33,11 @@
         color: $white;
         border: none;
         margin-bottom: 14px;
+        &:hover,
+        &:active,
+        &:focus {
+            color: $white;
+        }
     }
     &__message {
         display: block;
@@ -63,6 +71,13 @@
         justify-content: space-between;
         padding: 20px 0;
         width: 100%;
+    }
+    &__icon {
+        transform: rotate(0deg);
+        transition: 0.3s ease-in-out;
+    }
+    .active &__icon {
+        transform: rotate(135deg);
     }
     &__body {
         width: 100%;
