@@ -6,6 +6,7 @@
     height: 87px;
     background-color: $white;
     border-bottom: $border;
+    z-index: 1000;
     &_transparent {
         background-color: transparent;
         border-bottom: none;
@@ -32,6 +33,11 @@
             height: 60px;
         }
     }
+    @media (max-width: 991px) {
+        & {
+            z-index: 3000;
+        }
+    }
 }
 
 .burger {
@@ -47,11 +53,35 @@
             display: none;
         }
     }
+    &__img * {
+        transition: 0.3s ease-in-out;
+    }
+    .open2 &__img,
+    .open3 &__img {
+        & *:first-child {
+            transform-origin: 100% 50%;
+            transform: rotate(-45deg) translateX(3px);
+        }
+        & *:nth-child(2) {
+            transform: scaleX(0);
+        }
+        & *:last-child {
+            transform-origin: 100% 50%;
+            transform: rotate(45deg) translateX(2px);
+        }
+    }
 }
 
 .search {
     &_header {
         @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    &_mainMenu {
+        display: flex;
+        justify-content: center;
+        @media (min-width: 768px) {
             display: none;
         }
     }

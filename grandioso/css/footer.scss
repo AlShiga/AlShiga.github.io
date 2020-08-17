@@ -117,13 +117,42 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    & a {
+        display: flex;
+        align-items: center;
+    }
+    &__white {
+        & svg {
+            fill: $white;
+        }
+        & svg.stroke {
+            fill: transparent;
+            stroke: $white;
+        }
+    }
+    &__black {
+        & svg {
+            fill: $black;
+        }
+        & svg.stroke {
+            fill: transparent;
+            stroke: $black;
+        }
+    }
     &_footer {
         margin-bottom: 44px;
+        max-width: 100px;
+    }
+    &_mainMenu {
+        margin-bottom: 50px;
         max-width: 100px;
     }
     @media (max-width: 767px) {
         &_footer {
             margin: 30px auto;
+        }
+        &_mainMenu {
+            margin: 20px auto 50px;
         }
     }
 }

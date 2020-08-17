@@ -11,7 +11,7 @@ $grayLight2: $greyLight2;
 $border: 1px solid $greyLight2;
 * {
     box-sizing: border-box;
-    outline: none;
+    outline: none !important;
 }
 
 a {
@@ -181,7 +181,18 @@ li,
     }
 }
 
+.overflowHidden {
+    overflow: hidden;
+}
+
+.body {
+    &__gray {
+        background-color: $greyLight1;
+    }
+}
+
 @import "header.scss";
+@import "mainMenu.scss";
 @import "pageNews.scss";
 @import "pageAbout.scss";
 @import "pageContacts.scss";
@@ -190,4 +201,6 @@ li,
 @import "pagePortfolio.scss";
 @import "pageCase.scss";
 @import "pageArticle.scss";
+@import "pageProduct.scss";
+@import "pageCategory.scss";
 @import "footer.scss";
