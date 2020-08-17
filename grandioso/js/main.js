@@ -69,7 +69,7 @@ function setSizeMenu() {
     var padMenu = (docW - containerW) / 2;
     var padClose = 30;
     var colMenu;
-    if (docW > 991) {
+    if (docW > 991 && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
         colMenu = containerW / 3;
         $(".mainMenu__col1").css({ "width": padMenu + colMenu + "px", "padding-left": padMenu + "px" })
         $(".mainMenu__col2").css({ "width": colMenu + "px", "display": "" })
