@@ -1851,6 +1851,7 @@ li,
   line-height: 16px;
   letter-spacing: 0.1em;
   border: 1px solid #D1D1D1;
+  border-radius: 0;
   width: 45%;
 }
 
