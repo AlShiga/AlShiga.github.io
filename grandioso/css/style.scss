@@ -195,6 +195,10 @@ li,
     overflow: hidden;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .body {
     &__gray {
         background-color: $greyLight1;
@@ -203,6 +207,7 @@ li,
 
 @import "header.scss";
 @import "mainMenu.scss";
+@import "pageMain.scss";
 @import "pageNews.scss";
 @import "pageAbout.scss";
 @import "pageContacts.scss";
@@ -214,4 +219,5 @@ li,
 @import "pageProduct.scss";
 @import "pageCategory.scss";
 @import "pageBrands.scss";
+@import "pageDiscount.scss";
 @import "footer.scss";

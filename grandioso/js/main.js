@@ -64,7 +64,7 @@ $(window).resize(function() {
 });
 
 function setSizeMenu() {
-    var docW = $(document).width();
+    var docW = $(window).width();
     var containerW = $(".container").width();
     var padMenu = (docW - containerW) / 2;
     var padClose = 30;

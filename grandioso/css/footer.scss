@@ -28,6 +28,7 @@
         letter-spacing: 0.1em;
         // text-transform: uppercase;
         border: $border;
+        border-radius: 0;
         width: 45%;
         &::placeholder {
             font-family: Open Sans;

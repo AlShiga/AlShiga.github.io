@@ -1,0 +1,51 @@
+.pageDiscount {
+    margin-bottom: 50px;
+    &__item {
+        background-color: $white;
+        // margin: 0 10px;
+        display: flex;
+        height: 430px;
+    }
+    &__imgWrap {
+        padding: 0;
+        height: 100%;
+        flex-basis: 50%;
+    }
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+    }
+    &__textWrap {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 50px 30px;
+    }
+    @media (max-width: 991px) {
+        &__item {
+            display: flex;
+            flex-direction: column;
+            height: 700px;
+        }
+        &__imgWrap {
+            height: 50%;
+        }
+        &__textWrap {
+            height: 50%;
+        }
+    }
+    @media (max-width: 767px) {
+        &__item {
+            height: 600px;
+        }
+        &__imgWrap {
+            height: 35%;
+        }
+        &__textWrap {
+            height: 65%;
+        }
+    }
+}

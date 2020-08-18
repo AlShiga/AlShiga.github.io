@@ -35,7 +35,18 @@
 .slogan {
     background-color: $greyLight1;
     padding: 90px 0;
+    &_white {
+        background-color: $white;
+    }
+    &__title {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 50px;
+    }
     &__text {
         text-align: center;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
