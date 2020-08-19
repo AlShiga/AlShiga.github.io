@@ -95,7 +95,7 @@ function setSizeMenu() {
             $(".mainMenu__col3").css({ "left": 0 })
             $(".mainMenu__close").css({ "left": 0 })
         }
-    } else if (docW > 767 || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && docW < 767)) {
+    } else if (docW > 767) {
         colMenu = containerW / 2;
         $(".mainMenu__col1").css({ "width": padMenu + colMenu + "px", "padding-left": padMenu + "px" })
         $(".mainMenu__col2").css({ "width": padMenu + colMenu + "px", "padding-right": padMenu + "px", "display": "" })

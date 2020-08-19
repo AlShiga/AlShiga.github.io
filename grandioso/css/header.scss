@@ -36,6 +36,8 @@
     @media (max-width: 991px) {
         & {
             z-index: 3000;
+            background-color: $white;
+            border-bottom: $border;
         }
     }
 }
@@ -72,9 +74,24 @@
             transform: rotate(45deg) translateX(2px);
         }
     }
+    &_white {
+        color: $white;
+        & svg {
+            fill: $white;
+        }
+        @media (max-width: 991px) {
+            color: $black;
+            & svg {
+                fill: $black;
+            }
+        }
+    }
 }
 
 .search {
+    svg {
+        stroke: $black;
+    }
     &_header {
         @media (max-width: 767px) {
             display: none;
@@ -85,6 +102,28 @@
         justify-content: center;
         @media (min-width: 768px) {
             display: none;
+        }
+    }
+    &_white {
+        svg {
+            stroke: $white;
+            @media (max-width: 991px) {
+                stroke: $black;
+            }
+        }
+    }
+}
+
+.basket {
+    svg {
+        stroke: $black;
+    }
+    &_white {
+        svg {
+            stroke: $white;
+            @media (max-width: 991px) {
+                stroke: $black;
+            }
         }
     }
 }

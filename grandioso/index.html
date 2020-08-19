@@ -14,7 +14,7 @@
     <header class="header header_transparent">
         <div class="container">
             <div class="header__inner">
-                <div class="burger">
+                <div class="burger burger_white">
                     <svg class="burger__img" width="25px" height="23px" viewBox="0 0 25 23" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <rect x="0" y="0" width="25" height="2"></rect>
                         <rect x="0" y="10" width="25" height="2"></rect>
@@ -23,13 +23,22 @@
                     <!-- <img src="./img/burger.svg" alt="" class="burger__img"> -->
                     <p class="p1 burger__text">Каталог</p>
                 </div>
-                <img src="./img/logo.svg" alt="" class="logo">
+                <picture>
+                    <source media="(max-width: 991px)" srcset="./img/logo.svg">
+                    <img src="./img/logoW.svg" alt="" class="logo">
+                </picture>
+
                 <div class="header__right">
-                    <div class="search search_header">
-                        <img src=" ./img/loupe.svg" alt="" class="">
+                    <div class="search search_header search_white">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.04738 14.7143C11.8457 14.7143 14.9248 11.6442 14.9248 7.85714C14.9248 4.07004 11.8457 1 8.04738 1C4.24906 1 1.16992 4.07004 1.16992 7.85714C1.16992 11.6442 4.24906 14.7143 8.04738 14.7143Z"  stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.2061 13L17.2178 17" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <div class="basket">
-                        <img src=" ./img/basket.svg" alt="">
+                    <div class="basket basket_white">
+                        <svg width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.37463 5.09535C4.37463 5.09535 4.37463 1 7.78199 1C11.1894 1 11.1894 5.09535 11.1894 5.09535M1.53516 5.09535V18.7465H14.0288V5.09535H1.53516Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -156,25 +165,62 @@
     <!-- Header End -->
 
     <section class="main">
-
-        <div class="container">
+        <div class="">
             <div class="main__inner">
                 <div class="row main__row">
-                    <div class="col-md-4 main__colText">
+                    <div class="col-md-5 col-lg-4 main__colText">
                         <div class="main__text">
-                            <h3 class="h1">Новая коллекция: Leonie</h3>
-                            <p class="p1">В новой коллекции бренда представлены яркие и современные решения для гостинной и спальни. Благодаря новому механизму диван Leonie преобразуются в просторную кровать с достаточно ровным и широким спальным местом.</p>
-                            <a href="" class="btn2 btn2_white">Подробнее</a>
+
                         </div>
                     </div>
-                    <div class="col-md-8">
-
+                    <div class="col-md-7 col-lg-8 main__colBg">
+                        <div class="sliderBg">
+                            <div class="sliderBg__item" style="background-image: url(./img/category/cat1.jpg) ;"></div>
+                            <div class="sliderBg__item" style="background-image: url(./img/category/cat2.jpg) ;"></div>
+                            <div class="sliderBg__item" style="background-image: url(./img/category/cat3.jpg) ;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="main__content">
+            <div class="container">
+                <div class="main__inner">
+                    <div class="row main__row">
+                        <div class="col-md-5 col-lg-4 main__colText">
+                            <div class="main__text">
+                                <div class="main__sliderText">
+                                    <div class="main__sliderTextItem">
+                                        <h3 class="h1">Новая коллекция: Leonie</h3>
+                                        <p class="p1">В новой коллекции бренда представлены яркие и современные решения для гостинной и спальни. Благодаря новому механизму диван Leonie преобразуются в просторную кровать с достаточно ровным и широким спальным местом.</p>
+                                        <a href="" class="btn2 btn2_white">Подробнее</a>
+                                    </div>
+                                    <div class="main__sliderTextItem">
+                                        <h3 class="h1">Новая коллекция: Leonie</h3>
+                                        <p class="p1">В новой коллекции бренда представлены яркие и современные решения для гостинной и спальни. Благодаря новому механизму диван Leonie преобразуются в просторную кровать с достаточно ровным и широким спальным местом.</p>
+                                        <a href="" class="btn2 btn2_white">Подробнее</a>
+                                    </div>
+                                    <div class="main__sliderTextItem">
+                                        <h3 class="h1">Новая коллекция: Leonie</h3>
+                                        <p class="p1">В новой коллекции бренда представлены яркие и современные решения для гостинной и спальни. Благодаря новому механизму диван Leonie преобразуются в просторную кровать с достаточно ровным и широким спальным местом.</p>
+                                        <a href="" class="btn2 btn2_white">Подробнее</a>
+                                    </div>
+                                    <div class="main__sliderTextItem">
+                                        <h3 class="h1">Новая коллекция: Leonie</h3>
+                                        <p class="p1">В новой коллекции бренда представлены яркие и современные решения для гостинной и спальни. Благодаря новому механизму диван Leonie преобразуются в просторную кровать с достаточно ровным и широким спальным местом.</p>
+                                        <a href="" class="btn2 btn2_white">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-lg-8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
     <div class="slogan slogan_white">
         <div class="container">
             <h3 class="h1 slogan__title">VA Grandiozo — это коллекция уникальных предметов мебели, собранных со всего мира.</h3>
@@ -494,6 +540,32 @@
     <script type="text/javascript " src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js "></script>
     <script src="js/main.js "></script>
     <script>
+          $('.sliderBg').slick({
+            autoplay: true,
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            // cssEase: 'linear',
+            arrows: false,
+            dots: true,
+            dotsClass: "sliderDots sliderDots_white sliderDots_sliderBg ",
+            asNavFor: '.main__sliderText',
+        });
+        $('.main__sliderText').slick({
+            autoplay: true,
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: false,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            dots: false,
+            dotsClass: "sliderDots sliderDots_white sliderDots_sliderBg ",
+            asNavFor: '.sliderBg',
+        });
         if ($(window).width() < 768) {
             $('.pros__slider').slick({
                 dots: false,
