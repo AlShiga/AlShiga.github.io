@@ -8,6 +8,7 @@
         height: 100%;
         &>div {
             height: 100%;
+            margin: 0;
         }
     }
     &__content {
@@ -154,7 +155,8 @@
     background: linear-gradient(to bottom, $greyLight1 65%, $white 65%);
     &__title {
         text-align: center;
-        margin-bottom: 60px;
+        max-width: 840px;
+        margin: 0 auto 60px;
     }
     &__item {
         width: 650px !important;

@@ -38,6 +38,10 @@
     &_white {
         background-color: $white;
     }
+    &_maxWidth {
+        max-width: 840px;
+        margin: 0 auto;
+    }
     &__title {
         text-align: center;
         margin-right: auto;

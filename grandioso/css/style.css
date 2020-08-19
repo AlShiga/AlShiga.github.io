@@ -903,6 +903,7 @@ body {
 
 .main__inner > div {
   height: 100%;
+  margin: 0;
 }
 
 .main__content {
@@ -1093,7 +1094,8 @@ body {
 
 .partners__title {
   text-align: center;
-  margin-bottom: 60px;
+  max-width: 840px;
+  margin: 0 auto 60px;
 }
 
 .partners__item {
@@ -1319,6 +1321,11 @@ body {
 
 .slogan_white {
   background-color: #fff;
+}
+
+.slogan_maxWidth {
+  max-width: 840px;
+  margin: 0 auto;
 }
 
 .slogan__title {
