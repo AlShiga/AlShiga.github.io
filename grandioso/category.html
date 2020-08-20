@@ -201,7 +201,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Cersanit</p>
@@ -225,7 +225,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Cersanit</p>
@@ -243,7 +243,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Golden</p>
@@ -256,7 +256,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Golden</p>
@@ -269,7 +269,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Golden</p>
@@ -282,7 +282,7 @@
                                 <h4 class="btn1">Бренд</h4>
                                 <img src="./img/tick.svg" alt="">
                             </div>
-                            <div class="filter__itemBody">
+                            <div class="filter__itemBody" data-simplebar>
                                 <p class="p1">Artens</p>
                                 <p class="p1">Belani</p>
                                 <p class="p1">Golden</p>
@@ -625,8 +625,8 @@
     </footer>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/jquery.custom-scrollbar.css" />
-    <script src="./js/jquery.custom-scrollbar.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js "></script>
     <script>
@@ -638,15 +638,6 @@
             arrows: false,
             dots: true,
             dotsClass: "sliderDots pageCase__galeryDots"
-        });
-
-        $(document).ready(function() {
-            $(".filter__itemBody").customScrollbar({
-                "preventDefaultScroll": true,
-                "hScroll": false,
-                skin: "default-skin",
-                updateOnWindowResize: true
-            });
         });
     </script>
 </body>
