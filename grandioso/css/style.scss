@@ -140,6 +140,12 @@ li,
     &:focus {
         color: $black;
     }
+    &_violet {
+        width: 100%;
+        background-color: $violet;
+        color: $white;
+        padding: 20px;
+    }
 }
 
 .btn2 {
@@ -189,6 +195,10 @@ li,
             background-color: $white;
         }
     }
+    &_center {
+        display: block;
+        margin: auto;
+    }
 }
 
 .overflowHidden {
@@ -200,8 +210,85 @@ body {
 }
 
 .body {
-    &__gray {
+    &_gray {
         background-color: $greyLight1;
+    }
+}
+
+.sliderDots {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    & li {
+        list-style-type: none;
+        margin: 0 10px;
+    }
+    & button {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        border: 1px solid $black;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+    .slick-active button {
+        background-color: $black;
+    }
+    &_white {
+        & button {
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            border: 1px solid $white;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+        .slick-active button {
+            background-color: $white;
+        }
+    }
+    &_sliderBg {
+        position: absolute;
+        bottom: 10vh;
+        right: 10vw;
+        z-index: 1;
+        padding: 0;
+        margin: 0;
+        @media (max-width: 991px) {
+            bottom: -45vh;
+            right: 10vw;
+        }
+        @media (max-width: 767px) {
+            bottom: 2vh;
+            right: 13px;
+        }
+    }
+}
+
+.slogan {
+    background-color: $greyLight1;
+    padding: 90px 0;
+    &_white {
+        background-color: $white;
+    }
+    &_maxWidth {
+        max-width: 840px;
+        margin: 0 auto;
+    }
+    &__title {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 50px;
+    }
+    &__text {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -140,6 +141,13 @@ li,
   color: #323236;
 }
 
+.btn1_violet {
+  width: 100%;
+  background-color: #5A3D6C;
+  color: #fff;
+  padding: 20px;
+}
+
 .btn2 {
   display: inline-block;
   color: #323236;
@@ -190,6 +198,11 @@ li,
   background-color: #fff;
 }
 
+.btn2_center {
+  display: block;
+  margin: auto;
+}
+
 .overflowHidden {
   overflow: hidden;
 }
@@ -198,8 +211,103 @@ body {
   overflow-x: hidden;
 }
 
-.body__gray {
+.body_gray {
   background-color: #F2F2F2;
+}
+
+.sliderDots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.sliderDots li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.sliderDots button {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #323236;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.sliderDots .slick-active button {
+  background-color: #323236;
+}
+
+.sliderDots_white button {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.sliderDots_white .slick-active button {
+  background-color: #fff;
+}
+
+.sliderDots_sliderBg {
+  position: absolute;
+  bottom: 10vh;
+  right: 10vw;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .sliderDots_sliderBg {
+    bottom: -45vh;
+    right: 10vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderDots_sliderBg {
+    bottom: 2vh;
+    right: 13px;
+  }
+}
+
+.slogan {
+  background-color: #F2F2F2;
+  padding: 90px 0;
+}
+
+.slogan_white {
+  background-color: #fff;
+}
+
+.slogan_maxWidth {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.slogan__title {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+.slogan__text {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .header {
@@ -280,6 +388,13 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+@media (max-width: 767px) {
+  .burger {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 
 .burger__text {
@@ -1314,33 +1429,6 @@ body {
   }
 }
 
-.slogan {
-  background-color: #F2F2F2;
-  padding: 90px 0;
-}
-
-.slogan_white {
-  background-color: #fff;
-}
-
-.slogan_maxWidth {
-  max-width: 840px;
-  margin: 0 auto;
-}
-
-.slogan__title {
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 50px;
-}
-
-.slogan__text {
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .pageContacts__contactWrap {
   padding: 80px 0;
 }
@@ -1790,74 +1878,6 @@ body {
   }
 }
 
-.sliderDots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-}
-
-.sliderDots li {
-  list-style-type: none;
-  margin: 0 10px;
-}
-
-.sliderDots button {
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #323236;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.sliderDots .slick-active button {
-  background-color: #323236;
-}
-
-.sliderDots_white button {
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.sliderDots_white .slick-active button {
-  background-color: #fff;
-}
-
-.sliderDots_sliderBg {
-  position: absolute;
-  bottom: 10vh;
-  right: 10vw;
-  z-index: 1;
-  padding: 0;
-  margin: 0;
-}
-
-@media (max-width: 991px) {
-  .sliderDots_sliderBg {
-    bottom: -45vh;
-    right: 10vw;
-  }
-}
-
-@media (max-width: 767px) {
-  .sliderDots_sliderBg {
-    bottom: 2vh;
-    right: 13px;
-  }
-}
-
 .pageArticle {
   padding-bottom: 100px;
 }
@@ -2010,10 +2030,6 @@ body {
   display: none;
 }
 
-.slick-active button {
-  background-color: #323236;
-}
-
 .cartProduct {
   position: relative;
   border: 1px solid #D1D1D1;
@@ -2082,11 +2098,48 @@ body {
   padding: 0;
 }
 
+.subcategory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.subcategory li {
+  list-style-type: none;
+  margin: 0 10px;
+  padding: 0;
+  color: #323236;
+}
+
+.subcategory li a {
+  color: #323236;
+  font-size: 18px;
+  font-family: Ubuntu;
+}
+
+.subcategory li span {
+  font-size: 12px;
+  position: relative;
+  bottom: 8px;
+  left: 6px;
+}
+
 .filter {
   background-color: #fff;
   border-top: 1px solid #D1D1D1;
   border-bottom: 1px solid #D1D1D1;
   margin: 40px 0;
+  position: relative;
+}
+
+.filter__сlose {
+  display: none;
 }
 
 .filter__inner {
@@ -2097,6 +2150,112 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.filter__body {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  border-top: 1px solid #D1D1D1;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.filter__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.filter__item {
+  margin-bottom: 45px;
+}
+
+.filter__itemHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+}
+
+.filter__itemHead img {
+  display: none;
+}
+
+.filter__itemBody {
+  max-height: 200px;
+  height: 200px;
+  width: 100%;
+}
+
+.filter__buttonWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.filter__buttonItem {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 50px;
+}
+
+@media (max-width: 767px) {
+  .filter {
+    position: static;
+  }
+  .filter__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .filter__сlose {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #D1D1D1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .filter__сlose img {
+    margin: auto;
+  }
+  .filter__item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #D1D1D1;
+  }
+  .filter__itemHead img {
+    display: block;
+  }
+  .filter__itemBody {
+    display: none;
+  }
+  .filter__buttonItem {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .products {
@@ -2279,6 +2438,7 @@ body {
   }
   .pageDiscount__textWrap {
     height: 65%;
+    padding: 20px 30px 20px;
   }
 }
 
@@ -2331,6 +2491,8 @@ body {
   border: 1px solid #D1D1D1;
   border-radius: 0;
   width: 45%;
+  color: #323236;
+  background-color: transparent;
 }
 
 .formSubscription__input::-webkit-input-placeholder {
@@ -2341,6 +2503,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #323236;
 }
 
 .formSubscription__input:-ms-input-placeholder {
@@ -2351,6 +2514,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #323236;
 }
 
 .formSubscription__input::-ms-input-placeholder {
@@ -2361,6 +2525,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #323236;
 }
 
 .formSubscription__input::placeholder {
@@ -2371,6 +2536,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #323236;
 }
 
 .formSubscription__button {
@@ -2412,6 +2578,10 @@ body {
     width: 100%;
     margin: 0;
   }
+}
+
+.body_gray .formSubscription__button {
+  background-color: #fff;
 }
 
 .footer {

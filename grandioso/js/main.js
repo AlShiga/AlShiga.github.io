@@ -203,3 +203,45 @@ $('.accordion__item').click(function() {
         $(this).removeClass('active');
     }
 });
+
+
+function showfilterItem(elem) {
+    if ($(window).width() < 768) {
+        if (!elem.hasClass("active")) {
+            $(".filter__itemBody").slideUp();
+            $(".filter__item").removeClass('active');
+            elem.find('.filter__itemBody').slideDown();
+            elem.addClass('active');
+        } else {
+            elem.find('.filter__itemBody').slideUp();
+            elem.removeClass('active');
+        }
+    } else {
+        $('.filter__itemBody').slideDown();
+    }
+
+}
+
+
+$('.filter__item').click(function() {
+    showfilterItem($(this));
+});
+
+$('.filterOpen').click(function() {
+    if (!$(".filter__body").hasClass("active")) {
+        $(".filter__body").slideDown();
+        $(".filter__body").addClass("active");
+        if ($(window).width() < 768) {
+            $("body").addClass("overflowHidden");
+        }
+    } else {
+        $(".filter__body").slideUp();
+        $(".filter__body").removeClass("active");
+        $("body").removeClass("overflowHidden");
+    }
+});
+$('.filter__сlose').click(function() {
+    $(".filter__body").slideUp();
+    $(".filter__body").removeClass("active");
+    $("body").removeClass("overflowHidden");
+});

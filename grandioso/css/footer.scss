@@ -30,6 +30,8 @@
         border: $border;
         border-radius: 0;
         width: 45%;
+        color: $black;
+        background-color: transparent;
         &::placeholder {
             font-family: Open Sans;
             font-style: normal;
@@ -38,6 +40,7 @@
             line-height: 16px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            color: $black;
         }
     }
     &__button {
@@ -74,6 +77,10 @@
             margin: 0;
         }
     }
+}
+
+.body_gray .formSubscription__button {
+    background-color: $white;
 }
 
 .footer {

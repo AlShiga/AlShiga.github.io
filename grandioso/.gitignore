@@ -3,4 +3,5 @@
 *.scss.map
 *.css
 !style.css
+!jquery.custom-scrollbar.css
 !bootstrap.css
