@@ -148,6 +148,10 @@ li,
   padding: 20px;
 }
 
+.btn1_violet:hover, .btn1_violet:active, .btn1_violet:focus {
+  color: #fff;
+}
+
 .btn2 {
   display: inline-block;
   color: #323236;
@@ -2108,6 +2112,7 @@ body {
       flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  margin-top: 50px;
 }
 
 .subcategory li {
@@ -2153,6 +2158,7 @@ body {
 }
 
 .filter__body {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -2161,6 +2167,7 @@ body {
   z-index: 1;
   border-top: 1px solid #D1D1D1;
   border-bottom: 1px solid #D1D1D1;
+  padding-top: 45px;
 }
 
 .filter__row {
@@ -2191,7 +2198,6 @@ body {
 
 .filter__itemBody {
   max-height: 200px;
-  height: 200px;
   width: 100%;
 }
 
@@ -2229,6 +2235,7 @@ body {
     z-index: 10000;
     overflow: hidden;
     overflow-y: scroll;
+    padding-top: 0;
   }
   .filter__сlose {
     display: block;
@@ -2279,11 +2286,20 @@ body {
 }
 
 .simplebar-scrollbar::before {
-  background-color: #848486 !important;
+  background-color: #323236 !important;
+  top: 2px !important;
+  bottom: 2px !important;
+  width: 3px !important;
+  left: -1px !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
 }
 
 .simplebar-track.simplebar-vertical {
-  width: 8px !important;
+  width: 1px !important;
+  background-color: #D1D1D1 !important;
+  overflow: visible !important;
+  right: 5px !important;
 }
 
 .pageBrands__selectWrap {

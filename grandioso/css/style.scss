@@ -145,6 +145,11 @@ li,
         background-color: $violet;
         color: $white;
         padding: 20px;
+        &:hover,
+        &:active,
+        &:focus {
+            color: $white;
+        }
     }
 }
 
