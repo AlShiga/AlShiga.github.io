@@ -1,5 +1,8 @@
 .news {
     padding: 90px 0;
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
 }
 
 .lastNews {
@@ -65,8 +68,15 @@
 .newsList {
     margin-top: 90px;
     margin-bottom: -70px;
+    @media (max-width: 767px) {
+        margin-top: 70px;
+        margin-bottom: -50px;
+    }
     &__item {
         margin-bottom: 70px;
+        @media (max-width: 767px) {
+            margin-bottom: 50px;
+        }
     }
     &__itemImg {
         width: 100%;

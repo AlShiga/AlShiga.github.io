@@ -153,6 +153,13 @@ li,
     }
 }
 
+.btnWrap {
+    display: block;
+    &_center {
+        text-align: center;
+    }
+}
+
 .btn2 {
     display: inline-block;
     color: $black;
@@ -277,6 +284,9 @@ body {
 .slogan {
     background-color: $greyLight1;
     padding: 90px 0;
+    @media (max-width: 767px) {
+        padding: 60px 0;
+    }
     &_white {
         background-color: $white;
     }
@@ -288,12 +298,15 @@ body {
         text-align: center;
         margin-right: auto;
         margin-left: auto;
+        margin: 0;
         margin-bottom: 50px;
     }
     &__text {
         text-align: center;
         margin-right: auto;
         margin-left: auto;
+        margin: 0;
+        padding: 0;
     }
 }
 

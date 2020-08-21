@@ -92,6 +92,7 @@
 }
 
 .search {
+    cursor: pointer;
     svg {
         stroke: $black;
     }
@@ -118,6 +119,7 @@
 }
 
 .basket {
+    cursor: pointer;
     svg {
         stroke: $black;
     }
@@ -155,6 +157,10 @@
         &_maxWidth {
             max-width: 700px;
             margin: auto;
+        }
+        &_paddingBO {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
     &__date {

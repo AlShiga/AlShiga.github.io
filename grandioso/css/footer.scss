@@ -8,9 +8,13 @@
         align-items: center;
         max-width: 840px;
         margin: 0 auto;
+        @media (max-width: 767px) {
+            padding: 60px 0 70px;
+        }
     }
     &__title {
         text-align: center;
+        margin-top: 0;
         margin-bottom: 60px;
     }
     &__form {
@@ -88,10 +92,17 @@
     color: white;
     &__top {
         padding: 80px 0;
+        @media (max-width: 991px) {
+            padding: 100px 0 80px;
+        }
+        @media (max-width: 767px) {
+            padding: 70px 0;
+        }
     }
     &__bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 21px 0 31px;
+        padding: 26px 0 26px;
+        text-align: center;
     }
     &__logo {
         &-sm {
@@ -116,7 +127,7 @@
     }
     @media (max-width: 991px) and (min-width: 768px) {
         &__top-md-bottom {
-            padding-top: 75px;
+            padding-top: 65px;
         }
     }
 }
@@ -223,10 +234,7 @@
 }
 
 .avaLink {
-    display: block;
-    margin: 0 auto;
     color: white;
-    text-align: center;
     &:hover,
     &:active,
     &:focus {

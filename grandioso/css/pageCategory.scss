@@ -4,6 +4,9 @@
         background-color: $white;
         padding: 10px 10px 50px 10px;
         margin-bottom: 40px;
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
         &__imgWrap {
             width: 100%;
             height: auto;
@@ -87,7 +90,7 @@
         background-color: $white;
         border-top: $border;
         border-bottom: $border;
-        margin: 40px 0;
+        margin: 0 0 40px;
         position: relative;
         &__сlose {
             display: none;
@@ -195,7 +198,14 @@
     }
     
     .products {
-        margin: 70px 0 30px;
+        margin: 40px 0 100px;
+        @media (max-width: 767px) {
+            margin: 40px 0 60px;
+        }
+    }
+    
+    .filterOpen {
+        cursor: pointer;
     }
     
     .scroll-bar.vertical {
