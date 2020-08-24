@@ -93,9 +93,41 @@
 }
 
 .search {
+    position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    &__hide {
+        position: absolute;
+        right: 0;
+        display: flex;
+        overflow: hidden;
+        width: 0;
+        transition: 0.3s;
+        right: 0;
+    }
+    &:hover &__hide {
+        // position: absolute;
+        width: 150px;
+        right: 100%;
+    }
     svg {
         stroke: $black;
+        z-index: 1;
+    }
+    button {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+    input {
+        border: none;
+        border-bottom: $border;
+        width: 150px;
+        background-color: transparent;
     }
     &_header {
         @media (max-width: 767px) {
@@ -108,6 +140,11 @@
         @media (min-width: 768px) {
             display: none;
         }
+        .search__hide {
+            position: static;
+            width: 150px;
+            right: 100%;
+        }
     }
     &_white {
         svg {
@@ -116,19 +153,62 @@
                 stroke: $black;
             }
         }
+        input {
+            border-color: $white;
+            color: $white;
+            &::placeholder {
+                color: $white;
+            }
+        }
     }
 }
 
 .basket {
+    position: relative;
     cursor: pointer;
     svg {
         stroke: $black;
+    }
+    &__count {
+        position: absolute;
+        background-color: $black;
+        left: 100%;
+        top: -11px;
+        width: 14px;
+        height: 14px;
+        font-size: 9px;
+        line-height: 14px;
+        color: #FFF;
+        border-radius: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        &:hover {
+            color: $white;
+        }
+    }
+    &:hover * {
+        color: $white;
     }
     &_white {
         svg {
             stroke: $white;
             @media (max-width: 991px) {
                 stroke: $black;
+            }
+        }
+        .basket__count {
+            background-color: $white;
+            color: $black;
+            &:hover {
+                color: $black;
+            }
+            @media (max-width: 991px) {
+                background-color: $black;
+                color: $white;
+                &:hover {
+                    color: $white;
+                }
             }
         }
     }

@@ -56,6 +56,26 @@ li {
   font-family: 'Open Sans', sans-serif;
 }
 
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
 ul {
   padding: 0;
 }
@@ -165,7 +185,7 @@ li,
 }
 
 .btn1_violet:hover, .btn1_violet:active, .btn1_violet:focus {
-  color: #fff;
+  color: #D1D1D1;
 }
 
 .btnWrap {
@@ -496,11 +516,53 @@ body {
 }
 
 .search {
+  position: relative;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.search__hide {
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  right: 0;
+}
+
+.search:hover .search__hide {
+  width: 150px;
+  right: 100%;
 }
 
 .search svg {
   stroke: #323236;
+  z-index: 1;
+}
+
+.search button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.search input {
+  border: none;
+  border-bottom: 1px solid #D1D1D1;
+  width: 150px;
+  background-color: transparent;
 }
 
 @media (max-width: 767px) {
@@ -524,6 +586,12 @@ body {
   }
 }
 
+.search_mainMenu .search__hide {
+  position: static;
+  width: 150px;
+  right: 100%;
+}
+
 .search_white svg {
   stroke: #fff;
 }
@@ -534,12 +602,58 @@ body {
   }
 }
 
+.search_white input {
+  border-color: #fff;
+  color: #fff;
+}
+
+.search_white input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.search_white input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.search_white input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.search_white input::placeholder {
+  color: #fff;
+}
+
 .basket {
+  position: relative;
   cursor: pointer;
 }
 
 .basket svg {
   stroke: #323236;
+}
+
+.basket__count {
+  position: absolute;
+  background-color: #323236;
+  left: 100%;
+  top: -11px;
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  line-height: 14px;
+  color: #FFF;
+  border-radius: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.basket__count:hover {
+  color: #fff;
+}
+
+.basket:hover * {
+  color: #fff;
 }
 
 .basket_white svg {
@@ -549,6 +663,25 @@ body {
 @media (max-width: 991px) {
   .basket_white svg {
     stroke: #323236;
+  }
+}
+
+.basket_white .basket__count {
+  background-color: #fff;
+  color: #323236;
+}
+
+.basket_white .basket__count:hover {
+  color: #323236;
+}
+
+@media (max-width: 991px) {
+  .basket_white .basket__count {
+    background-color: #323236;
+    color: #fff;
+  }
+  .basket_white .basket__count:hover {
+    color: #fff;
   }
 }
 
@@ -814,7 +947,6 @@ body {
 
 .mainMenu__col1TopMenu a:hover, .mainMenu__col1TopMenu a:active, .mainMenu__col1TopMenu a:focus {
   color: #323236;
-  text-decoration: none;
 }
 
 .mainMenu__col1TopMenu a:before {
@@ -887,14 +1019,8 @@ body {
 .mainMenu__col1BottomMenu a {
   margin: 0;
   padding: 0;
-  color: #323236;
   text-transform: uppercase;
   font-size: 1.5vh;
-}
-
-.mainMenu__col1BottomMenu a:hover, .mainMenu__col1BottomMenu a:active, .mainMenu__col1BottomMenu a:focus {
-  color: #323236;
-  text-decoration: none;
 }
 
 @media (max-width: 767px) {
@@ -967,7 +1093,6 @@ body {
 
 .mainMenu__col2Menu a:hover, .mainMenu__col2Menu a:active, .mainMenu__col2Menu a:focus {
   color: #323236;
-  text-decoration: none;
 }
 
 .mainMenu__col2Menu a:before {
@@ -2742,7 +2867,9 @@ body {
 }
 
 .formSubscription__button:hover, .formSubscription__button:active, .formSubscription__button:focus {
-  background-color: #848486;
+  background-color: #5A3D6C;
+  color: #fff;
+  border-color: #5A3D6C;
 }
 
 @media (max-width: 767px) {
@@ -2927,7 +3054,7 @@ body {
 }
 
 .footerMenu__list a:hover, .footerMenu__list a:active, .footerMenu__list a:focus {
-  color: #FFFFFF;
+  color: #D1D1D1;
 }
 
 .contacts__link {
@@ -2937,10 +3064,11 @@ body {
   line-height: 154%;
   color: #FFFFFF;
   display: block;
+  white-space: nowrap;
 }
 
 .contacts__link:hover, .contacts__link:active, .contacts__link:focus {
-  color: #FFFFFF;
+  color: #D1D1D1;
 }
 
 @media (max-width: 767px) {
@@ -2954,6 +3082,6 @@ body {
 }
 
 .avaLink:hover, .avaLink:active, .avaLink:focus {
-  color: white;
+  color: #D1D1D1;
 }
 /*# sourceMappingURL=style.css.map */

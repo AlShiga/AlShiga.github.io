@@ -59,6 +59,11 @@ li {
     font-family: 'Open Sans', sans-serif;
 }
 
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Open Sans', sans-serif;
+}
+
 ul {
     padding: 0;
 }
@@ -162,7 +167,7 @@ li,
         &:hover,
         &:active,
         &:focus {
-            color: $white;
+            color: $greyLight2;
         }
     }
 }
