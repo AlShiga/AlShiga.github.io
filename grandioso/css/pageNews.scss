@@ -74,6 +74,7 @@
     }
     &__item {
         margin-bottom: 70px;
+        display: block;
         @media (max-width: 767px) {
             margin-bottom: 50px;
         }

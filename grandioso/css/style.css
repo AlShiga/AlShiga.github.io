@@ -8,6 +8,26 @@
 
 a {
   text-decoration: none !important;
+  color: #323236;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a * {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #848486;
+}
+
+a:hover * {
+  color: #323236;
+}
+
+a *:hover {
+  color: #848486;
 }
 
 h1,
@@ -137,10 +157,6 @@ li,
   border: none;
 }
 
-.btn1:hover, .btn1:active, .btn1:focus {
-  color: #323236;
-}
-
 .btn1_violet {
   width: 100%;
   background-color: #5A3D6C;
@@ -174,6 +190,7 @@ li,
   background-color: transparent;
   margin: 0;
   padding: 0;
+  padding-bottom: 2px;
   border: none;
   position: relative;
 }
@@ -181,7 +198,7 @@ li,
 .btn2::after {
   position: absolute;
   content: "";
-  bottom: -2px;
+  bottom: 0;
   right: 0;
   width: 100%;
   height: 1px;
@@ -362,6 +379,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  padding: 0 12px 0 13px;
 }
 
 .header__right {
@@ -1283,6 +1301,12 @@ body {
   margin: 0 auto 60px;
 }
 
+@media (max-width: 767px) {
+  .partners__title {
+    margin: 0 auto 40px;
+  }
+}
+
 .partners__item {
   width: 650px !important;
   padding: 0 70px;
@@ -1446,6 +1470,7 @@ body {
 
 .newsList__item {
   margin-bottom: 70px;
+  display: block;
 }
 
 @media (max-width: 767px) {
@@ -2712,6 +2737,12 @@ body {
   background-color: #F2F2F2;
   border: 1px solid #D1D1D1;
   width: 45%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.formSubscription__button:hover, .formSubscription__button:active, .formSubscription__button:focus {
+  background-color: #848486;
 }
 
 @media (max-width: 767px) {

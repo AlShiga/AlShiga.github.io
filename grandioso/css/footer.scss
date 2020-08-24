@@ -59,6 +59,12 @@
         background-color: $grayLight1;
         border: $border;
         width: 45%;
+        transition: 0.3s;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $gray;
+        }
     }
     @media (max-width: 767px) {
         &__inner {
