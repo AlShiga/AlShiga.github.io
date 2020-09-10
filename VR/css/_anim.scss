@@ -1,0 +1,129 @@
+.fadeUp {
+    animation-name: fadeUp;
+}
+
+.scale-in-hor-left {
+    animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide-right {
+    animation: slide-right 0.5s ease-out both;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-in-hor-left {
+    0% {
+        transform: scaleX(0);
+        transform-origin: 0% 0%;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 0% 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeRightSm {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100px, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.show {
+    .header__logo {
+        animation: fadeRightSm 0.5s;
+        animation-fill-mode: forwards;
+    }
+    .header__line {
+        animation: fadeRight 1.5s;
+        animation-fill-mode: forwards;
+    }
+    .header__phone {
+        animation: fadeRightSm 0.5s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+    .basket_header {
+        animation: fadeRightSm 0.6s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .first__titleImg {
+        animation: fadeTop 1s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+    .first__line {
+        animation: fadeRight 1s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+    }
+    .first__text {
+        animation: fadeRight 1s;
+        animation-delay: 1.3s;
+        animation-fill-mode: forwards;
+    }
+    .first__btn {
+        animation: fadeRight 1s;
+        animation-delay: 1.6s;
+        animation-fill-mode: forwards;
+    }
+    .mainMenu ul li {
+        animation: fadeRightSm 0.7s;
+        animation-fill-mode: forwards;
+        animation-delay: 2.8s;
+    }
+    .mainMenu ul li:nth-child(1) {
+        animation-delay: 2s;
+    }
+    .mainMenu ul li:nth-child(2) {
+        animation-delay: 2.2s;
+    }
+    .mainMenu ul li:nth-child(3) {
+        animation-delay: 2.4s;
+    }
+    .mainMenu ul li:nth-child(4) {
+        animation-delay: 2.6s;
+    }
+    .mainMenu ul li:nth-child(5) {
+        animation-delay: 2.7s;
+    }
+}

@@ -1,0 +1,272 @@
+@import "./bootstrap/bootstrap.scss";
+@import "anim";
+$dark:#25272B;
+$gold:#D39434;
+$grayDark:#303338;
+$gray:#4F4F4F;
+$grayLight:#828282;
+$grayWhite:#F2F2F2;
+a:hover {
+    text-decoration: none;
+}
+
+.h1 {
+    font-family: Anglecia Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.h2 {
+    font-family: Anglecia Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 200px;
+    line-height: 140%;
+}
+
+.h3 {
+    font-family: Anglecia Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.h4 {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.h5 {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.p1 {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.p2 {
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.btn1 {
+    display: inline-block;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.btn2 {
+    display: inline-block;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: $gold;
+    position: relative;
+    text-transform: uppercase;
+    white-space: nowrap;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $gold;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 64px;
+        height: 1px;
+        background-color: $gold;
+        transition: 0.5s;
+    }
+    &:after {
+        content: url(../img/arrowBtn.svg);
+        display: inline-block;
+        width: 26px;
+        margin-left: 20px;
+        position: relative;
+        top: -1px;
+        transition: 0.3s;
+    }
+    &:hover:after,
+    &:active:after,
+    &:focus:after {
+        transform: translateX(10px);
+    }
+    &:hover::before,
+    &:active:before,
+    &:focus:before {
+        width: 60%;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .h2 {
+        font-size: 150px;
+    }
+    .h3 {
+        font-size: 36px;
+    }
+    .h4 {
+        font-size: 20px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .h2 {
+        font-size: 100px;
+    }
+    .h3 {
+        font-size: 26px;
+    }
+}
+
+*,
+*:active,
+*:focus {
+    outline: none !important;
+    // user-select: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    // background-color: #E5E5E5;
+}
+
+.wow {
+    opacity: 0;
+    &_visible {
+        opacity: 1;
+    }
+}
+
+.marginTop {
+    margin-top: 100px;
+}
+
+.marginTop_big {
+    margin-top: 160px;
+}
+
+.marginBottom {
+    margin-bottom: 100px;
+}
+
+.marginBottom_big {
+    margin-bottom: 160px;
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    transition-delay: 0.8s;
+    &__bg {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #303338;
+        transition: ease-in-out 0.9s;
+        transition-delay: 0.5s;
+    }
+    &__imgWrap {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+    }
+    &__img {
+        width: 100px;
+        height: 100px;
+        // background-color:tomato;
+        transition: ease-in-out 0.7s;
+    }
+    &_close &__bg {
+        height: 0;
+    }
+    &_close &__img {
+        transform: translateY(-100%);
+        opacity: 0.3;
+    }
+    &_close {
+        transition-delay: 0.8s;
+        width: 0;
+        height: 0;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    &__logo {
+        margin-right: auto;
+    }
+    &__line {
+        flex-grow: 1;
+        height: 1px;
+        border-bottom: 1px solid $gray;
+        margin: 0 100px;
+    }
+    &__phone {
+        display: flex;
+        color: $grayLight;
+        transition: 0.3s;
+        &:hover {
+            color: $grayWhite;
+        }
+        & span {
+            margin-left: 20px;
+        }
+    }
+}
+
+.basket {
+    &_header {
+        margin: 0 81px;
+    }
+}
+
+@import "mainPage";

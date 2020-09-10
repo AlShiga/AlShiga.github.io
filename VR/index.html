@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.1/animate.css" integrity="sha512-bciXnge5AIkeJZPS9FcXQJEk6caEegtTFnaq1R9lZqSNroZnaHkSWeqAVT3dSKyL2L4vv9Ts7JqWWHPTI9zatA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="preloader" style="">
+        <div class="preloader__bg"></div>
+        <div class="preloader__imgWrap">
+            <svg class="preloader__img" width="73" height="42" viewBox="0 0 73 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0)">
+          <path opacity="0.2" d="M20.9844 42C9.40229 41.9847 -0.0153319 32.5508 1.87394e-05 20.9693C0.0153694 9.38789 9.45602 -0.0153209 21.0458 1.87413e-05C32.6355 0.0153584 42.0454 9.44925 42.0301 21.0307C42.0147 30.2115 36.1278 38.2418 27.3702 41.0183L26.595 41.3097L26.2726 40.9339C24.5457 38.9398 21.8133 36.1786 18.9197 33.2641C14.1149 28.4091 9.149 23.393 8.05911 21.1151C7.36833 19.6731 7.36833 17.9858 8.05911 16.3828C8.91874 14.3963 10.7378 12.7549 12.8178 12.0953C15.6116 11.2133 18.4975 12.1874 21.4142 15.0099C24.3231 12.2027 27.2244 11.221 30.0182 12.1184C32.0905 12.778 33.9096 14.427 34.7616 16.4211C35.4523 18.0318 35.4523 19.7115 34.7539 21.1534C33.3032 24.1523 30.6092 26.6604 27.2014 29.828C26.5029 30.4723 25.7814 31.1472 25.0369 31.8528L24.0545 30.8174C24.8067 30.1041 25.5281 29.4292 26.2266 28.7772C29.527 25.7093 32.1366 23.2856 33.4721 20.5245C34.1322 19.1593 33.8252 17.84 33.4567 16.981C32.7583 15.3627 31.277 14.0205 29.5884 13.4759C27.2628 12.7319 24.8681 13.614 22.2661 16.1757L21.4142 16.9427L20.5929 16.191C17.9756 13.5986 15.5809 12.7089 13.2553 13.4452C11.5667 13.9821 10.0777 15.3167 9.37926 16.935C9.00317 17.8017 8.69616 19.1132 9.35624 20.4861C10.3464 22.5493 15.4504 27.6958 19.9482 32.244C22.6883 35.0051 25.2749 37.6282 27.0402 39.6147C35.153 36.9916 40.5871 29.5365 40.6025 21.023C40.6178 10.2392 31.8449 1.44195 21.0381 1.42661C10.2389 1.41127 1.44298 10.1856 1.42763 20.977C1.41228 31.7685 10.1928 40.5581 20.992 40.5734C21.2223 40.5734 21.4449 40.5734 21.6751 40.5658L21.7212 41.9923C21.4756 42 21.23 42 20.9844 42Z" fill="white"/>
+          <path d="M15.3738 38.7248H14.1304L26.549 11.3052H27.6773L40.096 38.7248H38.8142L35.038 30.4414H19.15L15.3738 38.7248ZM27.094 12.9772L19.6182 29.3523H34.6081L27.094 12.9772Z" fill="url(#paint0_linear)"/>
+          <path d="M55.5695 13.9973L54.234 16.9655V19.8417L56.8513 13.9973H55.5695ZM45.1387 37.1679L33.5413 11.4969H32.2595L44.5631 38.8783H45.6913L49.1683 31.1394V28.2325L45.1387 37.1679Z" fill="url(#paint1_linear)"/>
+          <path d="M51.9851 38.7249H50.78V11.4969H62.7689C65.2864 11.4969 67.2666 12.1259 68.7019 13.3837C70.1449 14.6416 70.8587 16.3443 70.8587 18.4995C70.8587 20.4707 70.2523 22.0813 69.0319 23.3238C67.8116 24.5663 66.1153 25.295 63.9355 25.5021L73.0078 38.7249H71.5264L62.4926 25.5788H51.9851V38.7249ZM51.9851 12.6244V24.4513H62.6538C64.8566 24.4513 66.5682 23.9374 67.7885 22.9173C69.0089 21.8896 69.6153 20.4323 69.6153 18.5379C69.6153 16.6434 69.0089 15.1861 67.7885 14.1584C66.5682 13.1306 64.8566 12.6244 62.6538 12.6244H51.9851Z" fill="url(#paint2_linear)"/>
+          </g>
+          <defs>
+          <linearGradient id="paint0_linear" x1="72.1474" y1="6.51785" x2="42.5871" y2="60.1773" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C88361"/>
+          <stop offset="0.5129" stop-color="#FFD5A5"/>
+          <stop offset="1" stop-color="#B16A43"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="72.1474" y1="6.51785" x2="42.5871" y2="60.1773" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C88361"/>
+          <stop offset="0.5129" stop-color="#FFD5A5"/>
+          <stop offset="1" stop-color="#B16A43"/>
+          </linearGradient>
+          <linearGradient id="paint2_linear" x1="72.1474" y1="6.51785" x2="42.5871" y2="60.1773" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C88361"/>
+          <stop offset="0.5129" stop-color="#FFD5A5"/>
+          <stop offset="1" stop-color="#B16A43"/>
+          </linearGradient>
+          <clipPath id="clip0">
+          <rect width="73" height="42" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+        </div>
+    </div>
+    <div class="scrollBar d-none d-md-flex">
+        <div class="scrollBar__burger">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6.10352e-05" width="32" height="2" fill="#828282"/>
+              <rect x="6.10352e-05" y="7" width="32" height="2" fill="#828282"/>
+              <rect x="6.10352e-05" y="14" width="32" height="2" fill="#828282"/>
+            </svg>
+        </div>
+        <div class="scrollBar__count">
+            <p class="scrollBar__countСurrent h4"><span>01</span>/</p>
+            <p class="scrollBar__countTotal p1">07</p>
+        </div>
+        <div class="scrollBar__line">
+            <div class="scrollBar__lineTotal">
+                <div class="scrollBar__lineCurrent"> </div>
+            </div>
+        </div>
+        <div class="scrollBar__social">
+            <a href="" class="scrollBar__socialItem">
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.0697 0H6.93047C1.32815 0 6.10352e-05 1.32808 6.10352e-05 6.93041V13.0696C6.10352e-05 18.6719 1.32815 20 6.93047 20H13.0697C18.672 20 20.0001 18.6719 20.0001 13.0696V6.93041C20.0001 1.32808 18.6589 0 13.0697 0ZM16.1458 14.2671H14.694C14.144 14.2671 13.9746 13.8308 12.9853 12.8283C12.1259 11.9953 11.7453 11.8846 11.5335 11.8846C11.2341 11.8846 11.1491 11.969 11.1491 12.3796V13.6914C11.1491 14.0433 11.0385 14.2546 10.1072 14.2546C8.56729 14.2546 6.8586 13.3233 5.66051 11.5884C3.85369 9.04597 3.35933 7.14165 3.35933 6.74791C3.35933 6.53605 3.4437 6.33793 3.85057 6.33793H5.30552C5.67363 6.33793 5.81363 6.5073 5.95675 6.90103C6.6761 8.97785 7.87419 10.7972 8.36855 10.7972C8.55104 10.7972 8.63542 10.7128 8.63542 10.2472V8.10225C8.57979 7.1129 8.05919 7.02791 8.05919 6.67667C8.05919 6.5073 8.19918 6.33793 8.42355 6.33793H10.7116C11.021 6.33793 11.1347 6.5073 11.1347 6.87166V9.76532C11.1347 10.0778 11.2747 10.1884 11.3591 10.1884C11.5416 10.1884 11.6978 10.0778 12.0359 9.73907C13.0809 8.56723 13.8296 6.76041 13.8296 6.76041C13.9271 6.54855 14.0965 6.35043 14.4646 6.35043H15.9196C16.3558 6.35043 16.4533 6.5748 16.3558 6.88729C16.1733 7.73351 14.3927 10.2466 14.3927 10.2466C14.2396 10.5003 14.1809 10.6109 14.3927 10.894C14.549 11.1059 15.0571 11.5453 15.3952 11.939C16.0171 12.6452 16.4952 13.2377 16.6227 13.6477C16.7658 14.0546 16.5545 14.2664 16.1439 14.2664L16.1458 14.2671Z" />
+                </svg>
+            </a>
+            <a href="" class="scrollBar__socialItem">
+                <svg width="20" height="21" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.9356 5.91293C19.9234 5.07219 19.7679 4.23812 19.4703 3.4518C18.9494 2.10906 17.8888 1.04731 16.546 0.527544C15.7697 0.235451 14.949 0.0788539 14.1182 0.061084C13.0498 0.0133275 12.7111 0 9.99895 0C7.28682 0 6.9392 7.45058e-08 5.87856 0.061084C5.04893 0.0788539 4.22818 0.235451 3.45186 0.527544C2.10912 1.04731 1.04737 2.10906 0.527604 3.4518C0.235512 4.22812 0.0778043 5.04887 0.0622556 5.8785C0.0144991 6.94802 6.10352e-05 7.28676 6.10352e-05 9.99889C6.10352e-05 12.711 6.10277e-05 13.0575 0.0622556 14.1193C0.0789149 14.95 0.235512 15.7697 0.527604 16.5482C1.04848 17.8898 2.10912 18.9516 3.45297 19.4713C4.22596 19.7734 5.04671 19.9445 5.87967 19.9711C6.9492 20.0189 7.28793 20.0333 10.0001 20.0333C12.7122 20.0333 13.0598 20.0333 14.1205 19.9711C14.9501 19.9545 15.7708 19.7979 16.5483 19.5058C17.891 18.9849 18.9516 17.9231 19.4725 16.5815C19.7646 15.8041 19.9212 14.9845 19.9379 14.1526C19.9856 13.0842 20.0001 12.7454 20.0001 10.0322C19.9978 7.32008 19.9978 6.97579 19.9356 5.91293ZM9.99229 15.1277C7.15577 15.1277 4.8579 12.8299 4.8579 9.99334C4.8579 7.15682 7.15577 4.85895 9.99229 4.85895C12.8266 4.85895 15.1267 7.15682 15.1267 9.99334C15.1267 12.8299 12.8266 15.1277 9.99229 15.1277ZM15.331 5.86628C14.668 5.86628 14.1338 5.33096 14.1338 4.66904C14.1338 4.00711 14.668 3.47179 15.331 3.47179C15.9918 3.47179 16.5272 4.00711 16.5272 4.66904C16.5272 5.33096 15.9918 5.86628 15.331 5.86628Z" />
+                    <path d="M9.99383 13.329C11.8358 13.329 13.329 11.8357 13.329 9.99377C13.329 8.15179 11.8358 6.65858 9.99383 6.65858C8.15186 6.65858 6.65864 8.15179 6.65864 9.99377C6.65864 11.8357 8.15186 13.329 9.99383 13.329Z"/>
+                </svg>
+            </a>
+            <a href="" class="scrollBar__socialItem">
+                <svg width="20" height="21" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 5.0332C20.0001 2.27178 17.7615 0.0332031 15.0001 0.0332031H5.00006C2.23864 0.0332031 6.10352e-05 2.27178 6.10352e-05 5.0332V15.0332C6.10352e-05 17.7946 2.23864 20.0332 5.00006 20.0332H15.0001C17.7615 20.0332 20.0001 17.7946 20.0001 15.0332V5.0332ZM14.0001 10.5332L8.00006 7.0332V14.0332L14.0001 10.5332Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <section class="first">
+        <div class="container-fluid h-100">
+            <div class="header row">
+                <div class="col-1"></div>
+                <a class="header__logo wow" href=""><img class="" src="img/logo.svg" alt=""></a>
+                <div class="header__line wow d-none d-md-block"></div>
+                <a class="header__phone wow" href="+79516518821">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.465 20C15.2703 19.9994 15.0763 19.9776 14.8861 19.9348C11.2665 19.1691 7.93176 17.3737 5.26585 14.7553C2.65684 12.1312 0.847349 8.79006 0.0563121 5.13623C-0.036961 4.68086 -0.0140681 4.20859 0.122788 3.76488C0.259645 3.32117 0.505859 2.92095 0.837743 2.60271L3.1531 0.323725C3.27136 0.209354 3.41187 0.121771 3.56547 0.066692C3.71907 0.0116131 3.8823 -0.00972344 4.04451 0.00407474C4.2127 0.0220183 4.375 0.0774245 4.52 0.166397C4.66501 0.255369 4.78919 0.375748 4.88382 0.519066L7.77801 4.89354C7.88654 5.06327 7.93894 5.26415 7.92747 5.46662C7.91601 5.66908 7.8413 5.86244 7.71434 6.01823L6.26146 7.79406C6.84009 9.10371 7.65955 10.2874 8.67521 11.2806C9.6843 12.3099 10.877 13.1317 12.1888 13.7017L13.9889 12.2396C14.1401 12.1174 14.3241 12.0451 14.5164 12.0324C14.7087 12.0197 14.9003 12.0672 15.0656 12.1685L19.4358 15.0572C19.5858 15.1488 19.7135 15.2739 19.8095 15.4231C19.9055 15.5724 19.9672 15.7419 19.9901 15.919C20.0129 16.0961 19.9962 16.2761 19.9414 16.4457C19.8865 16.6153 19.7948 16.77 19.6731 16.8982L17.4157 19.1831C17.1592 19.444 16.8549 19.6505 16.5201 19.7907C16.1853 19.9309 15.8267 20.002 15.465 20ZM3.95189 1.17612L1.63654 3.45511C1.44984 3.63302 1.31163 3.85756 1.23551 4.10665C1.15939 4.35575 1.14799 4.62081 1.20241 4.87578C1.93795 8.3044 3.62874 11.4418 6.07044 13.9088C8.57924 16.3723 11.7174 18.061 15.1235 18.7806C15.3813 18.8357 15.6484 18.8245 15.901 18.7481C16.1536 18.6716 16.3836 18.5323 16.5706 18.3425L18.828 16.0576L14.6083 13.2695L12.675 14.8441C12.601 14.904 12.5138 14.9445 12.4209 14.9621C12.3281 14.9796 12.2325 14.9737 12.1424 14.9448C10.5372 14.3399 9.0824 13.3798 7.8822 12.133C6.6408 10.9475 5.67719 9.49058 5.06326 7.87102C5.03729 7.77297 5.03643 7.66974 5.06076 7.57125C5.08509 7.47276 5.13379 7.38234 5.20218 7.30867L6.76504 5.39669L3.95189 1.17612Z" fill="#828282"/>
+                </svg> <span class="d-none d-lg-block">+7 (951) 651 88 21</span>
+                </a>
+                <div class="basket wow basket_header">
+                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 6.85133V4.82003C15 4.18706 14.8707 3.56028 14.6194 2.97548C14.3681 2.39069 13.9998 1.85934 13.5355 1.41175C13.0712 0.964173 12.52 0.609132 11.9134 0.366903C11.3068 0.124674 10.6566 0 10 0C9.34339 0 8.69321 0.124674 8.08658 0.366903C7.47996 0.609132 6.92876 0.964173 6.46447 1.41175C6.00017 1.85934 5.63188 2.39069 5.3806 2.97548C5.12933 3.56028 5 4.18706 5 4.82003V9.64006C5 9.82268 5.07526 9.99783 5.20921 10.127C5.34316 10.2561 5.52485 10.3286 5.71429 10.3286C5.90373 10.3286 6.08541 10.2561 6.21936 10.127C6.35332 9.99783 6.42857 9.82268 6.42857 9.64006V8.22848H12.1429V6.85133H6.42857V4.82003C6.42857 3.90692 6.80485 3.03121 7.47462 2.38555C8.14439 1.73988 9.0528 1.37715 10 1.37715C10.9472 1.37715 11.8556 1.73988 12.5254 2.38555C13.1952 3.03121 13.5714 3.90692 13.5714 4.82003V9.60563C13.5714 9.78826 13.6467 9.9634 13.7806 10.0925C13.9146 10.2217 14.0963 10.2942 14.2857 10.2942C14.4752 10.2942 14.6568 10.2217 14.7908 10.0925C14.9247 9.9634 15 9.78826 15 9.60563V8.22848H18.5714V20.6228H1.42857V8.22848H3.57143V6.85133H0V20.6848C0 21.0336 0.143737 21.3681 0.39959 21.6148C0.655443 21.8614 1.00245 22 1.36429 22H18.6357C18.9975 22 19.3446 21.8614 19.6004 21.6148C19.8563 21.3681 20 21.0336 20 20.6848V6.85133H15Z" fill="#828282"/>
+                </svg>
+                </div>
+                <div class="col-2 col-lg-1 h-100">
+                    <div class="burger wow d-md-none">
+                        <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6.10352e-05" width="32" height="2" fill="#828282"/>
+                    <rect x="6.10352e-05" y="7" width="32" height="2" fill="#828282"/>
+                    <rect x="6.10352e-05" y="14" width="32" height="2" fill="#828282"/>
+                  </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="row h-100 align-items-center">
+                <div class="col-10 offset-1 col-md-7 col-lg-5 offset-lg-2 col-xl-4 offset-xl-2">
+                    <div class="first_textWrap">
+                        <img src="img/titleFirst.svg" alt="" class="first__titleImg wow">
+                        <div class="first__lineWrap">
+                            <div class="first__line wow"></div>
+                        </div>
+                        <p class="p1 first__text wow">
+                            Научитесь наращиванию волос в Академии Виктории Руссо&nbsp;— ведущей студии России.
+                        </p>
+                        <button class="first__btn btn2 wow">
+                            Записаться на курс
+                        </button>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block  col-lg-3 offset-lg-1 col-xl-2 offset-xl-3">
+                    <nav class="mainMenu">
+                        <ul class="">
+                            <li class="active wow"><a href="/">Главная</a></li>
+                            <li class="wow"><a href="/">Об академии</a></li>
+                            <li class="wow"><a href="/">Курсы</a></li>
+                            <li class="wow"><a href="/">Интернет-магазин</a></li>
+                            <li class="wow"><a href="/">Доставка и оплата</a></li>
+                            <li class="wow"><a href="/">Блог</a></li>
+                            <li class="wow"><a href="/">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="h-100 d-none d-md-block col-md-2 offset-md-2  col-lg-1 offset-lg-0">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="about">
+        <div class="container-fluid">
+            <div class="row overflow-hidden">
+                <div class="col-lg-2 col-md-2 col-1" style="background: #303338;">
+                </div>
+                <div class="col-lg-3 col-md-5 col-9 about_padTop" style="background: #303338;">
+                    <div class="titleBlock titleBlock_white">
+                        <p class="titleBlock__num h2">01</p>
+                        <h2 class="titleBlock__text h3">Об Академии</h2>
+                    </div>
+                </div>
+                <div class="d-lg-none col-md-3 col-1" style="background: #303338;"></div>
+                <div class="d-lg-none col-md-2 col-1" style=""></div>
+                <div class="d-lg-none col-md-2 col-1" style="background: #303338;"></div>
+                <div class="col-lg-4 col-md-5 col-9  about_padTop overflow-hidden" style="background: #303338;">
+                    <div class="wow wow_visible slide-right">
+                        <p class="p1">
+                            Более 200 выпускников нашего очного курса в студии за 4 года. Ученики из Германии, Эстонии, Великобритании, Финляндии, Латвии, Испании, США.
+                        </p>
+                        <p class="p1">
+                            Часть учеников уже открыли свои студии. Наши ученики на шаг впереди всех других. Скорость работы на начальном этапе в 80% случаев в 2 раза выше, чем у выпускников других курсов. Капсулы в 3 раза меньше и незаметнее, чем у тех, кто обучался наращиванию
+                            10 лет назад. Даем техники микро и нано наращивания, с которыми работают большинство самых крутых московских салонов.
+                        </p>
+                        <a class="btn2">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-3 col-1" style="background: #303338;"></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 col-md-1 col-1" style="background: #303338;"></div>
+                <div class="col-lg-8 col-md-9 col-10 p-0" style="background: #303338; ">
+                    <div class="about__sliderArrowWrap">
+                        <div class="about__sliderArrow about__sliderArrowP">
+                            <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.82843 7.68947L0.646447 4.36914C0.451184 4.16539 0.451184 3.83504 0.646447 3.63129L3.82843 0.310961C4.02369 0.107209 4.34027 0.107209 4.53553 0.310961C4.7308 0.514712 4.7308 0.84506 4.53553 1.04881L2.20711 3.47847L50 3.47848L50 4.52196L2.20711 4.52195L4.53553 6.95162C4.7308 7.15537 4.7308 7.48572 4.53553 7.68947C4.34027 7.89322 4.02369 7.89322 3.82843 7.68947Z" fill="#F2F2F2"/>
+                            </svg>
+                        </div>
+                        <div class="about__sliderArrow about__sliderArrowN">
+                            <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M46.1716 0.310533L49.3536 3.63086C49.5488 3.83461 49.5488 4.16496 49.3536 4.36871L46.1716 7.68904C45.9763 7.89279 45.6597 7.89279 45.4645 7.68904C45.2692 7.48529 45.2692 7.15494 45.4645 6.95119L47.7929 4.52153L-3.656e-07 4.52152L-2.78178e-07 3.47804L47.7929 3.47805L45.4645 1.04838C45.2692 0.844632 45.2692 0.514285 45.4645 0.310533C45.6597 0.106781 45.9763 0.106781 46.1716 0.310533Z" fill="#F2F2F2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="about__slider wow wow_visible slide-right">
+                        <img class="about__sliderItem" src="img/aboutSlider/1.jpg" alt="">
+                        <img class="about__sliderItem" src="img/aboutSlider/2.jpg" alt="">
+                        <img class="about__sliderItem" src="img/aboutSlider/3.jpg" alt="">
+                        <img class="about__sliderItem" src="img/aboutSlider/4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid marginTop_big">
+            <div class="row overflow-hidden">
+                <div class="col-lg-5 offset-lg-1 col-md-7 offset-md-0 col-9 overflow-hidden">
+                    <img class="about__video wow wow_visible slide-right" src="img/videoCover.jpg" alt="" class="">
+                </div>
+                <div class="col-md-3 offset-5 col-7 d-flex align-items-end">
+                    <div class="about__videoTitle">
+                        <div class="about__videoTitleLine"></div>
+                        <p class="p1 about__videoTitleText">Видео о нас</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row marginTop">
+                <div class="col-lg-6 offset-lg-4 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="quote">
+                        <img src="img/quotes.svg" alt="" class="quote__img">
+                        <div class="quote__textWrap">
+                            <p class="h4 quote__text">Красота, здоровье и идеальный вид ваших волос – цель нашей работы. К счастью, мы целеустремленная команда. Видеть крутой результат своего труда и ваши радостные глаза – то, ради чего стоит работать. В сети студий дизайна волос
+                                Виктории Руссо работают люди, преданные своему делу. Да, это именно их дело. Любимое занятие, а не простое исполнение обязанностей.</p>
+                            <p class="p1 quote__autor">Виктория Руссо, основатель студии</p>
+                            <div class="">
+                                <a href="" class="btn2 quote__btn">Начать обучение</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="legend marginTop_big">
+        <div class="legend__head">
+            <img src="img/legendCover.jpg" alt="" class="legend__headImg">
+            <div class="container-fluid">
+                <div class="row legend__headTop">
+                    <div class="offset-lg-2 col-9 offset-1 d-flex align-items-end ">
+                        <div class="titleBlock titleBlock_white">
+                            <p class="titleBlock__num h2">02</p>
+                            <h2 class="titleBlock__text h3">Легенда бренда</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid marginTop">
+            <div class="row align-items-center">
+                <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-9 col-10 offset-1">
+                    <p class="p1">После первого наращивания мне вдруг стало интересно – а как же оно там всё крепится. И я записалась на свои первые курсы. Процесс затянул меня сразу, но желание дорабатывать и исправлять технологию осталось. Пройдя ещё несколько курсов,
+                        я начала постепенно формировать свою методику постановки капсул, чтобы даже обладательницы самых тонких волос, как у меня, могли носить нарощенные волосы комфортно и безопасно, легко делать хвосты и причёски.</p>
+                    <p class="p1">В дальнейшем были ещё обучения колористике, стилистике, укладкам. Поэтому принимая сейчас каждого мастера на работу, я точно знаю, что я от него хочу. И могу проверить его технологию на практике, а не на словах и не дипломами. Мы делаем
+                        комплексные смены образа, делаем все самые лучшие процедуры по волосам. Основная философия моего бренда – не навреди! Сделай волосы красиво и максимально безопасно. Эта философия прослеживается от самого маленького окрашивания
+                        корней до смывки цвета, осветления и сложнейших наращиваний волос. Этой философии придерживается каждый мастер моей студии, и к каждому своему мастеру я бы села в кресло сама, других я не беру. Ведь я не понаслышке знаю, что такое
+                        проблемы с волосами.</p>
+                    <p class="p1">Виктория. Студия Victoria Russo, с любовью к Вашим волосам.</p>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 offset-md-3 col-8 offset-2">
+                    <img src="img/logoBig.svg" alt="" class="legend__logo">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid marginTop_big">
+            <div class="row">
+                <div class="legend__photoCol col-lg-4 offset-lg-6 col-md-6 offset-md-1 col-10 offset-1 order-0">
+                    <div class="legend__photoTitle">
+                        <p class="p1">Виктория, основатель студии</p>
+                        <div class=""></div>
+                    </div>
+
+                </div>
+                <div class="legend__photoCol col-lg-6 offset-lg-0 col-md-11 col-12 order-2 order-lg-1">
+                    <img src="img/mainPage/legend1.jpg" alt="" class="legend__photo ">
+                </div>
+                <div class="legend__photoCol col-lg-4 offset-lg-0 col-md-9 offset-md-3 col-11 offset-1 order-1 order-lg-2">
+                    <img src="img/mainPage/legend2.jpg" alt="" class="legend__photo ">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="aboutCource marginTop">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-2 col-10 offset-1">
+                    <div class="titleBlock titleBlock_margin">
+                        <p class="titleBlock__num h2">03</p>
+                        <h2 class="titleBlock__text h3">Почему стоит учиться имено у нас?</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-10 offset-1">
+                    <p class="p1">Меня зовут Виктория. Я прошла путь от частного мастера на дому до собственной большой студии по дизайну и наращиванию волос Victoria Russo. На данный момент команда моей студии состоит уже из 15 человек. И мы планируем расширение в
+                        сеть в ближайшее время. Но вернёмся к началу...
+                    </p>
+                    <p class="p1">10 лет назад в 2010 году я заинтересовалась наращиванием волос и решила поискать курсы. Изначально я пошла на обучение чисто ради интереса, но работа с волосами сразу мне понравилась и затянула меня. Мне фантастически нравилось и нравится
+                        до сих пор видеть как за один день, а то и несколько часов может измениться клиентка. Полностью сменить образ и стиль или усовершенствовать его мелкими, но такими важными деталями.</p>
+                    <a href="" class="btn2 ">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <img src="img/mainPage/aboutCource.jpg" alt="" class="aboutCource__img marginTop">
+    </section>
+    <div class="mainPageForm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="mainPageForm__col offset-lg-2 col-1 offset-1"></div>
+                <div class="mainPageForm__col col-8 col-lg-6">
+
+                    <div class="titleBlock titleBlock_white titleBlock_margin">
+                        <h2 class="titleBlock__text h3">Начни обучение прямо сейчас</h2>
+                    </div>
+                    <form action="" class="mainPageForm__form">
+                        <input type="text" placeholder="Ваше имя">
+                        <input type="text" placeholder="Номер телефона">
+                        <button class="btn2">Присоединиться</button>
+                    </form>
+                </div>
+                <div class="mainPageForm__col col-1"></div>
+            </div>
+        </div>
+    </div>
+    <section class="courses">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8 offset-lg-2 offset-1">
+                    <div class="titleBlock titleBlock_margin">
+                        <p class="titleBlock__num h2">04</p>
+                        <h2 class="titleBlock__text h3">Наши курсы</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="shop">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-10 offset-1">
+                    <div class="titleBlock titleBlock_marginBig">
+                        <p class="titleBlock__num h2">05</p>
+                        <h2 class="titleBlock__text h3">Интернет-магазин</h2>
+                    </div>
+                    <div class="cartCategory">
+                        <img class="cartCategory__img" src="img/category/c1.jpg" alt="">
+                        <h3 class="h4 cartCategory__title">Уход за волосами</h3>
+                        <a href="" class="btn1 cartCategory__link">Смотреть все</a>
+                    </div>
+                    <div class="cartCategory">
+                        <img class="cartCategory__img" src="img/category/c2.jpg" alt="">
+                        <h3 class="h4 cartCategory__title">Lush & brow</h3>
+                        <a href="" class="btn1 cartCategory__link">Смотреть все</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 offset-md-0 col-10 offset-1">
+                    <div class="cartCategory">
+                        <img class="cartCategory__img" src="img/category/c3.jpg" alt="">
+                        <h3 class="h4 cartCategory__title">Наращивание волос</h3>
+                        <a href="" class="btn1 cartCategory__link">Смотреть все</a>
+                    </div>
+                    <div class="cartCategory">
+                        <img class="cartCategory__img" src="img/category/c4.jpg" alt="">
+                        <h3 class="h4 cartCategory__title">Кератиновое выпрямление</h3>
+                        <a href="" class="btn1 cartCategory__link">Смотреть все</a>
+                    </div>
+                    <div class="cartCategory">
+                        <img class="cartCategory__img" src="img/category/c5.jpg" alt="">
+                        <h3 class="h4 cartCategory__title">Nail</h3>
+                        <a href="" class="btn1 cartCategory__link">Смотреть все</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="popularProduct">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 offset-xl-2 col-md-3 offset-md-3 col-10 offset-1">
+                    <h3 class="h4 popularProduct__title">Популярные товары</h3>
+                    <a href="" class="btn2 popularProduct__btn">Смотреть все</a>
+                </div>
+                <div class="col-xl-2 col-md-4 offset-md-0 col-10 offset-1">
+                    <div class="productCart productCart_dark">
+                        <img src="img/product/p1.jpg" alt="" class="productCart__img">
+                        <div class="productCart__textWrap">
+                            <div class="productCart__addBasket">
+                                <div class="">
+                                    <a href="" class="productCart__addBasketLink">Добавить в корзину</a>
+                                    <a href="" class="productCart__seeBasketLink">Просмотр корзины</a>
+                                </div>
+                            </div>
+                            <a href="" class="p1 productCart__title">Redken — Тонирующий шампунь (300ml)</a>
+                            <div class="productCart__costWrap">
+                                <span class="productCart__costSale">12 000 руб.</span>
+                                <span class="productCart__cost">10 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 offset-xl-0 col-md-4 offset-md-2 col-10 offset-1">
+                    <div class="productCart productCart_dark">
+                        <img src="img/product/p1.jpg" alt="" class="productCart__img">
+                        <div class="productCart__textWrap">
+                            <div class="productCart__addBasket">
+                                <div class="">
+                                    <a href="" class="productCart__addBasketLink">Добавить в корзину</a>
+                                </div>
+                            </div>
+                            <a href="" class="p1 productCart__title">Redken — Тонирующий шампунь (300ml)</a>
+                            <div class="productCart__costWrap">
+                                <span class="productCart__costSale">12 000 руб.</span>
+                                <span class="productCart__cost">10 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-4 offset-md-0 col-10 offset-1">
+                    <div class="productCart productCart_dark">
+                        <img src="img/product/p1.jpg" alt="" class="productCart__img">
+                        <div class="productCart__textWrap">
+                            <a href="" class="p1 productCart__title">Redken — Тонирующий шампунь (300ml)</a>
+                            <div class="productCart__costWrap">
+                                <span class="productCart__costSale">12 000 руб.</span>
+                                <span class="productCart__cost">10 000 руб.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-6 col-12">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-2">
+                            <div class="titleBlock titleBlock_white titleBlock_margin">
+                                <p class="titleBlock__num h2">06</p>
+                                <h2 class="titleBlock__text h3">Отзывы наших<br>учеников</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-2 col-md-5 offset-md-1 col-7">
+                            <img src="img/mainPage/r11.jpg" alt="">
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-5">
+                            <img src="img/mainPage/r12.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-10 offset-1">
+                    <h3 class="h4">Анна Николаева</h3>
+                    <p class="p1">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно и просто
+                        объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
+                    <p class="p1">25.02.2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 offset-lg-2 col-md-5 offset-md-1 col-9 offset-2">
+                    <img class="footer__logo" src="img/logoBig.svg" alt="" class="">
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-5 offset-md-1 col-11 offset-1">
+                    <p class="p1">
+                        Санкт-Петербург, Московский пр., 183-185А
+                    </p>
+                    <a href="" class="p1 footer__link">+7 951 651 88 21</a>
+                    <a href="" class="p1 footer__link">studio.victoria.russo@yandex.ru</a>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-5 col-11 offset-1">
+                    <nav class="footer__menu">
+                        <ul>
+                            <li>
+                                <a href="">Главная</a>
+                            </li>
+                            <li>
+                                <a href="">Об академии</a>
+                            </li>
+                            <li>
+                                <a href="">Курсы</a>
+                            </li>
+                            <li>
+                                <a href="">Интернет-магазин</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="row footer__bottom">
+                <div class="col-lg-2 offset-lg-5 col-md-5 offset-md-1 col-11 offset-1">
+                    <p class="p1">Все права защищены, 2020 ©</p>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-5 offset-md-0 col-11 offset-1">
+                    <p class="p1 footer__link">Сайт разработан в ava.digital.ru</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        new WOW().init();
+
+        $(".about__slider").slick({
+            dots: true,
+            infinite: false,
+            nextArrow: document.querySelector('.about__sliderArrowN'),
+            prevArrow: document.querySelector('.about__sliderArrowP'),
+            customPaging: function(slider, i) {
+                var thumb = jQuery(slider.$slides[i]).data();
+                return '' + ('0' + (i + 1)).slice(-2) + '/<span>0' + slider.$slides.length + '</span>'
+            },
+        });
+    </script>
+</body>
+
+</html>
+
+</html>
