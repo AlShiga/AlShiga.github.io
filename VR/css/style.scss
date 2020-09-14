@@ -191,6 +191,21 @@ body {
     margin-bottom: 160px;
 }
 
+@include media-breakpoint-down(sm) {
+    .marginTop {
+        margin-top: 60px;
+    }
+    .marginTop_big {
+        margin-top: 120px;
+    }
+    .marginBottom {
+        margin-bottom: 60px;
+    }
+    .marginBottom_big {
+        margin-bottom: 120px;
+    }
+}
+
 .preloader {
     position: fixed;
     width: 100%;

@@ -113,7 +113,7 @@
             </div>
             <div class="row h-100 align-items-center">
                 <div class="col-10 offset-1 col-md-7 col-lg-5 offset-lg-2 col-xl-4 offset-xl-2">
-                    <div class="first_textWrap">
+                    <div class="first__textWrap">
                         <img src="img/titleFirst.svg" alt="" class="first__titleImg wow">
                         <div class="first__lineWrap">
                             <div class="first__line wow"></div>
@@ -148,17 +148,19 @@
     </section>
     <section class="about">
         <div class="container-fluid">
-            <div class="row overflow-hidden">
+            <div class="row">
                 <div class="col-lg-2 col-md-2 col-1" style="background: #303338;">
                 </div>
-                <div class="col-lg-3 col-md-5 col-9 about_padTop" style="background: #303338;">
+                <div class="col-lg-3 col-md-5 col-9 about_padTop about_padTop_first" style="background: #303338;">
                     <div class="titleBlock titleBlock_white">
-                        <p class="titleBlock__num h2">01</p>
-                        <h2 class="titleBlock__text h3">Об Академии</h2>
+                        <p class="titleBlock__num h2 wow fade-in-top" data-wow-delay="0.5s">01</p>
+                        <div class="overflow-hidden">
+                            <h2 class="titleBlock__text h3  wow wow_visible slide-right" style="">Об Академии</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="d-lg-none col-md-3 col-1" style="background: #303338;"></div>
-                <div class="d-lg-none col-md-2 col-1" style=""></div>
+                <div class="d-lg-none col-md-2 col-0" style=""></div>
                 <div class="d-lg-none col-md-2 col-1" style="background: #303338;"></div>
                 <div class="col-lg-4 col-md-5 col-9  about_padTop overflow-hidden" style="background: #303338;">
                     <div class="wow wow_visible slide-right">
@@ -178,23 +180,25 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-2 col-md-1 col-1" style="background: #303338;"></div>
                 <div class="col-lg-8 col-md-9 col-10 p-0" style="background: #303338; ">
-                    <div class="about__sliderArrowWrap">
-                        <div class="about__sliderArrow about__sliderArrowP">
-                            <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="about__sliderWrap">
+                        <div class="about__sliderArrowWrap">
+                            <div class="about__sliderArrow about__sliderArrowP">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.82843 7.68947L0.646447 4.36914C0.451184 4.16539 0.451184 3.83504 0.646447 3.63129L3.82843 0.310961C4.02369 0.107209 4.34027 0.107209 4.53553 0.310961C4.7308 0.514712 4.7308 0.84506 4.53553 1.04881L2.20711 3.47847L50 3.47848L50 4.52196L2.20711 4.52195L4.53553 6.95162C4.7308 7.15537 4.7308 7.48572 4.53553 7.68947C4.34027 7.89322 4.02369 7.89322 3.82843 7.68947Z" fill="#F2F2F2"/>
                             </svg>
-                        </div>
-                        <div class="about__sliderArrow about__sliderArrowN">
-                            <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </div>
+                            <div class="about__sliderArrow about__sliderArrowN">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M46.1716 0.310533L49.3536 3.63086C49.5488 3.83461 49.5488 4.16496 49.3536 4.36871L46.1716 7.68904C45.9763 7.89279 45.6597 7.89279 45.4645 7.68904C45.2692 7.48529 45.2692 7.15494 45.4645 6.95119L47.7929 4.52153L-3.656e-07 4.52152L-2.78178e-07 3.47804L47.7929 3.47805L45.4645 1.04838C45.2692 0.844632 45.2692 0.514285 45.4645 0.310533C45.6597 0.106781 45.9763 0.106781 46.1716 0.310533Z" fill="#F2F2F2"/>
                             </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="about__slider wow wow_visible slide-right">
-                        <img class="about__sliderItem" src="img/aboutSlider/1.jpg" alt="">
-                        <img class="about__sliderItem" src="img/aboutSlider/2.jpg" alt="">
-                        <img class="about__sliderItem" src="img/aboutSlider/3.jpg" alt="">
-                        <img class="about__sliderItem" src="img/aboutSlider/4.jpg" alt="">
+                        <div class="about__slider wow wow_visible slide-right">
+                            <img class="about__sliderItem" src="img/aboutSlider/1.jpg" alt="">
+                            <img class="about__sliderItem" src="img/aboutSlider/2.jpg" alt="">
+                            <img class="about__sliderItem" src="img/aboutSlider/3.jpg" alt="">
+                            <img class="about__sliderItem" src="img/aboutSlider/4.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -204,8 +208,8 @@
                 <div class="col-lg-5 offset-lg-1 col-md-7 offset-md-0 col-9 overflow-hidden">
                     <img class="about__video wow wow_visible slide-right" src="img/videoCover.jpg" alt="" class="">
                 </div>
-                <div class="col-md-3 offset-5 col-7 d-flex align-items-end">
-                    <div class="about__videoTitle">
+                <div class="offset-md-0 col-md-3 offset-5 col-7 d-flex align-items-end">
+                    <div class="about__videoTitle wow fade-in-left" data-wow-delay="0.3s">
                         <div class="about__videoTitleLine"></div>
                         <p class="p1 about__videoTitleText">Видео о нас</p>
                     </div>
@@ -214,13 +218,13 @@
             <div class="row marginTop">
                 <div class="col-lg-6 offset-lg-4 col-md-8 offset-md-2 col-10 offset-1">
                     <div class="quote">
-                        <img src="img/quotes.svg" alt="" class="quote__img">
+                        <img src="img/quotes.svg" alt="" class="quote__img  wow fade-in-top" data-wow-delay="0.7s">
                         <div class="quote__textWrap">
-                            <p class="h4 quote__text">Красота, здоровье и идеальный вид ваших волос – цель нашей работы. К счастью, мы целеустремленная команда. Видеть крутой результат своего труда и ваши радостные глаза – то, ради чего стоит работать. В сети студий дизайна волос
+                            <p class="h4 quote__text wow fade-in-left" data-wow-delay="0.1s">Красота, здоровье и идеальный вид ваших волос – цель нашей работы. К счастью, мы целеустремленная команда. Видеть крутой результат своего труда и ваши радостные глаза – то, ради чего стоит работать. В сети студий дизайна волос
                                 Виктории Руссо работают люди, преданные своему делу. Да, это именно их дело. Любимое занятие, а не простое исполнение обязанностей.</p>
-                            <p class="p1 quote__autor">Виктория Руссо, основатель студии</p>
+                            <p class="p1 quote__autor wow fade-in-left" data-wow-delay="0.3s">Виктория Руссо, основатель студии</p>
                             <div class="">
-                                <a href="" class="btn2 quote__btn">Начать обучение</a>
+                                <a href="" class="btn2 quote__btn wow fade-in-left" data-wow-delay="0.5s">Начать обучение</a>
                             </div>
                         </div>
                     </div>
@@ -234,8 +238,10 @@
                 <div class="row legend__headTop">
                     <div class="offset-lg-2 col-9 offset-1 d-flex align-items-end ">
                         <div class="titleBlock titleBlock_white">
-                            <p class="titleBlock__num h2">02</p>
-                            <h2 class="titleBlock__text h3">Легенда бренда</h2>
+                            <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">02</p>
+                            <div class="overflow-hidden">
+                                <h2 class="titleBlock__text wow wow_visible slide-right h3">Легенда бренда</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -244,7 +250,7 @@
 
         <div class="container-fluid marginTop">
             <div class="row align-items-center">
-                <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-9 col-10 offset-1">
+                <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-9 col-10 offset-1 wow fade-in-left" data-wow-delay="0.5s">
                     <p class="p1">После первого наращивания мне вдруг стало интересно – а как же оно там всё крепится. И я записалась на свои первые курсы. Процесс затянул меня сразу, но желание дорабатывать и исправлять технологию осталось. Пройдя ещё несколько курсов,
                         я начала постепенно формировать свою методику постановки капсул, чтобы даже обладательницы самых тонких волос, как у меня, могли носить нарощенные волосы комфортно и безопасно, легко делать хвосты и причёски.</p>
                     <p class="p1">В дальнейшем были ещё обучения колористике, стилистике, укладкам. Поэтому принимая сейчас каждого мастера на работу, я точно знаю, что я от него хочу. И могу проверить его технологию на практике, а не на словах и не дипломами. Мы делаем
@@ -254,24 +260,24 @@
                     <p class="p1">Виктория. Студия Victoria Russo, с любовью к Вашим волосам.</p>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-6 offset-md-3 col-8 offset-2">
-                    <img src="img/logoBig.svg" alt="" class="legend__logo">
+                    <img src="img/logoBig.svg" alt="" class="legend__logo wow fade-in-top">
                 </div>
             </div>
         </div>
         <div class="container-fluid marginTop_big">
             <div class="row">
                 <div class="legend__photoCol col-lg-4 offset-lg-6 col-md-6 offset-md-1 col-10 offset-1 order-0">
-                    <div class="legend__photoTitle">
+                    <div class="legend__photoTitle wow fade-in">
                         <p class="p1">Виктория, основатель студии</p>
                         <div class=""></div>
                     </div>
 
                 </div>
-                <div class="legend__photoCol col-lg-6 offset-lg-0 col-md-11 col-12 order-2 order-lg-1">
-                    <img src="img/mainPage/legend1.jpg" alt="" class="legend__photo ">
+                <div class="legend__photoCol col-lg-6 offset-lg-0 col-md-11 col-12 order-2 order-lg-1 overflow-hidden">
+                    <img src="img/mainPage/legend1.jpg" alt="" class="legend__photo wow wow_visible slide-right">
                 </div>
-                <div class="legend__photoCol col-lg-4 offset-lg-0 col-md-9 offset-md-3 col-11 offset-1 order-1 order-lg-2">
-                    <img src="img/mainPage/legend2.jpg" alt="" class="legend__photo ">
+                <div class="legend__photoCol col-lg-4 offset-lg-0 col-md-9 offset-md-3 col-11 offset-1 order-1 order-lg-2 overflow-hidden">
+                    <img src="img/mainPage/legend2.jpg" alt="" class="legend__photo wow wow_visible slide-right" data-wow-delay="0.5s">
                 </div>
             </div>
         </div>
@@ -279,13 +285,15 @@
     <section class="aboutCource marginTop">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 offset-lg-2 col-10 offset-1">
+                <div class="col-lg-4 offset-lg-2 col-md-9 col-10 offset-1">
                     <div class="titleBlock titleBlock_margin">
-                        <p class="titleBlock__num h2">03</p>
-                        <h2 class="titleBlock__text h3">Почему стоит учиться имено у нас?</h2>
+                        <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">03</p>
+                        <div class="overflow-hidden">
+                            <h2 class="titleBlock__text wow wow_visible slide-right h3">Почему стоит учиться<br>имено у нас?</h2>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-10 offset-1">
+                <div class="col-lg-4 offset-lg-0  col-md-9 col-10 offset-1 wow fade-in-left" data-wow-delay="0.5s">
                     <p class="p1">Меня зовут Виктория. Я прошла путь от частного мастера на дому до собственной большой студии по дизайну и наращиванию волос Victoria Russo. На данный момент команда моей студии состоит уже из 15 человек. И мы планируем расширение в
                         сеть в ближайшее время. Но вернёмся к началу...
                     </p>
@@ -304,7 +312,9 @@
                 <div class="mainPageForm__col col-8 col-lg-6">
 
                     <div class="titleBlock titleBlock_white titleBlock_margin">
-                        <h2 class="titleBlock__text h3">Начни обучение прямо сейчас</h2>
+                        <div class="overflow-hidden">
+                            <h2 class="titleBlock__text wow wow_visible slide-right h3">Начни обучение прямо сейчас</h2>
+                        </div>
                     </div>
                     <form action="" class="mainPageForm__form">
                         <input type="text" placeholder="Ваше имя">
@@ -317,13 +327,118 @@
         </div>
     </div>
     <section class="courses">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-8 offset-lg-2 offset-1">
-                    <div class="titleBlock titleBlock_margin">
-                        <p class="titleBlock__num h2">04</p>
-                        <h2 class="titleBlock__text h3">Наши курсы</h2>
+        <div class="courses__upLayerTop">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-none d-sm-block col-2 courses__col_white"></div>
+                    <div class="col-8 offset-md-0 courses__col_white">
+                        <div class="titleBlock titleBlock_margin titleBlock_4">
+                            <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">04</p>
+                            <div class="overflow-hidden">
+                                <h2 class="titleBlock__text wow wow_visible slide-right h3">Наши курсы</h2>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="courses__inner">
+            <div class="container-fluid p-0">
+                <div class="courses__slider wow wow_visible slide-right">
+                    <img class="courses__sliderItem" src="img/aboutSlider/1.jpg" alt="">
+                    <img class="courses__sliderItem" src="img/aboutSlider/2.jpg" alt="">
+                    <img class="courses__sliderItem" src="img/aboutSlider/3.jpg" alt="">
+                    <img class="courses__sliderItem" src="img/aboutSlider/4.jpg" alt="">
+                </div>
+            </div>
+            <div class="courses__upLayer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-1 d-none d-md-block courses__col_white"></div>
+                        <div class="col-lg-1 offset-lg-8 col-md-1 offset-md-8 col-2 offset-10 courses__col_white"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="courses__upLayerBottom ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-md-1  d-none d-md-block courses__col_white courses__col_padding"></div>
+                    <div class="col-lg-3 col-md-8 offset-md-0 col-10 offset-1 courses__col_white courses__col_padding courses__col_relative ">
+                        <div class="courses__slider1 wow fade-in-left">
+                            <div class="courses__slider1Item">
+                                <h3 class="h4 courses__title">Наращивание волос. Горячее итальянское наращивание + микро, нано капсулы.</h3>
+                                <a href="" class="btn2">Подробнее</a>
+                            </div>
+                            <div class="courses__slider1Item">
+                                <h3 class="h4 courses__title">Наращивание волос1. Горячее итальянское наращивание + микро, нано капсулы.</h3>
+                                <a href="" class="btn2">Подробнее</a>
+                            </div>
+                            <div class="courses__slider1Item">
+                                <h3 class="h4 courses__title">Наращивание волос2. Горячее итальянское наращивание + микро, нано капсулы.</h3>
+                                <a href="" class="btn2">Подробнее</a>
+                            </div>
+                            <div class="courses__slider1Item">
+                                <h3 class="h4 courses__title">Наращивание волос3. Горячее итальянское наращивание + микро, нано капсулы.</h3>
+                                <a href="" class="btn2">Подробнее</a>
+                            </div>
+                        </div>
+
+                        <div class="courses__sliderArrowWrap courses__sliderArrowWrap_md">
+                            <div class="courses__sliderArrow courses__sliderArrowP">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.82843 7.68947L0.646447 4.36914C0.451184 4.16539 0.451184 3.83504 0.646447 3.63129L3.82843 0.310961C4.02369 0.107209 4.34027 0.107209 4.53553 0.310961C4.7308 0.514712 4.7308 0.84506 4.53553 1.04881L2.20711 3.47847L50 3.47848L50 4.52196L2.20711 4.52195L4.53553 6.95162C4.7308 7.15537 4.7308 7.48572 4.53553 7.68947C4.34027 7.89322 4.02369 7.89322 3.82843 7.68947Z" fill="#F2F2F2"/>
+                                </svg>
+                            </div>
+                            <div class="courses__sliderArrow courses__sliderArrowN">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M46.1716 0.310533L49.3536 3.63086C49.5488 3.83461 49.5488 4.16496 49.3536 4.36871L46.1716 7.68904C45.9763 7.89279 45.6597 7.89279 45.4645 7.68904C45.2692 7.48529 45.2692 7.15494 45.4645 6.95119L47.7929 4.52153L-3.656e-07 4.52152L-2.78178e-07 3.47804L47.7929 3.47805L45.4645 1.04838C45.2692 0.844632 45.2692 0.514285 45.4645 0.310533C45.6597 0.106781 45.9763 0.106781 46.1716 0.310533Z" fill="#F2F2F2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 offset-md-1 col-md-8 col-10 offset-1 courses__col_white courses__col_padding courses__col_relative ">
+                        <div class="courses__slider2 wow fade-in-left" data-wow-delay="0.3s">
+                            <div class="">
+                                <div class="courses__cost">
+                                    <p class="p1">Преподаватель курса - Виктория Руссо</p>
+                                    <p class="p1">от 10000 руб.</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="courses__cost">
+                                    <p class="p1">Преподаватель курса - Виктория Руссо</p>
+                                    <p class="p1">от 10000 руб.</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="courses__cost">
+                                    <p class="p1">Преподаватель курса - Виктория Руссо</p>
+                                    <p class="p1">от 10000 руб.</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="courses__cost">
+                                    <p class="p1">Преподаватель курса - Виктория Руссо</p>
+                                    <p class="p1">от 10000 руб.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="courses__sliderArrowWrap">
+                            <div class="courses__sliderArrow courses__sliderArrowP" onclick="$('.courses__slider').slick('slickPrev');">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.82843 7.68947L0.646447 4.36914C0.451184 4.16539 0.451184 3.83504 0.646447 3.63129L3.82843 0.310961C4.02369 0.107209 4.34027 0.107209 4.53553 0.310961C4.7308 0.514712 4.7308 0.84506 4.53553 1.04881L2.20711 3.47847L50 3.47848L50 4.52196L2.20711 4.52195L4.53553 6.95162C4.7308 7.15537 4.7308 7.48572 4.53553 7.68947C4.34027 7.89322 4.02369 7.89322 3.82843 7.68947Z" fill="#F2F2F2"/>
+                                </svg>
+                            </div>
+                            <div class="courses__sliderArrow courses__sliderArrowN" onclick="$('.courses__slider').slick('slickNext');">
+                                <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M46.1716 0.310533L49.3536 3.63086C49.5488 3.83461 49.5488 4.16496 49.3536 4.36871L46.1716 7.68904C45.9763 7.89279 45.6597 7.89279 45.4645 7.68904C45.2692 7.48529 45.2692 7.15494 45.4645 6.95119L47.7929 4.52153L-3.656e-07 4.52152L-2.78178e-07 3.47804L47.7929 3.47805L45.4645 1.04838C45.2692 0.844632 45.2692 0.514285 45.4645 0.310533C45.6597 0.106781 45.9763 0.106781 46.1716 0.310533Z" fill="#F2F2F2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -333,32 +448,34 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-10 offset-1">
                     <div class="titleBlock titleBlock_marginBig">
-                        <p class="titleBlock__num h2">05</p>
-                        <h2 class="titleBlock__text h3">Интернет-магазин</h2>
+                        <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">05</p>
+                        <div class="overflow-hidden">
+                            <h2 class="titleBlock__text wow wow_visible slide-right h3">Интернет-магазин</h2>
+                        </div>
                     </div>
-                    <div class="cartCategory">
+                    <div class="cartCategory wow height-bottom">
                         <img class="cartCategory__img" src="img/category/c1.jpg" alt="">
                         <h3 class="h4 cartCategory__title">Уход за волосами</h3>
                         <a href="" class="btn1 cartCategory__link">Смотреть все</a>
                     </div>
-                    <div class="cartCategory">
+                    <div class="cartCategory wow height-bottom">
                         <img class="cartCategory__img" src="img/category/c2.jpg" alt="">
                         <h3 class="h4 cartCategory__title">Lush & brow</h3>
                         <a href="" class="btn1 cartCategory__link">Смотреть все</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-5 offset-md-0 col-10 offset-1">
-                    <div class="cartCategory">
+                    <div class="cartCategory wow height-bottom">
                         <img class="cartCategory__img" src="img/category/c3.jpg" alt="">
                         <h3 class="h4 cartCategory__title">Наращивание волос</h3>
                         <a href="" class="btn1 cartCategory__link">Смотреть все</a>
                     </div>
-                    <div class="cartCategory">
+                    <div class="cartCategory wow height-bottom">
                         <img class="cartCategory__img" src="img/category/c4.jpg" alt="">
                         <h3 class="h4 cartCategory__title">Кератиновое выпрямление</h3>
                         <a href="" class="btn1 cartCategory__link">Смотреть все</a>
                     </div>
-                    <div class="cartCategory">
+                    <div class="cartCategory wow height-bottom">
                         <img class="cartCategory__img" src="img/category/c5.jpg" alt="">
                         <h3 class="h4 cartCategory__title">Nail</h3>
                         <a href="" class="btn1 cartCategory__link">Смотреть все</a>
@@ -430,41 +547,142 @@
             <div class="row">
                 <div class="offset-lg-1 col-lg-6 col-12">
                     <div class="row">
-                        <div class="col-lg-10 offset-lg-2">
+                        <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-2 col-11 offset-1">
                             <div class="titleBlock titleBlock_white titleBlock_margin">
-                                <p class="titleBlock__num h2">06</p>
-                                <h2 class="titleBlock__text h3">Отзывы наших<br>учеников</h2>
+                                <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">06</p>
+                                <div class="overflow-hidden">
+                                    <h2 class="titleBlock__text wow wow_visible slide-right h3">Отзывы наших<br>учеников</h2>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 offset-lg-2 col-md-5 offset-md-1 col-7">
-                            <img src="img/mainPage/r11.jpg" alt="">
+                        <div class="col-xl-6 offset-xl-2 col-lg-6 offset-lg-2 col-md-5 offset-md-1 col-7 position-relative">
+                            <div class="reviews__slider1 wow wow_visible slide-right ">
+                                <img class="reviews__slider1Item" src="img/mainPage/r11.jpg" alt="">
+                                <img class="reviews__slider1Item" src="img/mainPage/r11.jpg" alt="">
+                                <img class="reviews__slider1Item" src="img/mainPage/r11.jpg" alt="">
+                                <img class="reviews__slider1Item" src="img/mainPage/r11.jpg" alt="">
+
+                            </div>
+                            <div class="reviews__sliderArrowWrap">
+                                <div class="reviews__sliderArrow reviews__sliderArrowP">
+                                    <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.82843 7.68947L0.646447 4.36914C0.451184 4.16539 0.451184 3.83504 0.646447 3.63129L3.82843 0.310961C4.02369 0.107209 4.34027 0.107209 4.53553 0.310961C4.7308 0.514712 4.7308 0.84506 4.53553 1.04881L2.20711 3.47847L50 3.47848L50 4.52196L2.20711 4.52195L4.53553 6.95162C4.7308 7.15537 4.7308 7.48572 4.53553 7.68947C4.34027 7.89322 4.02369 7.89322 3.82843 7.68947Z" fill="#F2F2F2"/>
+                                    </svg>
+                                </div>
+                                <div class="reviews__sliderArrow reviews__sliderArrowN">
+                                    <svg width="50" height="8" viewBox="0 0 50 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M46.1716 0.310533L49.3536 3.63086C49.5488 3.83461 49.5488 4.16496 49.3536 4.36871L46.1716 7.68904C45.9763 7.89279 45.6597 7.89279 45.4645 7.68904C45.2692 7.48529 45.2692 7.15494 45.4645 6.95119L47.7929 4.52153L-3.656e-07 4.52152L-2.78178e-07 3.47804L47.7929 3.47805L45.4645 1.04838C45.2692 0.844632 45.2692 0.514285 45.4645 0.310533C45.6597 0.106781 45.9763 0.106781 46.1716 0.310533Z" fill="#F2F2F2"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-5">
-                            <img src="img/mainPage/r12.jpg" alt="">
+                        <div class="col-lg-4 col-md-4 col-5 overflow-hidden">
+                            <div class="reviews__slider2 wow wow_visible slide-right" data-wow-delay="0.3s">
+                                <img class="reviews__slider2Item" src="img/mainPage/r21.jpg" alt="">
+                                <img class="reviews__slider2Item" src="img/mainPage/r21.jpg" alt="">
+                                <img class="reviews__slider2Item" src="img/mainPage/r21.jpg" alt="">
+                                <img class="reviews__slider2Item" src="img/mainPage/r21.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-10 offset-1">
-                    <h3 class="h4">Анна Николаева</h3>
-                    <p class="p1">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно и просто
-                        объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
-                    <p class="p1">25.02.2020</p>
+                <div class="col-lg-3 offset-xl-1 offset-lg-0 col-md-6 col-10 offset-1">
+                    <div class="reviews__slider3">
+                        <div class="reviews__reviewItem wow fade-in-left" data-wow-delay="0.6s">
+                            <h3 class="h4 reviews__reviewItemTitle">Анна Николаева</h3>
+                            <p class="p1 reviews__reviewItemText">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно
+                                и просто объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
+                            <p class="p1 reviews__reviewItemDate">25.02.2020</p>
+                        </div>
+                        <div class="reviews__reviewItem">
+                            <h3 class="h4 reviews__reviewItemTitle">Мария Петровна</h3>
+                            <p class="p1 reviews__reviewItemText">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно
+                                и просто объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
+                            <p class="p1 reviews__reviewItemDate">25.02.2020</p>
+                        </div>
+                        <div class="reviews__reviewItem">
+                            <h3 class="h4 reviews__reviewItemTitle">Любовь Михайловна</h3>
+                            <p class="p1 reviews__reviewItemText">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно
+                                и просто объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
+                            <p class="p1 reviews__reviewItemDate">25.02.2020</p>
+                        </div>
+                        <div class="reviews__reviewItem">
+                            <h3 class="h4 reviews__reviewItemTitle">Ольга Васильевна</h3>
+                            <p class="p1 reviews__reviewItemText">Проходила курс Наращивания ресниц, почитала на сайте про опыт преподавателя и программу обучения. Понравилось что программа авторская не «по шаблону». Компетентность преподавателя была на высоком уровне, очень все доступно
+                                и просто объясняла. На обучении чувствовала себя довольно раскрепощенно, ну и нарастила модели волосы)) все супер!</p>
+                            <p class="p1 reviews__reviewItemDate">25.02.2020</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
-    <footer class="footer">
+
+    <div class="formBottom marginBottom marginTop">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-2 offset-lg-2 col-md-5 offset-md-1 col-9 offset-2">
-                    <img class="footer__logo" src="img/logoBig.svg" alt="" class="">
+                <div class="col-lg-8 offset-lg-2 col-10 offset-1">
+                    <div class="titleBlock titleBlock_margin">
+                        <p class="titleBlock__num wow fade-in-top h2" data-wow-delay="0.5s">07</p>
+                        <div class="overflow-hidden">
+                            <h2 class="titleBlock__text wow wow_visible slide-right h3">Стань частью Академии</h2>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 offset-lg-2 col-xl-2 offset-xl-3 col-md-6 col-10 offset-1">
+                    <input class="formBottom__input" type="text" placeholder="Ваше имя">
+                </div>
+                <div class="col-lg-3 col-xl-2 offset-lg-0 col-md-6 offset-md-1 col-10 offset-1">
+                    <input class="formBottom__input" type="text" placeholder="Номер телефона">
+                    <button class="formBottom__btn btn2">Присоединиться</button>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-5 col-10 offset-1">
+                    <div class="socialText">
+                        <a href="/" class="p1 socialText__link">Vkontakte</a>
+                        <a href="/" class="p1 socialText__link">Instagram</a>
+                        <a href="/" class="p1 socialText__link">Youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer wow fade-in-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 offset-lg-2 mr-lg-0 col-md-6 mr-md-auto offset-md-1 col-8 offset-2">
+                    <img class="footer__logo" src="img/logoFooter.svg" alt="" class="">
+                </div>
+                <div class="d-none d-lg-none d-md-block col-md-5 col-1"></div>
                 <div class="col-lg-2 offset-lg-1 col-md-5 offset-md-1 col-11 offset-1">
                     <p class="p1">
                         Санкт-Петербург, Московский пр., 183-185А
                     </p>
                     <a href="" class="p1 footer__link">+7 951 651 88 21</a>
                     <a href="" class="p1 footer__link">studio.victoria.russo@yandex.ru</a>
+
+                    <div class="footer__social">
+                        <a href="" class="footer__socialItem">
+                            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0697 0H6.93047C1.32815 0 6.10352e-05 1.32808 6.10352e-05 6.93041V13.0696C6.10352e-05 18.6719 1.32815 20 6.93047 20H13.0697C18.672 20 20.0001 18.6719 20.0001 13.0696V6.93041C20.0001 1.32808 18.6589 0 13.0697 0ZM16.1458 14.2671H14.694C14.144 14.2671 13.9746 13.8308 12.9853 12.8283C12.1259 11.9953 11.7453 11.8846 11.5335 11.8846C11.2341 11.8846 11.1491 11.969 11.1491 12.3796V13.6914C11.1491 14.0433 11.0385 14.2546 10.1072 14.2546C8.56729 14.2546 6.8586 13.3233 5.66051 11.5884C3.85369 9.04597 3.35933 7.14165 3.35933 6.74791C3.35933 6.53605 3.4437 6.33793 3.85057 6.33793H5.30552C5.67363 6.33793 5.81363 6.5073 5.95675 6.90103C6.6761 8.97785 7.87419 10.7972 8.36855 10.7972C8.55104 10.7972 8.63542 10.7128 8.63542 10.2472V8.10225C8.57979 7.1129 8.05919 7.02791 8.05919 6.67667C8.05919 6.5073 8.19918 6.33793 8.42355 6.33793H10.7116C11.021 6.33793 11.1347 6.5073 11.1347 6.87166V9.76532C11.1347 10.0778 11.2747 10.1884 11.3591 10.1884C11.5416 10.1884 11.6978 10.0778 12.0359 9.73907C13.0809 8.56723 13.8296 6.76041 13.8296 6.76041C13.9271 6.54855 14.0965 6.35043 14.4646 6.35043H15.9196C16.3558 6.35043 16.4533 6.5748 16.3558 6.88729C16.1733 7.73351 14.3927 10.2466 14.3927 10.2466C14.2396 10.5003 14.1809 10.6109 14.3927 10.894C14.549 11.1059 15.0571 11.5453 15.3952 11.939C16.0171 12.6452 16.4952 13.2377 16.6227 13.6477C16.7658 14.0546 16.5545 14.2664 16.1439 14.2664L16.1458 14.2671Z"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="footer__socialItem">
+                            <svg width="20" height="21" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9356 5.91293C19.9234 5.07219 19.7679 4.23812 19.4703 3.4518C18.9494 2.10906 17.8888 1.04731 16.546 0.527544C15.7697 0.235451 14.949 0.0788539 14.1182 0.061084C13.0498 0.0133275 12.7111 0 9.99895 0C7.28682 0 6.9392 7.45058e-08 5.87856 0.061084C5.04893 0.0788539 4.22818 0.235451 3.45186 0.527544C2.10912 1.04731 1.04737 2.10906 0.527604 3.4518C0.235512 4.22812 0.0778043 5.04887 0.0622556 5.8785C0.0144991 6.94802 6.10352e-05 7.28676 6.10352e-05 9.99889C6.10352e-05 12.711 6.10277e-05 13.0575 0.0622556 14.1193C0.0789149 14.95 0.235512 15.7697 0.527604 16.5482C1.04848 17.8898 2.10912 18.9516 3.45297 19.4713C4.22596 19.7734 5.04671 19.9445 5.87967 19.9711C6.9492 20.0189 7.28793 20.0333 10.0001 20.0333C12.7122 20.0333 13.0598 20.0333 14.1205 19.9711C14.9501 19.9545 15.7708 19.7979 16.5483 19.5058C17.891 18.9849 18.9516 17.9231 19.4725 16.5815C19.7646 15.8041 19.9212 14.9845 19.9379 14.1526C19.9856 13.0842 20.0001 12.7454 20.0001 10.0322C19.9978 7.32008 19.9978 6.97579 19.9356 5.91293ZM9.99229 15.1277C7.15577 15.1277 4.8579 12.8299 4.8579 9.99334C4.8579 7.15682 7.15577 4.85895 9.99229 4.85895C12.8266 4.85895 15.1267 7.15682 15.1267 9.99334C15.1267 12.8299 12.8266 15.1277 9.99229 15.1277ZM15.331 5.86628C14.668 5.86628 14.1338 5.33096 14.1338 4.66904C14.1338 4.00711 14.668 3.47179 15.331 3.47179C15.9918 3.47179 16.5272 4.00711 16.5272 4.66904C16.5272 5.33096 15.9918 5.86628 15.331 5.86628Z"></path>
+                                <path d="M9.99383 13.329C11.8358 13.329 13.329 11.8357 13.329 9.99377C13.329 8.15179 11.8358 6.65858 9.99383 6.65858C8.15186 6.65858 6.65864 8.15179 6.65864 9.99377C6.65864 11.8357 8.15186 13.329 9.99383 13.329Z"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="footer__socialItem">
+                            <svg width="20" height="21" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 5.0332C20.0001 2.27178 17.7615 0.0332031 15.0001 0.0332031H5.00006C2.23864 0.0332031 6.10352e-05 2.27178 6.10352e-05 5.0332V15.0332C6.10352e-05 17.7946 2.23864 20.0332 5.00006 20.0332H15.0001C17.7615 20.0332 20.0001 17.7946 20.0001 15.0332V5.0332ZM14.0001 10.5332L8.00006 7.0332V14.0332L14.0001 10.5332Z"></path>
+                            </svg>
+                        </a>
+                    </div>
+
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-5 col-11 offset-1">
                     <nav class="footer__menu">
@@ -490,7 +708,7 @@
                 <div class="col-lg-2 offset-lg-5 col-md-5 offset-md-1 col-11 offset-1">
                     <p class="p1">Все права защищены, 2020 ©</p>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-5 offset-md-0 col-11 offset-1">
+                <div class="col-lg-2 offset-lg-1 col-md-5 col-11 offset-1">
                     <p class="p1 footer__link">Сайт разработан в ava.digital.ru</p>
                 </div>
             </div>
@@ -513,8 +731,92 @@
             prevArrow: document.querySelector('.about__sliderArrowP'),
             customPaging: function(slider, i) {
                 var thumb = jQuery(slider.$slides[i]).data();
-                return '' + ('0' + (i + 1)).slice(-2) + '/<span>0' + slider.$slides.length + '</span>'
+                if (slider.$slides.length < 10) {
+                    var out = '' + ('0' + (i + 1)).slice(-2) + '/<span>0' + slider.$slides.length + '</span>'
+                } else {
+                    var out = '' + ('' + (i + 1)).slice(-2) + '/<span>' + slider.$slides.length + '</span>'
+                }
+                return out
             },
+        });
+        $(".courses__slider").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            infinite: true,
+            // autoplay: true,
+            nextArrow: document.querySelector('.courses__sliderArrowN'),
+            prevArrow: document.querySelector('.courses__sliderArrowP'),
+            variableWidth: true,
+            focusOnSelect: true,
+            asNavFor: '.courses__slider1, .courses__slider2',
+            customPaging: function(slider, i) {
+                var thumb = jQuery(slider.$slides[i]).data();
+                if (slider.$slides.length < 10) {
+                    var out = '' + ('0' + (i + 1)).slice(-2) + '/<span>0' + slider.$slides.length + '</span>'
+                } else {
+                    var out = '' + ('' + (i + 1)).slice(-2) + '/<span>' + slider.$slides.length + '</span>'
+                }
+                return out
+            },
+        });
+        $('.courses__slider1').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.courses__slider, .courses__slider2',
+            dots: false,
+            arrows: false,
+            infinite: true,
+            focusOnSelect: true
+        });
+        $('.courses__slider2').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.courses__slider, .courses__slider1',
+            dots: false,
+            arrows: false,
+            infinite: true,
+            focusOnSelect: true
+        });
+
+        $('.reviews__slider1').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.reviews__slider2, .reviews__slider3',
+            focusOnSelect: true,
+            dots: true,
+            infinite: true,
+            arrows: true,
+            nextArrow: document.querySelector('.reviews__sliderArrowN'),
+            prevArrow: document.querySelector('.reviews__sliderArrowP'),
+            customPaging: function(slider, i) {
+                var thumb = jQuery(slider.$slides[i]).data();
+                if (slider.$slides.length < 10) {
+                    var out = '' + ('0' + (i + 1)).slice(-2) + '/<span>0' + slider.$slides.length + '</span>'
+                } else {
+                    var out = '' + ('' + (i + 1)).slice(-2) + '/<span>' + slider.$slides.length + '</span>'
+                }
+                return out
+            },
+
+        });
+        $('.reviews__slider2').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.reviews__slider1, .reviews__slider1',
+            dots: false,
+            arrows: false,
+            // centerMode: true,
+            focusOnSelect: true
+        });
+        $('.reviews__slider3').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.reviews__slider1, .reviews__slider2',
+            dots: false,
+            arrows: false,
+            // centerMode: true,
+            focusOnSelect: true
         });
     </script>
 </body>
