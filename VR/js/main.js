@@ -3,6 +3,11 @@ $(window).load(function() {
 });
 
 function removePreload() {
-    $('.preloader').addClass('preloader_close');
-    setTimeout(() => $('.first').addClass('show'), 2000);
+    if ($(".preloader").length) {
+        $('.preloader').addClass('preloader_close');
+        setTimeout(() => $('body').addClass('show'), 2000);
+    } else {
+        setTimeout(() => $('body').addClass('show'), 200);
+    }
+
 }

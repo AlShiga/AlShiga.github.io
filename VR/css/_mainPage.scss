@@ -390,6 +390,11 @@
         display: flex;
         flex-direction: column;
     }
+    &__autor {
+        &_white {
+            color: $grayLight;
+        }
+    }
     @include media-breakpoint-down(md) {
         &__img {
             width: 66px;
@@ -521,6 +526,10 @@
                 color: $grayWhite;
             }
         }
+    }
+    &_w100 {
+        background-color: $grayDark;
+        margin: 100px 0;
     }
     @include media-breakpoint-down(md) {
         &__form {

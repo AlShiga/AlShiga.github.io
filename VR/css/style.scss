@@ -187,6 +187,14 @@ body {
     margin-bottom: 100px;
 }
 
+.marginBottom_small {
+    margin-bottom: 20px;
+}
+
+.marginBottom_normal {
+    margin-bottom: 40px;
+}
+
 .marginBottom_big {
     margin-bottom: 160px;
 }
@@ -256,6 +264,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 110px;
+    width: 100%;
     &__logo {
         margin-right: auto;
     }
@@ -284,4 +293,27 @@ body {
     }
 }
 
+.breadcrumb {
+    color: #BDBDBD;
+    margin-bottom: 20px;
+    font-family: Geometria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    & * {
+        color: #BDBDBD;
+        font-family: Geometria;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 140%;
+        &:hover {
+            color: #BDBDBD;
+            text-decoration: none;
+        }
+    }
+}
+
 @import "mainPage";
+@import "cours";
