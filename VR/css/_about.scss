@@ -1,0 +1,20 @@
+.aboutAdv {
+    &__item {
+        display: flex;
+        margin-top: 40px;
+        & span {
+            color: $gold;
+            margin-right: 20px;
+        }
+        & p {}
+    }
+    @include media-breakpoint-up(lg) {
+        margin-top: 100px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .aboutTextRight {
+        transform: translateX(-15%);
+    }
+}

@@ -166,6 +166,7 @@ input::-webkit-inner-spin-button {
 
 body {
     // background-color: #E5E5E5;
+    overflow-x: hidden;
 }
 
 .wow {
@@ -177,6 +178,14 @@ body {
 
 .marginTop {
     margin-top: 100px;
+}
+
+.marginTop_small {
+    margin-top: 20px;
+}
+
+.marginTop_normal {
+    margin-top: 40px;
 }
 
 .marginTop_big {
@@ -197,6 +206,11 @@ body {
 
 .marginBottom_big {
     margin-bottom: 160px;
+}
+
+.backgroundDark {
+    background-color: $grayDark;
+    color: $grayWhite;
 }
 
 @include media-breakpoint-down(sm) {
@@ -264,7 +278,8 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 110px;
-    width: 100%;
+    // width: 100%;
+    // padding-right: 8.33%;
     &__logo {
         margin-right: auto;
     }
@@ -289,7 +304,152 @@ body {
 
 .basket {
     &_header {
-        margin: 0 81px;
+        // margin: 0 0 0 81px;
+    }
+}
+
+.burgerWrap {
+    max-width: 140px;
+    min-width: 110px;
+}
+
+.menu {
+    position: fixed;
+    top: 110px;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    padding: 16.66vh 8.33vw;
+    background-color: $grayDark;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: $grayWhite;
+    transition: 0.5s ease-in-out;
+    transform: translateX(120%);
+    &__mainMenu {
+        opacity: 0;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        transform: translateX(50px);
+        & ul {
+            margin: 0 0 20px 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        & li {
+            margin: 0 0 20px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        & a {
+            color: $grayWhite;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 0px;
+                margin-right: 0px;
+                height: 1px;
+                background-color: $grayWhite;
+                transition: 0.4s;
+            }
+            &:hover:before {
+                width: 40px;
+                margin-right: 10px;
+            }
+            &:hover {
+                color: $grayWhite;
+            }
+        }
+    }
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        max-width: 180px;
+        margin: 0;
+        transition: 0.5s;
+        transition-delay: 0.5s;
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    &__socialItem {
+        & svg {
+            width: 30px;
+            height: auto;
+            fill: $grayLight;
+            transition: 0.3s;
+        }
+        &:hover svg {
+            fill: $grayWhite;
+        }
+    }
+}
+
+.openMenu {
+    .menu {
+        transform: translateX(0%);
+    }
+    body {
+        overflow: hidden;
+    }
+    .menu__mainMenu {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    .menu__social {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .col_phone {
+        width: max-content;
+        max-width: 17%;
+        flex: none;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .header {
+        &__col {
+            max-width: 80px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .menu {
+        top: 60px;
+    }
+    .burgerWrap {
+        background-color: rgba( $gray, 0.2);
+        max-width: 65px;
+        min-width: 0;
+    }
+    .header {
+        border-bottom: 1px solid rgba( $grayLight, 0.2);
+        height: 60px;
+        &__logo img {
+            height: 33px;
+            width: auto;
+        }
+        &__col {
+            max-width: 70px;
+        }
+    }
+    .burger,
+    .basket,
+    .header__phone {
+        & svg {
+            transform: scale(0.7);
+        }
     }
 }
 
@@ -317,3 +477,4 @@ body {
 
 @import "mainPage";
 @import "cours";
+@import "about";
