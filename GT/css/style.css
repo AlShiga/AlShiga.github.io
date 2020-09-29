@@ -6474,12 +6474,17 @@ h2,
   line-height: 20px;
 }
 
+.ttu {
+  text-transform: uppercase;
+}
+
 li {
   list-style-type: none;
 }
 
 body {
   background-color: #E5E5E5;
+  color: #4F4F4F;
 }
 
 .header {
@@ -6741,6 +6746,12 @@ body {
   stroke: #00335B;
 }
 
+@media (max-width: 991.98px) {
+  .btnNext {
+    display: none;
+  }
+}
+
 .sectionVideo {
   position: relative;
   height: 100vh;
@@ -6751,5 +6762,40 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.titleSection {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  white-space: nowrap;
+  margin-right: 40px;
+}
+
+.titleSection::after {
+  content: "";
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 1px;
+  border-bottom: 1px solid #1E7FCA;
+}
+
+@media (max-width: 767.98px) {
+  .titleSection {
+    margin-right: 20px;
+  }
+}
+
+.sectionAbout {
+  color: #4F4F4F;
+}
+
+.numCompany {
+  border-bottom: 1px solid #1E7FCA;
 }
 /*# sourceMappingURL=style.css.map */

@@ -128,6 +128,9 @@
     &_dark &__circle {
         stroke: $blue;
     }
+    @include media-breakpoint-down(md) {
+        display:none;
+    }
 }
 
 .sectionVideo {
@@ -138,4 +141,31 @@
         height: 100%;
         object-fit: cover;
     }
+}
+
+.titleSection{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+    margin-right: 40px;
+    &::after{
+        content:"";
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 1px;
+        border-bottom: 1px solid $blueLight;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-right: 20px;
+    }
+}
+
+.sectionAbout{
+    color: $dark;
+
+}
+.numCompany{
+    border-bottom: 1px solid $blueLight;
 }

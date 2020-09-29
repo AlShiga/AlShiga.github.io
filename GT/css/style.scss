@@ -179,12 +179,17 @@ h2,
     line-height: 20px;
 }
 
+.ttu{
+    text-transform: uppercase;
+}
+
 li {
     list-style-type: none;
 }
 
 body {
     background-color: $bgWhite;
+    color: $dark;
 }
 
 @import "header";
