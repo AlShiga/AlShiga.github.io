@@ -1,0 +1,141 @@
+.firstSection {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31)), url(../img/mainBg.jpg);
+    height: 100vh;
+    color: $white;
+    position: relative;
+    &__bgLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 16.6666%;
+        background-color: $bgWhite;
+    }
+    &__inner {
+        width: 100%;
+        height: 100%;
+        padding: 170px 0;
+        display: flex;
+        flex-direction: column;
+        & .row:first-child {
+            flex-grow: 1;
+        }
+    }
+    &__nameWrap {
+        position: relative;
+    }
+    &__name {
+        z-index: 2;
+        position: relative;
+        text-transform: uppercase;
+        & span {
+            color: $blueLight;
+        }
+    }
+    &__blur {
+        position: absolute;
+        width: 1000px;
+        height: 216px;
+        right: 150px;
+        bottom: 20px;
+        background: rgba(0, 107, 168, 0.31);
+        backdrop-filter: blur(4px);
+        z-index: 1;
+    }
+    &__content {
+        width: 720px;
+        margin-top: auto;
+    }
+    &__slogan {
+        display: flex;
+        align-items: start;
+    }
+    &__sloganText {
+        width: 400px;
+        margin-left: 40px;
+        position: relative;
+        top: -7px;
+    }
+    &__sloganLine {
+        flex-grow: 1;
+        border-top: 1px solid $bgWhite;
+    }
+}
+
+.btnNext {
+    position: absolute;
+    bottom: -60px;
+    right: calc(50% - 110px);
+    // border: 1px solid $white;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    z-index: 1;
+    * {
+        transition: 0.3s;
+    }
+    &__inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+    }
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        stroke: $white;
+    }
+    &__time {
+        position: absolute;
+        top: 0;
+        left: 0;
+        stroke: $white;
+    }
+    &__line {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        width: 1px;
+        height: 100px;
+        background-color: $white;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover &__line {
+        transform: translateY(30px);
+    }
+    &:hover &__cirсle,
+    &:hover &__time {
+        transform: scale(1.1);
+    }
+    &_dark &__line {
+        background-color: $blue;
+    }
+    &_dark &__text {
+        color: $blue;
+    }
+    &_dark &__time {
+        stroke: $blue;
+    }
+    &_dark &__circle {
+        stroke: $blue;
+    }
+}
+
+.sectionVideo {
+    position: relative;
+    height: 100vh;
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
