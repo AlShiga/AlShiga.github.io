@@ -1,0 +1,96 @@
+.anim {
+    .firstSection::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 100vw;
+        height: 100%;
+        background-color: $bgWhite;
+        z-index: 900;
+        transition: 0.5s;
+    }
+    .firstSection::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100vw;
+        height: 100%;
+        background-color: $bgWhite;
+        z-index: 900;
+        transition: 0.5s;
+    }
+    .header {
+        transform: translateY(-100%);
+        transition: 0.2s;
+    }
+    .header>div {
+        transform: translateY(70%);
+        opacity: 0;
+    }
+    .firstSection__bgLeft {
+        opacity: 0;
+    }
+    .firstSection__blur {
+        height: 0;
+    }
+    .firstSection__name {
+        transform: translateY(100%)
+    }
+    .firstSection__slogan {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+.step0 {}
+
+.step5 {
+    .firstSection::after {
+        transform: translateX(30%);
+    }
+    .firstSection::before {
+        transform: translateX(-30%);
+    }
+}
+
+.step8 {
+    .firstSection::after {
+        transform: translateX(30%);
+    }
+    .firstSection::before {
+        transform: translateX(-30%);
+    }
+}
+
+.step10 {
+    .firstSection::after {
+        transform: translateX(0%);
+    }
+    .firstSection::before {
+        transform: translateX(-50%);
+    }
+}
+
+.step15 {
+    .firstSection::after {
+        transform: translateX(0%);
+    }
+    .firstSection::before {
+        transform: translateX(0%);
+    }
+}
+
+.step20 {
+    .firstSection::after {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    .firstSection::before {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}

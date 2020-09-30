@@ -3,10 +3,9 @@ $dark:#4F4F4F;
 $gray: #828282;
 $white: #f2f2f2;
 $bgWhite: #E5E5E5;
-$blue: #00335B;
-$blueLight:#1E7FCA;
-$border1: 1px solid #1E7FCA;
-$border2: 2px solid #1E7FCA;
+$blueDeep: #00335B;
+$blueClass:#1E7FCA;
+$blueLight:#00BDFA;
 @font-face {
     font-family: 'Kelson Sans';
     src: url('../font/font.woff2') format('woff2'), url('../font/font.woff') format('woff');
@@ -105,7 +104,6 @@ html {
 h1,
 h2,
 .h1,
-.h2,
 .h3,
 .h7 {
     font-family: Kelson Sans, Montserrat, sans-serif;
@@ -122,6 +120,8 @@ h2,
 }
 
 .h2 {
+    font-style: normal;
+    font-weight: bold;
     font-size: 46px;
     line-height: 55px;
     text-transform: uppercase;
@@ -160,9 +160,9 @@ h2,
 
 .p1 {
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
 }
 
 .p2 {
@@ -179,7 +179,88 @@ h2,
     line-height: 20px;
 }
 
-.ttu{
+.num1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 146px;
+}
+
+@include media-breakpoint-down(md) {
+    .h1 {
+        font-size: 62px;
+        line-height: 74px;
+    }
+    .h2 {
+        font-size: 30px;
+        line-height: 37px;
+        text-transform: uppercase;
+    }
+    .h3 {
+        font-size: 24px;
+        line-height: 31px;
+    }
+    .h4 {}
+    .h5 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .h6 {}
+    .h7 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .p1 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .p2 {}
+    .btn1 {}
+    .num1 {
+        font-size: 85px;
+        line-height: 104px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .h1 {
+        font-size: 36px;
+        line-height: 43px;
+    }
+    .h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .h3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .h4 {
+        font-size: 22px;
+        line-height: 27px;
+    }
+    .h5 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .h6 {}
+    .h7 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .p1 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .p2 {}
+    .btn1 {}
+    .num1 {
+        font-size: 40px;
+        line-height: 49px;
+    }
+}
+
+.ttu {
     text-transform: uppercase;
 }
 
@@ -190,7 +271,9 @@ li {
 body {
     background-color: $bgWhite;
     color: $dark;
+    overflow-x: hidden;
 }
 
 @import "header";
 @import "mainPage";
+@import "animate";

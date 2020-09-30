@@ -1,5 +1,6 @@
 .firstSection {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31)), url(../img/mainBg.jpg);
+    background-size: cover;
     height: 100vh;
     color: $white;
     position: relative;
@@ -29,7 +30,7 @@
         position: relative;
         text-transform: uppercase;
         & span {
-            color: $blueLight;
+            color: $blueClass;
         }
     }
     &__blur {
@@ -117,19 +118,19 @@
         transform: scale(1.1);
     }
     &_dark &__line {
-        background-color: $blue;
+        background-color: $blueDeep;
     }
     &_dark &__text {
-        color: $blue;
+        color: $blueDeep;
     }
     &_dark &__time {
-        stroke: $blue;
+        stroke: $blueDeep;
     }
     &_dark &__circle {
-        stroke: $blue;
+        stroke: $blueDeep;
     }
     @include media-breakpoint-down(md) {
-        display:none;
+        display: none;
     }
 }
 
@@ -143,29 +144,29 @@
     }
 }
 
-.titleSection{
+.titleSection {
     position: relative;
     display: flex;
     align-items: flex-end;
     white-space: nowrap;
     margin-right: 40px;
-    &::after{
-        content:"";
+    &::after {
+        content: "";
         bottom: 0;
         right: 0;
         width: 100vw;
         height: 1px;
-        border-bottom: 1px solid $blueLight;
+        border-bottom: 1px solid $blueClass;
     }
     @include media-breakpoint-down(sm) {
         margin-right: 20px;
     }
 }
 
-.sectionAbout{
+.sectionAbout {
     color: $dark;
-
 }
-.numCompany{
-    border-bottom: 1px solid $blueLight;
+
+.numCompany {
+    border-bottom: 1px solid $blueClass;
 }
