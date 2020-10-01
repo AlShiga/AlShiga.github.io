@@ -6876,6 +6876,222 @@ body {
   border-bottom: 1px solid #1E7FCA;
 }
 
+.lighthouse {
+  position: relative;
+}
+
+.lighthouse__bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.lighthouse__img {
+  position: relative;
+}
+
+.sectionSecvices {
+  color: #f2f2f2;
+}
+
+.sectionSecvices__inner {
+  margin-top: -400px;
+}
+
+.sectionSecvices__headBg {
+  background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
+  width: 100%;
+  height: 600px;
+}
+
+.sliderSecvices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 450px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 500px;
+}
+
+.sliderSecvices__item {
+  cursor: pointer;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.sliderSecvices__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 1;
+}
+
+.sliderSecvices__content {
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 100px;
+  width: 560px;
+}
+
+.sliderSecvices__textInner {
+  position: relative;
+}
+
+.sliderSecvices__titleWrap {
+  -webkit-transition: width 2s;
+  transition: width 2s;
+  overflow: hidden;
+  width: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sliderSecvices__title {
+  width: 560px;
+  -webkit-transform: translateX(30%);
+          transform: translateX(30%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sliderSecvices__textWrap {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: absolute;
+  bottom: -120px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.sliderSecvices__text {
+  width: 560px;
+  color: #25272B;
+}
+
+.sliderSecvices__numWrap {
+  position: absolute;
+  bottom: 0px;
+  left: -175px;
+  overflow: hidden;
+  width: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sliderSecvices__num {
+  line-height: 100%;
+  width: 155px;
+  text-align: right;
+  color: rgba(130, 130, 130, 0.43);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sliderSecvices__numSmWrap {
+  position: absolute;
+  bottom: 0px;
+  left: -45px;
+  overflow: hidden;
+  width: 35px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sliderSecvices__numSm {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sliderSecvices__item.active {
+  cursor: auto;
+  -webkit-box-flex: 5;
+      -ms-flex-positive: 5;
+          flex-grow: 5;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.sliderSecvices__item.active::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.active .sliderSecvices__textWrap {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.active .sliderSecvices__titleWrap {
+  -webkit-transition: width 2s;
+  transition: width 2s;
+  overflow: hidden;
+  width: 560px;
+}
+
+.active .sliderSecvices__title {
+  width: 560px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.active .sliderSecvices__numWrap {
+  width: 155px;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.active .sliderSecvices__num {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.active .sliderSecvices__numSmWrap {
+  width: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.active .sliderSecvices__numSm {
+  line-height: 100%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .anim .firstSection::after {
   content: "";
   position: absolute;

@@ -179,7 +179,7 @@ btnNext.onclick = function() {
 
 
 
-
+//Scroll first screen
 function addOnWheel(elem, handler) {
     if (elem.addEventListener) {
         if ('onwheel' in document) {
@@ -196,22 +196,69 @@ function addOnWheel(elem, handler) {
         text.attachEvent("onmousewheel", handler);
     }
 }
-
-
 let firstEl = document.querySelector(".firstSection");
-
 addOnWheel(firstEl, function(e) {
-    var elm = document.querySelector(".sectionVideo");
-    console.log("Круть")
-        // отменим прокрутку
-    e.preventDefault();
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+
+    // отмасштабируем при помощи CSS
+    if (delta > 0) {
+        var elm = document.querySelector(".sectionVideo");
+        console.log("Круть")
+            // отменим прокрутку
+        e.preventDefault();
+        elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
 
 });
 
+// Slider offer
+let slider = document.querySelector(".sliderSecvices");
+let sliderItem = document.querySelectorAll(".sliderSecvices__item");
+
+sliderItem.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+
+        if (!slider.classList.contains("animated") && !this.classList.contains("active")) {
+            slider.classList.add("animated");
+            sliderItem.forEach(function(slide) {
+                slide.classList.remove("active");
+            });
+            e.target.classList.add("active");
+            if (e.target.nextElementSibling) {
+                e.target.nextElementSibling.style.flexGrow = "2";
+                if (e.target.nextElementSibling.nextElementSibling) {
+                    e.target.nextElementSibling.nextElementSibling.style.flexGrow = "1";
+                    if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
+                        e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "1";
+                    }
+                }
+
+
+            }
+            if (e.target.previousElementSibling) {
+                e.target.previousElementSibling.style.flexGrow = "2";
+                if (e.target.previousElementSibling.previousElementSibling) {
+                    e.target.previousElementSibling.previousElementSibling.style.flexGrow = "1";
+                    if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
+                        e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "1";
+                    }
+                }
+
+            }
+            e.target.style.flexGrow = "5";
+
+            slider.classList.remove("animated");
+
+        }
+    })
+})
 
 
 
+window.addEventListener('scroll', function() {
+
+    document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
+});
 
 
 
