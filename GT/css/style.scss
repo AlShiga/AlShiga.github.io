@@ -273,7 +273,11 @@ body {
     color: $dark;
     overflow-x: hidden;
 }
+a{
+    text-decoration:none;
+}
 
 @import "header";
 @import "mainPage";
 @import "animate";
+@import "news";
