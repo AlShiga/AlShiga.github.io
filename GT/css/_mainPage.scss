@@ -151,6 +151,7 @@
     white-space: nowrap;
     margin-right: 40px;
     width: max-content;
+    z-index: 10;
     &::after {
         content: "";
         position: absolute;
@@ -338,5 +339,91 @@
         // color: rgba( $gray, 0.43);
         transform: translateX(50%);
         transition: 0.3s;
+    }
+}
+
+.map {
+    background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
+    overflow: hidden;
+    &__map {
+        // margin-top: -700px;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    &__svg {
+        max-height: 120vh;
+        /* margin-left: -20vw; */
+        margin-top: -70vh;
+        @include media-breakpoint-down(lg) {
+            margin-left: -20vw;
+        }
+        @include media-breakpoint-down(md) {
+            margin-left: -50vw;
+        }
+    }
+    &__point {
+        cursor: pointer;
+        & ellipse:first-child {
+            rx: 10;
+            ry: 10;
+            transition: 0.5s;
+            // transform: scale(2);
+        }
+        & ellipse:last-child {
+            rx: 4;
+            ry: 4;
+            transition: 0.5s;
+            // transform: scale(2);
+        }
+        &:hover ellipse:first-child {
+            rx: 20;
+            ry: 20;
+        }
+        &.active ellipse:last-child {
+            rx: 10;
+            ry: 10;
+        }
+    }
+    &__detailsInner {
+        padding: 40px 40px 40px 160px;
+        background-color: rgba(#2C2F37, .2);
+        display: inline-block;
+        transition: 0.3s;
+        border-bottom: 1px solid $blueClass;
+    }
+}
+
+.ticker {
+    &__line {
+        display: flex;
+    }
+    &__img {
+        // height: 72px;
+        // width: auto;
+        margin-right: 200px;
+    }
+}
+
+.tippy-box[data-theme~='gt'] {
+    background-color: rgba($gray, 0.2);
+    color: $gray;
+    border-radius: 0;
+}
+
+.footerMap {
+    width: 100%;
+    height: 600px;
+}
+
+.contacts {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -130px;
+    &__inner {
+        background-color: $white;
+    }
+    &__link {
+        display: block;
     }
 }

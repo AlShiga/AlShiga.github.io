@@ -1,6 +1,7 @@
 @import "bootstrap/bootstrap";
 $dark:#4F4F4F;
 $gray: #828282;
+$map:#2C2F37;
 $white: #f2f2f2;
 $bgWhite: #E5E5E5;
 $blueDeep: #00335B;
@@ -260,8 +261,38 @@ h2,
     }
 }
 
+.btn3 {
+    color: initial;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: $gray;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    display: inline-block;
+    &::after {
+        content: url(../img/arrowBtn.svg);
+        margin-left: 15px;
+        transition: 0.3s;
+    }
+    &:hover::after {
+        margin-left: 25px;
+        display: inline-block;
+    }
+}
+
 .ttu {
     text-transform: uppercase;
+}
+
+.mp {
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -273,8 +304,14 @@ body {
     color: $dark;
     overflow-x: hidden;
 }
-a{
-    text-decoration:none;
+
+a {
+    text-decoration: none;
+}
+
+a,
+button {
+    outline: none;
 }
 
 @import "header";
