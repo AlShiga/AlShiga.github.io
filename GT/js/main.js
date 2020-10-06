@@ -33,7 +33,12 @@ function showStartAnim() {
     let rectEl = document.querySelector(".firstSection__blur");
     let nameEl = document.querySelector(".firstSection__name");
     let sloganEl = document.querySelector(".firstSection__slogan");
-
+    let widthScreen = window.innerWidth;
+    let rectH = '';
+    (widthScreen > 1400) ? rectH = "216px": '';
+    (widthScreen < 1400 && widthScreen >= 1025) ? rectH = "130px": "";
+    (widthScreen < 1025 && widthScreen >= 768) ? rectH = "188px": "";
+    (widthScreen < 768) ? rectH = "75px": "";
     setTimeout(() => {
         bodyEl.classList.remove("step0");
         bodyEl.classList.add("step5");
@@ -43,7 +48,8 @@ function showStartAnim() {
             headerEl.style.transform = "translateY(0%)";
             headerEl.style.transition = "0.2s cubic-bezier(.19,0,.51,1)";
             bgLeftEl.style.opacity = "1";
-            rectEl.style.height = "216px";
+            rectEl.style.height = rectH;
+
             rectEl.style.transition = "0.5s cubic-bezier(.19,0,.51,1)";
             rectEl.style.transitionDelay = "0.2s";
             setTimeout(() => {
@@ -216,6 +222,9 @@ addOnWheel(firstEl, function(e) {
 let slider = document.querySelector(".sliderSecvices");
 let sliderItem = document.querySelectorAll(".sliderSecvices__item");
 
+document.addEventListener("DOMContentLoaded", function() {
+    sliderItem[0].click();
+});
 sliderItem.forEach(function(item) {
     item.addEventListener('click', function(e) {
         if (!slider.classList.contains("animated") && !this.classList.contains("active")) {
@@ -224,25 +233,48 @@ sliderItem.forEach(function(item) {
                 slide.classList.remove("active");
             });
             e.target.classList.add("active");
-            if (e.target.nextElementSibling) {
-                e.target.nextElementSibling.style.flexGrow = "2";
-                if (e.target.nextElementSibling.nextElementSibling) {
-                    e.target.nextElementSibling.nextElementSibling.style.flexGrow = "1";
-                    if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
-                        e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "1";
+            if (window.innerWidth > 1025) {
+                if (e.target.nextElementSibling) {
+                    e.target.nextElementSibling.style.flexGrow = "2";
+                    if (e.target.nextElementSibling.nextElementSibling) {
+                        e.target.nextElementSibling.nextElementSibling.style.flexGrow = "1";
+                        if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
+                            e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "1";
+                        }
                     }
                 }
-            }
-            if (e.target.previousElementSibling) {
-                e.target.previousElementSibling.style.flexGrow = "2";
-                if (e.target.previousElementSibling.previousElementSibling) {
-                    e.target.previousElementSibling.previousElementSibling.style.flexGrow = "1";
-                    if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
-                        e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "1";
+                if (e.target.previousElementSibling) {
+                    e.target.previousElementSibling.style.flexGrow = "2";
+                    if (e.target.previousElementSibling.previousElementSibling) {
+                        e.target.previousElementSibling.previousElementSibling.style.flexGrow = "1";
+                        if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
+                            e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "1";
+                        }
                     }
                 }
+                e.target.style.flexGrow = "5";
+            } else {
+                if (e.target.nextElementSibling) {
+                    e.target.nextElementSibling.style.flexGrow = "2";
+                    if (e.target.nextElementSibling.nextElementSibling) {
+                        e.target.nextElementSibling.nextElementSibling.style.flexGrow = "0";
+                        if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
+                            e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "0";
+                        }
+                    }
+                }
+                if (e.target.previousElementSibling) {
+                    e.target.previousElementSibling.style.flexGrow = "2";
+                    if (e.target.previousElementSibling.previousElementSibling) {
+                        e.target.previousElementSibling.previousElementSibling.style.flexGrow = "0";
+                        if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
+                            e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "0";
+                        }
+                    }
+                }
+                e.target.style.flexGrow = "8";
             }
-            e.target.style.flexGrow = "5";
+
             slider.classList.remove("animated");
         }
     })
