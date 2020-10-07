@@ -344,21 +344,65 @@ addOnWheel(sliderPWrap, function(e) {
         // console.log("Прив")
     });
     if (delta > 0) {
+        if (sliderActiveNum == sliderPItem.length - 1) {
+            document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
+            return false;
+        }
+
         sliderPHideSlide()
         sliderPItem[sliderActiveNum].classList.remove("active");
-        sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
-        sliderPItem[sliderActiveNum + 1].classList.add("active");
-        sliderPShowSlide()
+        setTimeout(() => {
+            sliderPItem[sliderActiveNum + 1].classList.add("active");
+            sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+            setTimeout(() => {
+                sliderPShowSlide();
+            }, 300);
+        }, 500);
     } else {
+        if (sliderActiveNum == 0) {
+            document.querySelector(".projectHead").scrollIntoView({ block: "center", behavior: "smooth" });
+            return false;
+        }
         sliderPHideSlide()
         sliderPItem[sliderActiveNum].classList.remove("active");
-        sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
-        sliderPItem[sliderActiveNum - 1].classList.add("active");
-        sliderPShowSlide()
+        setTimeout(() => {
+            sliderPItem[sliderActiveNum - 1].classList.add("active");
+            sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+            setTimeout(() => {
+                sliderPShowSlide();
+            }, 300);
+        }, 500);
     }
 
 });
 
+addOnWheel(document.querySelector(".seaBig"), function(e) {
+    console.log(e)
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+    if (delta < 0) {
+        e.preventDefault()
+        sliderPItem.forEach(function(item, i, arr) {
+            item.classList.remove("active");
+        });
+        sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+        sliderPItem[sliderPItem.length - 1].classList.add("active");
+        setTimeout(() => {
+            sliderPShowSlide();
+        }, 300);
+        return false;
+    }
+});
+addOnWheel(document.querySelector(".projectHead"), function(e) {
+    sliderPItem.forEach(function(item, i, arr) {
+        item.classList.remove("active");
+    });
+    sliderPItem[0].classList.add("active");
+    setTimeout(() => {
+        sliderPShowSlide();
+    }, 300);
+    return false;
+
+});
 
 sliderPWrap.onclick = function() {
     sliderPItem.forEach(function(item, i, arr) {
@@ -370,9 +414,14 @@ sliderPWrap.onclick = function() {
     });
     sliderPHideSlide()
     sliderPItem[sliderActiveNum].classList.remove("active");
-    sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
-    sliderPItem[sliderActiveNum + 1].classList.add("active");
-    sliderPShowSlide()
+    setTimeout(() => {
+        sliderPItem[sliderActiveNum + 1].classList.add("active");
+        sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+        setTimeout(() => {
+            sliderPShowSlide();
+        }, 200);
+    }, 300);
+
 };
 
 function sliderPHideSlide() {
@@ -381,12 +430,20 @@ function sliderPHideSlide() {
         let slideContent = slide.querySelector(".sliderP__content");
         let slideText = slide.querySelector(".sliderP__textWrap");
         let slideImgW = slide.querySelector(".sliderP__img");
-
-        slideContent.style.opacity = "1";
+        let slideBg = slide.querySelector(".sliderP__bg");
+        slideBg.style.transition = "1s ease-out";
+        slideBg.style.opacity = "1";
         slideText.style.height = "0";
+        slideContent.style.transition = "1s";
         slideContent.style.opacity = "0";
         slideImgW.style.transition = "1s";
         slideImgW.style.opacity = "0";
+        setTimeout(() => {
+            slideText.style.transition = "0";
+            slideText.style.height = "";
+            slideText.style.transform = "";
+        }, 1000);
+
         // slideImgW.style.transition = "0";
     }
 }
@@ -397,13 +454,20 @@ function sliderPShowSlide() {
         let slideContent = slide.querySelector(".sliderP__content");
         let slideText = slide.querySelector(".sliderP__textWrap");
         let slideImgW = slide.querySelector(".sliderP__img");
+        let slideBg = slide.querySelector(".sliderP__bg");
+        slideBg.style.transition = "1s ease-out";
+        slideBg.style.opacity = "0";
         slideContent.style.opacity = "1";
-        slideText.style.transition = "1s";
-        slideText.style.height = "400px";
-        slideImgW.style.transition = "1s";
+
+        slideImgW.style.transition = "1s ease-out";
         slideImgW.style.opacity = "1";
         // slideImgW.style.transition = "0";
-        slideText.style.transition = "0";
+
+        slideText.style.transition = "1s ease-out";
+        slideText.style.transform = "translateX(0)";
+        // slideText.style.height = "400px";
+
+
     }
 }
 
