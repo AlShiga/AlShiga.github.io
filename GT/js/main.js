@@ -6,6 +6,7 @@ console.log(docHeight);
 
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => removePreload(), 300);
+    var modal = new VanillaModal.default();
 });
 
 function removePreload() {
@@ -244,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 sliderItem.forEach(function(item) {
     item.addEventListener('click', function(e) {
-        console.log("прив")
+        // console.log("прив")
         if (!slider.classList.contains("anim") && !this.classList.contains("active")) {
             slider.classList.add("anim");
             sliderItem.forEach(function(slide) {
@@ -352,48 +353,60 @@ let sliderPItem = document.querySelectorAll(".sliderP__item");
 let sliderActiveNum = 0;
 
 // let firstEl = document.querySelector(".firstSection");
+
+//Переключение слайдера по скролу
 addOnWheel(sliderPWrap, function(e) {
     e.preventDefault()
-    var delta = e.deltaY || e.detail || e.wheelDelta;
+    if (!bodyEl.classList.contains("animSl")) {
+        bodyEl.classList.add("animSl");
+        var delta = e.deltaY || e.detail || e.wheelDelta;
 
-    sliderPItem.forEach(function(item, i, arr) {
-        if (item.classList.contains('active')) {
-            sliderActiveNum = i;
-            return false
-        }
-        // console.log("Прив")
-    });
-    if (delta > 0) {
-        if (sliderActiveNum == sliderPItem.length - 1) {
-            document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
-            return false;
-        }
+        sliderPItem.forEach(function(item, i, arr) {
+            if (item.classList.contains('active')) {
+                sliderActiveNum = i;
+                return false
+            }
+            // console.log("Прив")
+        });
+        if (delta > 0) {
+            if (sliderActiveNum == sliderPItem.length - 1) {
+                document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
+                bodyEl.classList.remove("animSl");
+                return false;
+            }
 
-        sliderPHideSlide()
-        sliderPItem[sliderActiveNum].classList.remove("active");
-        setTimeout(() => {
-            sliderPItem[sliderActiveNum + 1].classList.add("active");
-            sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+            sliderPHideSlide()
+            sliderPItem[sliderActiveNum].classList.remove("active");
             setTimeout(() => {
-                sliderPShowSlide();
-            }, 300);
-        }, 500);
-    } else {
-        if (sliderActiveNum == 0) {
-            document.querySelector(".projectHead").scrollIntoView({ block: "center", behavior: "smooth" });
-            return false;
-        }
-        sliderPHideSlide()
-        sliderPItem[sliderActiveNum].classList.remove("active");
-        setTimeout(() => {
-            sliderPItem[sliderActiveNum - 1].classList.add("active");
-            sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                sliderPItem[sliderActiveNum + 1].classList.add("active");
+                sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                setTimeout(() => {
+                    sliderPShowSlide();
+                    setTimeout(() => {
+                        bodyEl.classList.remove("animSl");
+                    }, 1000);
+                }, 300);
+            }, 500);
+        } else {
+            if (sliderActiveNum == 0) {
+                document.querySelector(".projectHead").scrollIntoView({ block: "center", behavior: "smooth" });
+                bodyEl.classList.remove("animSl");
+                return false;
+            }
+            sliderPHideSlide()
+            sliderPItem[sliderActiveNum].classList.remove("active");
             setTimeout(() => {
-                sliderPShowSlide();
-            }, 300);
-        }, 500);
-    }
-
+                sliderPItem[sliderActiveNum - 1].classList.add("active");
+                sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                setTimeout(() => {
+                    sliderPShowSlide();
+                    setTimeout(() => {
+                        bodyEl.classList.remove("animSl");
+                    }, 1000);
+                }, 300);
+            }, 500);
+        };
+    };
 });
 
 addOnWheel(document.querySelector(".seaBig"), function(e) {
@@ -425,21 +438,33 @@ addOnWheel(document.querySelector(".projectHead"), function(e) {
 });
 
 sliderPWrap.onclick = function() {
-    sliderPItem.forEach(function(item, i, arr) {
-        if (item.classList.contains('active')) {
-            sliderActiveNum = i;
-            return false
+    if (!bodyEl.classList.contains("animSl")) {
+        bodyEl.classList.add("animSl");
+        sliderPItem.forEach(function(item, i, arr) {
+            if (item.classList.contains('active')) {
+                sliderActiveNum = i;
+                return false
+            }
+        });
+        if (sliderActiveNum == sliderPItem.length - 1) {
+            document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
+            bodyEl.classList.remove("animSl");
+            return false;
         }
-    });
-    sliderPHideSlide()
-    sliderPItem[sliderActiveNum].classList.remove("active");
-    setTimeout(() => {
-        sliderPItem[sliderActiveNum + 1].classList.add("active");
-        sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+
+        sliderPHideSlide()
+        sliderPItem[sliderActiveNum].classList.remove("active");
         setTimeout(() => {
-            sliderPShowSlide();
-        }, 200);
-    }, 300);
+            sliderPItem[sliderActiveNum + 1].classList.add("active");
+            sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+            setTimeout(() => {
+                sliderPShowSlide();
+                setTimeout(() => {
+                    bodyEl.classList.remove("animSl");
+                }, 1000);
+            }, 300);
+        }, 500);
+    }
 };
 
 function sliderPHideSlide() {
