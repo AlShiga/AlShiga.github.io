@@ -41,8 +41,7 @@
             padding-right: 20%;
         }
     }
-    div>&:nth-child(odd) {
-        // color:red;
+    &:nth-child(odd) {
         &:after {
             content: "";
             position: absolute;
@@ -54,7 +53,6 @@
         }
     }
     &:nth-child(even) {
-        color: red;
         .newsItem__img {
             height: auto;
             object-fit: cover;
@@ -78,6 +76,11 @@
         height: 10%;
         background: #F2C94C;
         opacity: 0.9;
+        transition: 1s ease-out;
+        transform: translateX(-110%);
+        &.animated {
+            transform: translateX(0);
+        }
     }
     &__img {
         @include media-breakpoint-down(md) {

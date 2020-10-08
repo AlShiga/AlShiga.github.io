@@ -202,18 +202,35 @@ function addOnWheel(elem, handler) {
         text.attachEvent("onmousewheel", handler);
     }
 }
+// addOnWheel(document.querySelector("body > div"), function(e) {
+//     e.preventDefault();
+// });
 
 let firstEl = document.querySelector(".firstSection");
 addOnWheel(firstEl, function(e) {
     var delta = e.deltaY || e.detail || e.wheelDelta;
-
-    // отмасштабируем при помощи CSS
     if (delta > 0) {
+        let btn = firstEl.querySelector(".btnNext");
         var elm = document.querySelector(".sectionVideo");
-        console.log("Круть")
-            // отменим прокрутку
         e.preventDefault();
         elm.scrollIntoView({ block: "start", behavior: "smooth" });
+        btn.style.transition = "1s";
+        btn.style.transform = "scale(3)";
+        btn.style.opacity = "0";
+    }
+
+});
+let secVideo = document.querySelector(".sectionVideo");
+addOnWheel(secVideo, function(e) {
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+    if (delta > 0) {
+        let btn = secVideo.querySelector(".btnNext");
+        var elm = document.querySelector(".sectionAbout");
+        e.preventDefault();
+        elm.scrollIntoView({ block: "start", behavior: "smooth" });
+        btn.style.transition = "1s";
+        btn.style.transform = "scale(3)";
+        btn.style.opacity = "0";
     }
 
 });
@@ -227,10 +244,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 sliderItem.forEach(function(item) {
     item.addEventListener('click', function(e) {
-        if (!slider.classList.contains("animated") && !this.classList.contains("active")) {
-            slider.classList.add("animated");
+        console.log("прив")
+        if (!slider.classList.contains("anim") && !this.classList.contains("active")) {
+            slider.classList.add("anim");
             sliderItem.forEach(function(slide) {
                 slide.classList.remove("active");
+                // slide.style.transition = "1s";
+                // slide.style.transitionDelay = "0.2s";
             });
             e.target.classList.add("active");
             if (window.innerWidth > 1025) {
@@ -275,7 +295,7 @@ sliderItem.forEach(function(item) {
                 e.target.style.flexGrow = "8";
             }
 
-            slider.classList.remove("animated");
+            slider.classList.remove("anim");
         }
     })
 })
@@ -410,7 +430,6 @@ sliderPWrap.onclick = function() {
             sliderActiveNum = i;
             return false
         }
-        // console.log("Прив")
     });
     sliderPHideSlide()
     sliderPItem[sliderActiveNum].classList.remove("active");
@@ -421,7 +440,6 @@ sliderPWrap.onclick = function() {
             sliderPShowSlide();
         }, 200);
     }, 300);
-
 };
 
 function sliderPHideSlide() {
@@ -430,6 +448,7 @@ function sliderPHideSlide() {
         let slideContent = slide.querySelector(".sliderP__content");
         let slideText = slide.querySelector(".sliderP__textWrap");
         let slideImgW = slide.querySelector(".sliderP__img");
+        let slideImg = slide.querySelector(".sliderP__img>img");
         let slideBg = slide.querySelector(".sliderP__bg");
         slideBg.style.transition = "1s ease-out";
         slideBg.style.opacity = "1";
@@ -442,9 +461,9 @@ function sliderPHideSlide() {
             slideText.style.transition = "0";
             slideText.style.height = "";
             slideText.style.transform = "";
+            slideImg.style.transition = "0s";
+            slideImg.style.height = "0vh";
         }, 1000);
-
-        // slideImgW.style.transition = "0";
     }
 }
 
@@ -454,22 +473,21 @@ function sliderPShowSlide() {
         let slideContent = slide.querySelector(".sliderP__content");
         let slideText = slide.querySelector(".sliderP__textWrap");
         let slideImgW = slide.querySelector(".sliderP__img");
+        let slideImg = slide.querySelector(".sliderP__img > img");
         let slideBg = slide.querySelector(".sliderP__bg");
         slideBg.style.transition = "1s ease-out";
         slideBg.style.opacity = "0";
         slideContent.style.opacity = "1";
-
         slideImgW.style.transition = "1s ease-out";
         slideImgW.style.opacity = "1";
-        // slideImgW.style.transition = "0";
-
-        slideText.style.transition = "1s ease-out";
+        slideText.style.transition = "1s ease-out 0.4s";
         slideText.style.transform = "translateX(0)";
-        // slideText.style.height = "400px";
-
+        slideImg.style.transition = "1s ease-out";
+        slideImg.style.height = "40vh";
 
     }
 }
+
 
 function sliderProject() {
 
