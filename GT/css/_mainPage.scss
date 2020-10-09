@@ -24,6 +24,9 @@
         & .row:first-child {
             flex-grow: 1;
         }
+        @include media-breakpoint-down(lg) {
+            padding: 120px 0;
+        }
         @include media-breakpoint-down(sm) {
             padding: 70px 0;
         }
@@ -184,6 +187,7 @@
     width: max-content;
     z-index: 10;
     color: $gray;
+    text-transform: uppercase;
     &::before {
         content: "";
         position: absolute;
@@ -494,6 +498,9 @@
             rx: 10;
             ry: 10;
         }
+    }
+    &__details {
+        margin-top: -100px;
     }
     &__detailsInner {
         padding: 40px 40px 40px 160px;

@@ -6538,6 +6538,10 @@ h2,
     font-size: 24px;
     line-height: 31px;
   }
+  .h4 {
+    font-size: 32px;
+    line-height: 40px;
+  }
   .h5 {
     font-size: 18px;
     line-height: 22px;
@@ -6658,6 +6662,12 @@ button {
   z-index: 100;
 }
 
+@media (max-width: 1399.98px) {
+  .header {
+    padding: 20px 0 30px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .header {
     padding: 20px 0 20px;
@@ -6727,6 +6737,12 @@ button {
   width: auto;
 }
 
+@media (max-width: 1399.98px) {
+  .header__logo {
+    height: 50px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .header__logo {
     height: 40px;
@@ -6774,6 +6790,12 @@ button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+@media (max-width: 1399.98px) {
+  .firstSection__inner {
+    padding: 120px 0;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -6988,6 +7010,7 @@ button {
   width: max-content;
   z-index: 10;
   color: #828282;
+  text-transform: uppercase;
 }
 
 .titleSection::before {
@@ -7400,6 +7423,10 @@ button {
 .map__point.active ellipse:last-child {
   rx: 10;
   ry: 10;
+}
+
+.map__details {
+  margin-top: -100px;
 }
 
 .map__detailsInner {

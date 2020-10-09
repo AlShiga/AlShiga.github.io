@@ -183,10 +183,17 @@ btnNextFirstEl.onclick = function() {
 addOnWheel(firstEl, function(e) {
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (delta > 0) {
-        var elm = document.querySelector(".sectionVideo");
         e.preventDefault();
-        elm.scrollIntoView({ block: "start", behavior: "smooth" });
-        btnNextHide(firstEl);
+
+        if (!bodyEl.classList.contains("scroll")) {
+            bodyEl.classList.add("scroll");
+            var elm = document.querySelector(".sectionVideo");
+            elm.scrollIntoView({ block: "start", behavior: "smooth" });
+            btnNextHide(firstEl);
+            setTimeout(() => {
+                bodyEl.classList.remove("scroll");
+            }, 2000);
+        }
     }
 });
 
@@ -200,12 +207,21 @@ btnNextSecVideo.onclick = function() {
     btnNextHide(secVideo);
 };
 addOnWheel(secVideo, function(e) {
+
+
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (delta > 0) {
-        var elm = document.querySelector(".sectionAbout");
         e.preventDefault();
-        elm.scrollIntoView({ block: "start", behavior: "smooth" });
-        btnNextHide(secVideo);
+
+        if (!bodyEl.classList.contains("scroll")) {
+            bodyEl.classList.add("scroll");
+            var elm = document.querySelector(".sectionAbout");
+            elm.scrollIntoView({ block: "start", behavior: "smooth" });
+            btnNextHide(secVideo);
+        }
+        setTimeout(() => {
+            bodyEl.classList.remove("scroll");
+        }, 300);
     }
 });
 
@@ -234,48 +250,40 @@ sliderItem.forEach(function(item) {
             slider.classList.add("anim");
             sliderItem.forEach(function(slide) {
                 slide.classList.remove("active");
-                // slide.style.transition = "1s";
-                // slide.style.transitionDelay = "0.2s";
+                if (slider.classList.contains("animated")) {
+                    slide.style.transition = "1s";
+                    slide.style.transitionDelay = "0.2s";
+                }
+
             });
             e.target.classList.add("active");
             if (window.innerWidth > 1025) {
+                sliderItem.forEach(function(slide) {
+                    slide.style.flexGrow = "1";
+                });
                 if (e.target.nextElementSibling) {
-                    e.target.nextElementSibling.style.flexGrow = "2";
+                    e.target.nextElementSibling.style.flexGrow = "3";
                     if (e.target.nextElementSibling.nextElementSibling) {
-                        e.target.nextElementSibling.nextElementSibling.style.flexGrow = "1";
-                        if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
-                            e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "1";
-                        }
+                        e.target.nextElementSibling.nextElementSibling.style.flexGrow = "2";
                     }
                 }
                 if (e.target.previousElementSibling) {
-                    e.target.previousElementSibling.style.flexGrow = "2";
+                    e.target.previousElementSibling.style.flexGrow = "3";
                     if (e.target.previousElementSibling.previousElementSibling) {
-                        e.target.previousElementSibling.previousElementSibling.style.flexGrow = "1";
-                        if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
-                            e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "1";
-                        }
+                        e.target.previousElementSibling.previousElementSibling.style.flexGrow = "2";
                     }
                 }
-                e.target.style.flexGrow = "5";
+                e.target.style.flexGrow = "6";
             } else {
+                sliderItem.forEach(function(slide) {
+                    slide.style.flexGrow = "0";
+                });
                 if (e.target.nextElementSibling) {
                     e.target.nextElementSibling.style.flexGrow = "2";
-                    if (e.target.nextElementSibling.nextElementSibling) {
-                        e.target.nextElementSibling.nextElementSibling.style.flexGrow = "0";
-                        if (e.target.nextElementSibling.nextElementSibling.nextElementSibling) {
-                            e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.flexGrow = "0";
-                        }
-                    }
+
                 }
                 if (e.target.previousElementSibling) {
                     e.target.previousElementSibling.style.flexGrow = "2";
-                    if (e.target.previousElementSibling.previousElementSibling) {
-                        e.target.previousElementSibling.previousElementSibling.style.flexGrow = "0";
-                        if (e.target.previousElementSibling.previousElementSibling.previousElementSibling) {
-                            e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.flexGrow = "0";
-                        }
-                    }
                 }
                 e.target.style.flexGrow = "8";
             }
