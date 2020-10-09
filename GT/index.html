@@ -826,8 +826,8 @@
             <script>
                 function initMap() {
                     var point = {
-                        lat: 59.855432,
-                        lng: 30.316367
+                        lat: 60.036963,
+                        lng: 30.332248
                     };
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 16,
@@ -836,11 +836,7 @@
                             "featureType": "all",
                             "elementType": "labels.text.fill",
                             "stylers": [{
-                                "saturation": 36
-                            }, {
-                                "color": "#000000"
-                            }, {
-                                "lightness": 40
+                                "color": "#6c747d"
                             }]
                         }, {
                             "featureType": "all",
@@ -848,9 +844,11 @@
                             "stylers": [{
                                 "visibility": "on"
                             }, {
-                                "color": "#000000"
+                                "color": "#13263c"
                             }, {
-                                "lightness": 16
+                                "weight": 2
+                            }, {
+                                "gamma": "1"
                             }]
                         }, {
                             "featureType": "all",
@@ -860,94 +858,62 @@
                             }]
                         }, {
                             "featureType": "administrative",
-                            "elementType": "geometry.fill",
+                            "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
+                                "weight": 0.6
                             }, {
-                                "lightness": 20
-                            }]
-                        }, {
-                            "featureType": "administrative",
-                            "elementType": "geometry.stroke",
-                            "stylers": [{
-                                "color": "#000000"
+                                "color": "#223347"
                             }, {
-                                "lightness": 17
-                            }, {
-                                "weight": 1.2
+                                "gamma": "0"
                             }]
                         }, {
                             "featureType": "landscape",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
+                                "color": "#223347"
                             }, {
-                                "lightness": 20
+                                "gamma": "1"
+                            }, {
+                                "weight": "10"
                             }]
                         }, {
                             "featureType": "poi",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 21
+                                "color": "#2f3f51"
                             }]
                         }, {
-                            "featureType": "road.highway",
-                            "elementType": "geometry.fill",
-                            "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 17
-                            }]
-                        }, {
-                            "featureType": "road.highway",
-                            "elementType": "geometry.stroke",
-                            "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 29
-                            }, {
-                                "weight": 0.2
-                            }]
-                        }, {
-                            "featureType": "road.arterial",
+                            "featureType": "poi.park",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 18
+                                "color": "#283b51"
                             }]
                         }, {
-                            "featureType": "road.local",
+                            "featureType": "road",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
+                                "color": "#182b40"
                             }, {
-                                "lightness": 16
+                                "lightness": "0"
                             }]
                         }, {
                             "featureType": "transit",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 19
+                                "color": "#304358"
                             }]
                         }, {
                             "featureType": "water",
                             "elementType": "geometry",
                             "stylers": [{
-                                "color": "#000000"
-                            }, {
-                                "lightness": 17
+                                "color": "#0e2239"
                             }]
                         }]
                     });
                     var marker = new google.maps.Marker({
                         position: point,
                         map: map,
-                        // icon: '<?php bloginfo('template_directory ') ?>/img/map-icon.svg',
+                        icon: 'img/mapmaker.svg',
                         title: 'GT Corporation',
                     });
                 }
@@ -1048,7 +1014,9 @@
         })
         wow.init();
     </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css" integrity="sha512-pYQcc5kgavar0ah58/O8hw/6Tbo3mWlmQTmvoi1i96cBz7jQYS9as5J+Nfy32rAHY6CgR9ExwnFMcBdGVcKM7g==" crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/js/OverlayScrollbars.min.js" integrity="sha512-5R3ngaUdvyhXkQkIqTf/k+Noq3phjmrqlUQyQYbgfI34Mzcx7vLIIYTy/K1VMHkL33T709kfh5y6R9Xy/Cbt7Q==" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous"></script>

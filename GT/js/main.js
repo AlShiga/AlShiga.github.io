@@ -2,11 +2,12 @@ let bodyEl = document.querySelector("body")
 
 
 let docHeight = window.innerHeight;
-console.log(docHeight);
+
 
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => removePreload(), 300);
     var modal = new VanillaModal.default();
+    var instance = OverlayScrollbars(document.querySelector("body"), { /* your options */ });
 });
 
 function removePreload() {
@@ -332,6 +333,7 @@ tippy('[data-tippy-content]', {
     arrow: false,
     delay: [100, 400],
     trigger: "click",
+    placement: 'top-end',
     zIndex: 99,
     theme: 'gt',
 });
