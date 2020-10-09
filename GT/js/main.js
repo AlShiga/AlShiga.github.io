@@ -84,11 +84,13 @@ function showStartAnim() {
 
 
 }
-SmoothScroll({
-    stepSize: 40,
-    accelerationDelta: 500,
-    accelerationMax: 3,
-})
+
+
+// SmoothScroll({
+//     stepSize: 40,
+//     accelerationDelta: 500,
+//     accelerationMax: 3,
+// })
 
 
 // let y = 0
@@ -111,23 +113,7 @@ SmoothScroll({
 
 // })
 
-let btnNext = document.querySelector(".btnNext__time");
 
-btnNext.onclick = function() {
-    // smoothScroll(".sectionVideo");
-    var elm = document.querySelector(".sectionVideo");
-
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
-};
-// window.onscroll = function(e) {
-//     var elm = document.querySelector(".sectionVideo");
-
-//     elm.scrollIntoView({ block: "start", behavior: "smooth" });
-
-//     // if (window.pageYOffset < docHeight) {
-//     //     smoothScroll(".sectionVideo");
-//     // }
-// };
 
 // function currentYPosition() {
 //     // Firefox, Chrome, Opera, Safari
@@ -185,56 +171,54 @@ btnNext.onclick = function() {
 
 
 
-
-//Scroll first screen
-function addOnWheel(elem, handler) {
-    if (elem.addEventListener) {
-        if ('onwheel' in document) {
-            // IE9+, FF17+
-            elem.addEventListener("wheel", handler);
-        } else if ('onmousewheel' in document) {
-            // устаревший вариант события
-            elem.addEventListener("mousewheel", handler);
-        } else {
-            // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
-            elem.addEventListener("MozMousePixelScroll", handler);
-        }
-    } else { // IE8-
-        text.attachEvent("onmousewheel", handler);
-    }
-}
-// addOnWheel(document.querySelector("body > div"), function(e) {
-//     e.preventDefault();
-// });
-
+//Скролл ко второмц блоку
 let firstEl = document.querySelector(".firstSection");
+let btnNextFirstEl = firstEl.querySelector(".btnNext");
+
+btnNextFirstEl.onclick = function() {
+    var elm = document.querySelector(".sectionVideo");
+    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    btnNextHide(firstEl);
+};
 addOnWheel(firstEl, function(e) {
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (delta > 0) {
-        let btn = firstEl.querySelector(".btnNext");
         var elm = document.querySelector(".sectionVideo");
         e.preventDefault();
         elm.scrollIntoView({ block: "start", behavior: "smooth" });
-        btn.style.transition = "1s";
-        btn.style.transform = "scale(3)";
-        btn.style.opacity = "0";
+        btnNextHide(firstEl);
     }
-
 });
+
+
+
 let secVideo = document.querySelector(".sectionVideo");
+let btnNextSecVideo = secVideo.querySelector(".btnNext");
+btnNextSecVideo.onclick = function() {
+    var elm = document.querySelector(".sectionAbout");
+    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    btnNextHide(secVideo);
+};
 addOnWheel(secVideo, function(e) {
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (delta > 0) {
-        let btn = secVideo.querySelector(".btnNext");
         var elm = document.querySelector(".sectionAbout");
         e.preventDefault();
         elm.scrollIntoView({ block: "start", behavior: "smooth" });
-        btn.style.transition = "1s";
-        btn.style.transform = "scale(3)";
-        btn.style.opacity = "0";
+        btnNextHide(secVideo);
     }
-
 });
+
+
+function btnNextHide(section) {
+    let btn = section.querySelector(".btnNext");
+    btn.style.transition = "1s";
+    btn.style.transform = "scale(3)";
+    btn.style.opacity = "0";
+    btn.style.pointerEvents = "none";
+}
+
+
 
 // Slider offer
 let slider = document.querySelector(".sliderSecvices");
@@ -301,7 +285,7 @@ sliderItem.forEach(function(item) {
     })
 })
 
-
+// Карта
 mapPoint = document.querySelectorAll(".map__point");
 cartMap = document.querySelector(".map__detailsInner");
 cartMapName = document.querySelector(".map__detailsName");
@@ -335,7 +319,6 @@ function changeCartMap(object) {
     }, 300);
 }
 
-//
 tippy('[data-tippy-content]', {
     allowHTML: true,
     arrow: false,
@@ -514,8 +497,51 @@ function sliderPShowSlide() {
 }
 
 
-function sliderProject() {
+window.onscroll = function(e) {
+    let scrMy = window.pageYOffset;
+    let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect();
+    let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
+    let partnersTop = document.querySelector(".partners  ").getBoundingClientRect();
+    if (-aboutTop.top > 0 && -aboutTop.top < aboutTop.height) {
+        paralaxAbout()
+    }
+    if (-licensesTop.top > 0 && -licensesTop.top < licensesTop.height) {
+        paralaxLicenses()
+    }
+    if (-partnersTop.top > 0 && -partnersTop.top < partnersTop.height) {
+        paralaxPartners()
+    }
+};
 
+function paralaxAbout() {
+    let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect()
+    document.querySelector(".sectionAbout__scr1").style.transform = "translateY(" + -aboutTop.top / 5 + "px )";
+    document.querySelector(".sectionAbout__scr1").style.transition = "0.5s ease-out";
+    document.querySelector(".sectionAbout__scr2").style.transform = "translateY(" + -aboutTop.top / 10 + "px )";
+    document.querySelector(".sectionAbout__scr2").style.transition = "0.5s ease-out";
+}
+
+function paralaxLicenses() {
+    let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
+    let coef = -licensesTop.top / licensesTop.height - 0.5;
+    let imges = document.querySelectorAll(".licenses__img");
+    imges.forEach(function(img) {
+        img.style.transform = "scale(1.15)translateY(" + 10 * coef + "% )";
+        img.style.transition = "0.5s ease-out";
+    });
+}
+
+function paralaxPartners() {
+    let partnersTop = document.querySelector(".partners  ").getBoundingClientRect().top;
+    let lines = document.querySelectorAll(".partners__line");
+    let x = (partnersTop) / 5;
+    console.log(x)
+    lines.forEach(function(line, i) {
+        console.log(line)
+        let rev = 1;
+        (i % 2) ? rev = -1: '';
+        line.style.transform = "translateX(" + rev * x + "px )";
+    });;
 }
 
 
@@ -524,7 +550,23 @@ function sliderProject() {
 
 
 
-
+//Скролл к блоку
+function addOnWheel(elem, handler) {
+    if (elem.addEventListener) {
+        if ('onwheel' in document) {
+            // IE9+, FF17+
+            elem.addEventListener("wheel", handler);
+        } else if ('onmousewheel' in document) {
+            // устаревший вариант события
+            elem.addEventListener("mousewheel", handler);
+        } else {
+            // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
+            elem.addEventListener("MozMousePixelScroll", handler);
+        }
+    } else { // IE8-
+        text.attachEvent("onmousewheel", handler);
+    }
+}
 
 ! function() {
     "use strict";

@@ -45,17 +45,17 @@
         width: 1000px;
         height: 216px;
         right: 150px;
-        bottom: 20px;
-        background: rgba(0, 107, 168, 0.31);
+        bottom: 22px;
+        background: rgba($color: #1E7FCA, $alpha: 0.4);
         backdrop-filter: blur(4px);
         z-index: 1;
         @include media-breakpoint-down(lg) {
             right: 340px;
-            bottom: 16px;
+            bottom: 18px;
         }
         @include media-breakpoint-down(md) {
             right: 340px;
-            bottom: 13px;
+            bottom: 14px;
         }
         @include media-breakpoint-down(sm) {
             right: 50%;
@@ -179,7 +179,8 @@
     display: flex;
     align-items: flex-end;
     white-space: nowrap;
-    margin-right: 40px;
+    margin: 0;
+    padding: 0;
     width: max-content;
     z-index: 10;
     color: $gray;
@@ -195,8 +196,8 @@
     &::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 101%;
+        bottom: 5px;
+        left: calc(100% + 40px);
         width: 0vw;
         height: 1px;
         border-bottom: 1px solid $blueClass;
@@ -242,11 +243,13 @@
         left: 0;
         width: 100%;
         height: auto;
-        transform: scaleY(0.7);
+        // transform: scaleY(1);
         transition: 1.5s ease-out;
+        transform: scaleY(1.2);
         transform-origin: bottom;
+        visibility: visible !important;
         &.animated {
-            transform: scaleY(1);
+            transform: scaleY(0.9);
         }
     }
     &__img {
@@ -494,6 +497,7 @@
     }
     &__detailsInner {
         padding: 40px 40px 40px 160px;
+        width: 700px;
         background-color: rgba(#2C2F37, .2);
         display: inline-block;
         transition: 0.3s;
@@ -502,6 +506,7 @@
 }
 
 .ticker {
+    opacity: 0.2;
     &__line {
         display: flex;
     }
@@ -516,6 +521,7 @@
     background-color: rgba($gray, 0.2);
     color: $gray;
     border-radius: 0;
+    padding: 10px 40px;
 }
 
 .footerMap {
@@ -554,9 +560,13 @@
 
 .licenses {
     background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
-    color: $dark;
+    color: $gray;
+    &__imgWrap {
+        margin: 10px;
+        display: block;
+        overflow: hidden;
+    }
     &__img {
-        padding: 10px;
         width: 100%;
         height: auto;
         &_h {
@@ -580,6 +590,11 @@
     }
     &__item {
         margin: 0 25px;
+        width: 180px;
+        flex-shrink: 0;
+        @include media-breakpoint-down(md) {
+            width: 100px;
+        }
     }
 }
 

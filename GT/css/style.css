@@ -6454,6 +6454,7 @@ h2,
 }
 
 .h2 {
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 46px;
@@ -6467,6 +6468,7 @@ h2,
 }
 
 .h4 {
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
@@ -6474,6 +6476,7 @@ h2,
 }
 
 .h5 {
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -6481,6 +6484,7 @@ h2,
 }
 
 .h6 {
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -6630,7 +6634,7 @@ li {
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
   color: #4F4F4F;
   overflow-x: hidden;
 }
@@ -6649,7 +6653,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
   padding: 20px 0 40px;
   z-index: 100;
 }
@@ -6744,7 +6748,7 @@ button {
   left: 0;
   height: 100%;
   width: 16.6666%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
 }
 
 @media (max-width: 1024.98px) {
@@ -6798,8 +6802,8 @@ button {
   width: 1000px;
   height: 216px;
   right: 150px;
-  bottom: 20px;
-  background: rgba(0, 107, 168, 0.31);
+  bottom: 22px;
+  background: rgba(30, 127, 202, 0.4);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   z-index: 1;
@@ -6808,14 +6812,14 @@ button {
 @media (max-width: 1399.98px) {
   .firstSection__blur {
     right: 340px;
-    bottom: 16px;
+    bottom: 18px;
   }
 }
 
 @media (max-width: 1024.98px) {
   .firstSection__blur {
     right: 340px;
-    bottom: 13px;
+    bottom: 14px;
   }
 }
 
@@ -6856,7 +6860,7 @@ button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #E3E6EC;
 }
 
 .btnNext {
@@ -6977,7 +6981,8 @@ button {
       -ms-flex-align: end;
           align-items: flex-end;
   white-space: nowrap;
-  margin-right: 40px;
+  margin: 0;
+  padding: 0;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -6992,14 +6997,14 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
 }
 
 .titleSection::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 101%;
+  bottom: 5px;
+  left: calc(100% + 40px);
   width: 0vw;
   height: 1px;
   border-bottom: 1px solid #1E7FCA;
@@ -7060,17 +7065,18 @@ button {
   left: 0;
   width: 100%;
   height: auto;
-  -webkit-transform: scaleY(0.7);
-          transform: scaleY(0.7);
   -webkit-transition: 1.5s ease-out;
   transition: 1.5s ease-out;
+  -webkit-transform: scaleY(1.2);
+          transform: scaleY(1.2);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  visibility: visible !important;
 }
 
 .lighthouse__bg.animated {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  -webkit-transform: scaleY(0.9);
+          transform: scaleY(0.9);
 }
 
 .lighthouse__img {
@@ -7398,11 +7404,16 @@ button {
 
 .map__detailsInner {
   padding: 40px 40px 40px 160px;
+  width: 700px;
   background-color: rgba(44, 47, 55, 0.2);
   display: inline-block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   border-bottom: 1px solid #1E7FCA;
+}
+
+.ticker {
+  opacity: 0.2;
 }
 
 .ticker__line {
@@ -7419,6 +7430,7 @@ button {
   background-color: rgba(130, 130, 130, 0.2);
   color: #828282;
   border-radius: 0;
+  padding: 10px 40px;
 }
 
 .footerMap {
@@ -7463,11 +7475,16 @@ button {
 
 .licenses {
   background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
-  color: #4F4F4F;
+  color: #828282;
+}
+
+.licenses__imgWrap {
+  margin: 10px;
+  display: block;
+  overflow: hidden;
 }
 
 .licenses__img {
-  padding: 10px;
   width: 100%;
   height: auto;
 }
@@ -7501,6 +7518,15 @@ button {
 
 .partners__item {
   margin: 0 25px;
+  width: 180px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media (max-width: 1024.98px) {
+  .partners__item {
+    width: 100px;
+  }
 }
 
 .projectBody {
@@ -7618,7 +7644,7 @@ button {
   right: 100%;
   width: 100vw;
   height: 100%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
   z-index: 900;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -7631,15 +7657,15 @@ button {
   left: 100%;
   width: 100vw;
   height: 100%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
   z-index: 900;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .anim .header {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  -webkit-transform: translateY(-110%);
+          transform: translateY(-110%);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -7659,8 +7685,8 @@ button {
 }
 
 .anim .firstSection__name {
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  -webkit-transform: translateY(110%);
+          transform: translateY(110%);
 }
 
 .anim .firstSection__slogan {
@@ -7861,6 +7887,12 @@ button {
   position: relative;
 }
 
+@media (min-width: 1025px) {
+  .footer {
+    padding-bottom: 30vh;
+  }
+}
+
 .footer__img {
   position: absolute;
   bottom: 0;
@@ -7944,7 +7976,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #E5E5E5;
+  background-color: #E3E6EC;
   -webkit-transition: 1s ease-out 0.3s;
   transition: 1s ease-out 0.3s;
 }
@@ -8126,7 +8158,6 @@ button {
 }
 
 .modal-content img {
-  width: 100%;
   height: auto;
   max-width: 80vw;
   max-height: 80vh;

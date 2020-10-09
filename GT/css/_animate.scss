@@ -22,7 +22,7 @@
         transition: 0.5s;
     }
     .header {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
         transition: 0.2s;
     }
     .header>div {
@@ -36,7 +36,7 @@
         height: 0;
     }
     .firstSection__name {
-        transform: translateY(100%)
+        transform: translateY(110%)
     }
     .firstSection__slogan {
         transform: translateY(50px);

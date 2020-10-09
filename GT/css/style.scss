@@ -3,7 +3,7 @@ $dark:#4F4F4F;
 $gray: #828282;
 $map:#2C2F37;
 $white: #f2f2f2;
-$bgWhite: #E5E5E5;
+$bgWhite: #E3E6EC;
 $blueDeep: #00335B;
 $blueClass:#1E7FCA;
 $blueLight:#00BDFA;
@@ -159,6 +159,7 @@ h2,
 }
 
 .h2 {
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 46px;
@@ -172,6 +173,7 @@ h2,
 }
 
 .h4 {
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -179,6 +181,7 @@ h2,
 }
 
 .h5 {
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -186,6 +189,7 @@ h2,
 }
 
 .h6 {
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;

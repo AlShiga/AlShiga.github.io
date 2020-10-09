@@ -97,6 +97,9 @@
     background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
     color: $gray;
     position: relative;
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 30vh;
+    }
     &__img {
         position: absolute;
         bottom: 0;
