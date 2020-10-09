@@ -6,8 +6,18 @@ let docHeight = window.innerHeight;
 
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => removePreload(), 300);
+    wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 100,
+        mobile: true,
+        live: true
+    })
+    wow.init();
     var modal = new VanillaModal.default();
-    var instance = OverlayScrollbars(document.querySelector("body"), { /* your options */ });
+    // var instance = OverlayScrollbars(document.querySelector("body"), { /* your options */ });
+
+
 });
 
 function removePreload() {
