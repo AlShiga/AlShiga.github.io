@@ -11,6 +11,7 @@
         height: 100%;
         width: 16.6666%;
         background-color: $bgWhite;
+        transition: all 0.5s cubic-bezier(0.19, 0, 0.51, 1) 0.2s;
         @include media-breakpoint-down(md) {
             width: 13.6666%;
         }
@@ -39,6 +40,7 @@
         position: relative;
         text-transform: uppercase;
         line-height: 1;
+        transition: 0.5s cubic-bezier(.19, 0, .51, 1) 0.3s;
         & span {
             color: $blueClass;
         }
@@ -52,6 +54,7 @@
         background: rgba($color: #1E7FCA, $alpha: 0.4);
         backdrop-filter: blur(4px);
         z-index: 1;
+        transition: all 0.5s cubic-bezier(0.19, 0, 0.51, 1) 0.2s;
         @include media-breakpoint-down(lg) {
             right: 340px;
             bottom: 18px;
@@ -74,6 +77,7 @@
     &__slogan {
         display: flex;
         align-items: start;
+        transition: 0.5s cubic-bezier(.19, 0, .51, 1) 0.1s;
     }
     &__sloganText {
         width: 70%;
@@ -102,9 +106,9 @@
     width: 220px;
     height: 220px;
     z-index: 1;
-    * {
-        transition: 0.3s;
-    }
+    // * {
+    //     transition: 0.3s;
+    // }
     &__inner {
         width: 100%;
         height: 100%;
@@ -122,12 +126,25 @@
         top: 0;
         left: 0;
         stroke: $white;
+        fill: transparent;
     }
     &__time {
         position: absolute;
         top: 0;
         left: 0;
         stroke: $white;
+        fill: transparent;
+        stroke-width: 5;
+        stroke-dasharray: 450;
+        stroke-dashoffset: 450;
+        transition: 40s;
+        path {
+            stroke: $white;
+            stroke-width: 5;
+            stroke-dasharray: 450;
+            stroke-dashoffset: 450;
+            transition: 40s;
+        }
     }
     &__line {
         position: absolute;
@@ -136,6 +153,7 @@
         width: 1px;
         height: 100px;
         background-color: $white;
+        transition: 0.3s;
     }
     &:hover {
         cursor: pointer;
@@ -164,6 +182,15 @@
     }
     @include media-breakpoint-down(md) {
         display: none;
+    }
+    &_video {
+        bottom: -60px;
+        .btnNext__text {
+            transform: translate(-50%, -50%);
+        }
+    }
+    &_sectionSecvices {
+        bottom: -60px;
     }
 }
 
@@ -233,6 +260,12 @@
             margin-top: -50px;
         }
     }
+    @include media-breakpoint-down(md) {
+        &__scr1,
+        &__scr2 {
+            transition: transform 0.5s ease-out 0s;
+        }
+    }
 }
 
 .numCompany {
@@ -259,10 +292,43 @@
     &__img {
         position: relative;
     }
+    &__slogan {
+        display: flex;
+        align-items: flex-start;
+        position: absolute;
+        top: 65%;
+        left: 16.66%;
+        color: $white;
+        z-index: 1;
+    }
+    &__quote {
+        flex-shrink: 0;
+        width: 45px;
+        height: auto;
+        margin-right: 35px;
+        @include media-breakpoint-down(md) {
+            width: 22px;
+            margin-right: 10px;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 18px;
+        }
+    }
+    &__text {
+        width: 100%;
+        max-width: 560px;
+        @include media-breakpoint-down(md) {
+            max-width: 380px;
+        }
+        @include media-breakpoint-down(sm) {
+            max-width: 270px;
+        }
+    }
 }
 
 .sectionSecvices {
     color: $white;
+    position: relative;
     &__inner {
         margin-top: -400px;
     }
@@ -576,6 +642,10 @@
     &__img {
         width: 100%;
         height: auto;
+        transition: transform 0.5s ease-out 0s;
+        @include media-breakpoint-down(md) {
+            transition: 0s !important;
+        }
         &_h {
             height: 100%;
             object-fit: cover;
@@ -585,6 +655,7 @@
 
 .projectHead {
     color: $gray;
+    position: relative;
 }
 
 .partners {
@@ -594,6 +665,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        @include media-breakpoint-down(md) {
+            transition: 0s !important;
+        }
     }
     &__item {
         margin: 0 25px;
@@ -613,83 +687,11 @@
 .sliderP {
     &__item {
         position: relative;
-        margin-bottom: 100px;
-        transition: 0.5s;
-        height: 300px;
-    }
-    &__bg {
-        opacity: 0.2;
-        width: 80%;
-        margin-left: 20%;
-        img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
     }
     &__content {
-        z-index: 1;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 40vh;
         opacity: 0;
-    }
-    &__contentWrap {
-        position: relative;
-    }
-    &__img {
-        opacity: 0;
-        img {
-            width: 100%;
-            height: 0vh;
-            object-fit: cover;
-            object-position: top;
-        }
-    }
-    &__textWrap {
-        position: absolute;
-        top: 60%;
-        left: 20%;
-        width: 80%;
-        height: 400px;
-        transform: translate(100%);
-        background: rgba(0, 0, 0, 0.6);
-        padding: 0px 80px;
-        // height: 0;
-        // height: 400px;
-        transition: 1s;
-        /* height: 0; */
-        overflow: hidden;
-        @include media-breakpoint-down(lg) {
-            top: 40%;
-            left: 10%;
-            width: 90%;
-        }
-    }
-    &__text {
-        display: flex;
-        margin-top: 40px;
-        margin-bottom: 60px;
-        margin-right: 50px;
-        p {
-            margin-right: 50px;
-            max-width: 45%;
-        }
-    }
-    &__line {
-        margin-top: 8px;
-        width: 50px;
-        min-width: 50px;
-        margin-right: 20px;
-        height: 1px;
-        background-color: $white;
-    }
-    .active &__content {
-        opacity: 1;
-    }
-    &__item.active {
-        height: 80vh;
     }
 }
