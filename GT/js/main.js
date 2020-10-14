@@ -384,11 +384,16 @@ sliderPScroll.getOption("preventMouse");
 let seaScroll = new WheelIndicator({
     elem: document.querySelector(".seaBig"),
     callback: function(e) {
+        projectHeadScroll.setOptions({
+            preventMouse: false,
+        })
         if (!noScroll) {
             if (e.direction == "down") { // "up" or "down"
-                turnOff()
-                    // console.log("sea")
             } else {
+                projectHeadScroll.setOptions({
+                    preventMouse: true,
+                })
+                e.preventDefault();
                 noScroll = true;
                 sliderPNum(sliderPItem.length - 1);
                 sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
@@ -401,15 +406,24 @@ let seaScroll = new WheelIndicator({
                 }, 300);
             }
         }
-    }
+    },
+    preventMouse: false,
 
 });
-seaScroll.getOption("preventMouse");
+
 let projectHeadScroll = new WheelIndicator({
     elem: document.querySelector(".projectHead"),
+
     callback: function(e) {
+        projectHeadScroll.setOptions({
+            preventMouse: false,
+        })
         if (!noScroll) {
             if (e.direction == "down") { // "up" or "down"
+                projectHeadScroll.setOptions({
+                    preventMouse: true,
+                })
+                e.preventDefault();
                 noScroll = true;
                 btnNextHide(document.querySelector(".projectHead"));
                 sliderPNum(0);
@@ -422,14 +436,12 @@ let projectHeadScroll = new WheelIndicator({
                     }, 1200);
                 }, 300);
 
-            } else {
-                turnOff()
-            }
+            } else {}
         }
-    }
-
+    },
+    preventMouse: false,
 });
-projectHeadScroll.getOption("preventMouse");
+
 
 function sliderPHideSlide() {
     let slide = document.querySelector(".sliderP__item.active");
@@ -456,7 +468,6 @@ function sliderPHideSlide() {
             slideImgW.style.transform = "";
             slideImgW.style.opacity = "";
             slideBorder.style.transition = "";
-
         }, 1300);
     }
 }

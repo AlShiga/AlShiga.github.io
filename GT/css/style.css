@@ -7174,7 +7174,7 @@ button {
           transform: translate(-50%, -50%);
 }
 
-@media (max-width: 1024.98px) {
+@media (max-width: 1399.98px) {
   .btnNext_video {
     bottom: -80px;
   }
@@ -7184,7 +7184,7 @@ button {
   bottom: -60px;
 }
 
-@media (max-width: 1024.98px) {
+@media (max-width: 1399.98px) {
   .btnNext_sectionSecvices {
     bottom: -80px;
   }
@@ -7915,6 +7915,8 @@ button {
      object-fit: cover;
   -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .sliderP__img_right img {

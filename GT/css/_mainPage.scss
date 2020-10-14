@@ -188,13 +188,13 @@
         .btnNext__text {
             transform: translate(-50%, -50%);
         }
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             bottom: -80px;
         }
     }
     &_sectionSecvices {
         bottom: -60px;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
             bottom: -80px;
         }
     }
@@ -729,6 +729,7 @@
             width: 100%;
             object-fit: cover;
             transition: 0.7s ease-out;
+            flex-shrink: 0;
         }
         &_right {
             img {
