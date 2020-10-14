@@ -688,10 +688,60 @@
     &__item {
         position: relative;
     }
-    &__content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
+    &__img{
+        height: 300px;
+        width: 80%;
+        padding: 0px 0 100px;
+        display: flex;
+        margin-left: auto;
+        opacity: 0.3;
+        overflow:hidden;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition:0.7s ease-out;
+        }
+        &_right{
+            img{
+                transform:translateX(-100%);
+            }
+        }
+    }
+    &__descriptionWrap{
+        position:absolute;
+        top: 30%;
+        width: 80%;
+        right: 0;
+        transform: translateX(100%);
+        z-index:1;
+        overflow: hidden;
+
+    }
+    &__description{
+        background: rgba(0, 0, 0, 0.6);
+        // backdrop-filter: blur(10px);
+        padding: 60px 80px;
+    }
+    &__text{
+        display: flex;
+        div{
+            flex-shrink:0;
+            width: 50px;
+            border-top:1px solid white;
+            position: relative;
+            top:9px;
+        }
+        p {
+            flex-grow: 1;
+            padding-left:30px
+        }
+    }
+    .active &__textWrap{
+
+
+    }
+    .active &__text{
+        display: flex;
     }
 }

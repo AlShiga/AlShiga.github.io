@@ -13,9 +13,8 @@ document.querySelector(".nav__bg").addEventListener('click', function(e) {
 
 let docHeight = window.innerHeight;
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => removePreload(), 300);
+    setTimeout(() => removePreload(), 500);
     wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     wow.init();
     var modal = new VanillaModal.default();
-    // var instance = OverlayScrollbars(document.querySelector("body"), { /* your options */ });
 });
 
 function removePreload() {
@@ -106,92 +104,18 @@ function showStartAnim() {
     }
 }
 
-
-// SmoothScroll({
-//     stepSize: 40,
-//     accelerationDelta: 500,
-//     accelerationMax: 3,
-// })
-
-
-// let y = 0
-
-// document.body.addEventListener('wheel', (e) => {
-//     const height = document.body.offsetHeight
-
-//     y = y + e.wheelDeltaY
-
-//     if (y < -height + window.innerHeight) {
-//         y = -height + window.innerHeight
-//     }
-
-//     if (y > 0) {
-//         y = 0
-//     }
-
-//     const tr = `translateY(${y}px)`
-//     document.body.style.transform = tr
-
-// })
-
-
-
-// function currentYPosition() {
-//     // Firefox, Chrome, Opera, Safari
-//     if (self.pageYOffset) return self.pageYOffset;
-//     // Internet Explorer 6 - standards mode
-//     if (document.documentElement && document.documentElement.scrollTop)
-//         return document.documentElement.scrollTop;
-//     // Internet Explorer 6, 7 and 8
-//     if (document.body.scrollTop) return document.body.scrollTop;
-//     return 0;
-// }
-
-
-// function elmYPosition(eID) {
-//     var elm = document.querySelector(eID);
-//     var y = elm.offsetTop;
-//     var node = elm;
-//     while (node.offsetParent && node.offsetParent != document.body) {
-//         node = node.offsetParent;
-//         y += node.offsetTop;
-//     }
-//     return y;
-// }
-
-
-// function smoothScroll(eID) {
-//     var startY = currentYPosition();
-//     var stopY = elmYPosition(eID);
-//     var distance = stopY > startY ? stopY - startY : startY - stopY;
-//     if (distance < 100) {
-//         scrollTo(0, stopY);
-//         return;
-//     }
-//     var speed = Math.round(distance / 10);
-//     if (speed >= 20) speed = 100;
-//     var step = Math.round(distance / 25);
-//     var leapY = stopY > startY ? startY + step : startY - step;
-//     var timer = 0;
-//     if (stopY > startY) {
-//         for (var i = startY; i < stopY; i += step) {
-//             setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-//             leapY += step;
-//             if (leapY > stopY) leapY = stopY;
-//             timer++;
-//         }
-//         return;
-//     }
-//     for (var i = startY; i > stopY; i -= step) {
-//         setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-//         leapY -= step;
-//         if (leapY < stopY) leapY = stopY;
-//         timer++;
-//     }
-// }
-
-
-
+let sliderImgTern = setTimeout(imgTern, 5000);
+function imgTern() {
+    let el = document.querySelector(".sliderP__item.active .sliderP__img")
+    if(el){
+        if(el.classList.contains("sliderP__img_right")){
+            el.classList.remove("sliderP__img_right");
+        }else{
+            el.classList.add("sliderP__img_right");
+        }
+    }
+    sliderImgTern = setTimeout(imgTern, 5000); // (*)
+}
 //Скролл ко второмц блоку
 let firstEl = document.querySelector(".firstSection");
 let btnNextFirstEl = firstEl.querySelector(".btnNext");
@@ -207,7 +131,6 @@ btnNextFirstEl.onclick = function() {
 let firstScroll = new WheelIndicator({
     elem: firstEl,
     callback: function(e) {
-        console.log(e.direction)
         if (e.direction == "down") { // "up" or "down"
             if (!noScroll) {
                 noScroll = true;
@@ -241,7 +164,6 @@ btnNextSecVideo.onclick = function() {
 let secondScroll = new WheelIndicator({
     elem: secVideo,
     callback: function(e) {
-        console.log(e.direction)
         if (e.direction == "down") { // "up" or "down"
             if (!noScroll) {
                 noScroll = true;
@@ -286,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 sliderItem.forEach(function(item) {
     item.addEventListener('click', function(e) {
-        // console.log("прив")
         if (!slider.classList.contains("anim") && !this.classList.contains("active")) {
             slider.classList.add("anim");
             sliderItem.forEach(function(slide) {
@@ -345,9 +266,7 @@ mapPoint.forEach(function(item) {
         mapPoint.forEach(function(slide) {
             slide.classList.remove("active");
         });
-        // console.log(this.dataset.target)
         let object = arrObjects.find(item => item.name == this.dataset.target);
-        console.log(object)
         changeCartMap(object);
         this.classList.add("active");
     })
@@ -386,159 +305,163 @@ let sliderPItem = document.querySelectorAll(".sliderP__item");
 let sliderActiveNum = 0;
 
 // let firstEl = document.querySelector(".firstSection");
-
+// let sliderPWrapScroll = new WheelIndicator({
+//     elem: document.querySelector(".projectBody"),
+//     callback: function(e) {
+//         if (noScroll){
+//             turnOn()
+//         }
+// }
+// });
+// sliderPWrapScroll.getOption("preventMouse");
 //Переключение слайдера по скролу
 let sliderPScroll = new WheelIndicator({
-    elem: sliderPWrap,
+    elem: document.querySelector(".projectBody"),
     callback: function(e) {
-        console.log(e.direction)
-        noScroll = true;
-        sliderPItem.forEach(function(item, i, arr) {
-            if (item.classList.contains('active')) {
-                sliderActiveNum = i;
-                sliderPHideSlide()
-                item.classList.remove('active')
-            }
-        });
-        if (e.direction == "down") {
-            if (sliderActiveNum == sliderPItem.length - 1) {
-                document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
-                return false;
-            }
-
-            setTimeout(() => {
-                sliderPItem[sliderActiveNum + 1].classList.add("active");
-                sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
-                setTimeout(() => {
-                    sliderPShowSlide();
+        // console.log(e)
+        if (!noScroll){
+            noScroll = true;
+            sliderPItem.forEach(function(item, i, arr) {
+                if (item.classList.contains('active')) {
+                    sliderActiveNum = i;
+                    sliderPHideSlide()
+                    item.classList.remove('active')
+                }
+            });
+            if (e.direction == "down") {
+                if (sliderActiveNum == sliderPItem.length - 1) {
+                    document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
+                    // console.log('1')
                     setTimeout(() => {
                         noScroll = false;
-                    }, 700);
-                }, 300);
-            }, 500);
+                    // console.log('2')
 
-        } else {
-            if (sliderActiveNum == 0) {
-                document.querySelector(".projectHead").scrollIntoView({ block: "center", behavior: "smooth" });
-                return false;
-            }
+                    }, 1200);
+                    return false;
+                }
 
-            setTimeout(() => {
-                sliderPItem[sliderActiveNum - 1].classList.add("active");
-                sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
                 setTimeout(() => {
-                    sliderPShowSlide();
+                    sliderPItem[sliderActiveNum + 1].classList.add("active");
+                    sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }, 500);
+
+            } else {
+                if (sliderActiveNum == 0) {
+                    document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
                     setTimeout(() => {
                         noScroll = false;
-                    }, 700);
-                }, 300);
-            }, 500);
+                    }, 1200);
+                    return false;
+                }
+
+                setTimeout(() => {
+                    sliderPItem[sliderActiveNum - 1].classList.add("active");
+                    sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }, 500);
+            }
         }
     }
 });
 sliderPScroll.getOption("preventMouse");
 
-// addOnWheel(document.querySelector(".seaBig"), function(e) {
-//     console.log(e)
-//     var delta = e.deltaY || e.detail || e.wheelDelta;
-//     if (delta < 0) {
-//         e.preventDefault()
-//         sliderPItem.forEach(function(item, i, arr) {
-//             item.classList.remove("active");
-//         });
-//         sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
-//         sliderPItem[sliderPItem.length - 1].classList.add("active");
-//         setTimeout(() => {
-//             sliderPShowSlide();
-//         }, 300);
-//         return false;
-//     }
-// });
-// addOnWheel(document.querySelector(".projectHead"), function(e) {
-//     sliderPItem.forEach(function(item, i, arr) {
-//         item.classList.remove("active");
-//     });
-//     sliderPItem[0].classList.add("active");
-//     setTimeout(() => {
-//         sliderPShowSlide();
-//     }, 300);
-//     return false;
-
-// });
-
-sliderPWrap.onclick = function() {
-    if (!bodyEl.classList.contains("animSl")) {
-        bodyEl.classList.add("animSl");
-        sliderPItem.forEach(function(item, i, arr) {
-            if (item.classList.contains('active')) {
-                sliderActiveNum = i;
-                return false
-            }
-        });
-        if (sliderActiveNum == sliderPItem.length - 1) {
-            document.querySelector(".seaBig").scrollIntoView({ block: "center", behavior: "smooth" });
-            bodyEl.classList.remove("animSl");
-            return false;
-        }
-
-        sliderPHideSlide()
-        sliderPItem[sliderActiveNum].classList.remove("active");
-        setTimeout(() => {
-            sliderPItem[sliderActiveNum + 1].classList.add("active");
-            sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
-            setTimeout(() => {
-                sliderPShowSlide();
+let seaScroll = new WheelIndicator({
+    elem: document.querySelector(".seaBig"),
+    callback: function(e) {
+        if (!noScroll) {
+            if (e.direction == "down") { // "up" or "down"
+            turnOff()
+            // console.log("sea")
+            } else {
+                noScroll = true;
+                sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                sliderPItem[sliderPItem.length - 1].classList.add("active");
                 setTimeout(() => {
-                    bodyEl.classList.remove("animSl");
-                }, 1000);
-            }, 300);
-        }, 500);
+                    sliderPShowSlide();
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 1200);
+                }, 300);
+            }
+        }
     }
-};
+
+});
+seaScroll.getOption("preventMouse");
+let projectHeadScroll = new WheelIndicator({
+    elem: document.querySelector(".projectHead"),
+    callback: function(e) {
+        if (!noScroll) {
+            if (e.direction == "down") { // "up" or "down"
+                noScroll = true;
+                btnNextHide(document.querySelector(".projectHead"));
+                sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
+                sliderPItem[0].classList.add("active");
+                setTimeout(() => {
+                    sliderPShowSlide();
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 1200);
+                }, 300);
+
+            } else {
+                turnOff()
+            }
+        }
+    }
+
+});
+projectHeadScroll.getOption("preventMouse");
 
 function sliderPHideSlide() {
     let slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideContent = slide.querySelector(".sliderP__content");
-        let slideText = slide.querySelector(".sliderP__textWrap");
+        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        let slideDescription = slide.querySelector(".sliderP__description");
         let slideImgW = slide.querySelector(".sliderP__img");
         let slideImg = slide.querySelector(".sliderP__img>img");
-        let slideBg = slide.querySelector(".sliderP__bg");
-        slideBg.style.transition = "1s ease-out";
-        slideBg.style.opacity = "1";
-        slideText.style.height = "0";
-        slideContent.style.transition = "1s";
-        slideContent.style.opacity = "0";
-        slideImgW.style.transition = "1s";
-        slideImgW.style.opacity = "0";
+        slideDescription.style.transition = "0.6s ease-out";
+        slideDescription.style.transform = "translateY(-100%)";
+        slideImgW.style.transition = "1s ease-out 0.4s";
+        slideImgW.style.transform = "scale(1)";
+        slideImgW.style.opacity = "0.3";
         setTimeout(() => {
-            slideText.style.transition = "0";
-            slideText.style.height = "";
-            slideText.style.transform = "";
-            slideImg.style.transition = "0s";
-            slideImg.style.height = "0vh";
-        }, 1000);
+            slideDescriptionWrap.style.transition = "";
+            slideDescription.style.transition = "";
+            slideDescriptionWrap.style.transform = "";
+            slideDescription.style.transform = "";
+            slideImgW.style.transition = "";
+            slideImgW.style.transform = "";
+            slideImgW.style.opacity = "";
+        }, 1300);
     }
 }
 
 function sliderPShowSlide() {
+    clearTimeout(sliderImgTern);
+    sliderImgTern = setTimeout(imgTern, 5000);
     let slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideContent = slide.querySelector(".sliderP__content");
-        let slideText = slide.querySelector(".sliderP__textWrap");
+        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        let slideDescription = slide.querySelector(".sliderP__slideDescription");
         let slideImgW = slide.querySelector(".sliderP__img");
         let slideImg = slide.querySelector(".sliderP__img > img");
-        let slideBg = slide.querySelector(".sliderP__bg");
-        slideBg.style.transition = "1s ease-out";
-        slideBg.style.opacity = "0";
-        slideContent.style.opacity = "1";
-        slideImgW.style.transition = "1s ease-out";
+        slideDescriptionWrap.style.transition = "1s ease-out 0.4s";
+        slideDescriptionWrap.style.transform = "translateX(0)";
+        slideImgW.style.transition = "1s ease-out 0s";
+        slideImgW.style.transform = "scale(1.3)";
         slideImgW.style.opacity = "1";
-        slideText.style.transition = "1s ease-out 0.4s";
-        slideText.style.transform = "translateX(0)";
-        slideImg.style.transition = "1s ease-out";
-        slideImg.style.height = "40vh";
-
     }
 }
 
@@ -581,9 +504,7 @@ function paralaxPartners() {
     let partnersTop = document.querySelector(".partners  ").getBoundingClientRect().top;
     let lines = document.querySelectorAll(".partners__line");
     let x = (partnersTop) / 5;
-    console.log(x)
     lines.forEach(function(line, i) {
-        console.log(line)
         let rev = 1;
         (i % 2) ? rev = -1: '';
         line.style.transform = "translateX(" + rev * x + "px )";
@@ -595,25 +516,23 @@ function paralaxPartners() {
 
 
 
-
-
-//Скролл к блоку
-function addOnWheel(elem, handler) {
-    if (elem.addEventListener) {
-        if ('onwheel' in document) {
-            // IE9+, FF17+
-            elem.addEventListener("wheel", handler);
-        } else if ('onmousewheel' in document) {
-            // устаревший вариант события
-            elem.addEventListener("mousewheel", handler);
-        } else {
-            // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
-            elem.addEventListener("MozMousePixelScroll", handler);
-        }
-    } else { // IE8-
-        text.attachEvent("onmousewheel", handler);
-    }
-}
+// //Скролл к блоку
+// function addOnWheel(elem, handler) {
+//     if (elem.addEventListener) {
+//         if ('onwheel' in document) {
+//             // IE9+, FF17+
+//             elem.addEventListener("wheel", handler);
+//         } else if ('onmousewheel' in document) {
+//             // устаревший вариант события
+//             elem.addEventListener("mousewheel", handler);
+//         } else {
+//             // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
+//             elem.addEventListener("MozMousePixelScroll", handler);
+//         }
+//     } else { // IE8-
+//         text.attachEvent("onmousewheel", handler);
+//     }
+// }
 
 ! function() {
     "use strict";
@@ -731,7 +650,7 @@ let arrObjects = [{
     «Приразломная». Для выполнения отсыпки и тщательного равнения постели был сконструирован и
     построен специальный подводный планировщик на базе самоподъемной платформы `,
         about2: `в уникальной
-    кольцевой сборке. 
+    кольцевой сборке.
     В 2006 году это оборудование и технологии были нами использованы для равнения и крепления от
     размыва дна у причальных сооружений в порту Приморск Ленинградской области. А в 2007 году, для создания подводной постели для посадки на дно погружной баржи, перевозящей опорный блок рейдового терминалва Варандей.`
     },

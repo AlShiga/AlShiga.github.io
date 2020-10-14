@@ -7823,11 +7823,74 @@ button {
   position: relative;
 }
 
-.sliderP__content {
+.sliderP__img {
+  height: 300px;
+  width: 80%;
+  padding: 0px 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.sliderP__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.7s ease-out;
+  transition: 0.7s ease-out;
+}
+
+.sliderP__img_right img {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.sliderP__descriptionWrap {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+  top: 30%;
+  width: 80%;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sliderP__description {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px 80px;
+}
+
+.sliderP__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sliderP__text div {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 50px;
+  border-top: 1px solid white;
+  position: relative;
+  top: 9px;
+}
+
+.sliderP__text p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-left: 30px;
+}
+
+.active .sliderP__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .anim .firstSection::after {
