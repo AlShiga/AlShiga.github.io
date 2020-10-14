@@ -6817,6 +6817,18 @@ button {
   margin-bottom: 40px;
 }
 
+@media (max-width: 1399.98px) {
+  .nav__content li {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .nav__content li {
+    margin-bottom: 20px;
+  }
+}
+
 .nav__content a {
   color: #f2f2f2;
   opacity: 0.6;
@@ -6840,7 +6852,7 @@ button {
   height: 100%;
   background-color: #24272E;
   color: #f2f2f2;
-  padding: 100px 8.33vw;
+  padding: 10vh 8.33vw;
 }
 
 .nav_active .nav__content {
@@ -6862,6 +6874,13 @@ button {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+@media (max-width: 1399.98px) {
+  .nav__img {
+    height: 14vh;
+    width: auto;
+  }
 }
 
 @media (max-width: 1024.98px) {
@@ -7155,8 +7174,20 @@ button {
           transform: translate(-50%, -50%);
 }
 
+@media (max-width: 1024.98px) {
+  .btnNext_video {
+    bottom: -80px;
+  }
+}
+
 .btnNext_sectionSecvices {
   bottom: -60px;
+}
+
+@media (max-width: 1024.98px) {
+  .btnNext_sectionSecvices {
+    bottom: -80px;
+  }
 }
 
 .sectionVideo {
@@ -7353,6 +7384,18 @@ button {
   margin-top: -400px;
 }
 
+@media (max-width: 1399.98px) {
+  .sectionSecvices__inner {
+    margin-top: -300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .sectionSecvices__inner {
+    margin-top: -200px;
+  }
+}
+
 .sectionSecvices__headBg {
   background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
   width: 100%;
@@ -7372,6 +7415,13 @@ button {
           justify-content: flex-end;
   height: 500px;
   visibility: visible !important;
+}
+
+@media (max-width: 1399.98px) {
+  .sliderSecvices {
+    height: 350px;
+    margin-bottom: 400px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -7439,6 +7489,12 @@ button {
   width: 560px;
 }
 
+@media (max-width: 1399.98px) {
+  .sliderSecvices__content {
+    width: 400px;
+  }
+}
+
 @media (max-width: 1024.98px) {
   .sliderSecvices__content {
     left: 40px;
@@ -7470,6 +7526,9 @@ button {
 
 @media (max-width: 767.98px) {
   .sliderSecvices__title {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
     white-space: normal;
     max-width: 70vw;
   }
@@ -7538,6 +7597,12 @@ button {
 @media (max-width: 1024.98px) {
   .sliderSecvices__numSmWrap {
     left: -25px;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .sliderSecvices__numSmWrap {
+    display: none;
   }
 }
 
@@ -7808,9 +7873,17 @@ button {
       flex-shrink: 0;
 }
 
+@media (max-width: 1399.98px) {
+  .partners__item {
+    margin: 0 20px;
+    width: 140px;
+  }
+}
+
 @media (max-width: 1024.98px) {
   .partners__item {
     width: 100px;
+    margin: 0 15px;
   }
 }
 
@@ -7825,7 +7898,7 @@ button {
 
 .sliderP__img {
   height: 300px;
-  width: 80%;
+  width: 87%;
   padding: 0px 0 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7852,7 +7925,7 @@ button {
 .sliderP__descriptionWrap {
   position: absolute;
   top: 30%;
-  width: 80%;
+  width: 87%;
   right: 0;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -7863,6 +7936,13 @@ button {
 .sliderP__description {
   background: rgba(0, 0, 0, 0.6);
   padding: 60px 80px;
+  position: relative;
+}
+
+@media (max-width: 1024.98px) {
+  .sliderP__description {
+    padding: 40px 60px;
+  }
 }
 
 .sliderP__text {
@@ -7887,10 +7967,76 @@ button {
   padding-left: 30px;
 }
 
+.sliderP__border {
+  position: absolute;
+  top: 30%;
+  width: 105%;
+  right: 0;
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+  z-index: 2;
+  height: 3px;
+  background-color: #1E7FCA;
+}
+
+@media (max-width: 1399.98px) {
+  .sliderP__border {
+    width: 103%;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .sliderP__border {
+    width: 102%;
+  }
+}
+
 .active .sliderP__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.counter {
+  position: fixed;
+  top: calc(50vh - 99px);
+  color: #4F4F4F;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.counter__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.counter__num {
+  margin-bottom: 30px;
+  line-height: 50px;
+  -webkit-transition: 0.5s ease-out 1s;
+  transition: 0.5s ease-out 1s;
+}
+
+.counter__num.active {
+  margin-bottom: 30px;
+  line-height: 50px;
+  font-size: 46px;
+  color: #1E7FCA;
+  -webkit-transition: 0.5s ease-out 0;
+  transition: 0.5s ease-out 0;
+  font-weight: 700;
+}
+
+.counter_hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .anim .firstSection::after {

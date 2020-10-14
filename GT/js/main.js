@@ -105,12 +105,13 @@ function showStartAnim() {
 }
 
 let sliderImgTern = setTimeout(imgTern, 5000);
+
 function imgTern() {
     let el = document.querySelector(".sliderP__item.active .sliderP__img")
-    if(el){
-        if(el.classList.contains("sliderP__img_right")){
+    if (el) {
+        if (el.classList.contains("sliderP__img_right")) {
             el.classList.remove("sliderP__img_right");
-        }else{
+        } else {
             el.classList.add("sliderP__img_right");
         }
     }
@@ -319,7 +320,7 @@ let sliderPScroll = new WheelIndicator({
     elem: document.querySelector(".projectBody"),
     callback: function(e) {
         // console.log(e)
-        if (!noScroll){
+        if (!noScroll) {
             noScroll = true;
             sliderPItem.forEach(function(item, i, arr) {
                 if (item.classList.contains('active')) {
@@ -331,16 +332,18 @@ let sliderPScroll = new WheelIndicator({
             if (e.direction == "down") {
                 if (sliderActiveNum == sliderPItem.length - 1) {
                     document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
+                    sliderPNum(1, false);
                     // console.log('1')
                     setTimeout(() => {
                         noScroll = false;
-                    // console.log('2')
+                        // console.log('2')
 
                     }, 1200);
                     return false;
                 }
 
                 setTimeout(() => {
+                    sliderPNum(sliderActiveNum + 1);
                     sliderPItem[sliderActiveNum + 1].classList.add("active");
                     sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
                     setTimeout(() => {
@@ -354,6 +357,7 @@ let sliderPScroll = new WheelIndicator({
             } else {
                 if (sliderActiveNum == 0) {
                     document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
+                    sliderPNum(1, false);
                     setTimeout(() => {
                         noScroll = false;
                     }, 1200);
@@ -361,6 +365,7 @@ let sliderPScroll = new WheelIndicator({
                 }
 
                 setTimeout(() => {
+                    sliderPNum(sliderActiveNum - 1);
                     sliderPItem[sliderActiveNum - 1].classList.add("active");
                     sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
                     setTimeout(() => {
@@ -381,10 +386,11 @@ let seaScroll = new WheelIndicator({
     callback: function(e) {
         if (!noScroll) {
             if (e.direction == "down") { // "up" or "down"
-            turnOff()
-            // console.log("sea")
+                turnOff()
+                    // console.log("sea")
             } else {
                 noScroll = true;
+                sliderPNum(sliderPItem.length - 1);
                 sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
                 sliderPItem[sliderPItem.length - 1].classList.add("active");
                 setTimeout(() => {
@@ -406,6 +412,7 @@ let projectHeadScroll = new WheelIndicator({
             if (e.direction == "down") { // "up" or "down"
                 noScroll = true;
                 btnNextHide(document.querySelector(".projectHead"));
+                sliderPNum(0);
                 sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
                 sliderPItem[0].classList.add("active");
                 setTimeout(() => {
@@ -429,10 +436,14 @@ function sliderPHideSlide() {
     if (slide) {
         let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
         let slideDescription = slide.querySelector(".sliderP__description");
+        let slideBorder = slide.querySelector(".sliderP__border");
         let slideImgW = slide.querySelector(".sliderP__img");
         let slideImg = slide.querySelector(".sliderP__img>img");
         slideDescription.style.transition = "0.6s ease-out";
         slideDescription.style.transform = "translateY(-100%)";
+        slideBorder.style.transition = "0.6s ease-out";
+        slideBorder.style.transform = "";
+
         slideImgW.style.transition = "1s ease-out 0.4s";
         slideImgW.style.transform = "scale(1)";
         slideImgW.style.opacity = "0.3";
@@ -444,6 +455,8 @@ function sliderPHideSlide() {
             slideImgW.style.transition = "";
             slideImgW.style.transform = "";
             slideImgW.style.opacity = "";
+            slideBorder.style.transition = "";
+
         }, 1300);
     }
 }
@@ -455,16 +468,43 @@ function sliderPShowSlide() {
     if (slide) {
         let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
         let slideDescription = slide.querySelector(".sliderP__slideDescription");
+        let slideBorder = slide.querySelector(".sliderP__border");
         let slideImgW = slide.querySelector(".sliderP__img");
         let slideImg = slide.querySelector(".sliderP__img > img");
         slideDescriptionWrap.style.transition = "1s ease-out 0.4s";
         slideDescriptionWrap.style.transform = "translateX(0)";
+        slideBorder.style.transition = "1s ease-out 0.7s";
+        slideBorder.style.transform = "translateX(0)";
         slideImgW.style.transition = "1s ease-out 0s";
         slideImgW.style.transform = "scale(1.3)";
         slideImgW.style.opacity = "1";
     }
 }
 
+let sliderPcount = document.querySelector(".counter")
+let sliderPcountInner = document.querySelector(".counter__inner")
+let sliderPcountItems = document.querySelectorAll(".counter__num")
+
+function sliderPNum(active, show = true) {
+    if (show) {
+        sliderPcount.classList.remove("counter_hide");
+        sliderPcountItems.forEach(function(num) {
+            num.classList.remove("active");
+        });
+        // console.log(active);
+        // console.log(sliderPcountItems);
+        // console.log(sliderPcountItems[active]);
+        let x = 80 * active;
+        sliderPcountItems[active].classList.add("active");
+        sliderPcountInner.style.transform = "translateY(-" + x + "px)";
+    } else {
+        sliderPcount.classList.add("counter_hide");
+        sliderPcountItems.forEach(function(num) {
+            num.classList.remove("active");
+        });
+    }
+
+}
 
 window.onscroll = function(e) {
     let scrMy = window.pageYOffset;
@@ -493,8 +533,8 @@ function paralaxAbout() {
 function paralaxLicenses() {
     let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
     let coef = -licensesTop.top / licensesTop.height - 0.5;
-    let imges = document.querySelectorAll(".licenses__img");
-    imges.forEach(function(img) {
+    let images = document.querySelectorAll(".licenses__img");
+    images.forEach(function(img) {
         img.style.transform = "scale(1.15)translateY(" + 10 * coef + "% )";
         img.style.transition = "0.5s ease-out";
     });
@@ -533,6 +573,17 @@ function paralaxPartners() {
 //         text.attachEvent("onmousewheel", handler);
 //     }
 // }
+
+function getCoords(elem) { // кроме IE8-
+    var box = elem.getBoundingClientRect();
+
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+
+}
+
 
 ! function() {
     "use strict";

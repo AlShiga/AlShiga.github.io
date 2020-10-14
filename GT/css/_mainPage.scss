@@ -188,9 +188,15 @@
         .btnNext__text {
             transform: translate(-50%, -50%);
         }
+        @include media-breakpoint-down(md) {
+            bottom: -80px;
+        }
     }
     &_sectionSecvices {
         bottom: -60px;
+        @include media-breakpoint-down(md) {
+            bottom: -80px;
+        }
     }
 }
 
@@ -331,6 +337,12 @@
     position: relative;
     &__inner {
         margin-top: -400px;
+        @include media-breakpoint-down(lg) {
+            margin-top: -300px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-top: -200px;
+        }
     }
     &__headBg {
         background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
@@ -346,6 +358,10 @@
     justify-content: flex-end;
     height: 500px;
     visibility: visible !important;
+    @include media-breakpoint-down(lg) {
+        height: 350px;
+        margin-bottom: 400px;
+    }
     @include media-breakpoint-down(sm) {
         height: 300px;
         margin-bottom: 450px;
@@ -393,6 +409,9 @@
         bottom: 40px;
         left: 100px;
         width: 560px;
+        @include media-breakpoint-down(lg) {
+            width: 400px;
+        }
         @include media-breakpoint-down(md) {
             left: 40px;
         }
@@ -414,6 +433,7 @@
         transition: 1s;
         white-space: nowrap;
         @include media-breakpoint-down(sm) {
+            width: min-content;
             white-space: normal;
             max-width: 70vw;
         }
@@ -467,6 +487,9 @@
         // transition-delay: 0.5s;
         @include media-breakpoint-down(md) {
             left: -25px;
+        }
+        @include media-breakpoint-down(md) {
+            display: none;
         }
     }
     &__numSm {
@@ -673,8 +696,13 @@
         margin: 0 25px;
         width: 180px;
         flex-shrink: 0;
+        @include media-breakpoint-down(lg) {
+            margin: 0 20px;
+            width: 140px;
+        }
         @include media-breakpoint-down(md) {
             width: 100px;
+            margin: 0 15px;
         }
     }
 }
@@ -688,60 +716,105 @@
     &__item {
         position: relative;
     }
-    &__img{
+    &__img {
         height: 300px;
-        width: 80%;
+        width: 87%;
         padding: 0px 0 100px;
         display: flex;
         margin-left: auto;
         opacity: 0.3;
-        overflow:hidden;
-        img{
+        overflow: hidden;
+        img {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            transition:0.7s ease-out;
+            transition: 0.7s ease-out;
         }
-        &_right{
-            img{
-                transform:translateX(-100%);
+        &_right {
+            img {
+                transform: translateX(-100%);
             }
         }
     }
-    &__descriptionWrap{
-        position:absolute;
+    &__descriptionWrap {
+        position: absolute;
         top: 30%;
-        width: 80%;
+        width: 87%;
         right: 0;
         transform: translateX(100%);
-        z-index:1;
+        z-index: 1;
         overflow: hidden;
-
     }
-    &__description{
+    &__description {
         background: rgba(0, 0, 0, 0.6);
         // backdrop-filter: blur(10px);
         padding: 60px 80px;
+        position: relative;
+        @include media-breakpoint-down(md) {
+            padding: 40px 60px;
+        }
     }
-    &__text{
+    &__text {
         display: flex;
-        div{
-            flex-shrink:0;
+        div {
+            flex-shrink: 0;
             width: 50px;
-            border-top:1px solid white;
+            border-top: 1px solid white;
             position: relative;
-            top:9px;
+            top: 9px;
         }
         p {
             flex-grow: 1;
-            padding-left:30px
+            padding-left: 30px
         }
     }
-    .active &__textWrap{
-
-
+    &__border {
+        position: absolute;
+        top: 30%;
+        width: 105%;
+        right: 0;
+        transform: translateX(110%);
+        z-index: 2;
+        height: 3px;
+        background-color: $blueClass;
+        @include media-breakpoint-down(lg) {
+            width: 103%;
+        }
+        @include media-breakpoint-down(md) {
+            width: 102%;
+        }
     }
-    .active &__text{
+    .active &__textWrap {}
+    .active &__text {
         display: flex;
+    }
+}
+
+.counter {
+    position: fixed;
+    top: calc(50vh - 99px);
+    color: $dark;
+    transition: 1s;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        transition: 1s ease-in-out;
+    }
+    &__num {
+        margin-bottom: 30px;
+        line-height: 50px;
+        transition: 0.5s ease-out 1s;
+    }
+    &__num.active {
+        margin-bottom: 30px;
+        line-height: 50px;
+        font-size: 46px;
+        color: #1E7FCA;
+        transition: 0.5s ease-out 0;
+        font-weight: 700;
+    }
+    &_hide {
+        opacity: 0;
+        pointer-events: none;
     }
 }
