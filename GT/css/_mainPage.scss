@@ -679,6 +679,11 @@
 .projectHead {
     color: $gray;
     position: relative;
+    @include media-breakpoint-down(sm) {
+        .m-b-6 {
+            margin-bottom: 160px;
+        }
+    }
 }
 
 .partners {
@@ -817,5 +822,43 @@
     &_hide {
         opacity: 0;
         pointer-events: none;
+    }
+}
+
+.sliderPM {
+    color: $white;
+    &__item {
+        position: relative;
+    }
+    &__img {
+        height: 300px;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        margin-left: auto;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__descriptionWrap {
+        margin: -100px 0 0 auto;
+        width: 87%;
+        z-index: 1;
+        overflow: hidden;
+        @include media-breakpoint-down(sm) {
+            width: 95%;
+        }
+    }
+    &__description {
+        background: rgba(0, 0, 0, 0.6);
+        // backdrop-filter: blur(10px);
+        padding: 45px 90px 45px 30px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding: 30px 40px 30px 20px;
+        }
     }
 }

@@ -24,6 +24,23 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     wow.init();
     var modal = new VanillaModal.default();
+
+    var swiper = new Swiper('.swiper-container', {
+        // direction: 'vertical',
+        slidesPerView: 1,
+        mousewheel: true,
+        clickable: true,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function(index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+    });
 });
 
 function removePreload() {
