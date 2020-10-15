@@ -2,19 +2,12 @@ let bodyEl = document.querySelector("body");
 let burger = document.querySelectorAll(".burger");
 let menu = document.querySelector(".nav");
 let noScroll = false;
-burger.forEach(function(item) {
-    item.addEventListener('click', function(e) {
-        menu.classList.toggle("nav_active")
-    })
-});
-document.querySelector(".nav__bg").addEventListener('click', function(e) {
-    menu.classList.toggle("nav_active")
-})
+
 
 let docHeight = window.innerHeight;
 
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => removePreload(), 500);
+    setTimeout(() => removePreload(), 1000);
     wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',
@@ -30,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         slidesPerView: 1,
         mousewheel: true,
         clickable: true,
+        loop: true,
         autoplay: {
             delay: 5000,
         },
@@ -41,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
             },
         },
     });
+    if (window.innerWidth < 1025) {
+        var myElement = document.querySelector(".header_fixed");
+        // construct an instance of Headroom, passing the element
+        var headroom = new Headroom(myElement);
+        // initialise
+        headroom.init();
+    }
 });
 
 function removePreload() {
@@ -121,19 +122,17 @@ function showStartAnim() {
     }
 }
 
-let sliderImgTern = setTimeout(imgTern, 5000);
+burger.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        menu.classList.toggle("nav_active")
+    })
+});
+document.querySelector(".nav__bg").addEventListener('click', function(e) {
+    menu.classList.toggle("nav_active")
+})
 
-function imgTern() {
-    let el = document.querySelector(".sliderP__item.active .sliderP__img")
-    if (el) {
-        if (el.classList.contains("sliderP__img_right")) {
-            el.classList.remove("sliderP__img_right");
-        } else {
-            el.classList.add("sliderP__img_right");
-        }
-    }
-    sliderImgTern = setTimeout(imgTern, 5000); // (*)
-}
+
+
 //Скролл ко второмц блоку
 let firstEl = document.querySelector(".firstSection");
 let btnNextFirstEl = firstEl.querySelector(".btnNext");
@@ -321,17 +320,19 @@ tippy('[data-tippy-content]', {
 let sliderPWrap = document.querySelector(".sliderP");
 let sliderPItem = document.querySelectorAll(".sliderP__item");
 let sliderActiveNum = 0;
-
-// let firstEl = document.querySelector(".firstSection");
-// let sliderPWrapScroll = new WheelIndicator({
-//     elem: document.querySelector(".projectBody"),
-//     callback: function(e) {
-//         if (noScroll){
-//             turnOn()
-//         }
-// }
-// });
-// sliderPWrapScroll.getOption("preventMouse");
+let sliderImgTern = setTimeout(imgTern, 5000);
+//Смена картинки в слайдере
+function imgTern() {
+    let el = document.querySelector(".sliderP__item.active .sliderP__img")
+    if (el) {
+        if (el.classList.contains("sliderP__img_right")) {
+            el.classList.remove("sliderP__img_right");
+        } else {
+            el.classList.add("sliderP__img_right");
+        }
+    }
+    sliderImgTern = setTimeout(imgTern, 5000); // (*)
+}
 //Переключение слайдера по скролу
 let sliderPScroll = new WheelIndicator({
     elem: document.querySelector(".projectBody"),
@@ -401,17 +402,23 @@ sliderPScroll.getOption("preventMouse");
 let seaScroll = new WheelIndicator({
     elem: document.querySelector(".seaBig"),
     callback: function(e) {
-        projectHeadScroll.setOptions({
+        console.log(3)
+        seaScroll.setOptions({
             preventMouse: false,
         })
         if (!noScroll) {
-            if (e.direction == "down") { // "up" or "down"
-            } else {
-                projectHeadScroll.setOptions({
+            if (e.direction == "up") {
+                noScroll = true;
+                seaScroll.setOptions({
                     preventMouse: true,
                 })
-                e.preventDefault();
-                noScroll = true;
+                sliderPItem.forEach(function(item, i, arr) {
+                    if (item.classList.contains('active')) {
+                        sliderActiveNum = i;
+                        sliderPHideSlide()
+                        item.classList.remove('active')
+                    }
+                });
                 sliderPNum(sliderPItem.length - 1);
                 sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
                 sliderPItem[sliderPItem.length - 1].classList.add("active");
@@ -422,27 +429,38 @@ let seaScroll = new WheelIndicator({
                     }, 1200);
                 }, 300);
             }
+        } else {
+            seaScroll.setOptions({
+                preventMouse: true,
+            })
         }
     },
     preventMouse: false,
-
 });
 
 let projectHeadScroll = new WheelIndicator({
     elem: document.querySelector(".projectHead"),
-
     callback: function(e) {
+        console.log(1)
         projectHeadScroll.setOptions({
             preventMouse: false,
         })
         if (!noScroll) {
+            console.log(12)
             if (e.direction == "down") { // "up" or "down"
+                console.log(13)
+                noScroll = true;
                 projectHeadScroll.setOptions({
                     preventMouse: true,
                 })
-                e.preventDefault();
-                noScroll = true;
                 btnNextHide(document.querySelector(".projectHead"));
+                sliderPItem.forEach(function(item, i, arr) {
+                    if (item.classList.contains('active')) {
+                        sliderActiveNum = i;
+                        sliderPHideSlide()
+                        item.classList.remove('active')
+                    }
+                });
                 sliderPNum(0);
                 sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
                 sliderPItem[0].classList.add("active");
@@ -454,6 +472,10 @@ let projectHeadScroll = new WheelIndicator({
                 }, 300);
 
             } else {}
+        } else {
+            projectHeadScroll.setOptions({
+                preventMouse: true,
+            })
         }
     },
     preventMouse: false,
@@ -467,12 +489,11 @@ function sliderPHideSlide() {
         let slideDescription = slide.querySelector(".sliderP__description");
         let slideBorder = slide.querySelector(".sliderP__border");
         let slideImgW = slide.querySelector(".sliderP__img");
-        let slideImg = slide.querySelector(".sliderP__img>img");
+        // let slideImg = slide.querySelector(".sliderP__img>img");
         slideDescription.style.transition = "0.6s ease-out";
         slideDescription.style.transform = "translateY(-100%)";
         slideBorder.style.transition = "0.6s ease-out";
         slideBorder.style.transform = "";
-
         slideImgW.style.transition = "1s ease-out 0.4s";
         slideImgW.style.transform = "scale(1)";
         slideImgW.style.opacity = "0.3";
@@ -495,10 +516,10 @@ function sliderPShowSlide() {
     let slide = document.querySelector(".sliderP__item.active");
     if (slide) {
         let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
-        let slideDescription = slide.querySelector(".sliderP__slideDescription");
+        // let slideDescription = slide.querySelector(".sliderP__slideDescription");
         let slideBorder = slide.querySelector(".sliderP__border");
         let slideImgW = slide.querySelector(".sliderP__img");
-        let slideImg = slide.querySelector(".sliderP__img > img");
+        // let slideImg = slide.querySelector(".sliderP__img > img");
         slideDescriptionWrap.style.transition = "1s ease-out 0.4s";
         slideDescriptionWrap.style.transform = "translateX(0)";
         slideBorder.style.transition = "1s ease-out 0.7s";
@@ -535,7 +556,7 @@ function sliderPNum(active, show = true) {
 }
 
 window.onscroll = function(e) {
-    let scrMy = window.pageYOffset;
+    // let scrMy = window.pageYOffset;
     let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect();
     let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
     let partnersTop = document.querySelector(".partners  ").getBoundingClientRect();
@@ -564,7 +585,7 @@ function paralaxLicenses() {
     let images = document.querySelectorAll(".licenses__img");
     images.forEach(function(img) {
         img.style.transform = "scale(1.15)translateY(" + 10 * coef + "% )";
-        img.style.transition = "0.5s ease-out";
+        // img.style.transition = "0.5s ease-out";
     });
 }
 
@@ -578,38 +599,6 @@ function paralaxPartners() {
         line.style.transform = "translateX(" + rev * x + "px )";
         // line.style.transition = "none";
     });;
-}
-
-
-
-
-
-// //Скролл к блоку
-// function addOnWheel(elem, handler) {
-//     if (elem.addEventListener) {
-//         if ('onwheel' in document) {
-//             // IE9+, FF17+
-//             elem.addEventListener("wheel", handler);
-//         } else if ('onmousewheel' in document) {
-//             // устаревший вариант события
-//             elem.addEventListener("mousewheel", handler);
-//         } else {
-//             // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
-//             elem.addEventListener("MozMousePixelScroll", handler);
-//         }
-//     } else { // IE8-
-//         text.attachEvent("onmousewheel", handler);
-//     }
-// }
-
-function getCoords(elem) { // кроме IE8-
-    var box = elem.getBoundingClientRect();
-
-    return {
-        top: box.top + pageYOffset,
-        left: box.left + pageXOffset
-    };
-
 }
 
 

@@ -266,7 +266,7 @@
             margin-top: -50px;
         }
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-up(lg) {
         &__scr1,
         &__scr2 {
             transition: transform 0.5s ease-out 0s;
@@ -636,10 +636,14 @@
         display: block;
         white-space: nowrap;
     }
+    .m-t-4 {
+        margin-top: 40px;
+    }
 }
 
 .seaBig {
     position: relative;
+    height: 100vh;
     &__logo {
         position: absolute;
         top: 50%;
@@ -665,13 +669,15 @@
     &__img {
         width: 100%;
         height: auto;
-        transition: transform 0.5s ease-out 0s;
         @include media-breakpoint-down(md) {
             transition: 0s !important;
         }
         &_h {
             height: 100%;
             object-fit: cover;
+        }
+        @include media-breakpoint-up(lg) {
+            transition: transform 0.5s ease-out 0s;
         }
     }
 }

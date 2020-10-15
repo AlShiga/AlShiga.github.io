@@ -6749,6 +6749,20 @@ button {
   }
 }
 
+.header_fixed {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (max-width: 1024.98px) {
+  .header_fixed {
+    position: fixed;
+    display: block;
+  }
+}
+
 .nav {
   position: fixed;
   top: 0;
@@ -6909,6 +6923,32 @@ button {
   right: 4.12%;
   top: 50%;
   z-index: 200;
+}
+
+.headroom {
+  will-change: transform !important;
+  -webkit-transition: -webkit-transform 200ms linear !important;
+  transition: -webkit-transform 200ms linear !important;
+  transition: transform 200ms linear !important;
+  transition: transform 200ms linear, -webkit-transform 200ms linear !important;
+}
+
+.headroom > div {
+  -webkit-transform: none !important;
+          transform: none !important;
+  opacity: 1 !important;
+}
+
+.headroom--pinned,
+.headroom--bottom,
+.headroom--top {
+  -webkit-transform: translateY(0%) !important;
+          transform: translateY(0%) !important;
+}
+
+.headroom--unpinned {
+  -webkit-transform: translateY(-100%) !important;
+          transform: translateY(-100%) !important;
 }
 
 .firstSection {
@@ -7282,7 +7322,7 @@ button {
   }
 }
 
-@media (max-width: 1024.98px) {
+@media (min-width: 1025px) {
   .sectionAbout__scr1, .sectionAbout__scr2 {
     -webkit-transition: -webkit-transform 0.5s ease-out 0s;
     transition: -webkit-transform 0.5s ease-out 0s;
@@ -7784,8 +7824,13 @@ button {
   white-space: nowrap;
 }
 
+.contacts .m-t-4 {
+  margin-top: 40px;
+}
+
 .seaBig {
   position: relative;
+  height: 100vh;
 }
 
 .seaBig__logo {
@@ -7818,10 +7863,6 @@ button {
 .licenses__img {
   width: 100%;
   height: auto;
-  -webkit-transition: -webkit-transform 0.5s ease-out 0s;
-  transition: -webkit-transform 0.5s ease-out 0s;
-  transition: transform 0.5s ease-out 0s;
-  transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;
 }
 
 @media (max-width: 1024.98px) {
@@ -7835,6 +7876,15 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 1025px) {
+  .licenses__img {
+    -webkit-transition: -webkit-transform 0.5s ease-out 0s;
+    transition: -webkit-transform 0.5s ease-out 0s;
+    transition: transform 0.5s ease-out 0s;
+    transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;
+  }
 }
 
 .projectHead {
@@ -8125,8 +8175,8 @@ button {
 }
 
 .anim .header {
-  -webkit-transform: translateY(-110%);
-          transform: translateY(-110%);
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -8146,8 +8196,8 @@ button {
 }
 
 .anim .firstSection__name {
-  -webkit-transform: translateY(110%);
-          transform: translateY(110%);
+  -webkit-transform: translateY(130%);
+          transform: translateY(130%);
 }
 
 .anim .firstSection__slogan {

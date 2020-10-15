@@ -67,6 +67,16 @@
             height: 40px;
         }
     }
+    &_fixed {
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            display: block;
+        }
+    }
 }
 
 .nav {
@@ -192,4 +202,23 @@
     right: 4.12%;
     top: 50%;
     z-index: 200;
+}
+
+.headroom {
+    will-change: transform !important;
+    transition: transform 200ms linear !important;
+    &>div {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+.headroom--pinned,
+.headroom--bottom,
+.headroom--top {
+    transform: translateY(0%) !important;
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%) !important;
 }
