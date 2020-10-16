@@ -141,6 +141,7 @@ let btnNextSecVideo = secVideo.querySelector(".btnNext");
 
 btnNextFirstEl.onclick = function() {
     var elm = document.querySelector(".sectionVideo");
+    document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
     elm.scrollIntoView({ block: "start", behavior: "smooth" });
     btnNextHide(firstEl);
 };
@@ -151,6 +152,7 @@ let firstScroll = new WheelIndicator({
         if (e.direction == "down") { // "up" or "down"
             if (!noScroll) {
                 noScroll = true;
+                document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
                 secVideo.scrollIntoView({ block: "start", behavior: "smooth" });
                 btnNextHide(firstEl);
                 document.querySelector(".btnNext_video .btnNext__time path").style.strokeDashoffset = 900;
@@ -175,6 +177,7 @@ firstScroll.getOption("preventMouse");
 btnNextSecVideo.onclick = function() {
     var elm = document.querySelector(".sectionAbout");
     elm.scrollIntoView({ block: "start", behavior: "smooth" });
+
     btnNextHide(secVideo);
 };
 
@@ -194,6 +197,7 @@ let secondScroll = new WheelIndicator({
         } else {
             if (!noScroll) {
                 noScroll = true;
+                document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
                 firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
                 btnNextHide(secVideo);
                 setTimeout(() => {
@@ -569,14 +573,19 @@ window.onscroll = function(e) {
     if (-partnersTop.top > 0 && -partnersTop.top < partnersTop.height) {
         paralaxPartners()
     }
+    if (window.pageYOffset < 500) {
+        document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
+    } else {
+        document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
+    }
 };
 
 function paralaxAbout() {
     let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect()
-    document.querySelector(".sectionAbout__scr1").style.transform = "translateY(" + -aboutTop.top / 5 + "px )";
-    // document.querySelector(".sectionAbout__scr1").style.transition = "0.5s ease-out";
-    document.querySelector(".sectionAbout__scr2").style.transform = "translateY(" + -aboutTop.top / 10 + "px )";
-    // document.querySelector(".sectionAbout__scr2").style.transition = "0.5s ease-out";
+    document.querySelector(".sectionAbout__scr1").style.top = -aboutTop.top / 5 + "px";
+    document.querySelector(".sectionAbout__scr1").style.transition = "0.5s ease-out";
+    document.querySelector(".sectionAbout__scr2").style.top = -aboutTop.top / 10 + "px";
+    document.querySelector(".sectionAbout__scr2").style.transition = "0.6s ease-out";
 }
 
 function paralaxLicenses() {

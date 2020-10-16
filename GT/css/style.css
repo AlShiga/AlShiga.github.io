@@ -6923,6 +6923,19 @@ button {
   right: 4.12%;
   top: 50%;
   z-index: 200;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+@media (max-width: 1024.98px) {
+  .burgerFixed {
+    display: none;
+  }
+}
+
+.burgerFixed_hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .headroom {
