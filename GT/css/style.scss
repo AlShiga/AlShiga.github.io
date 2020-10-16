@@ -331,6 +331,52 @@ h2,
     }
 }
 
+.btn4 {
+    position: relative;
+    color: initial;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $white;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    display: inline-block;
+    &:hover {
+        color: $white;
+    }
+    &::after {
+        content: url(../img/arrowBtn1.svg);
+        margin-left: 30px;
+        transition: 0.3s;
+    }
+    &::before {
+        content: url(../img/cirklBtn.svg);
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+        transition: 0.3s;
+    }
+    &:hover::before {
+        right: 20px;
+    }
+    &:active::after,
+    &:focus:after {
+        margin-left: 60px;
+        display: inline-block;
+    }
+    &:active::before,
+    &:focus::before {
+        right: 40px;
+    }
+}
+
 .ttu {
     text-transform: uppercase;
 }

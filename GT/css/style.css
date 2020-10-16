@@ -6624,6 +6624,60 @@ h2,
   display: inline-block;
 }
 
+.btn4 {
+  position: relative;
+  color: initial;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn4:hover {
+  color: #f2f2f2;
+}
+
+.btn4::after {
+  content: url(../img/arrowBtn1.svg);
+  margin-left: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn4::before {
+  content: url(../img/cirklBtn.svg);
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn4:hover::before {
+  right: 20px;
+}
+
+.btn4:active::after, .btn4:focus:after {
+  margin-left: 60px;
+  display: inline-block;
+}
+
+.btn4:active::before, .btn4:focus::before {
+  right: 40px;
+}
+
 .ttu {
   text-transform: uppercase;
 }
@@ -8343,7 +8397,7 @@ button {
 .newsItem:nth-child(odd):after {
   content: "";
   position: absolute;
-  bottom: -30px;
+  bottom: 0px;
   left: -20%;
   width: 100vw;
   height: 1px;
@@ -8366,6 +8420,12 @@ button {
   .newsItem:nth-child(even) .newsItem__img {
     height: 250px;
   }
+}
+
+.newsItem:nth-last-child(2):after {
+  width: 0;
+  height: 0;
+  background-color: transparent;
 }
 
 .sea {

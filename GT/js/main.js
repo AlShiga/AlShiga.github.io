@@ -564,6 +564,7 @@ window.onscroll = function(e) {
     let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect();
     let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
     let partnersTop = document.querySelector(".partners  ").getBoundingClientRect();
+    let projectTop = document.querySelector(".projectBody").getBoundingClientRect();
     if (-aboutTop.top > 0 && -aboutTop.top < aboutTop.height && window.innerWidth > 1024) {
         paralaxAbout()
     }
@@ -572,6 +573,9 @@ window.onscroll = function(e) {
     }
     if (-partnersTop.top > 0 && -partnersTop.top < partnersTop.height) {
         paralaxPartners()
+    }
+    if (-projectTop.top < -window.innerHeight * 2 || -projectTop.top > projectTop.height + window.innerHeight * 1.2) {
+        document.querySelector(".counter").classList.add("counter_hide");
     }
     if (window.pageYOffset < 500) {
         document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
