@@ -599,6 +599,9 @@
         transition: 0.3s;
         border-bottom: 1px solid $blueClass;
     }
+    &__detailsName {
+        color: $white;
+    }
 }
 
 .ticker {

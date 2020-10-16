@@ -32,6 +32,12 @@
     &__text {
         color: $white;
         padding-right: 10%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
         &:hover,
         &:active,
         &:focus {
