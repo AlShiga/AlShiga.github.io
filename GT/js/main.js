@@ -42,6 +42,33 @@ document.addEventListener("DOMContentLoaded", function() {
         // initialise
         headroom.init();
     }
+    SmoothScroll({
+        // Время скролла 400 = 0.4 секунды
+        animationTime: 800,
+        // Размер шага в пикселях 
+        stepSize: 75,
+
+        // Дополнительные настройки:
+
+        // Ускорение 
+        accelerationDelta: 30,
+        // Максимальное ускорение
+        accelerationMax: 2,
+
+        // Поддержка клавиатуры
+        keyboardSupport: true,
+        // Шаг скролла стрелками на клавиатуре в пикселях
+        arrowScroll: 50,
+
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+
+        // Поддержка тачпада
+        touchpadSupport: true,
+    })
 });
 
 function removePreload() {
@@ -142,73 +169,83 @@ let btnNextSecVideo = secVideo.querySelector(".btnNext");
 btnNextFirstEl.onclick = function() {
     var elm = document.querySelector(".sectionVideo");
     document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(secVideo)
     btnNextHide(firstEl);
 };
 
 let firstScroll = new WheelIndicator({
     elem: firstEl,
     callback: function(e) {
-        if (e.direction == "down") { // "up" or "down"
-            if (!noScroll) {
-                noScroll = true;
-                document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
-                secVideo.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(firstEl);
-                document.querySelector(".btnNext_video .btnNext__time path").style.strokeDashoffset = 900;
+        console.log(e)
+
+        if (!noScroll) {
+            noScroll = true;
+            if (e.direction == "down") {
                 setTimeout(() => {
+                    document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
                     noScroll = false;
-                }, 700);
-            }
-        } else {
-            if (!noScroll) {
-                noScroll = true;
-                firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
+                    // secVideo.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(secVideo)
+
+                    noScroll = true;
+                    btnNextHide(firstEl);
+                    document.querySelector(".btnNext_video .btnNext__time path").style.strokeDashoffset = 900;
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
+
+            } else {
                 setTimeout(() => {
-                    noScroll = false;
-                }, 700);
+                    // firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(firstEl)
+
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
             }
         }
     }
 });
-firstScroll.getOption("preventMouse");
-
 btnNextSecVideo.onclick = function() {
     var elm = document.querySelector(".sectionAbout");
     elm.scrollIntoView({ block: "start", behavior: "smooth" });
 
     btnNextHide(secVideo);
 };
-
 let secondScroll = new WheelIndicator({
     elem: secVideo,
     callback: function(e) {
-        if (e.direction == "down") { // "up" or "down"
-            if (!noScroll) {
-                noScroll = true;
-                var elm = document.querySelector(".sectionAbout");
-                elm.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
+        if (!noScroll) {
+            noScroll = true;
+            if (e.direction == "down") {
                 setTimeout(() => {
-                    noScroll = false;
-                }, 700);
-            }
-        } else {
-            if (!noScroll) {
-                noScroll = true;
-                document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
-                firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
-                setTimeout(() => {
-                    noScroll = false;
-                }, 700);
-            }
+                    var elm = document.querySelector(".sectionAbout");
+                    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(elm)
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
 
+            } else {
+                setTimeout(() => {
+                    document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
+                    // firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(firstEl)
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
+            }
         }
     }
 });
-secondScroll.getOption("preventMouse");
 
 function btnNextHide(section) {
     let btn = section.querySelector(".btnNext");
@@ -217,8 +254,6 @@ function btnNextHide(section) {
     btn.style.opacity = "0";
     btn.style.pointerEvents = "none";
 }
-
-
 
 // Slider offer
 let slider = document.querySelector(".sliderSecvices");
@@ -353,7 +388,8 @@ let sliderPScroll = new WheelIndicator({
             });
             if (e.direction == "down") {
                 if (sliderActiveNum == sliderPItem.length - 1) {
-                    document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
+                    // document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(document.querySelector(".seaBig"))
                     sliderPNum(1, false);
                     // console.log('1')
                     setTimeout(() => {
@@ -367,7 +403,8 @@ let sliderPScroll = new WheelIndicator({
                 setTimeout(() => {
                     sliderPNum(sliderActiveNum + 1);
                     sliderPItem[sliderActiveNum + 1].classList.add("active");
-                    sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    // sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderActiveNum + 1], true)
                     setTimeout(() => {
                         sliderPShowSlide();
                         setTimeout(() => {
@@ -378,7 +415,8 @@ let sliderPScroll = new WheelIndicator({
 
             } else {
                 if (sliderActiveNum == 0) {
-                    document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
+                    // document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
+                    smoothScroll(document.querySelector(".projectHead"))
                     sliderPNum(1, false);
                     setTimeout(() => {
                         noScroll = false;
@@ -389,7 +427,8 @@ let sliderPScroll = new WheelIndicator({
                 setTimeout(() => {
                     sliderPNum(sliderActiveNum - 1);
                     sliderPItem[sliderActiveNum - 1].classList.add("active");
-                    sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    // sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderActiveNum - 1], true)
                     setTimeout(() => {
                         sliderPShowSlide();
                         setTimeout(() => {
@@ -401,7 +440,6 @@ let sliderPScroll = new WheelIndicator({
         }
     }
 });
-sliderPScroll.getOption("preventMouse");
 
 let seaScroll = new WheelIndicator({
     elem: document.querySelector(".seaBig"),
@@ -416,22 +454,31 @@ let seaScroll = new WheelIndicator({
                 seaScroll.setOptions({
                     preventMouse: true,
                 })
-                sliderPItem.forEach(function(item, i, arr) {
-                    if (item.classList.contains('active')) {
-                        sliderActiveNum = i;
-                        sliderPHideSlide()
-                        item.classList.remove('active')
-                    }
-                });
-                sliderPNum(sliderPItem.length - 1);
-                sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
-                sliderPItem[sliderPItem.length - 1].classList.add("active");
-                setTimeout(() => {
-                    sliderPShowSlide();
+                if (document.querySelector(".seaBig").getBoundingClientRect().y < -50) {
+                    smoothScroll(document.querySelector(".seaBig"))
                     setTimeout(() => {
                         noScroll = false;
-                    }, 1200);
-                }, 300);
+                    }, 800);
+                } else {
+                    sliderPItem.forEach(function(item, i, arr) {
+                        if (item.classList.contains('active')) {
+                            sliderActiveNum = i;
+                            sliderPHideSlide()
+                            item.classList.remove('active')
+                        }
+                    });
+                    sliderPNum(sliderPItem.length - 1);
+                    // sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderPItem.length - 1], true)
+                    sliderPItem[sliderPItem.length - 1].classList.add("active");
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }
+
             }
         } else {
             seaScroll.setOptions({
@@ -452,12 +499,13 @@ let projectHeadScroll = new WheelIndicator({
         if (!noScroll) {
             console.log(12)
             if (e.direction == "down") { // "up" or "down"
+                console.log(e)
                 console.log(13)
                 noScroll = true;
                 projectHeadScroll.setOptions({
                     preventMouse: true,
                 })
-                btnNextHide(document.querySelector(".projectHead"));
+
                 sliderPItem.forEach(function(item, i, arr) {
                     if (item.classList.contains('active')) {
                         sliderActiveNum = i;
@@ -465,16 +513,25 @@ let projectHeadScroll = new WheelIndicator({
                         item.classList.remove('active')
                     }
                 });
-                sliderPNum(0);
-                sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
-                sliderPItem[0].classList.add("active");
-                setTimeout(() => {
-                    sliderPShowSlide();
+                // sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
+                // console.log(document.querySelector(".projectHead").getBoundingClientRect().y)
+                if (document.querySelector(".projectHead").getBoundingClientRect().y > 50) {
+                    smoothScroll(document.querySelector(".projectHead"))
                     setTimeout(() => {
                         noScroll = false;
-                    }, 1200);
-                }, 300);
-
+                    }, 800);
+                } else {
+                    smoothScroll(sliderPItem[0], true)
+                    btnNextHide(document.querySelector(".projectHead"));
+                    sliderPNum(0);
+                    sliderPItem[0].classList.add("active");
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }
             } else {}
         } else {
             projectHeadScroll.setOptions({
@@ -615,58 +672,58 @@ function paralaxPartners() {
 }
 
 
-! function() {
-    "use strict";
+// ! function() {
+//     "use strict";
 
-    function o() {
-        var o = window,
-            t = document;
-        if (!("scrollBehavior" in t.documentElement.style && !0 !== o.__forceSmoothScrollPolyfill__)) {
-            var l, e = o.HTMLElement || o.Element,
-                r = 468,
-                i = { scroll: o.scroll || o.scrollTo, scrollBy: o.scrollBy, elementScroll: e.prototype.scroll || n, scrollIntoView: e.prototype.scrollIntoView },
-                s = o.performance && o.performance.now ? o.performance.now.bind(o.performance) : Date.now,
-                c = (l = o.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(l) ? 1 : 0);
-            o.scroll = o.scrollTo = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? h.call(o, t.body, void 0 !== arguments[0].left ? ~~arguments[0].left : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? ~~arguments[0].top : o.scrollY || o.pageYOffset) : i.scroll.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : o.scrollY || o.pageYOffset)) }, o.scrollBy = function() { void 0 !== arguments[0] && (f(arguments[0]) ? i.scrollBy.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : 0, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : 0) : h.call(o, t.body, ~~arguments[0].left + (o.scrollX || o.pageXOffset), ~~arguments[0].top + (o.scrollY || o.pageYOffset))) }, e.prototype.scroll = e.prototype.scrollTo = function() {
-                if (void 0 !== arguments[0])
-                    if (!0 !== f(arguments[0])) {
-                        var o = arguments[0].left,
-                            t = arguments[0].top;
-                        h.call(this, this, void 0 === o ? this.scrollLeft : ~~o, void 0 === t ? this.scrollTop : ~~t)
-                    } else {
-                        if ("number" == typeof arguments[0] && void 0 === arguments[1]) throw new SyntaxError("Value could not be converted");
-                        i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left : "object" != typeof arguments[0] ? ~~arguments[0] : this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top : void 0 !== arguments[1] ? ~~arguments[1] : this.scrollTop)
-                    }
-            }, e.prototype.scrollBy = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? this.scroll({ left: ~~arguments[0].left + this.scrollLeft, top: ~~arguments[0].top + this.scrollTop, behavior: arguments[0].behavior }) : i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left + this.scrollLeft : ~~arguments[0] + this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top + this.scrollTop : ~~arguments[1] + this.scrollTop)) }, e.prototype.scrollIntoView = function() {
-                if (!0 !== f(arguments[0])) {
-                    var l = function(o) { for (; o !== t.body && !1 === (e = p(l = o, "Y") && a(l, "Y"), r = p(l, "X") && a(l, "X"), e || r);) o = o.parentNode || o.host; var l, e, r; return o }(this),
-                        e = l.getBoundingClientRect(),
-                        r = this.getBoundingClientRect();
-                    l !== t.body ? (h.call(this, l, l.scrollLeft + r.left - e.left, l.scrollTop + r.top - e.top), "fixed" !== o.getComputedStyle(l).position && o.scrollBy({ left: e.left, top: e.top, behavior: "smooth" })) : o.scrollBy({ left: r.left, top: r.top, behavior: "smooth" })
-                } else i.scrollIntoView.call(this, void 0 === arguments[0] || arguments[0])
-            }
-        }
+//     function o() {
+//         var o = window,
+//             t = document;
+//         if (!("scrollBehavior" in t.documentElement.style && !0 !== o.__forceSmoothScrollPolyfill__)) {
+//             var l, e = o.HTMLElement || o.Element,
+//                 r = 468,
+//                 i = { scroll: o.scroll || o.scrollTo, scrollBy: o.scrollBy, elementScroll: e.prototype.scroll || n, scrollIntoView: e.prototype.scrollIntoView },
+//                 s = o.performance && o.performance.now ? o.performance.now.bind(o.performance) : Date.now,
+//                 c = (l = o.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(l) ? 1 : 0);
+//             o.scroll = o.scrollTo = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? h.call(o, t.body, void 0 !== arguments[0].left ? ~~arguments[0].left : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? ~~arguments[0].top : o.scrollY || o.pageYOffset) : i.scroll.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : o.scrollY || o.pageYOffset)) }, o.scrollBy = function() { void 0 !== arguments[0] && (f(arguments[0]) ? i.scrollBy.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : 0, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : 0) : h.call(o, t.body, ~~arguments[0].left + (o.scrollX || o.pageXOffset), ~~arguments[0].top + (o.scrollY || o.pageYOffset))) }, e.prototype.scroll = e.prototype.scrollTo = function() {
+//                 if (void 0 !== arguments[0])
+//                     if (!0 !== f(arguments[0])) {
+//                         var o = arguments[0].left,
+//                             t = arguments[0].top;
+//                         h.call(this, this, void 0 === o ? this.scrollLeft : ~~o, void 0 === t ? this.scrollTop : ~~t)
+//                     } else {
+//                         if ("number" == typeof arguments[0] && void 0 === arguments[1]) throw new SyntaxError("Value could not be converted");
+//                         i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left : "object" != typeof arguments[0] ? ~~arguments[0] : this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top : void 0 !== arguments[1] ? ~~arguments[1] : this.scrollTop)
+//                     }
+//             }, e.prototype.scrollBy = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? this.scroll({ left: ~~arguments[0].left + this.scrollLeft, top: ~~arguments[0].top + this.scrollTop, behavior: arguments[0].behavior }) : i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left + this.scrollLeft : ~~arguments[0] + this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top + this.scrollTop : ~~arguments[1] + this.scrollTop)) }, e.prototype.scrollIntoView = function() {
+//                 if (!0 !== f(arguments[0])) {
+//                     var l = function(o) { for (; o !== t.body && !1 === (e = p(l = o, "Y") && a(l, "Y"), r = p(l, "X") && a(l, "X"), e || r);) o = o.parentNode || o.host; var l, e, r; return o }(this),
+//                         e = l.getBoundingClientRect(),
+//                         r = this.getBoundingClientRect();
+//                     l !== t.body ? (h.call(this, l, l.scrollLeft + r.left - e.left, l.scrollTop + r.top - e.top), "fixed" !== o.getComputedStyle(l).position && o.scrollBy({ left: e.left, top: e.top, behavior: "smooth" })) : o.scrollBy({ left: r.left, top: r.top, behavior: "smooth" })
+//                 } else i.scrollIntoView.call(this, void 0 === arguments[0] || arguments[0])
+//             }
+//         }
 
-        function n(o, t) { this.scrollLeft = o, this.scrollTop = t }
+//         function n(o, t) { this.scrollLeft = o, this.scrollTop = t }
 
-        function f(o) { if (null === o || "object" != typeof o || void 0 === o.behavior || "auto" === o.behavior || "instant" === o.behavior) return !0; if ("object" == typeof o && "smooth" === o.behavior) return !1; throw new TypeError("behavior member of ScrollOptions " + o.behavior + " is not a valid value for enumeration ScrollBehavior.") }
+//         function f(o) { if (null === o || "object" != typeof o || void 0 === o.behavior || "auto" === o.behavior || "instant" === o.behavior) return !0; if ("object" == typeof o && "smooth" === o.behavior) return !1; throw new TypeError("behavior member of ScrollOptions " + o.behavior + " is not a valid value for enumeration ScrollBehavior.") }
 
-        function p(o, t) { return "Y" === t ? o.clientHeight + c < o.scrollHeight : "X" === t ? o.clientWidth + c < o.scrollWidth : void 0 }
+//         function p(o, t) { return "Y" === t ? o.clientHeight + c < o.scrollHeight : "X" === t ? o.clientWidth + c < o.scrollWidth : void 0 }
 
-        function a(t, l) { var e = o.getComputedStyle(t, null)["overflow" + l]; return "auto" === e || "scroll" === e }
+//         function a(t, l) { var e = o.getComputedStyle(t, null)["overflow" + l]; return "auto" === e || "scroll" === e }
 
-        function d(t) {
-            var l, e, i, c, n = (s() - t.startTime) / r;
-            c = n = n > 1 ? 1 : n, l = .5 * (1 - Math.cos(Math.PI * c)), e = t.startX + (t.x - t.startX) * l, i = t.startY + (t.y - t.startY) * l, t.method.call(t.scrollable, e, i), e === t.x && i === t.y || o.requestAnimationFrame(d.bind(o, t))
-        }
+//         function d(t) {
+//             var l, e, i, c, n = (s() - t.startTime) / r;
+//             c = n = n > 1 ? 1 : n, l = .5 * (1 - Math.cos(Math.PI * c)), e = t.startX + (t.x - t.startX) * l, i = t.startY + (t.y - t.startY) * l, t.method.call(t.scrollable, e, i), e === t.x && i === t.y || o.requestAnimationFrame(d.bind(o, t))
+//         }
 
-        function h(l, e, r) {
-            var c, f, p, a, h = s();
-            l === t.body ? (c = o, f = o.scrollX || o.pageXOffset, p = o.scrollY || o.pageYOffset, a = i.scroll) : (c = l, f = l.scrollLeft, p = l.scrollTop, a = n), d({ scrollable: c, method: a, startTime: h, startX: f, startY: p, x: e, y: r })
-        }
-    }
-    "object" == typeof exports && "undefined" != typeof module ? module.exports = { polyfill: o } : o()
-}();
+//         function h(l, e, r) {
+//             var c, f, p, a, h = s();
+//             l === t.body ? (c = o, f = o.scrollX || o.pageXOffset, p = o.scrollY || o.pageYOffset, a = i.scroll) : (c = l, f = l.scrollLeft, p = l.scrollTop, a = n), d({ scrollable: c, method: a, startTime: h, startX: f, startY: p, x: e, y: r })
+//         }
+//     }
+//     "object" == typeof exports && "undefined" != typeof module ? module.exports = { polyfill: o } : o()
+// }();
 
 
 let arrObjects = [{
@@ -786,3 +843,73 @@ let arrObjects = [{
         about2: ``
     },
 ]
+
+// firstEl.addEventListener("onwheel", onWheel, { passive: false });
+// firstEl.addEventListener("mousewheel", onWheel, { passive: false });
+// firstEl.addEventListener("MozMousePixelScroll", onWheel, { passive: false });
+
+// function onWheel(e) {
+//     e = e || window.event;
+//     if (e.preventDefault)
+//         e.preventDefault();
+//     e.returnValue = false;
+// }
+
+
+function currentYPosition() {
+    // Firefox, Chrome, Opera, Safari
+    if (self.pageYOffset) return self.pageYOffset;
+    // Internet Explorer 6 - standards mode
+    if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+    // Internet Explorer 6, 7 and 8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
+
+
+function elmYPosition(elm) {
+    // var elm = document.querySelector(eID);
+    var y = elm.offsetTop;
+    var node = elm;
+    while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+    }
+    return y;
+}
+
+
+function smoothScroll(elm, center) {
+    var startY = currentYPosition();
+    var stopY = elmYPosition(elm);
+    if (center) {
+        const padding = (document.documentElement.clientHeight - elm.getBoundingClientRect().height) / 2
+        stopY = stopY - padding
+    }
+    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY);
+        return;
+    }
+    var speed = Math.round(distance / 30);
+    if (speed >= 20) speed = 20;
+    var step = Math.round(distance / 25);
+    var leapY = stopY > startY ? startY + step : startY - step;
+    var timer = 0;
+    if (stopY > startY) {
+        for (var i = startY; i < stopY; i += step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY += step;
+            if (leapY > stopY) leapY = stopY;
+            timer++;
+        }
+        return;
+    }
+    for (var i = startY; i > stopY; i -= step) {
+        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        leapY -= step;
+        if (leapY < stopY) leapY = stopY;
+        timer++;
+    }
+}
