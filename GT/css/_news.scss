@@ -11,9 +11,11 @@
         object-fit: cover;
         @include media-breakpoint-down(md) {
             height: 300px;
+            max-height: 300px;
         }
         @include media-breakpoint-down(sm) {
             height: 200px;
+            max-height: 200px;
         }
     }
     &__textWrap {

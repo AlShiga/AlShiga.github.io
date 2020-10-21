@@ -1,8 +1,7 @@
-let bodyEl = document.querySelector("body");
-let burger = document.querySelectorAll(".burger");
-let menu = document.querySelector(".nav");
+const bodyEl = document.querySelector("body");
+const burger = document.querySelectorAll(".burger");
+const menu = document.querySelector(".nav");
 let noScroll = false;
-
 
 let docHeight = window.innerHeight;
 
@@ -16,9 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
         live: true
     })
     wow.init();
-    var modal = new VanillaModal.default();
 
-    var swiper = new Swiper('.swiper-container', {
+    let modal = new VanillaModal.default();
+
+    let swiper = new Swiper('.swiper-container', {
         // direction: 'vertical',
         slidesPerView: 1,
         mousewheel: true,
@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     });
     if (window.innerWidth < 1025) {
-        var myElement = document.querySelector(".header_fixed");
+        let myElement = document.querySelector(".header_fixed");
         // construct an instance of Headroom, passing the element
-        var headroom = new Headroom(myElement);
+        let headroom = new Headroom(myElement);
         // initialise
         headroom.init();
     }
@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Поддержка тачпада
         touchpadSupport: true,
-    })
+    });
 });
 
 function removePreload() {
-    let preloader = document.querySelector(".preloader")
-    let preloaderLogo = document.querySelector(".preloader__logo")
+    const preloader = document.querySelector(".preloader")
+    const preloaderLogo = document.querySelector(".preloader__logo")
     if (preloader) {
         bodyEl.classList.add("step0");
         bodyEl.classList.add("anim");
@@ -90,12 +90,12 @@ function removePreload() {
 }
 
 function showStartAnim() {
-    let headerEl = document.querySelector(".header");
-    let headerElContent = document.querySelector(".header > div");
-    let bgLeftEl = document.querySelector(".firstSection__bgLeft");
-    let rectEl = document.querySelector(".firstSection__blur");
-    let nameEl = document.querySelector(".firstSection__name");
-    let sloganEl = document.querySelector(".firstSection__slogan");
+    const headerEl = document.querySelector(".header");
+    const headerElContent = document.querySelector(".header > div");
+    const bgLeftEl = document.querySelector(".firstSection__bgLeft");
+    const rectEl = document.querySelector(".firstSection__blur");
+    const nameEl = document.querySelector(".firstSection__name");
+    const sloganEl = document.querySelector(".firstSection__slogan");
     let widthScreen = window.innerWidth;
     let rectH = '';
     (widthScreen > 1400) ? rectH = "216px": '';
@@ -161,13 +161,13 @@ document.querySelector(".nav__bg").addEventListener('click', function(e) {
 
 
 //Скролл ко второмц блоку
-let firstEl = document.querySelector(".firstSection");
-let btnNextFirstEl = firstEl.querySelector(".btnNext");
-let secVideo = document.querySelector(".sectionVideo");
-let btnNextSecVideo = secVideo.querySelector(".btnNext");
+const firstEl = document.querySelector(".firstSection");
+const btnNextFirstEl = firstEl.querySelector(".btnNext");
+const secVideo = document.querySelector(".sectionVideo");
+const btnNextSecVideo = secVideo.querySelector(".btnNext");
 
 btnNextFirstEl.onclick = function() {
-    var elm = document.querySelector(".sectionVideo");
+    const elm = document.querySelector(".sectionVideo");
     document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
     // elm.scrollIntoView({ block: "start", behavior: "smooth" });
     smoothScroll(secVideo)
@@ -177,8 +177,6 @@ btnNextFirstEl.onclick = function() {
 let firstScroll = new WheelIndicator({
     elem: firstEl,
     callback: function(e) {
-        console.log(e)
-
         if (!noScroll) {
             noScroll = true;
             if (e.direction == "down") {
@@ -211,9 +209,9 @@ let firstScroll = new WheelIndicator({
     }
 });
 btnNextSecVideo.onclick = function() {
-    var elm = document.querySelector(".sectionAbout");
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
-
+    const elm = document.querySelector(".sectionAbout");
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(elm)
     btnNextHide(secVideo);
 };
 let secondScroll = new WheelIndicator({
@@ -223,7 +221,7 @@ let secondScroll = new WheelIndicator({
             noScroll = true;
             if (e.direction == "down") {
                 setTimeout(() => {
-                    var elm = document.querySelector(".sectionAbout");
+                    const elm = document.querySelector(".sectionAbout");
                     // elm.scrollIntoView({ block: "start", behavior: "smooth" });
                     smoothScroll(elm)
                     btnNextHide(secVideo);
@@ -310,6 +308,14 @@ sliderItem.forEach(function(item) {
         }
     })
 })
+const secServ = document.querySelector(".sectionSecvices");
+const btnNextSecServ = secServ.querySelector(".btnNext");
+btnNextSecServ.onclick = function() {
+    const elm = document.querySelector(".map");
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(elm)
+    btnNextHide(secServ);
+};
 
 // Карта
 mapPoint = document.querySelectorAll(".map__point");
@@ -335,7 +341,8 @@ function changeCartMap(object) {
         if (object.contacts !== "") {
             cartMapText.innerHTML = object.contacts;
         } else {
-            cartMapText.innerHTML = "<button class='btn3' >Узнать больше</button";
+            document.querySelector("html").style.scrollBehavior = "smooth"
+            cartMapText.innerHTML = "<a href='#project' class='btn3' >Узнать больше</a>";
         }
         setTimeout(() => {
             cartMap.style.transform = "translateX(0%)"
@@ -356,8 +363,8 @@ tippy('[data-tippy-content]', {
 
 
 //Слайдер проекты
-let sliderPWrap = document.querySelector(".sliderP");
-let sliderPItem = document.querySelectorAll(".sliderP__item");
+const sliderPWrap = document.querySelector(".sliderP");
+const sliderPItem = document.querySelectorAll(".sliderP__item");
 let sliderActiveNum = 0;
 let sliderImgTern = setTimeout(imgTern, 5000);
 //Смена картинки в слайдере
@@ -376,7 +383,6 @@ function imgTern() {
 let sliderPScroll = new WheelIndicator({
     elem: document.querySelector(".projectBody"),
     callback: function(e) {
-        // console.log(e)
         if (!noScroll) {
             noScroll = true;
             sliderPItem.forEach(function(item, i, arr) {
@@ -391,11 +397,9 @@ let sliderPScroll = new WheelIndicator({
                     // document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
                     smoothScroll(document.querySelector(".seaBig"))
                     sliderPNum(1, false);
-                    // console.log('1')
+
                     setTimeout(() => {
                         noScroll = false;
-                        // console.log('2')
-
                     }, 1200);
                     return false;
                 }
@@ -444,7 +448,6 @@ let sliderPScroll = new WheelIndicator({
 let seaScroll = new WheelIndicator({
     elem: document.querySelector(".seaBig"),
     callback: function(e) {
-        console.log(3)
         seaScroll.setOptions({
             preventMouse: false,
         })
@@ -478,7 +481,6 @@ let seaScroll = new WheelIndicator({
                         }, 1200);
                     }, 300);
                 }
-
             }
         } else {
             seaScroll.setOptions({
@@ -492,15 +494,11 @@ let seaScroll = new WheelIndicator({
 let projectHeadScroll = new WheelIndicator({
     elem: document.querySelector(".projectHead"),
     callback: function(e) {
-        console.log(1)
         projectHeadScroll.setOptions({
             preventMouse: false,
         })
         if (!noScroll) {
-            console.log(12)
             if (e.direction == "down") { // "up" or "down"
-                console.log(e)
-                console.log(13)
                 noScroll = true;
                 projectHeadScroll.setOptions({
                     preventMouse: true,
@@ -514,7 +512,6 @@ let projectHeadScroll = new WheelIndicator({
                     }
                 });
                 // sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
-                // console.log(document.querySelector(".projectHead").getBoundingClientRect().y)
                 if (document.querySelector(".projectHead").getBoundingClientRect().y > 50) {
                     smoothScroll(document.querySelector(".projectHead"))
                     setTimeout(() => {
@@ -542,14 +539,13 @@ let projectHeadScroll = new WheelIndicator({
     preventMouse: false,
 });
 
-
 function sliderPHideSlide() {
-    let slide = document.querySelector(".sliderP__item.active");
+    const slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
-        let slideDescription = slide.querySelector(".sliderP__description");
-        let slideBorder = slide.querySelector(".sliderP__border");
-        let slideImgW = slide.querySelector(".sliderP__img");
+        const slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        const slideDescription = slide.querySelector(".sliderP__description");
+        const slideBorder = slide.querySelector(".sliderP__border");
+        const slideImgW = slide.querySelector(".sliderP__img");
         // let slideImg = slide.querySelector(".sliderP__img>img");
         slideDescription.style.transition = "0.6s ease-out";
         slideDescription.style.transform = "translateY(-100%)";
@@ -574,12 +570,12 @@ function sliderPHideSlide() {
 function sliderPShowSlide() {
     clearTimeout(sliderImgTern);
     sliderImgTern = setTimeout(imgTern, 5000);
-    let slide = document.querySelector(".sliderP__item.active");
+    const slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        const slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
         // let slideDescription = slide.querySelector(".sliderP__slideDescription");
-        let slideBorder = slide.querySelector(".sliderP__border");
-        let slideImgW = slide.querySelector(".sliderP__img");
+        const slideBorder = slide.querySelector(".sliderP__border");
+        const slideImgW = slide.querySelector(".sliderP__img");
         // let slideImg = slide.querySelector(".sliderP__img > img");
         slideDescriptionWrap.style.transition = "1s ease-out 0.4s";
         slideDescriptionWrap.style.transform = "translateX(0)";
@@ -591,9 +587,9 @@ function sliderPShowSlide() {
     }
 }
 
-let sliderPcount = document.querySelector(".counter")
-let sliderPcountInner = document.querySelector(".counter__inner")
-let sliderPcountItems = document.querySelectorAll(".counter__num")
+const sliderPcount = document.querySelector(".counter")
+const sliderPcountInner = document.querySelector(".counter__inner")
+const sliderPcountItems = document.querySelectorAll(".counter__num")
 
 function sliderPNum(active, show = true) {
     if (show) {
@@ -601,9 +597,6 @@ function sliderPNum(active, show = true) {
         sliderPcountItems.forEach(function(num) {
             num.classList.remove("active");
         });
-        // console.log(active);
-        // console.log(sliderPcountItems);
-        // console.log(sliderPcountItems[active]);
         let x = 80 * active;
         sliderPcountItems[active].classList.add("active");
         sliderPcountInner.style.transform = "translateY(-" + x + "px)";
@@ -613,7 +606,6 @@ function sliderPNum(active, show = true) {
             num.classList.remove("active");
         });
     }
-
 }
 
 window.onscroll = function(e) {
@@ -855,6 +847,39 @@ let arrObjects = [{
 //     e.returnValue = false;
 // }
 
+function smoothScroll(elm, center) {
+    let startY = currentYPosition();
+    let stopY = elmYPosition(elm);
+    if (center) {
+        const padding = (document.documentElement.clientHeight - elm.getBoundingClientRect().height) / 2
+        stopY = stopY - padding
+    }
+    let distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY);
+        return;
+    }
+    let speed = Math.round(distance / 30);
+    if (speed >= 20) speed = 20;
+    let step = Math.round(distance / 25);
+    let leapY = stopY > startY ? startY + step : startY - step;
+    let timer = 0;
+    if (stopY > startY) {
+        for (let i = startY; i < stopY; i += step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY += step;
+            if (leapY > stopY) leapY = stopY;
+            timer++;
+        }
+        return;
+    }
+    for (let i = startY; i > stopY; i -= step) {
+        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        leapY -= step;
+        if (leapY < stopY) leapY = stopY;
+        timer++;
+    }
+}
 
 function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
@@ -867,11 +892,9 @@ function currentYPosition() {
     return 0;
 }
 
-
 function elmYPosition(elm) {
-    // var elm = document.querySelector(eID);
-    var y = elm.offsetTop;
-    var node = elm;
+    let y = elm.offsetTop;
+    let node = elm;
     while (node.offsetParent && node.offsetParent != document.body) {
         node = node.offsetParent;
         y += node.offsetTop;
@@ -879,37 +902,18 @@ function elmYPosition(elm) {
     return y;
 }
 
-
-function smoothScroll(elm, center) {
-    var startY = currentYPosition();
-    var stopY = elmYPosition(elm);
-    if (center) {
-        const padding = (document.documentElement.clientHeight - elm.getBoundingClientRect().height) / 2
-        stopY = stopY - padding
-    }
-    var distance = stopY > startY ? stopY - startY : startY - stopY;
-    if (distance < 100) {
-        scrollTo(0, stopY);
-        return;
-    }
-    var speed = Math.round(distance / 30);
-    if (speed >= 20) speed = 20;
-    var step = Math.round(distance / 25);
-    var leapY = stopY > startY ? startY + step : startY - step;
-    var timer = 0;
-    if (stopY > startY) {
-        for (var i = startY; i < stopY; i += step) {
-            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-            leapY += step;
-            if (leapY > stopY) leapY = stopY;
-            timer++;
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        const menu = document.querySelector(".nav");
+        if (menu.classList.contains("nav_active")) {
+            menu.classList.remove("nav_active")
         }
-        return;
-    }
-    for (var i = startY; i > stopY; i -= step) {
-        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-        leapY -= step;
-        if (leapY < stopY) leapY = stopY;
-        timer++;
-    }
-}
+    });
+};

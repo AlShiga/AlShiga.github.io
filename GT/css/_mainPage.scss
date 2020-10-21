@@ -28,8 +28,11 @@
         @include media-breakpoint-down(lg) {
             padding: 120px 0;
         }
+        @include media-breakpoint-down(md) {
+            padding: 180px 0;
+        }
         @include media-breakpoint-down(sm) {
-            padding: 70px 0;
+            padding: 90px 0;
         }
     }
     &__nameWrap {
@@ -212,12 +215,12 @@
 
 .titleSection {
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    white-space: nowrap;
+    display: inline-block;
+    // align-items: flex-end;
+    // white-space: nowrap;
     margin: 0;
     padding: 0;
-    width: max-content;
+    width: auto;
     z-index: 10;
     color: $gray;
     text-transform: uppercase;
@@ -306,6 +309,9 @@
         left: 16.66%;
         color: $white;
         z-index: 1;
+        @include media-breakpoint-down(sm) {
+            left: 8.33%;
+        }
     }
     &__quote {
         flex-shrink: 0;
@@ -618,6 +624,16 @@
         // width: auto;
         margin-right: 200px;
         flex: none;
+        @include media-breakpoint-down(md) {
+            // height: 35px;
+            // width: auto;
+            margin-right: 140px;
+        }
+        @include media-breakpoint-down(sm) {
+            height: 35px;
+            width: auto;
+            margin-right: 60px;
+        }
     }
 }
 
@@ -693,7 +709,7 @@
 .projectHead {
     color: $gray;
     position: relative;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         .m-b-6 {
             margin-bottom: 160px;
         }
@@ -723,12 +739,21 @@
             width: 100px;
             margin: 0 15px;
         }
+        @include media-breakpoint-down(sm) {
+            width: 80px;
+        }
     }
 }
 
 .projectBody {
     background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
     color: $white;
+}
+
+.projectBodyM {
+    background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
+    color: $white;
+    padding-top: 160px;
 }
 
 .sliderP {
