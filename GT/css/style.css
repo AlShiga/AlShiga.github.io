@@ -8684,27 +8684,37 @@ button {
 }
 
 .map__point ellipse:first-child {
-  rx: 10;
-  ry: 10;
+  rx: 10px;
+  ry: 10px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .map__point ellipse:last-child {
-  rx: 4;
-  ry: 4;
+  rx: 4px;
+  ry: 4px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
+.map__point ellipse:first-child {
+  rx: 10px;
+  ry: 10px;
+}
+
+.map__point ellipse:last-child {
+  rx: 5px;
+  ry: 5px;
+}
+
 .map__point:hover ellipse:first-child {
-  rx: 20;
-  ry: 20;
+  rx: 20px;
+  ry: 20px;
 }
 
 .map__point.active ellipse:last-child {
-  rx: 10;
-  ry: 10;
+  rx: 10px;
+  ry: 10px;
 }
 
 .map__details {
@@ -9030,7 +9040,7 @@ button {
 
 .counter {
   position: fixed;
-  top: calc(50vh - 99px);
+  top: calc(50vh - 65px);
   color: #4F4F4F;
   -webkit-transition: 1s;
   transition: 1s;
@@ -9346,7 +9356,7 @@ button {
   }
 }
 
-.newsItem:nth-last-child(2):after {
+.newsItem:nth-last-of-type(2):after {
   width: 0;
   height: 0;
   background-color: transparent;
