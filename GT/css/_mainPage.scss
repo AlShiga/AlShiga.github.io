@@ -28,8 +28,11 @@
         @include media-breakpoint-down(lg) {
             padding: 120px 0;
         }
+        @include media-breakpoint-down(md) {
+            padding: 180px 0;
+        }
         @include media-breakpoint-down(sm) {
-            padding: 70px 0;
+            padding: 90px 0;
         }
     }
     &__nameWrap {
@@ -188,9 +191,15 @@
         .btnNext__text {
             transform: translate(-50%, -50%);
         }
+        @include media-breakpoint-down(lg) {
+            bottom: -80px;
+        }
     }
     &_sectionSecvices {
         bottom: -60px;
+        @include media-breakpoint-down(lg) {
+            bottom: -80px;
+        }
     }
 }
 
@@ -206,12 +215,12 @@
 
 .titleSection {
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    white-space: nowrap;
+    display: inline-block;
+    // align-items: flex-end;
+    // white-space: nowrap;
     margin: 0;
     padding: 0;
-    width: max-content;
+    width: auto;
     z-index: 10;
     color: $gray;
     text-transform: uppercase;
@@ -260,7 +269,7 @@
             margin-top: -50px;
         }
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-up(lg) {
         &__scr1,
         &__scr2 {
             transition: transform 0.5s ease-out 0s;
@@ -300,6 +309,9 @@
         left: 16.66%;
         color: $white;
         z-index: 1;
+        @include media-breakpoint-down(sm) {
+            left: 8.33%;
+        }
     }
     &__quote {
         flex-shrink: 0;
@@ -331,6 +343,12 @@
     position: relative;
     &__inner {
         margin-top: -400px;
+        @include media-breakpoint-down(lg) {
+            margin-top: -300px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-top: -200px;
+        }
     }
     &__headBg {
         background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
@@ -346,6 +364,10 @@
     justify-content: flex-end;
     height: 500px;
     visibility: visible !important;
+    @include media-breakpoint-down(lg) {
+        height: 350px;
+        margin-bottom: 400px;
+    }
     @include media-breakpoint-down(sm) {
         height: 300px;
         margin-bottom: 450px;
@@ -393,6 +415,13 @@
         bottom: 40px;
         left: 100px;
         width: 560px;
+        pointer-events: none;
+        & * {
+            pointer-events: none;
+        }
+        @include media-breakpoint-down(lg) {
+            width: 400px;
+        }
         @include media-breakpoint-down(md) {
             left: 40px;
         }
@@ -414,6 +443,7 @@
         transition: 1s;
         white-space: nowrap;
         @include media-breakpoint-down(sm) {
+            width: min-content;
             white-space: normal;
             max-width: 70vw;
         }
@@ -467,6 +497,9 @@
         // transition-delay: 0.5s;
         @include media-breakpoint-down(md) {
             left: -25px;
+        }
+        @include media-breakpoint-down(md) {
+            display: none;
         }
     }
     &__numSm {
@@ -545,24 +578,32 @@
     &__point {
         cursor: pointer;
         & ellipse:first-child {
-            rx: 10;
-            ry: 10;
+            rx: 10px;
+            ry: 10px;
             transition: 0.5s;
             // transform: scale(2);
         }
         & ellipse:last-child {
-            rx: 4;
-            ry: 4;
+            rx: 4px;
+            ry: 4px;
             transition: 0.5s;
             // transform: scale(2);
         }
+        & ellipse:first-child {
+            rx: 10px;
+            ry: 10px;
+        }
+        & ellipse:last-child {
+            rx: 5px;
+            ry: 5px;
+        }
         &:hover ellipse:first-child {
-            rx: 20;
-            ry: 20;
+            rx: 20px;
+            ry: 20px;
         }
         &.active ellipse:last-child {
-            rx: 10;
-            ry: 10;
+            rx: 10px;
+            ry: 10px;
         }
     }
     &__details {
@@ -576,6 +617,9 @@
         transition: 0.3s;
         border-bottom: 1px solid $blueClass;
     }
+    &__detailsName {
+        color: $white;
+    }
 }
 
 .ticker {
@@ -587,6 +631,17 @@
         // height: 72px;
         // width: auto;
         margin-right: 200px;
+        flex: none;
+        @include media-breakpoint-down(md) {
+            // height: 35px;
+            // width: auto;
+            margin-right: 140px;
+        }
+        @include media-breakpoint-down(sm) {
+            height: 35px;
+            width: auto;
+            margin-right: 60px;
+        }
     }
 }
 
@@ -613,10 +668,14 @@
         display: block;
         white-space: nowrap;
     }
+    .m-t-4 {
+        margin-top: 40px;
+    }
 }
 
 .seaBig {
     position: relative;
+    height: 100vh;
     &__logo {
         position: absolute;
         top: 50%;
@@ -642,7 +701,6 @@
     &__img {
         width: 100%;
         height: auto;
-        transition: transform 0.5s ease-out 0s;
         @include media-breakpoint-down(md) {
             transition: 0s !important;
         }
@@ -650,12 +708,20 @@
             height: 100%;
             object-fit: cover;
         }
+        @include media-breakpoint-up(lg) {
+            transition: transform 0.5s ease-out 0s;
+        }
     }
 }
 
 .projectHead {
     color: $gray;
     position: relative;
+    @include media-breakpoint-down(md) {
+        .m-b-6 {
+            margin-bottom: 160px;
+        }
+    }
 }
 
 .partners {
@@ -673,8 +739,16 @@
         margin: 0 25px;
         width: 180px;
         flex-shrink: 0;
+        @include media-breakpoint-down(lg) {
+            margin: 0 20px;
+            width: 140px;
+        }
         @include media-breakpoint-down(md) {
             width: 100px;
+            margin: 0 15px;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 80px;
         }
     }
 }
@@ -684,64 +758,165 @@
     color: $white;
 }
 
+.projectBodyM {
+    background: radial-gradient(127.3% 98.9% at 50.98% 1.1%, #363C44 0%, #0F141B 100%);
+    color: $white;
+    padding-top: 160px;
+}
+
 .sliderP {
     &__item {
         position: relative;
     }
-    &__img{
+    &__img {
         height: 300px;
-        width: 80%;
+        width: 87%;
         padding: 0px 0 100px;
         display: flex;
         margin-left: auto;
         opacity: 0.3;
-        overflow:hidden;
-        img{
+        overflow: hidden;
+        img {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            transition:0.7s ease-out;
+            transition: 0.7s ease-out;
+            flex-shrink: 0;
         }
-        &_right{
-            img{
-                transform:translateX(-100%);
+        &_right {
+            img {
+                transform: translateX(-100%);
             }
         }
     }
-    &__descriptionWrap{
-        position:absolute;
+    &__descriptionWrap {
+        position: absolute;
         top: 30%;
-        width: 80%;
+        width: 87%;
         right: 0;
         transform: translateX(100%);
-        z-index:1;
+        z-index: 1;
         overflow: hidden;
-
     }
-    &__description{
-        background: rgba(0, 0, 0, 0.6);
+    &__description {
+        background: rgba(0, 0, 0, 0.8);
         // backdrop-filter: blur(10px);
         padding: 60px 80px;
+        position: relative;
+        @include media-breakpoint-down(md) {
+            padding: 40px 60px;
+        }
     }
-    &__text{
+    &__text {
         display: flex;
-        div{
-            flex-shrink:0;
+        div {
+            flex-shrink: 0;
             width: 50px;
-            border-top:1px solid white;
+            border-top: 1px solid white;
             position: relative;
-            top:9px;
+            top: 9px;
         }
         p {
+            flex-basis: 45%;
             flex-grow: 1;
-            padding-left:30px
+            padding-left: 30px
         }
     }
-    .active &__textWrap{
-
-
+    &__border {
+        position: absolute;
+        top: 30%;
+        width: 105%;
+        right: 0;
+        transform: translateX(110%);
+        z-index: 2;
+        height: 3px;
+        background-color: $blueClass;
+        @include media-breakpoint-down(lg) {
+            width: 103%;
+        }
+        @include media-breakpoint-down(md) {
+            width: 102%;
+        }
     }
-    .active &__text{
+    .active &__textWrap {}
+    .active &__text {
         display: flex;
     }
+}
+
+.counter {
+    position: fixed;
+    top: calc(50vh - 65px);
+    color: $dark;
+    transition: 1s;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        transition: 1s ease-in-out;
+    }
+    &__num {
+        margin-bottom: 30px;
+        line-height: 50px;
+        transition: 0.5s ease-out 1s;
+    }
+    &__num.active {
+        margin-bottom: 30px;
+        line-height: 50px;
+        font-size: 46px;
+        color: #1E7FCA;
+        transition: 0.5s ease-out 0;
+        font-weight: 700;
+    }
+    &_hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.sliderPM {
+    color: $white;
+    &__item {
+        position: relative;
+    }
+    &__img {
+        height: 300px;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        margin-left: auto;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__descriptionWrap {
+        margin: -100px 0 0 auto;
+        width: 87%;
+        z-index: 1;
+        overflow: hidden;
+        @include media-breakpoint-down(sm) {
+            width: 95%;
+        }
+    }
+    &__description {
+        background: rgba(0, 0, 0, 0.6);
+        // backdrop-filter: blur(10px);
+        padding: 45px 90px 45px 30px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding: 30px 40px 30px 20px;
+        }
+    }
+}
+
+.alm-reveal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
 }

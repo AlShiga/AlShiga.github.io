@@ -1,20 +1,12 @@
-let bodyEl = document.querySelector("body");
-let burger = document.querySelectorAll(".burger");
-let menu = document.querySelector(".nav");
+const bodyEl = document.querySelector("body");
+const burger = document.querySelectorAll(".burger");
+const menu = document.querySelector(".nav");
 let noScroll = false;
-burger.forEach(function(item) {
-    item.addEventListener('click', function(e) {
-        menu.classList.toggle("nav_active")
-    })
-});
-document.querySelector(".nav__bg").addEventListener('click', function(e) {
-    menu.classList.toggle("nav_active")
-})
 
 let docHeight = window.innerHeight;
 
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => removePreload(), 500);
+    setTimeout(() => removePreload(), 1000);
     wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',
@@ -23,12 +15,65 @@ document.addEventListener("DOMContentLoaded", function() {
         live: true
     })
     wow.init();
-    var modal = new VanillaModal.default();
+
+    let modal = new VanillaModal.default();
+
+    let swiper = new Swiper('.swiper-container', {
+        // direction: 'vertical',
+        slidesPerView: 1,
+        mousewheel: true,
+        clickable: true,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function(index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+    });
+    if (window.innerWidth < 1025) {
+        let myElement = document.querySelector(".header_fixed");
+        // construct an instance of Headroom, passing the element
+        let headroom = new Headroom(myElement);
+        // initialise
+        headroom.init();
+    }
+    SmoothScroll({
+        // Время скролла 400 = 0.4 секунды
+        animationTime: 800,
+        // Размер шага в пикселях 
+        stepSize: 75,
+
+        // Дополнительные настройки:
+
+        // Ускорение 
+        accelerationDelta: 30,
+        // Максимальное ускорение
+        accelerationMax: 2,
+
+        // Поддержка клавиатуры
+        keyboardSupport: true,
+        // Шаг скролла стрелками на клавиатуре в пикселях
+        arrowScroll: 50,
+
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+
+        // Поддержка тачпада
+        touchpadSupport: true,
+    });
 });
 
 function removePreload() {
-    let preloader = document.querySelector(".preloader")
-    let preloaderLogo = document.querySelector(".preloader__logo")
+    const preloader = document.querySelector(".preloader")
+    const preloaderLogo = document.querySelector(".preloader__logo")
     if (preloader) {
         bodyEl.classList.add("step0");
         bodyEl.classList.add("anim");
@@ -45,12 +90,12 @@ function removePreload() {
 }
 
 function showStartAnim() {
-    let headerEl = document.querySelector(".header");
-    let headerElContent = document.querySelector(".header > div");
-    let bgLeftEl = document.querySelector(".firstSection__bgLeft");
-    let rectEl = document.querySelector(".firstSection__blur");
-    let nameEl = document.querySelector(".firstSection__name");
-    let sloganEl = document.querySelector(".firstSection__slogan");
+    const headerEl = document.querySelector(".header");
+    const headerElContent = document.querySelector(".header > div");
+    const bgLeftEl = document.querySelector(".firstSection__bgLeft");
+    const rectEl = document.querySelector(".firstSection__blur");
+    const nameEl = document.querySelector(".firstSection__name");
+    const sloganEl = document.querySelector(".firstSection__slogan");
     let widthScreen = window.innerWidth;
     let rectH = '';
     (widthScreen > 1400) ? rectH = "216px": '';
@@ -104,90 +149,101 @@ function showStartAnim() {
     }
 }
 
-let sliderImgTern = setTimeout(imgTern, 5000);
-function imgTern() {
-    let el = document.querySelector(".sliderP__item.active .sliderP__img")
-    if(el){
-        if(el.classList.contains("sliderP__img_right")){
-            el.classList.remove("sliderP__img_right");
-        }else{
-            el.classList.add("sliderP__img_right");
-        }
-    }
-    sliderImgTern = setTimeout(imgTern, 5000); // (*)
-}
+burger.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        menu.classList.toggle("nav_active")
+    })
+});
+document.querySelector(".nav__bg").addEventListener('click', function(e) {
+    menu.classList.toggle("nav_active")
+})
+
+
+
 //Скролл ко второмц блоку
-let firstEl = document.querySelector(".firstSection");
-let btnNextFirstEl = firstEl.querySelector(".btnNext");
-let secVideo = document.querySelector(".sectionVideo");
-let btnNextSecVideo = secVideo.querySelector(".btnNext");
+const firstEl = document.querySelector(".firstSection");
+const btnNextFirstEl = firstEl.querySelector(".btnNext");
+const secVideo = document.querySelector(".sectionVideo");
+const btnNextSecVideo = secVideo.querySelector(".btnNext");
 
 btnNextFirstEl.onclick = function() {
-    var elm = document.querySelector(".sectionVideo");
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    const elm = document.querySelector(".sectionVideo");
+    document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(secVideo)
     btnNextHide(firstEl);
 };
 
 let firstScroll = new WheelIndicator({
     elem: firstEl,
     callback: function(e) {
-        if (e.direction == "down") { // "up" or "down"
-            if (!noScroll) {
-                noScroll = true;
-                secVideo.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(firstEl);
-                document.querySelector(".btnNext_video .btnNext__time path").style.strokeDashoffset = 900;
+        if (!noScroll) {
+            noScroll = true;
+            if (e.direction == "down") {
                 setTimeout(() => {
+                    document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
                     noScroll = false;
-                }, 700);
-            }
-        } else {
-            if (!noScroll) {
-                noScroll = true;
-                firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
+                    // secVideo.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(secVideo)
+
+                    noScroll = true;
+                    btnNextHide(firstEl);
+                    document.querySelector(".btnNext_video .btnNext__time path").style.strokeDashoffset = 900;
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
+
+            } else {
                 setTimeout(() => {
-                    noScroll = false;
-                }, 700);
+                    // firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(firstEl)
+
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
             }
         }
     }
 });
-firstScroll.getOption("preventMouse");
-
 btnNextSecVideo.onclick = function() {
-    var elm = document.querySelector(".sectionAbout");
-    elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    const elm = document.querySelector(".sectionAbout");
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(elm)
     btnNextHide(secVideo);
 };
-
 let secondScroll = new WheelIndicator({
     elem: secVideo,
     callback: function(e) {
-        if (e.direction == "down") { // "up" or "down"
-            if (!noScroll) {
-                noScroll = true;
-                var elm = document.querySelector(".sectionAbout");
-                elm.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
+        if (!noScroll) {
+            noScroll = true;
+            if (e.direction == "down") {
                 setTimeout(() => {
-                    noScroll = false;
-                }, 700);
-            }
-        } else {
-            if (!noScroll) {
-                noScroll = true;
-                firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
-                btnNextHide(secVideo);
-                setTimeout(() => {
-                    noScroll = false;
-                }, 700);
-            }
+                    const elm = document.querySelector(".sectionAbout");
+                    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(elm)
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
 
+            } else {
+                setTimeout(() => {
+                    document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
+                    // firstEl.scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(firstEl)
+                    btnNextHide(secVideo);
+                    setTimeout(() => {
+                        noScroll = false;
+                    }, 700);
+                }, 100);
+            }
         }
     }
 });
-secondScroll.getOption("preventMouse");
 
 function btnNextHide(section) {
     let btn = section.querySelector(".btnNext");
@@ -196,8 +252,6 @@ function btnNextHide(section) {
     btn.style.opacity = "0";
     btn.style.pointerEvents = "none";
 }
-
-
 
 // Slider offer
 let slider = document.querySelector(".sliderSecvices");
@@ -254,6 +308,14 @@ sliderItem.forEach(function(item) {
         }
     })
 })
+const secServ = document.querySelector(".sectionSecvices");
+const btnNextSecServ = secServ.querySelector(".btnNext");
+btnNextSecServ.onclick = function() {
+    const elm = document.querySelector(".map");
+    // elm.scrollIntoView({ block: "start", behavior: "smooth" });
+    smoothScroll(elm)
+    btnNextHide(secServ);
+};
 
 // Карта
 mapPoint = document.querySelectorAll(".map__point");
@@ -279,7 +341,8 @@ function changeCartMap(object) {
         if (object.contacts !== "") {
             cartMapText.innerHTML = object.contacts;
         } else {
-            cartMapText.innerHTML = "<button class='btn3' >Узнать больше</button";
+            document.querySelector("html").style.scrollBehavior = "smooth"
+            cartMapText.innerHTML = "<a href='#project' class='btn3' >Узнать больше</a>";
         }
         setTimeout(() => {
             cartMap.style.transform = "translateX(0%)"
@@ -300,26 +363,27 @@ tippy('[data-tippy-content]', {
 
 
 //Слайдер проекты
-let sliderPWrap = document.querySelector(".sliderP");
-let sliderPItem = document.querySelectorAll(".sliderP__item");
+const sliderPWrap = document.querySelector(".sliderP");
+const sliderPItem = document.querySelectorAll(".sliderP__item");
 let sliderActiveNum = 0;
-
-// let firstEl = document.querySelector(".firstSection");
-// let sliderPWrapScroll = new WheelIndicator({
-//     elem: document.querySelector(".projectBody"),
-//     callback: function(e) {
-//         if (noScroll){
-//             turnOn()
-//         }
-// }
-// });
-// sliderPWrapScroll.getOption("preventMouse");
+let sliderImgTern = setTimeout(imgTern, 5000);
+//Смена картинки в слайдере
+function imgTern() {
+    let el = document.querySelector(".sliderP__item.active .sliderP__img")
+    if (el) {
+        if (el.classList.contains("sliderP__img_right")) {
+            el.classList.remove("sliderP__img_right");
+        } else {
+            el.classList.add("sliderP__img_right");
+        }
+    }
+    sliderImgTern = setTimeout(imgTern, 5000); // (*)
+}
 //Переключение слайдера по скролу
 let sliderPScroll = new WheelIndicator({
     elem: document.querySelector(".projectBody"),
     callback: function(e) {
-        // console.log(e)
-        if (!noScroll){
+        if (!noScroll) {
             noScroll = true;
             sliderPItem.forEach(function(item, i, arr) {
                 if (item.classList.contains('active')) {
@@ -330,19 +394,21 @@ let sliderPScroll = new WheelIndicator({
             });
             if (e.direction == "down") {
                 if (sliderActiveNum == sliderPItem.length - 1) {
-                    document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
-                    // console.log('1')
+                    // document.querySelector(".seaBig").scrollIntoView({ block: "start", behavior: "smooth" });
+                    smoothScroll(document.querySelector(".seaBig"))
+                    sliderPNum(1, false);
+
                     setTimeout(() => {
                         noScroll = false;
-                    // console.log('2')
-
                     }, 1200);
                     return false;
                 }
 
                 setTimeout(() => {
+                    sliderPNum(sliderActiveNum + 1);
                     sliderPItem[sliderActiveNum + 1].classList.add("active");
-                    sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    // sliderPItem[sliderActiveNum + 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderActiveNum + 1], true)
                     setTimeout(() => {
                         sliderPShowSlide();
                         setTimeout(() => {
@@ -353,7 +419,9 @@ let sliderPScroll = new WheelIndicator({
 
             } else {
                 if (sliderActiveNum == 0) {
-                    document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
+                    // document.querySelector(".projectHead").scrollIntoView({ block: "end", behavior: "smooth" });
+                    smoothScroll(document.querySelector(".projectHead"))
+                    sliderPNum(1, false);
                     setTimeout(() => {
                         noScroll = false;
                     }, 1200);
@@ -361,8 +429,10 @@ let sliderPScroll = new WheelIndicator({
                 }
 
                 setTimeout(() => {
+                    sliderPNum(sliderActiveNum - 1);
                     sliderPItem[sliderActiveNum - 1].classList.add("active");
-                    sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    // sliderPItem[sliderActiveNum - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderActiveNum - 1], true)
                     setTimeout(() => {
                         sliderPShowSlide();
                         setTimeout(() => {
@@ -374,65 +444,113 @@ let sliderPScroll = new WheelIndicator({
         }
     }
 });
-sliderPScroll.getOption("preventMouse");
 
 let seaScroll = new WheelIndicator({
     elem: document.querySelector(".seaBig"),
     callback: function(e) {
+        seaScroll.setOptions({
+            preventMouse: false,
+        })
         if (!noScroll) {
-            if (e.direction == "down") { // "up" or "down"
-            turnOff()
-            // console.log("sea")
-            } else {
+            if (e.direction == "up") {
                 noScroll = true;
-                sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
-                sliderPItem[sliderPItem.length - 1].classList.add("active");
-                setTimeout(() => {
-                    sliderPShowSlide();
+                seaScroll.setOptions({
+                    preventMouse: true,
+                })
+                if (document.querySelector(".seaBig").getBoundingClientRect().y < -50) {
+                    smoothScroll(document.querySelector(".seaBig"))
                     setTimeout(() => {
                         noScroll = false;
-                    }, 1200);
-                }, 300);
+                    }, 800);
+                } else {
+                    sliderPItem.forEach(function(item, i, arr) {
+                        if (item.classList.contains('active')) {
+                            sliderActiveNum = i;
+                            sliderPHideSlide()
+                            item.classList.remove('active')
+                        }
+                    });
+                    sliderPNum(sliderPItem.length - 1);
+                    // sliderPItem[sliderPItem.length - 1].scrollIntoView({ block: "center", behavior: "smooth" });
+                    smoothScroll(sliderPItem[sliderPItem.length - 1], true)
+                    sliderPItem[sliderPItem.length - 1].classList.add("active");
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }
             }
+        } else {
+            seaScroll.setOptions({
+                preventMouse: true,
+            })
         }
-    }
-
+    },
+    preventMouse: false,
 });
-seaScroll.getOption("preventMouse");
+
 let projectHeadScroll = new WheelIndicator({
     elem: document.querySelector(".projectHead"),
     callback: function(e) {
+        projectHeadScroll.setOptions({
+            preventMouse: false,
+        })
         if (!noScroll) {
             if (e.direction == "down") { // "up" or "down"
                 noScroll = true;
-                btnNextHide(document.querySelector(".projectHead"));
-                sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
-                sliderPItem[0].classList.add("active");
-                setTimeout(() => {
-                    sliderPShowSlide();
+                projectHeadScroll.setOptions({
+                    preventMouse: true,
+                })
+
+                sliderPItem.forEach(function(item, i, arr) {
+                    if (item.classList.contains('active')) {
+                        sliderActiveNum = i;
+                        sliderPHideSlide()
+                        item.classList.remove('active')
+                    }
+                });
+                // sliderPItem[0].scrollIntoView({ block: "center", behavior: "smooth" });
+                if (document.querySelector(".projectHead").getBoundingClientRect().y > 50) {
+                    smoothScroll(document.querySelector(".projectHead"))
                     setTimeout(() => {
                         noScroll = false;
-                    }, 1200);
-                }, 300);
-
-            } else {
-                turnOff()
-            }
+                    }, 800);
+                } else {
+                    smoothScroll(sliderPItem[0], true)
+                    btnNextHide(document.querySelector(".projectHead"));
+                    sliderPNum(0);
+                    sliderPItem[0].classList.add("active");
+                    setTimeout(() => {
+                        sliderPShowSlide();
+                        setTimeout(() => {
+                            noScroll = false;
+                        }, 1200);
+                    }, 300);
+                }
+            } else {}
+        } else {
+            projectHeadScroll.setOptions({
+                preventMouse: true,
+            })
         }
-    }
-
+    },
+    preventMouse: false,
 });
-projectHeadScroll.getOption("preventMouse");
 
 function sliderPHideSlide() {
-    let slide = document.querySelector(".sliderP__item.active");
+    const slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
-        let slideDescription = slide.querySelector(".sliderP__description");
-        let slideImgW = slide.querySelector(".sliderP__img");
-        let slideImg = slide.querySelector(".sliderP__img>img");
+        const slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        const slideDescription = slide.querySelector(".sliderP__description");
+        const slideBorder = slide.querySelector(".sliderP__border");
+        const slideImgW = slide.querySelector(".sliderP__img");
+        // let slideImg = slide.querySelector(".sliderP__img>img");
         slideDescription.style.transition = "0.6s ease-out";
         slideDescription.style.transform = "translateY(-100%)";
+        slideBorder.style.transition = "0.6s ease-out";
+        slideBorder.style.transform = "";
         slideImgW.style.transition = "1s ease-out 0.4s";
         slideImgW.style.transform = "scale(1)";
         slideImgW.style.opacity = "0.3";
@@ -444,6 +562,7 @@ function sliderPHideSlide() {
             slideImgW.style.transition = "";
             slideImgW.style.transform = "";
             slideImgW.style.opacity = "";
+            slideBorder.style.transition = "";
         }, 1300);
     }
 }
@@ -451,26 +570,50 @@ function sliderPHideSlide() {
 function sliderPShowSlide() {
     clearTimeout(sliderImgTern);
     sliderImgTern = setTimeout(imgTern, 5000);
-    let slide = document.querySelector(".sliderP__item.active");
+    const slide = document.querySelector(".sliderP__item.active");
     if (slide) {
-        let slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
-        let slideDescription = slide.querySelector(".sliderP__slideDescription");
-        let slideImgW = slide.querySelector(".sliderP__img");
-        let slideImg = slide.querySelector(".sliderP__img > img");
+        const slideDescriptionWrap = slide.querySelector(".sliderP__descriptionWrap");
+        // let slideDescription = slide.querySelector(".sliderP__slideDescription");
+        const slideBorder = slide.querySelector(".sliderP__border");
+        const slideImgW = slide.querySelector(".sliderP__img");
+        // let slideImg = slide.querySelector(".sliderP__img > img");
         slideDescriptionWrap.style.transition = "1s ease-out 0.4s";
         slideDescriptionWrap.style.transform = "translateX(0)";
+        slideBorder.style.transition = "1s ease-out 0.7s";
+        slideBorder.style.transform = "translateX(0)";
         slideImgW.style.transition = "1s ease-out 0s";
         slideImgW.style.transform = "scale(1.3)";
         slideImgW.style.opacity = "1";
     }
 }
 
+const sliderPcount = document.querySelector(".counter")
+const sliderPcountInner = document.querySelector(".counter__inner")
+const sliderPcountItems = document.querySelectorAll(".counter__num")
+
+function sliderPNum(active, show = true) {
+    if (show) {
+        sliderPcount.classList.remove("counter_hide");
+        sliderPcountItems.forEach(function(num) {
+            num.classList.remove("active");
+        });
+        let x = 80 * active;
+        sliderPcountItems[active].classList.add("active");
+        sliderPcountInner.style.transform = "translateY(-" + x + "px)";
+    } else {
+        sliderPcount.classList.add("counter_hide");
+        sliderPcountItems.forEach(function(num) {
+            num.classList.remove("active");
+        });
+    }
+}
 
 window.onscroll = function(e) {
-    let scrMy = window.pageYOffset;
+    // let scrMy = window.pageYOffset;
     let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect();
     let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
     let partnersTop = document.querySelector(".partners  ").getBoundingClientRect();
+    let projectTop = document.querySelector(".projectBody").getBoundingClientRect();
     if (-aboutTop.top > 0 && -aboutTop.top < aboutTop.height && window.innerWidth > 1024) {
         paralaxAbout()
     }
@@ -480,23 +623,31 @@ window.onscroll = function(e) {
     if (-partnersTop.top > 0 && -partnersTop.top < partnersTop.height) {
         paralaxPartners()
     }
+    if (-projectTop.top < -window.innerHeight * 2 || -projectTop.top > projectTop.height + window.innerHeight * 1.2) {
+        document.querySelector(".counter").classList.add("counter_hide");
+    }
+    if (window.pageYOffset < 500) {
+        document.querySelector(".burgerFixed").classList.add("burgerFixed_hide");
+    } else {
+        document.querySelector(".burgerFixed").classList.remove("burgerFixed_hide");
+    }
 };
 
 function paralaxAbout() {
     let aboutTop = document.querySelector(".sectionAbout ").getBoundingClientRect()
-    document.querySelector(".sectionAbout__scr1").style.transform = "translateY(" + -aboutTop.top / 5 + "px )";
-    // document.querySelector(".sectionAbout__scr1").style.transition = "0.5s ease-out";
-    document.querySelector(".sectionAbout__scr2").style.transform = "translateY(" + -aboutTop.top / 10 + "px )";
-    // document.querySelector(".sectionAbout__scr2").style.transition = "0.5s ease-out";
+    document.querySelector(".sectionAbout__scr1").style.top = -aboutTop.top / 5 + "px";
+    document.querySelector(".sectionAbout__scr1").style.transition = "0.5s ease-out";
+    document.querySelector(".sectionAbout__scr2").style.top = -aboutTop.top / 10 + "px";
+    document.querySelector(".sectionAbout__scr2").style.transition = "0.6s ease-out";
 }
 
 function paralaxLicenses() {
     let licensesTop = document.querySelector(".licenses  ").getBoundingClientRect();
     let coef = -licensesTop.top / licensesTop.height - 0.5;
-    let imges = document.querySelectorAll(".licenses__img");
-    imges.forEach(function(img) {
+    let images = document.querySelectorAll(".licenses__img");
+    images.forEach(function(img) {
         img.style.transform = "scale(1.15)translateY(" + 10 * coef + "% )";
-        img.style.transition = "0.5s ease-out";
+        // img.style.transition = "0.5s ease-out";
     });
 }
 
@@ -513,79 +664,58 @@ function paralaxPartners() {
 }
 
 
+// ! function() {
+//     "use strict";
 
-
-
-// //Скролл к блоку
-// function addOnWheel(elem, handler) {
-//     if (elem.addEventListener) {
-//         if ('onwheel' in document) {
-//             // IE9+, FF17+
-//             elem.addEventListener("wheel", handler);
-//         } else if ('onmousewheel' in document) {
-//             // устаревший вариант события
-//             elem.addEventListener("mousewheel", handler);
-//         } else {
-//             // 3.5 <= Firefox < 17, более старое событие DOMMouseScroll пропустим
-//             elem.addEventListener("MozMousePixelScroll", handler);
+//     function o() {
+//         var o = window,
+//             t = document;
+//         if (!("scrollBehavior" in t.documentElement.style && !0 !== o.__forceSmoothScrollPolyfill__)) {
+//             var l, e = o.HTMLElement || o.Element,
+//                 r = 468,
+//                 i = { scroll: o.scroll || o.scrollTo, scrollBy: o.scrollBy, elementScroll: e.prototype.scroll || n, scrollIntoView: e.prototype.scrollIntoView },
+//                 s = o.performance && o.performance.now ? o.performance.now.bind(o.performance) : Date.now,
+//                 c = (l = o.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(l) ? 1 : 0);
+//             o.scroll = o.scrollTo = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? h.call(o, t.body, void 0 !== arguments[0].left ? ~~arguments[0].left : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? ~~arguments[0].top : o.scrollY || o.pageYOffset) : i.scroll.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : o.scrollY || o.pageYOffset)) }, o.scrollBy = function() { void 0 !== arguments[0] && (f(arguments[0]) ? i.scrollBy.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : 0, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : 0) : h.call(o, t.body, ~~arguments[0].left + (o.scrollX || o.pageXOffset), ~~arguments[0].top + (o.scrollY || o.pageYOffset))) }, e.prototype.scroll = e.prototype.scrollTo = function() {
+//                 if (void 0 !== arguments[0])
+//                     if (!0 !== f(arguments[0])) {
+//                         var o = arguments[0].left,
+//                             t = arguments[0].top;
+//                         h.call(this, this, void 0 === o ? this.scrollLeft : ~~o, void 0 === t ? this.scrollTop : ~~t)
+//                     } else {
+//                         if ("number" == typeof arguments[0] && void 0 === arguments[1]) throw new SyntaxError("Value could not be converted");
+//                         i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left : "object" != typeof arguments[0] ? ~~arguments[0] : this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top : void 0 !== arguments[1] ? ~~arguments[1] : this.scrollTop)
+//                     }
+//             }, e.prototype.scrollBy = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? this.scroll({ left: ~~arguments[0].left + this.scrollLeft, top: ~~arguments[0].top + this.scrollTop, behavior: arguments[0].behavior }) : i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left + this.scrollLeft : ~~arguments[0] + this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top + this.scrollTop : ~~arguments[1] + this.scrollTop)) }, e.prototype.scrollIntoView = function() {
+//                 if (!0 !== f(arguments[0])) {
+//                     var l = function(o) { for (; o !== t.body && !1 === (e = p(l = o, "Y") && a(l, "Y"), r = p(l, "X") && a(l, "X"), e || r);) o = o.parentNode || o.host; var l, e, r; return o }(this),
+//                         e = l.getBoundingClientRect(),
+//                         r = this.getBoundingClientRect();
+//                     l !== t.body ? (h.call(this, l, l.scrollLeft + r.left - e.left, l.scrollTop + r.top - e.top), "fixed" !== o.getComputedStyle(l).position && o.scrollBy({ left: e.left, top: e.top, behavior: "smooth" })) : o.scrollBy({ left: r.left, top: r.top, behavior: "smooth" })
+//                 } else i.scrollIntoView.call(this, void 0 === arguments[0] || arguments[0])
+//             }
 //         }
-//     } else { // IE8-
-//         text.attachEvent("onmousewheel", handler);
+
+//         function n(o, t) { this.scrollLeft = o, this.scrollTop = t }
+
+//         function f(o) { if (null === o || "object" != typeof o || void 0 === o.behavior || "auto" === o.behavior || "instant" === o.behavior) return !0; if ("object" == typeof o && "smooth" === o.behavior) return !1; throw new TypeError("behavior member of ScrollOptions " + o.behavior + " is not a valid value for enumeration ScrollBehavior.") }
+
+//         function p(o, t) { return "Y" === t ? o.clientHeight + c < o.scrollHeight : "X" === t ? o.clientWidth + c < o.scrollWidth : void 0 }
+
+//         function a(t, l) { var e = o.getComputedStyle(t, null)["overflow" + l]; return "auto" === e || "scroll" === e }
+
+//         function d(t) {
+//             var l, e, i, c, n = (s() - t.startTime) / r;
+//             c = n = n > 1 ? 1 : n, l = .5 * (1 - Math.cos(Math.PI * c)), e = t.startX + (t.x - t.startX) * l, i = t.startY + (t.y - t.startY) * l, t.method.call(t.scrollable, e, i), e === t.x && i === t.y || o.requestAnimationFrame(d.bind(o, t))
+//         }
+
+//         function h(l, e, r) {
+//             var c, f, p, a, h = s();
+//             l === t.body ? (c = o, f = o.scrollX || o.pageXOffset, p = o.scrollY || o.pageYOffset, a = i.scroll) : (c = l, f = l.scrollLeft, p = l.scrollTop, a = n), d({ scrollable: c, method: a, startTime: h, startX: f, startY: p, x: e, y: r })
+//         }
 //     }
-// }
-
-! function() {
-    "use strict";
-
-    function o() {
-        var o = window,
-            t = document;
-        if (!("scrollBehavior" in t.documentElement.style && !0 !== o.__forceSmoothScrollPolyfill__)) {
-            var l, e = o.HTMLElement || o.Element,
-                r = 468,
-                i = { scroll: o.scroll || o.scrollTo, scrollBy: o.scrollBy, elementScroll: e.prototype.scroll || n, scrollIntoView: e.prototype.scrollIntoView },
-                s = o.performance && o.performance.now ? o.performance.now.bind(o.performance) : Date.now,
-                c = (l = o.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join("|")).test(l) ? 1 : 0);
-            o.scroll = o.scrollTo = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? h.call(o, t.body, void 0 !== arguments[0].left ? ~~arguments[0].left : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? ~~arguments[0].top : o.scrollY || o.pageYOffset) : i.scroll.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : o.scrollX || o.pageXOffset, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : o.scrollY || o.pageYOffset)) }, o.scrollBy = function() { void 0 !== arguments[0] && (f(arguments[0]) ? i.scrollBy.call(o, void 0 !== arguments[0].left ? arguments[0].left : "object" != typeof arguments[0] ? arguments[0] : 0, void 0 !== arguments[0].top ? arguments[0].top : void 0 !== arguments[1] ? arguments[1] : 0) : h.call(o, t.body, ~~arguments[0].left + (o.scrollX || o.pageXOffset), ~~arguments[0].top + (o.scrollY || o.pageYOffset))) }, e.prototype.scroll = e.prototype.scrollTo = function() {
-                if (void 0 !== arguments[0])
-                    if (!0 !== f(arguments[0])) {
-                        var o = arguments[0].left,
-                            t = arguments[0].top;
-                        h.call(this, this, void 0 === o ? this.scrollLeft : ~~o, void 0 === t ? this.scrollTop : ~~t)
-                    } else {
-                        if ("number" == typeof arguments[0] && void 0 === arguments[1]) throw new SyntaxError("Value could not be converted");
-                        i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left : "object" != typeof arguments[0] ? ~~arguments[0] : this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top : void 0 !== arguments[1] ? ~~arguments[1] : this.scrollTop)
-                    }
-            }, e.prototype.scrollBy = function() { void 0 !== arguments[0] && (!0 !== f(arguments[0]) ? this.scroll({ left: ~~arguments[0].left + this.scrollLeft, top: ~~arguments[0].top + this.scrollTop, behavior: arguments[0].behavior }) : i.elementScroll.call(this, void 0 !== arguments[0].left ? ~~arguments[0].left + this.scrollLeft : ~~arguments[0] + this.scrollLeft, void 0 !== arguments[0].top ? ~~arguments[0].top + this.scrollTop : ~~arguments[1] + this.scrollTop)) }, e.prototype.scrollIntoView = function() {
-                if (!0 !== f(arguments[0])) {
-                    var l = function(o) { for (; o !== t.body && !1 === (e = p(l = o, "Y") && a(l, "Y"), r = p(l, "X") && a(l, "X"), e || r);) o = o.parentNode || o.host; var l, e, r; return o }(this),
-                        e = l.getBoundingClientRect(),
-                        r = this.getBoundingClientRect();
-                    l !== t.body ? (h.call(this, l, l.scrollLeft + r.left - e.left, l.scrollTop + r.top - e.top), "fixed" !== o.getComputedStyle(l).position && o.scrollBy({ left: e.left, top: e.top, behavior: "smooth" })) : o.scrollBy({ left: r.left, top: r.top, behavior: "smooth" })
-                } else i.scrollIntoView.call(this, void 0 === arguments[0] || arguments[0])
-            }
-        }
-
-        function n(o, t) { this.scrollLeft = o, this.scrollTop = t }
-
-        function f(o) { if (null === o || "object" != typeof o || void 0 === o.behavior || "auto" === o.behavior || "instant" === o.behavior) return !0; if ("object" == typeof o && "smooth" === o.behavior) return !1; throw new TypeError("behavior member of ScrollOptions " + o.behavior + " is not a valid value for enumeration ScrollBehavior.") }
-
-        function p(o, t) { return "Y" === t ? o.clientHeight + c < o.scrollHeight : "X" === t ? o.clientWidth + c < o.scrollWidth : void 0 }
-
-        function a(t, l) { var e = o.getComputedStyle(t, null)["overflow" + l]; return "auto" === e || "scroll" === e }
-
-        function d(t) {
-            var l, e, i, c, n = (s() - t.startTime) / r;
-            c = n = n > 1 ? 1 : n, l = .5 * (1 - Math.cos(Math.PI * c)), e = t.startX + (t.x - t.startX) * l, i = t.startY + (t.y - t.startY) * l, t.method.call(t.scrollable, e, i), e === t.x && i === t.y || o.requestAnimationFrame(d.bind(o, t))
-        }
-
-        function h(l, e, r) {
-            var c, f, p, a, h = s();
-            l === t.body ? (c = o, f = o.scrollX || o.pageXOffset, p = o.scrollY || o.pageYOffset, a = i.scroll) : (c = l, f = l.scrollLeft, p = l.scrollTop, a = n), d({ scrollable: c, method: a, startTime: h, startX: f, startY: p, x: e, y: r })
-        }
-    }
-    "object" == typeof exports && "undefined" != typeof module ? module.exports = { polyfill: o } : o()
-}();
+//     "object" == typeof exports && "undefined" != typeof module ? module.exports = { polyfill: o } : o()
+// }();
 
 
 let arrObjects = [{
@@ -705,3 +835,85 @@ let arrObjects = [{
         about2: ``
     },
 ]
+
+// firstEl.addEventListener("onwheel", onWheel, { passive: false });
+// firstEl.addEventListener("mousewheel", onWheel, { passive: false });
+// firstEl.addEventListener("MozMousePixelScroll", onWheel, { passive: false });
+
+// function onWheel(e) {
+//     e = e || window.event;
+//     if (e.preventDefault)
+//         e.preventDefault();
+//     e.returnValue = false;
+// }
+
+function smoothScroll(elm, center) {
+    let startY = currentYPosition();
+    let stopY = elmYPosition(elm);
+    if (center) {
+        const padding = (document.documentElement.clientHeight - elm.getBoundingClientRect().height) / 2
+        stopY = stopY - padding
+    }
+    let distance = stopY > startY ? stopY - startY : startY - stopY;
+    if (distance < 100) {
+        scrollTo(0, stopY);
+        return;
+    }
+    let speed = Math.round(distance / 30);
+    if (speed >= 20) speed = 20;
+    let step = Math.round(distance / 25);
+    let leapY = stopY > startY ? startY + step : startY - step;
+    let timer = 0;
+    if (stopY > startY) {
+        for (let i = startY; i < stopY; i += step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY += step;
+            if (leapY > stopY) leapY = stopY;
+            timer++;
+        }
+        return;
+    }
+    for (let i = startY; i > stopY; i -= step) {
+        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        leapY -= step;
+        if (leapY < stopY) leapY = stopY;
+        timer++;
+    }
+}
+
+function currentYPosition() {
+    // Firefox, Chrome, Opera, Safari
+    if (self.pageYOffset) return self.pageYOffset;
+    // Internet Explorer 6 - standards mode
+    if (document.documentElement && document.documentElement.scrollTop)
+        return document.documentElement.scrollTop;
+    // Internet Explorer 6, 7 and 8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
+
+function elmYPosition(elm) {
+    let y = elm.offsetTop;
+    let node = elm;
+    while (node.offsetParent && node.offsetParent != document.body) {
+        node = node.offsetParent;
+        y += node.offsetTop;
+    }
+    return y;
+}
+
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        const menu = document.querySelector(".nav");
+        if (menu.classList.contains("nav_active")) {
+            menu.classList.remove("nav_active")
+        }
+    });
+};
