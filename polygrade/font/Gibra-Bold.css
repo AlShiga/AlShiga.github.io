@@ -1,0 +1,19 @@
+/* Webfont: Gibra-Bold */@font-face {
+    font-family: 'Gibra';
+    src: url('Gibra-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('Gibra-Bold.woff') format('woff'), /* Modern Browsers */
+         url('Gibra-Bold.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+/* Webfont: Gibra-Light */@font-face {
+    font-family: 'Gibra';
+    src: url('Gibra-Light.woff2') format('woff2'), /* Modern Browsers */
+         url('Gibra-Light.woff') format('woff'), /* Modern Browsers */
+         url('Gibra-Light.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: light;
+    text-rendering: optimizeLegibility;
+}
+

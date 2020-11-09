@@ -1,0 +1,290 @@
+
+.first{
+    margin-top: 310px;
+    padding-bottom: 400px;
+    &__rectWrap{
+        position: relative;
+        margin-top: 150px;
+    }
+    &__circle{
+        position: absolute;
+        top: -250px;
+        left: -150px;
+        z-index: 1;
+    }
+    &__rect{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+    &__textWrap{
+        margin-top: 15vw;
+        margin-bottom: 90vh;
+    }
+    &__circleImg{
+        position: absolute;
+        top: 10%;
+        right: -45%;
+    }
+    &__technology{
+        margin-top: -50px;
+        margin-bottom: 150px;
+        color: $yellow;
+    }
+    &__technologyBody{
+        padding-top: 60px;
+        border-top: 1px solid $white;
+    }
+}
+.technology{
+    background-color: $white;
+    color: $dark;
+    padding: 400px 0;
+    &_btn2{
+        margin-top: 60px;
+    }
+}
+.services{
+    padding: 150px 0;
+    color: $white;
+    &__title{
+        border-top:1px solid $white;
+        border-bottom:1px solid $white;
+        padding: 60px 0;
+        display: flex;
+        margin-bottom: 150px;
+        & img{
+            margin: 0 30px;
+        }
+    }
+    &__wraper{
+        padding: 90px 0;
+    }
+    &__item{
+        padding: 60px 60px;
+        border-bottom: 1px solid $white;
+        &:last-of-type{
+            border-bottom: none;
+        }
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../img/services1.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    &__link{
+        color: $white;
+        transition: 0.2s;
+        &:hover, &:active, &:focus{
+            color: $yellow;
+        }
+    }
+}
+.slogan{
+    margin: 600px 0;
+    position: relative;
+    &__circle{
+        position: absolute;
+        top: -300px;
+        left: -200px;
+    }
+}
+.portfolio{
+    color: $yellow;
+    position: relative;
+    margin-bottom: 400px;
+    &__title{
+        position: absolute;
+        top: 100px;
+        z-index: 1;
+    }
+    &_btn2{
+        margin-top: 60px;
+    }
+    &__textWrap{
+        color: $white;
+        max-width: 480px;
+        margin-top: 60px;
+    }
+    &__row1{
+        margin-bottom: 370px;
+    }
+}
+.banner{
+    position: relative;
+    &__img{
+        width: 100%;
+    }
+    &__text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+    }
+}
+.partners{
+    background-color: $white;
+    color: $dark;
+    padding: 400px 0;
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 150px;
+    }
+    &__item{
+        position: relative;
+        // border: 1px solid;
+        padding-top: 40px;
+        width: 20%;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: $dark;
+        }
+        &:first-of-type::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: $dark;
+        }
+        & img{
+            width: 140px;
+            margin: 60px 0 150px;
+            filter: grayscale(1);
+        }
+    }
+}
+.blog{
+    padding: 150px 0 400px;
+    &__title{
+        border-top:1px solid $yellow;
+        border-bottom:1px solid $yellow;
+        padding: 60px 0;
+        display: flex;
+        margin-bottom: 150px;
+        & img{
+            margin: 0 30px;
+        }
+    }
+    &__wrap{
+        margin-bottom: 150px;
+    }
+    &__item{
+        position: relative;
+        padding: 70px 8vw 100px;
+        display: flex;
+        justify-content: space-between;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: #4F4F4F;
+        }
+        &:first-of-type::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: #4F4F4F;
+        }
+    }
+    &__itemLink{
+        max-width: 770px;
+        margin-right: 24vw; 
+        color: $white;
+        &:hover, &:focus, &:active{
+            color: $white;
+        }
+    }
+    &__itemImg{
+
+    }
+}
+
+.contacts{
+    padding: 400px 0;
+    &__link{
+        color: $white;
+        margin-bottom: 10px;
+        display: inline-block;
+        &:hover, &:focus, &:active{
+            color: $white;
+        }
+    }
+    &__title{
+        color: $yellow;
+    }
+    &__adress{
+        margin-top: -40px;
+    }
+    &__mail{
+        margin: 100px 0;
+    }
+}
+.form{
+    margin-top: 500px;
+    &__title{
+        margin-top: 20px;
+    }
+    input{
+        display: block;
+        width: 100%;
+        border: none;
+        background: transparent;
+        color: $white;
+        border-bottom: 1px solid $white;
+        font-family: Gibra;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        padding: 20px 0;
+        &::placeholder{
+            color: $white;
+            font-family: Gibra;
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+    &_btn{
+        margin-top: 150px;
+    }
+}
+.prefooter{
+    padding: 200px 0;
+    position: relative;
+    // background-color: $white;
+    &__row1{
+        margin-bottom: 150px;
+    }
+    &__svg{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 76%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+}

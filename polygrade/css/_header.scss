@@ -1,0 +1,33 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &__logo{
+        width: 80%;
+        padding: 60px 10% 24px 10%;
+        background-color: goldenrod;
+        @include media-breakpoint-down(md) {
+            padding: 46px 10% 19px 10%;
+        }
+        
+        @include media-breakpoint-down(sm) {
+            padding: 35px 10% 19px 10%;
+        }
+    }
+    &__burger{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    &__burgerText{
+        margin: 0 20px 0 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    &__technology{}
+    &__technologyBody{
+        padding-top: 60px;
+        border-top: 1px solid $white;
+    }
+}
