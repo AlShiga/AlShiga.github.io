@@ -1,3 +1,71 @@
+const serviceWrap = document.querySelector(".services__wraper");
+if (serviceWrap){
+    const serviceLink = serviceWrap.querySelectorAll(".services__link");
+    const serviceBg = serviceWrap.querySelectorAll(".services__bg");
+    serviceLink.forEach(function(item) {
+        item.addEventListener('mouseover', function(e) {
+            serviceLink.forEach(function(item) {
+               item.classList.remove("active");
+            });
+            item.classList.add("active");
+            const activeService = item.dataset.service;
+            serviceBg.forEach(function(item) {
+                item.classList.remove("active");
+            });
+            serviceWrap.querySelector(".services__bg[data-service='"+activeService+"']").classList.add("active")
+        })
+    });
+}
+
+const sceneEl1 = document.querySelector(".first"),
+      sceneEl2 = document.querySelector(".galery"),
+      sceneEl3 = document.querySelector(".lent"),
+      sceneEl4 = document.querySelector(".section-main");
+
+const el1 = document.querySelector(".first__circle"),
+      el2 = document.querySelectorAll(".imgWrap"),
+      el3 = document.querySelectorAll(".imgWrap img"),
+      el4 = document.querySelector(".first__canvasWrap");
+      el5 = document.querySelector(".lent_1");
+      el6 = document.querySelector(".lent_3");
+
+var controller = new ScrollMagic.Controller();
+var tween = new TimelineMax()
+        .add(TweenMax.to(el1, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
+        .add(TweenLite.to(el4, 1, { yPercent: 50, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
+var scene = new ScrollMagic.Scene({triggerElement: sceneEl1, duration: 800, offset:400 , tweenChanges: true})
+	// animate color and top border in relation to scroll position
+	.setTween(tween) 
+	.addIndicators({name: "1"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+el2.forEach(function(item, key) {
+    var scene = new ScrollMagic.Scene({triggerElement: el2[key], duration: 1200, offset:-400 , tweenChanges: true})
+    	// animate color and top border in relation to scroll position
+    	.setTween(TweenLite.to(el3[key], 0.9, { yPercent: 30, ease:Linear.easeInOut})) // the tween durtion can be omitted and defaults to 1
+    	.addIndicators({name: "2"}) // add indicators (requires plugin)
+        .addTo(controller);
+});
+
+var tween = new TimelineMax()
+        .add(TweenMax.to(el5, 0.9, {yPercent: 20, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
+        .add(TweenLite.to(el6, 1, { yPercent: 20, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
+var scene = new ScrollMagic.Scene({triggerElement: sceneEl3, duration: 600, offset:0 , tweenChanges: true})
+	// animate color and top border in relation to scroll position
+	.setTween(tween) 
+	.addIndicators({name: "3"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+// var scene = new ScrollMagic.Scene({triggerElement: sceneEl2, duration: 00, offset:00})
+// 							// animate color and top border in relation to scroll position
+// 							.setTween(el1, {transform: "rotate(180deg)"}) // the tween durtion can be omitted and defaults to 1
+// 							.setTween(el2, {color: "tomato"}) // the tween durtion can be omitted and defaults to 1
+// 							.addIndicators({name: "2 (duration: 000)"}) // add indicators (requires plugin)
+// 							.addTo(controller);
+
+
+
+
 // const bodyEl = document.querySelector("body");
 // const burger = document.querySelectorAll(".burger");
 // const menu = document.querySelector(".nav");

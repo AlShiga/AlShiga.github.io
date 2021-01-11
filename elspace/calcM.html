@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js" integrity="sha512-m0RQU4SBx0p/bLwRiI4fJBGRafVLZ4s86wRe1+OAx5EXbcWiS/X1jvYdJQRD8jOoIVl+WTyVeMawUWVCh1O8+Q==" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="calcB">
+      <div class="calcBHead">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-18 offset-3">
+              <h1 class="h2">Калькулятор</h1>
+              <div class="calcTHead">
+                <div class="calcTHead__row">
+                  <div class="calcTHead__name">
+                    <p class="р5">Название объекта</p>
+                  </div>
+                  <div class="calcTHead__input">
+                    <input
+                      class="calcTHead__nameP"
+                      id="nameProject"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="calcTHead__row">
+                  <div class="calcTHead__name">
+                    <p class="р5">Площадь</p>
+                  </div>
+                  <div class="calcTHead__input">
+                    <input
+                      class="calcTHead__square"
+                      data-costSq="1000"
+                      id="nameProject"
+                      type="number"
+                      min="10"
+                      max="1000"
+                    />
+                  </div>
+                </div>
+                <div class="calcTHead__row">
+                  <div class="calcTHead__name">
+                    <p class="р5">Кол-во этажей</p>
+                  </div>
+                  <div class="calcTHead__input">
+                    <input
+                      class="calcTHead__storey"
+                      data-costFl="5000"
+                      id="nameProject"
+                      type="number"
+                      min="1"
+                      max="10"
+                    />
+                  </div>
+                </div>
+                <div class="calcTHead__row">
+                  <div class="calcTHead__name">
+                    <p class="р5">Тип системы</p>
+                  </div>
+                  <div class="calcTHead__input">
+                    <select>
+                      <option>Умный дом</option>
+                      <option>Пункт 2</option>
+                      <option>Пункт 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="calcTRooms">
+                <div class="calcTRooms__item">
+                  <label for="">Жилая</label>
+                  <input data-costVkl="50000" data-costRest="10000" type="text">
+                </div>
+                <div class="calcTRooms__item">
+                  <label for="">Ванная</label>
+                  <input data-costVkl="50000" data-costRest="20000" type="text">
+                </div>
+                <div class="calcTRooms__item">
+                  <label for="">Кухня</label>
+                  <input data-costVkl="5000" data-costRest="30000" type="text">
+                </div>
+                <div class="calcTRooms__item">
+                  <label for="">Прочее</label>
+                  <input data-costVkl="5000" data-costRest="40000" type="text">
+                </div>
+              </div>
+              <div class="calcTVkl">
+                <input type="radio" id="contactChoice1"
+                 name="contact" value="1" checked>
+                <label for="contactChoice1">Выкллючатель1</label>
+            
+                <input type="radio" id="contactChoice2"
+                 name="contact" value="0.5">
+                <label for="contactChoice2">Выкллючатель2</label>
+            
+                <input type="radio" id="contactChoice3"
+                 name="contact" value="0.1">
+                <label for="contactChoice3">Выкллючатель3</label>
+
+                <input type="radio" id="contactChoice4"
+                 name="contact" value="0.5">
+                <label for="contactChoice4">Выкллючатель4</label>
+            
+                <input type="radio" id="contactChoice5"
+                 name="contact" value="0.1">
+                <label for="contactChoice5">Выкллючатель5</label>
+              </div>
+
+              
+              <div class="calcTResult">
+                <button class="calcTResult__calc">Рассчитать</button>
+                <form action="" class="">
+                  <div class="calcTResult__name">Объект: <span></span></div>
+                  <div class="calcTResult__project">
+                    Стоимость проектирования: <span></span>
+                  </div>
+                  <div class="calcTResult__equipment">
+                    Стоимость оборудования: <span></span>
+                  </div>
+                </form>
+              </div>
+              <div class="messareError"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="anim"></div>
+
+    <script>
+    var animEl = document.querySelector('.anim');
+    // console.log(animEl);
+    // lottie.loadAnimation({
+    //   container: animEl, // the dom element that will contain the animation
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: 'https://www.michalhotovec.com/extra/loader/loader.json'
+    // });
+
+
+
+      let tableB = document.querySelector(".calcTtable");
+      let tableBtr = document.querySelectorAll(".calcTtable tr");
+      let inputHead = document.querySelectorAll(".calcTHead input");
+      let btnCalc = document.querySelector(".calcTResult__calc");
+
+      inputHead.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+            item.style.borderColor = "";
+        });
+      });
+      btnCalc.addEventListener("click", function (e) {
+        if (validateInput()) {
+          calcProject();
+          calcEquipment();
+          document.querySelector(
+            ".calcTResult__name span"
+          ).textContent = document.querySelector(".calcTHead__nameP").value;
+        }
+      });
+
+      function validateInput() {
+        let name = document.querySelector(".calcTHead__nameP");
+        let square = document.querySelector(".calcTHead__square");
+        let storey = document.querySelector(".calcTHead__storey");
+        if (name.value.length == 0) {
+          showErr(name, "Введите название");
+          return false;
+        }
+        if (square.value.length == 0) {
+          showErr(square, "Введите площадь");
+          return false;
+        }
+        if (square.value < 10 || square.value > 1000) {
+          showErr(square, "Площадь в диапазоне от 10 до 1000кв.м.");
+          return false;
+        }
+        if (storey.value.length == 0) {
+          showErr(storey, "Введите количество этажей");
+          return false;
+        }
+        if (!(storey.value > 0 && storey.value < 10)) {
+          showErr(storey, "Этаж в диапазоне от 1 до 10");
+          return false;
+        }
+        document.querySelector(".messareError").textContent = "";
+        return true;
+      }
+      function showErr(el, text) {
+        document.querySelector(".messareError").textContent = text;
+        el.style.borderColor = "red";
+      }
+      function calcProject() {
+        // console.log("Рассчитать");
+        let name = document.querySelector(".calcTHead__nameP");
+        let square = document.querySelector(".calcTHead__square");
+        
+        let costProj =
+          square.value *
+          square.dataset.costsq
+        // console.log({ costProj });
+        let costProjR =
+          costProj == 0 ? "0" : costProj - (costProj % 50000) + 50000;
+        document.querySelector(".calcTResult__project span").textContent =
+          costProjR + "p";
+      }
+
+      function calcEquipment() {
+        let storey = document.querySelector(".calcTHead__storey");
+        let inputRoom = document.querySelectorAll(".calcTRooms__item input");
+        let costAll = 0;
+        let coefVkl = document.querySelector(".calcTVkl input:checked").value
+        console.log({coefVkl})
+        inputRoom.forEach((item)=>{
+          // console.log({costAll})
+          // console.log(item.value)
+          // console.log(item.dataset.costrest)
+
+          console.log("___")
+          console.log(item.value)
+          console.log(item.dataset.costvkl)
+          console.log(item.dataset.costrest)
+          console.log("___")
+
+
+          costAll = costAll + (item.value*item.dataset.costvkl*coefVkl+item.value*item.dataset.costrest)
+        });
+        console.log("__")
+        console.log({costAll})
+        costAll = costAll+storey.value*storey.dataset.costfl;
+        console.log({costAll})
+        let costAllR = costAll == 0 ? "0" :(costAll % 5000)?costAll - (costAll % 5000) + 5000:costAll;
+        document.querySelector(".calcTResult__equipment span").textContent =
+          costAllR + "p";
+      }
+
+      function closeTR(el) {
+        if (document.querySelectorAll(".calcTtable tr").length > 2) {
+          el.remove();
+        }
+      }
+
+      function addTR(parent) {
+        let firstTd = document.querySelectorAll(".calcTtable tr")[1];
+        document
+          .querySelector("table tbody")
+          .insertAdjacentHTML("beforeEnd", firstTd.outerHTML);
+        tableBtr = document.querySelectorAll(".calcTtable tr");
+        tableBtr.forEach(function (item) {
+          item.addEventListener("click", function (e) {
+            if (e.srcElement.classList.contains("calcTtable__btn")) {
+              closeTR(item);
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
