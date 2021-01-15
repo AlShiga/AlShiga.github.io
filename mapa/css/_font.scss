@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Buyan';
+  src: url('../font/BuyanBold.woff2') format('woff2'), /* Modern Browsers */
+       url('../font/BuyanBold.otf') format('opentype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Buyan';
+  src: url('../font/BuyanRegular.woff2') format('woff2'), /* Modern Browsers */
+       url('../font/BuyanRegular.otf') format('opentype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../font/Raleway-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../font/Raleway-Regular.otf') format('opentype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,103 @@
+.header{
+  position: fixed;
+  top: 20px;
+  height: 90px;
+  width: 100%;
+  color: $white;
+  z-index: 50;
+  // border: 1px solid $white;
+  @include media-breakpoint-down(lg) {
+    height: 70px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 60px;
+  }
+  &__logo{
+    // max-height: 40%;
+    max-width: 70%;
+    svg{
+      fill: $white;
+      width: 100%;
+    }
+  } 
+  &__borderR{
+    border-right: 1px solid $white;
+  }
+  &__borderL{
+    border-left: 1px solid $white;
+  }
+  &__borderT{
+    border-top: 1px solid $white;
+  }
+  &__lines{
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100vh;
+      background-color: $white;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100vh;
+      background-color: $white;
+    }
+  }
+}
+.burger{
+  & svg{
+    stroke:$white;
+  }
+}
+
+.preloader{
+  position: relative;
+  z-index: 1000;
+  &__bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100vh;
+    background-color: $white;
+    // transition: 1s;
+    background-color: #D2D3DD;
+    transform-origin: 0 100%;
+  }
+  &__anim{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.4s;
+    // max-width: 25%;
+  }
+  &_show &__bg{
+    // transform: translateY(-100%);
+    animation: 1s preload 0s both ;
+  }
+  &_show &__img{
+    opacity: 0;
+  }
+}
+@keyframes preload {
+  0% {
+    transform: translateY(0%);
+  }
+  20%{
+    transform: rotate(-5deg) translateY(-20%);
+  }
+  80%{
+    transform: rotate(-3deg) translateY(-90%);
+  }
+  100%{
+    transform: rotate(-0deg) translateY(-120%);
+  }
+}

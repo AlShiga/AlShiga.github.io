@@ -1,0 +1,556 @@
+$white: #eaeaea;
+$blue: #3343e6;
+$dark: #242628;
+$gray: #424242;
+*,
+*:hover,
+*:focus,
+*:active {
+  font-family: Montserrat, sans-serif;
+  outline: none !important;
+}
+
+a {
+  scroll-behavior: smooth;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+body {
+  color: $white;
+  overflow-x: hidden;
+  background: url(../img/bg.jpg);
+  background-size: auto;
+  background-repeat: repeat;
+}
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  outline: none;
+}
+p > a,
+span > a {
+  font: inherit;
+  color: inherit;
+  &:hover,
+  &:focus,
+  &:active {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #929292;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b2b2b2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.m-b-1 {
+  margin-bottom: 20px;
+}
+
+.m-b-2 {
+  margin-bottom: 40px;
+}
+
+.m-b-3 {
+  margin-bottom: 70px;
+}
+
+.m-b-4 {
+  margin-bottom: 100px;
+}
+
+.m-b-5 {
+  margin-bottom: 250px;
+}
+
+.m-b-6 {
+  margin-bottom: 350px;
+}
+
+.m-t-1 {
+  margin-top: 20px;
+}
+
+.m-t-2 {
+  margin-top: 40px;
+}
+
+.m-t-3 {
+  margin-top: 70px;
+}
+
+.m-t-4 {
+  margin-top: 100px;
+}
+
+.m-t-5 {
+  margin-top: 250px;
+}
+
+.m-t-6 {
+  margin-top: 350px;
+}
+
+.p-b-1 {
+  padding-bottom: 20px;
+}
+
+.p-b-2 {
+  padding-bottom: 40px;
+}
+
+.p-b-3 {
+  padding-bottom: 70px;
+}
+
+.p-b-4 {
+  padding-bottom: 100px;
+}
+
+.p-b-5 {
+  padding-bottom: 250px;
+}
+
+.p-b-6 {
+  padding-bottom: 350px;
+}
+
+.p-t-1 {
+  padding-top: 20px;
+}
+
+.p-t-2 {
+  padding-top: 40px;
+}
+
+.p-t-3 {
+  padding-top: 70px;
+}
+
+.p-t-4 {
+  padding-top: 100px;
+}
+
+.p-t-5 {
+  padding-top: 250px;
+}
+
+.p-t-6 {
+  padding-top: 350px;
+}
+
+@include media-breakpoint-down(lg) {
+  .m-b-5 {
+    margin-bottom: 200px;
+  }
+
+  .m-b-6 {
+    margin-bottom: 300px;
+  }
+
+  .m-t-5 {
+    margin-top: 200px;
+  }
+
+  .m-t-6 {
+    margin-top: 300px;
+  }
+
+  .p-b-5 {
+    padding-bottom: 200px;
+  }
+
+  .p-b-6 {
+    padding-bottom: 300px;
+  }
+
+  .p-t-5 {
+    padding-top: 200px;
+  }
+
+  .p-t-6 {
+    padding-top: 300px;
+  }
+}
+@include media-breakpoint-down(md) {
+  .m-b-5 {
+    margin-bottom: 200px;
+  }
+
+  .m-b-6 {
+    margin-bottom: 200px;
+  }
+
+  .m-t-5 {
+    margin-top: 200px;
+  }
+
+  .m-t-6 {
+    margin-top: 200px;
+  }
+
+  .p-b-5 {
+    padding-bottom: 200px;
+  }
+
+  .p-b-6 {
+    padding-bottom: 200px;
+  }
+
+  .p-t-5 {
+    padding-top: 200px;
+  }
+
+  .p-t-6 {
+    padding-top: 200px;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .m-b-3 {
+    margin-bottom: 50px;
+  }
+
+  .m-b-4 {
+    margin-bottom: 70px;
+  }
+
+  .m-b-5 {
+    margin-bottom: 100px;
+  }
+
+  .m-b-6 {
+    margin-bottom: 150px;
+  }
+
+  .m-t-3 {
+    margin-top: 50px;
+  }
+
+  .m-t-4 {
+    margin-top: 70px;
+  }
+
+  .m-t-5 {
+    margin-top: 100px;
+  }
+
+  .m-t-6 {
+    margin-top: 150px;
+  }
+
+  .p-b-3 {
+    padding-bottom: 50px;
+  }
+
+  .p-b-4 {
+    padding-bottom: 70px;
+  }
+
+  .p-b-5 {
+    padding-bottom: 100px;
+  }
+
+  .p-b-6 {
+    padding-bottom: 150px;
+  }
+
+  .p-t-3 {
+    padding-top: 50px;
+  }
+
+  .p-t-4 {
+    padding-top: 70px;
+  }
+
+  .p-t-5 {
+    padding-top: 100px;
+  }
+
+  .p-t-6 {
+    padding-top: 150px;
+  }
+}
+
+.mp {
+  margin: 0;
+  padding: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-100 {
+  z-index: 100;
+}
+.h1 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  &_contour {
+    color: transparent;
+    -webkit-text-stroke: 1px $gray;
+  }
+}
+.h2 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  &_contour {
+    color: transparent;
+    -webkit-text-stroke: 1px $gray;
+  }
+}
+.h3 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 100%;
+}
+.h4 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+}
+.h5 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 100%;
+}
+.h6 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+}
+.h7 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+.p1 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+.num1 {
+  font-family: Buyan;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 100%;
+}
+@include media-breakpoint-down(lg) {
+  .h1 {
+    font-size: 48px;
+  }
+  .h2 {
+    font-size: 48px;
+  }
+  .h3 {
+    font-size: 36px;
+  }
+  .h4 {
+    font-size: 24px;
+  }
+  .h5 {
+    font-size: 24px;
+  }
+  .h6 {
+    font-size: 24px;
+  }
+  .h7 {
+    font-size: 16px;
+  }
+  .p1 {
+    font-size: 14px;
+  }
+  .num1 {
+    font-size: 64px;
+  }
+}
+@include media-breakpoint-down(md) {
+  .h1 {
+    font-size: 36px;
+  }
+  .h2 {
+    font-size: 36px;
+  }
+  .h3 {
+    font-size: 30px;
+  }
+  .h4 {
+    font-size: 24px;
+  }
+  .h5 {
+    font-size: 24px;
+  }
+  .h6 {
+    font-size: 24px;
+  }
+  .h7 {
+    font-size: 16px;
+  }
+  .p1 {
+    font-size: 14px;
+  }
+  .num1 {
+    font-size: 48px;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .h1 {
+    font-size: 24px;
+  }
+  .h2 {
+    font-size: 24px;
+  }
+  .h3 {
+    font-size: 48px;
+  }
+  .h4 {
+    font-size: 24px;
+  }
+  .h5 {
+    font-size: 24px;
+  }
+  .h6 {
+    font-size: 18px;
+  }
+  .h7 {
+    font-size: 14px;
+  }
+  .p1 {
+    font-size: 14px;
+  }
+  .num1 {
+    font-size: 36px;
+  }
+}
+
+.btn2 {
+  & svg {
+    animation: rotate 26s linear infinite;
+    will-change: transform;
+  }
+  & circle {
+    fill: $blue;
+  }
+  & path {
+    fill: $white;
+  }
+  &_transparent {
+    & circle {
+      fill: transparent;
+    }
+  }
+  &_blue {
+    & circle {
+      fill: transparent;
+    }
+    & path {
+      fill: $blue;
+    }
+  }
+}
+
+
+
+.ttu {
+  text-transform: uppercase;
+}
+.w-100 {
+  width: 100% !important;
+  height: auto;
+}
+.btnWrap {
+  display: flex;
+  width: 100%;
+  &_right {
+    justify-content: flex-end;
+  }
+}
+
+.madeAva {
+  color: $white;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+  }
+}
+
+.logo {
+  & path {
+    fill: $gray;
+  }
+  &_white {
+    & path {
+      fill: $white;
+    }
+  }
+}

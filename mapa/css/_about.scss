@@ -1,0 +1,25 @@
+.aboutFitst{
+  background-color: $white;
+  color: $gray;
+}
+.aboutMap{
+  background-color: $blue;
+  color: $white;
+}
+.aboutScheme{
+  background-color: $white;
+  color: $gray;
+}
+.aboutDoc{
+  background-color: $white;
+  color: $gray;
+  &__item{
+    a{
+      display: flex;
+      align-items: center;
+    }
+    img{
+      margin-right: 10px;
+    }
+  }
+}

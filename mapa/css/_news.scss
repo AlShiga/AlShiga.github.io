@@ -1,0 +1,23 @@
+.newsFirst{
+  // background-color: $white;
+
+  color: $gray;
+}
+.newsBody{
+  // background-color: $white;
+  color: $gray;
+  &__item{
+    border: 1px solid $gray;
+    img{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.newsDBody{
+  color: $gray;
+  &__img{
+    position: sticky;
+    top: 150px;
+  }
+}

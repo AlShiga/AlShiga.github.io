@@ -1,0 +1,102 @@
+body{
+  background-image: url(../img/bgWp.jpg);
+  // background-color: $gray;
+  background-size: contain;
+  background-position: center;
+  &.white{
+  background-color: $white;
+  background-image: url(../img/bgWp.jpg);
+  overflow: scroll;
+  }
+}
+.about{
+  background-color: rgba($color: $gray, $alpha: 0.4);
+  color: $white;
+}
+.project{
+  // background-color: rgba($white, 0.8);
+  color: $white;
+}
+.services{
+  background-color: $gray;
+  color: $white;
+  &__big{
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+    & > img {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__bigTextInner{
+    position: absolute;
+    bottom: 150px;
+    left: 8.33vw;
+  }
+  &__sm{
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 200%;
+    }
+    & > img {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+
+    }
+  }
+  &__smTextInner{
+    position: absolute;
+    top: 150px;
+    left: 20%;
+    width: 70%;
+  }
+}
+.partners{
+  &__imgBottom{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+.news{
+  background-color: #2D328C;
+  background-image: url(../img/bgB.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  & .swiper-slide{
+    border-bottom: 1px solid $white;
+  }
+  & .swiper-container{
+    overflow: visible;
+  }
+  & .swiper-slide{
+    opacity: 0.2;
+    transition: 0.7s;
+  }
+  & .swiper-slide-prev, & .swiper-slide-next{
+    opacity: 0.4;
+  }
+  & .swiper-slide-active{
+    opacity: 1;
+  }
+}
