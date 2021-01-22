@@ -6,7 +6,26 @@
   color: $gray;
 }
 .prDNum{
-
+  &__bg{
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 200vw;
+    height: 120%;
+    background-color: $gray;
+    z-index: -1;
+  }
+  &__grayBg{
+    background-color: $gray;
+  }
+  &__imgF{
+    @include media-breakpoint-only(lg) {
+      transform: translateY(-20%);
+    }
+    @include media-breakpoint-only(md) {
+      transform: translateY(-50%);
+    }
+  }
 }
 .prDLast{
   background-color: $white;
@@ -30,18 +49,22 @@
   }
 }
 
-.project{
+.projectL{
   color: $gray;
   position: relative;
+  min-height: 100vh;
   &__detailImg{
-    position: sticky;
-    top: 150px;
-    height: calc(100vh - 300px);
+    // position: sticky;
+    // top: 150px;
+    // height: calc(100vh - 300px);
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
   }
-  &__detailImg1, &__detailImg2{
-    max-height: 50%;
-    object-fit: cover;
-  }
+  // &__detailImg1, &__detailImg2{
+  //   max-height: calc(50vh - 170px);
+  //   object-fit: cover;
+  // }
   &__item{
     padding: 20px 0;
     border-bottom: 1px solid $gray;
@@ -55,6 +78,31 @@
       &:hover{
         color: $gray;
       }
+    }
+  }
+  &__images{
+    img {
+      opacity: 0.3;
+      transition: 0.5s;
+    }
+    .swiper-slide-active img{
+      opacity: 1;
+    }
+  }
+  &__head{
+    a{
+      color: transparent;
+      transition: 0.3s;
+      &:hover, &:active, &:focus{
+        color: $gray;
+      }
+    }
+    .swiper-slide-active a{
+      color: $gray;
+    }
+    .h2{
+      padding: 20px 0;
+      border-top: 1px solid $gray;
     }
   }
 }

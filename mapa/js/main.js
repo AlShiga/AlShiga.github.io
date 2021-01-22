@@ -1,67 +1,279 @@
-const serviceWrap = document.querySelector(".services__wraper");
-if (serviceWrap){
-    const serviceLink = serviceWrap.querySelectorAll(".services__link");
-    const serviceBg = serviceWrap.querySelectorAll(".services__bg");
-    serviceLink.forEach(function(item) {
-        item.addEventListener('mouseover', function(e) {
-            serviceLink.forEach(function(item) {
-               item.classList.remove("active");
-            });
-            item.classList.add("active");
-            const activeService = item.dataset.service;
-            serviceBg.forEach(function(item) {
-                item.classList.remove("active");
-            });
-            serviceWrap.querySelector(".services__bg[data-service='"+activeService+"']").classList.add("active")
-        })
+document.addEventListener("DOMContentLoaded", function() {
+  wow = new WOW(
+    {
+    boxClass:     'anim',     
+    animateClass: 'anim_show',
+    offset:       200,         
+    mobile:       true,      
+    live:         false       
+  }
+  )
+  wow.init();
+
+  var accordeon = {
+    init: function () {
+      accordeon.head = document.querySelectorAll(".accordeon__head");
+      accordeon.browseTheClassArrow();
+    },
+    browseTheClassArrow: function () {
+      for (var i = 0; i < accordeon.head.length; i++) {
+        accordeon.head[i].addEventListener(
+          "click",
+          accordeon.handleDisplayContenu
+        );
+      }
+    },
+    handleDisplayContenu: function (evt) {
+      for (var i = 0; i < accordeon.head.length; i++) {
+        accordeon.head[i].classList.remove("accordeon__head_open");
+      }
+      evt.currentTarget.classList.add("accordeon__head_open");
+      console.log(evt.currentTarget.dataset.num)
+      accordeon.ternSlider(evt.currentTarget.dataset.num)
+    },
+    ternSlider: function(n){
+      console.log(n)
+      console.log(accordeon.head.length)
+      let sliderInner = document.querySelector(".sliderSteps__inner");
+      let sliderInnerImg = sliderInner.querySelectorAll("img");
+      sliderInner.style.transform="translateY("+-100/accordeon.head.length*(n-1)+"%)"
+      sliderInnerImg
+      sliderInnerImg.forEach(el => {
+        el.style.opacity=0;
+      });
+      sliderInnerImg[n-1].style.opacity=1;
+      sliderInnerImg[n-2].style.opacity=0.2;
+      sliderInnerImg[n].style.opacity=0.2;
+
+
+    }
+  };
+  accordeon.init();
+})
+
+let main3dEl = document.querySelector(".main3d");
+if(main3dEl){
+  let vh = window.innerHeight * 0.01;
+  main3dEl.style.height = vh*100+"px";
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    main3dEl.style.height = vh*100+"px";
+  });
+}
+
+
+let burger = document.querySelector(".burger");
+let menu = document.querySelector(".menu");
+    burger.addEventListener('click', function(e) {
+        menu.classList.toggle("menu_open");
+    })
+
+
+let parentBtn2 = [];
+let btn2Cube = [];
+let btn2Text = [];
+let btn2Circle = [];
+let btn2 = document.querySelectorAll(".btn2");
+let animBtn = false;
+if(innerWidth>1024 && btn2.length){
+    initMoveBtn2();
+}
+
+setInterval(() => {
+    animBtn = true;
+}, 50);
+
+function initMoveBtn2(){
+    btn2.forEach(el => {
+        parentBtn2.push(el.closest("section") || document);
+        btn2Cube.push(el.querySelector(".btn2__cube"));
+        btn2Text.push(el.querySelector(".btn2__text"));
+        btn2Circle.push(el.querySelector("circle"));
+    });
+    parentBtn2.forEach((el, i) => {
+        el.addEventListener('mousemove', (e) => {
+            if(animBtn){
+                animBtn = false;
+                moveBtn2(e, i);
+            }
+        });
     });
 }
 
-const sceneEl1 = document.querySelector(".first"),
-      sceneEl2 = document.querySelector(".galery"),
-      sceneEl3 = document.querySelector(".lent"),
-      sceneEl4 = document.querySelector(".section-main");
+function moveBtn2(e, i){
+    let pos = btn2[i].getBoundingClientRect();
+    let x = pos.x+pos.width/2;
+    let y = pos.y+pos.height/2;
+    let xM = e.clientX;
+    let yM = e.clientY;
+    let posX = x-xM;
+    let posY = y-yM;
+    if(Math.abs(posY)<300 && Math.abs(posX)<300){
+        gsap.to(btn2Circle[i], {
+          duration: 1,
+          x: -posX/15,
+          y: -posY/15,
+          ease: "ease"
+        });
+        gsap.to(btn2Text[i], {
+            duration: 1,
+            x: -posX/10,
+            y: -posY/10,
+            ease: "ease"
+          });
+        gsap.to(btn2Cube[i], {
+          duration: 1,
+          x: -posX/35,
+          y: -posY/35,
+          ease: "ease"
+        });
+        } else {
+        gsap.to(btn2Circle[i], {
+          duration: 2.5,
+          x: 0,
+          y: 0,
+          ease: "ease"
+        });
+        gsap.to(btn2Text[i], {
+          duration: 2.5,
+          x: 0,
+          y: 0,
+          ease: "ease"
+        });
+        gsap.to(btn2Cube[i], {
+          duration: 2.5,
+          x: 0,
+          y: 0,
+          ease: "ease"
+        });
+      }
+}
 
-const el1 = document.querySelector(".first__circle"),
-      el2 = document.querySelectorAll(".imgWrap"),
-      el3 = document.querySelectorAll(".imgWrap img"),
-      el4 = document.querySelector(".first__canvasWrap");
-      el5 = document.querySelector(".lent_1");
-      el6 = document.querySelector(".lent_3");
+let controller = new ScrollMagic.Controller({addIndicators: true});
 
-var controller = new ScrollMagic.Controller();
-var tween = new TimelineMax()
-        .add(TweenMax.to(el1, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
-        .add(TweenLite.to(el4, 1, { yPercent: 50, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
-var scene = new ScrollMagic.Scene({triggerElement: sceneEl1, duration: 800, offset:400 , tweenChanges: true})
-	// animate color and top border in relation to scroll position
-	.setTween(tween) 
-	.addIndicators({name: "1"}) // add indicators (requires plugin)
-    .addTo(controller);
+let secAbout = document.querySelector(".about ");
+if(secAbout){
+  (function aboutAnim(){
+    let aboutGrid = secAbout.querySelector(".grid");
+    let folderImg = secAbout.querySelector(".folder__img");
+    let folderImgBg = secAbout.querySelector(".folder__imgBg");
+    let aboutText = secAbout.querySelector(".about__text");
+    let timeline = gsap.timeline()
+    .add(TweenLite.to(aboutGrid,1, { yPercent: -20}),0)
+    .add(TweenLite.fromTo(folderImg,1, {yPercent: -40}, {yPercent: 30}),0)
+    .add(TweenLite.fromTo(folderImgBg,0.9, {yPercent: -15}, {yPercent: 20}),0)
+    .add(TweenLite.fromTo(aboutText,0.9, {yPercent: 20}, {yPercent: 0}),0);
+    var scene = new ScrollMagic.Scene({triggerElement: secAbout, duration: secAbout.offsetHeight, offset: 0 , tweenChanges: true})
+    scene.setTween(timeline);
+    scene.addIndicators({name: "About"});
+    scene.addTo(controller);
+  }());
+}
+let secProject  = document.querySelector(".project");
 
-el2.forEach(function(item, key) {
-    var scene = new ScrollMagic.Scene({triggerElement: el2[key], duration: 1200, offset:-400 , tweenChanges: true})
-    	// animate color and top border in relation to scroll position
-    	.setTween(TweenLite.to(el3[key], 0.9, { yPercent: 30, ease:Linear.easeInOut})) // the tween durtion can be omitted and defaults to 1
-    	.addIndicators({name: "2"}) // add indicators (requires plugin)
-        .addTo(controller);
-});
+if(secProject){
+  (function projectAnim(){
+    let grid = secProject.querySelector(".grid");
+    let slider1 = secProject.querySelector(".swiper-container1")
+    let slider2 = secProject.querySelector(".swiper-container2")
+    let slider3 = secProject.querySelector(".swiper-container3")
+    let timeline = gsap.timeline()
+    .add(TweenLite.to(grid,1, { yPercent: -20}),0)
+    .add(TweenLite.fromTo(slider1,0.6, {yPercent: 40}, {yPercent: -20}),0)
+    .add(TweenLite.fromTo(slider2,0.4, {yPercent: 25}, {yPercent: -10}),0)
+    .add(TweenLite.fromTo(slider3,0.3, {yPercent: 20}, {yPercent: 0}),0);
+    var scene1 = new ScrollMagic.Scene({triggerElement: secProject, duration: secProject.offsetHeight, offset: 0 , tweenChanges: true})
+    scene1.setTween(timeline);
+    scene1.addIndicators({name: "Project"}) // add indicators (requires plugin);
+    scene1.addTo(controller);
+  }());
+}
 
-var tween = new TimelineMax()
-        .add(TweenMax.to(el5, 0.9, {yPercent: 20, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
-        .add(TweenLite.to(el6, 1, { yPercent: 20, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
-var scene = new ScrollMagic.Scene({triggerElement: sceneEl3, duration: 600, offset:0 , tweenChanges: true})
-	// animate color and top border in relation to scroll position
-	.setTween(tween) 
-	.addIndicators({name: "3"}) // add indicators (requires plugin)
-    .addTo(controller);
+let secContacts  = document.querySelector(".contacts");
 
-// var scene = new ScrollMagic.Scene({triggerElement: sceneEl2, duration: 00, offset:00})
-// 							// animate color and top border in relation to scroll position
-// 							.setTween(el1, {transform: "rotate(180deg)"}) // the tween durtion can be omitted and defaults to 1
-// 							.setTween(el2, {color: "tomato"}) // the tween durtion can be omitted and defaults to 1
-// 							.addIndicators({name: "2 (duration: 000)"}) // add indicators (requires plugin)
-// 							.addTo(controller);
+if(secContacts){
+  (function projectAnim(){
+    let grid = secContacts.querySelector(".grid");
+    let map = secContacts.querySelector(".map__map")
+    let slider2 = secContacts.querySelector(".swiper-container2")
+    let slider3 = secContacts.querySelector(".swiper-container3")
+    let timeline = gsap.timeline()
+    // .add(TweenLite.to(grid,1, { yPercent: -20}),0)
+    .add(TweenLite.fromTo(map,1, {yPercent: -10}, {yPercent: -40}),0);
+    // .add(TweenLite.fromTo(slider2,0.4, {yPercent: 25}, {yPercent: -10}),0)
+    // .add(TweenLite.fromTo(slider3,0.3, {yPercent: 20}, {yPercent: 0}),0);
+    var scene1 = new ScrollMagic.Scene({triggerElement: secContacts, duration: secContacts.offsetHeight, offset: 0 , tweenChanges: true})
+    scene1.setTween(timeline);
+    scene1.addIndicators({name: "Contacts"}) // add indicators (requires plugin);
+    scene1.addTo(controller);
+  }());
+}
+
+
+// const serviceWrap = document.querySelector(".services__wraper");
+// if (serviceWrap){
+//     const serviceLink = serviceWrap.querySelectorAll(".services__link");
+//     const serviceBg = serviceWrap.querySelectorAll(".services__bg");
+//     serviceLink.forEach(function(item) {
+//         item.addEventListener('mouseover', function(e) {
+//             serviceLink.forEach(function(item) {
+//                item.classList.remove("active");
+//             });
+//             item.classList.add("active");
+//             const activeService = item.dataset.service;
+//             serviceBg.forEach(function(item) {
+//                 item.classList.remove("active");
+//             });
+//             serviceWrap.querySelector(".services__bg[data-service='"+activeService+"']").classList.add("active")
+//         })
+//     });
+// }
+
+// const sceneEl1 = document.querySelector(".first"),
+//       sceneEl2 = document.querySelector(".galery"),
+//       sceneEl3 = document.querySelector(".lent"),
+//       sceneEl4 = document.querySelector(".section-main");
+
+// const el1 = document.querySelector(".first__circle"),
+//       el2 = document.querySelectorAll(".imgWrap"),
+//       el3 = document.querySelectorAll(".imgWrap img"),
+//       el4 = document.querySelector(".first__canvasWrap");
+//       el5 = document.querySelector(".lent_1");
+//       el6 = document.querySelector(".lent_3");
+
+// var controller = new ScrollMagic.Controller();
+// var tween = new TimelineMax()
+//         .add(TweenMax.to(el1, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
+//         .add(TweenLite.to(el4, 1, { yPercent: 50, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
+// var scene = new ScrollMagic.Scene({triggerElement: sceneEl1, duration: 800, offset:400 , tweenChanges: true})
+// 	// animate color and top border in relation to scroll position
+// 	.setTween(tween) 
+// 	.addIndicators({name: "1"}) // add indicators (requires plugin)
+//     .addTo(controller);
+
+// el2.forEach(function(item, key) {
+//     var scene = new ScrollMagic.Scene({triggerElement: el2[key], duration: 1200, offset:-400 , tweenChanges: true})
+//     	// animate color and top border in relation to scroll position
+//     	.setTween(TweenLite.to(el3[key], 0.9, { yPercent: 30, ease:Linear.easeInOut})) // the tween durtion can be omitted and defaults to 1
+//     	.addIndicators({name: "2"}) // add indicators (requires plugin)
+//         .addTo(controller);
+// });
+
+// var tween = new TimelineMax()
+//         .add(TweenMax.to(el5, 0.9, {yPercent: 20, ease:Linear.easeNone})) // the tween durtion can be omitted and defaults to 1
+//         .add(TweenLite.to(el6, 1, { yPercent: 20, ease:Linear.easeOut})); // the tween durtion can be omitted and defaults to 1
+// var scene = new ScrollMagic.Scene({triggerElement: sceneEl3, duration: 600, offset:0 , tweenChanges: true})
+// 	// animate color and top border in relation to scroll position
+// 	.setTween(tween) 
+// 	.addIndicators({name: "3"}) // add indicators (requires plugin)
+//     .addTo(controller);
+
+// // var scene = new ScrollMagic.Scene({triggerElement: sceneEl2, duration: 00, offset:00})
+// // 							// animate color and top border in relation to scroll position
+// // 							.setTween(el1, {transform: "rotate(180deg)"}) // the tween durtion can be omitted and defaults to 1
+// // 							.setTween(el2, {color: "tomato"}) // the tween durtion can be omitted and defaults to 1
+// // 							.addIndicators({name: "2 (duration: 000)"}) // add indicators (requires plugin)
+// // 							.addTo(controller);
 
 
 

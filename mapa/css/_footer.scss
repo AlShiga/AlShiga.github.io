@@ -1,5 +1,8 @@
 .footerWrap{
   background-color: $gray;
+  background: url(../img/bgBp.jpg);
+  background-size: contain;
+  background-position: center;
   border: 1px solid transparent;
   position: relative;
   z-index: 100;

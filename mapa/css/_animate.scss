@@ -3,3 +3,44 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translate3d(0,50%,0)
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes scaleMin {
+  0% {
+      opacity: 0;
+      transform: scale(1.1)
+  }
+
+
+  100% {
+      opacity: 1;
+      transform: scale(1)
+  }
+}
+
+.scaleMin {
+  // transform: scale(1.2);
+  animation-name: scaleMin;
+  transform-origin: 50% 100%;
+}
+
+.anin_w{
+  visibility: visible !important;
+}

@@ -7,11 +7,26 @@
   // background-color: $white;
   color: $gray;
   &__item{
+    padding-top: 40px;
+    padding-bottom: 40px;
     border: 1px solid $gray;
+    @include media-breakpoint-down(sm) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     img{
       height: 100%;
       object-fit: cover;
     }
+    &>.row>div:first-child{
+      @include media-breakpoint-down(md) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &__itemDate{
+    margin: 0;
+    padding: 0;
   }
 }
 .newsDBody{
@@ -19,5 +34,8 @@
   &__img{
     position: sticky;
     top: 150px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 60px;
+    }
   }
 }

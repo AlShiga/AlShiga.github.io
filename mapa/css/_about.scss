@@ -1,17 +1,34 @@
 .aboutFitst{
   background-color: $white;
+  background: url(../img/bgWp.jpg);
+  background-size: contain;
+  background-position: center;
   color: $gray;
 }
 .aboutMap{
   background-color: $blue;
+  background-image: url(../img/bgB.jpg);
+  color: $white;
+}
+.aboutExperience {
+  background-color: $gray;
+  background: url(../img/bgBp.jpg);
+  background-size: contain;
+  background-position: center;
   color: $white;
 }
 .aboutScheme{
   background-color: $white;
+  background: url(../img/bgWp.jpg);
+  background-size: contain;
+  background-position: center;
   color: $gray;
 }
 .aboutDoc{
   background-color: $white;
+  background: url(../img/bgWp.jpg);
+  background-size: contain;
+  background-position: center;
   color: $gray;
   &__item{
     a{
