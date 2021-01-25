@@ -29,6 +29,9 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    @include media-breakpoint-down(sm){
+      border-right: 1px solid $white;
+    }
   }
   &__col1{
     flex-grow: 1;
@@ -58,5 +61,8 @@
     a{
       color: $white;
     }
+  }
+  &__img{
+    flex: none;
   }
 }

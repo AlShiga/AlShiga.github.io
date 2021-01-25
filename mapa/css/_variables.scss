@@ -6,10 +6,13 @@ $gray: #424242;
 *:hover,
 *:focus,
 *:active {
-  font-family: Montserrat, sans-serif;
   outline: none !important;
 }
-
+*{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+}
 a {
   scroll-behavior: smooth;
 }
@@ -592,6 +595,7 @@ input[type="number"] {
 
 .imgW{
   position: relative;
+  display: block;
   &::after{
     content: "";
     display: block;
@@ -603,5 +607,6 @@ input[type="number"] {
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }

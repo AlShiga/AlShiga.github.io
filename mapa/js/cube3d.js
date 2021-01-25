@@ -83,12 +83,24 @@ loaderCube.load(
   );
 
   // FLOOR
+  //
+  let scrW =  document.querySelector(".main3d").offsetWidth;
+  let scrH =  document.querySelector(".main3d").offsetHeight;
+  let imgW 
+  let imgH 
+  if (scrW/scrH > 1.78){
+    imgW = scrW;
+    imgH = scrW * 1080 / 1920;
+  } else{
+    imgW = scrH * 1920 / 1080;
+    imgH = scrH;
+  }
   var floorTexture = new THREE.TextureLoader().load( window.location.href+'/img/bgBM.jpg' );
   floorTexture.minFilter = THREE.LinearFilter;
   // floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
   floorTexture.repeat.set( 1, 1 );
   var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
-  var floorGeometry = new THREE.PlaneGeometry(1920, 1080, 1, 1);
+  var floorGeometry = new THREE.PlaneGeometry(imgW, imgH, 1, 1);
   var floor = new THREE.Mesh(floorGeometry, floorMaterial);
   floor.position.x = -00;
   floor.position.y = -00;
@@ -107,41 +119,44 @@ loaderCube.load(
   
   
   // Left.Right FLOOR
-  const geometry = new THREE.PlaneGeometry( 800, 1080 );
+  const geometry = new THREE.PlaneGeometry( scrW, scrW );
   const material = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
   const floor1 = new THREE.Mesh( geometry, material );
-  floor1.position.x = -00;
-  floor1.position.x = -900;
+  floor1.position.x = -0;
+  floor1.position.x = -scrW;
   floor1.position.z = -299;
   floor1.rotation.y = Math.PI/2;
   sceneCube.add( floor1 );
   const floor2 = new THREE.Mesh( geometry, material );
-  floor2.position.x = -00;
-  floor2.position.x = 900;
-  floor2.position.z = -899;
+  floor2.position.x = -0;
+  floor2.position.x = scrW;
+  floor2.position.z = -scrW;
   floor2.rotation.y = Math.PI/2;
   sceneCube.add( floor2 );
-  floor2.position.x = -00;
-  floor2.position.x = 900;
-  floor2.position.z = -899;
+  floor2.position.x = -0;
+  floor2.position.x = scrW;
+  floor2.position.z = -scrW;
   floor2.rotation.y = Math.PI/2;
   sceneCube.add( floor2 );
 
+  function ternModelCube(el, x, y) {
+    let mouseRotX = x/1920/3*Math.PI;
+    let mouseRotY = y/1080/3*Math.PI;
+    el.rotation.y = modelCubePosY + mouseRotX;
+    el.rotation.z = modelCubePosY*2 + mouseRotY;
+    modelCubePosY=modelCubePosY+Math.PI / 720;
+  }
 
 render();
 function render(event) {
-    refractSphereCamera.updateCubeMap( rendererCube, sceneCube );
     requestAnimationFrame(render);
-    if(modelCubeLoaded){
-        ternModelCube(modelCube, mousePosXCube, mousePosYCube);
+    if(window.scrollY < scrH*1.2){
+        refractSphereCamera.updateCubeMap( rendererCube, sceneCube );
+        if(modelCubeLoaded){
+            ternModelCube(modelCube, mousePosXCube, mousePosYCube);
+        }
+        rendererCube.render(sceneCube, camera);
     }
-    rendererCube.render(sceneCube, camera);
 }
 
-function ternModelCube(el, x, y) {
-  let mouseRotX = x/1920/3*Math.PI;
-  let mouseRotY = y/1080/3*Math.PI;
-  el.rotation.y = modelCubePosY + mouseRotX;
-  el.rotation.z = modelCubePosY*2 + mouseRotY;
-  modelCubePosY=modelCubePosY+Math.PI / 720;
-}
+

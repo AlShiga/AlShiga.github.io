@@ -55,10 +55,11 @@ let main3dEl = document.querySelector(".main3d");
 if(main3dEl){
   let vh = window.innerHeight * 0.01;
   main3dEl.style.height = vh*100+"px";
-  window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    main3dEl.style.height = vh*100+"px";
-  });
+  // window.addEventListener('resize', () => {
+  //   alert('Resize');
+  //   let vh = window.innerHeight * 0.01;
+  //   main3dEl.style.height = vh*100+"px";
+  // });
 }
 
 
@@ -149,10 +150,11 @@ function moveBtn2(e, i){
       }
 }
 
-let controller = new ScrollMagic.Controller({addIndicators: true});
+let controller = new ScrollMagic.Controller({addIndicators: false});
 
 let secAbout = document.querySelector(".about ");
 if(secAbout){
+  let secAboutHeight = secAbout.offsetHeight;
   (function aboutAnim(){
     let aboutGrid = secAbout.querySelector(".grid");
     let folderImg = secAbout.querySelector(".folder__img");
@@ -163,28 +165,29 @@ if(secAbout){
     .add(TweenLite.fromTo(folderImg,1, {yPercent: -40}, {yPercent: 30}),0)
     .add(TweenLite.fromTo(folderImgBg,0.9, {yPercent: -15}, {yPercent: 20}),0)
     .add(TweenLite.fromTo(aboutText,0.9, {yPercent: 20}, {yPercent: 0}),0);
-    var scene = new ScrollMagic.Scene({triggerElement: secAbout, duration: secAbout.offsetHeight, offset: 0 , tweenChanges: true})
+    var scene = new ScrollMagic.Scene({triggerElement: secAbout, duration: secAboutHeight, offset: 0 , tweenChanges: true})
     scene.setTween(timeline);
-    scene.addIndicators({name: "About"});
+    // scene.addIndicators({name: "About"});
     scene.addTo(controller);
   }());
 }
 let secProject  = document.querySelector(".project");
 
 if(secProject){
+  let secProjectHeight = secProject.offsetHeight;
   (function projectAnim(){
-    let grid = secProject.querySelector(".grid");
+    // let grid = secProject.querySelector(".grid");
     let slider1 = secProject.querySelector(".swiper-container1")
     let slider2 = secProject.querySelector(".swiper-container2")
     let slider3 = secProject.querySelector(".swiper-container3")
     let timeline = gsap.timeline()
-    .add(TweenLite.to(grid,1, { yPercent: -20}),0)
-    .add(TweenLite.fromTo(slider1,0.6, {yPercent: 40}, {yPercent: -20}),0)
-    .add(TweenLite.fromTo(slider2,0.4, {yPercent: 25}, {yPercent: -10}),0)
-    .add(TweenLite.fromTo(slider3,0.3, {yPercent: 20}, {yPercent: 0}),0);
-    var scene1 = new ScrollMagic.Scene({triggerElement: secProject, duration: secProject.offsetHeight, offset: 0 , tweenChanges: true})
+    // .add(TweenLite.to(grid,1, { yPercent: -20}),0)
+    .add(TweenLite.fromTo(slider1, 0.6, {yPercent: 40}, {yPercent: -20}),0)
+    .add(TweenLite.fromTo(slider2, 0.4, {yPercent: 25}, {yPercent: -10}),0)
+    .add(TweenLite.fromTo(slider3, 0.3, {yPercent: 20}, {yPercent: 0  }),0);
+    var scene1 = new ScrollMagic.Scene({triggerElement: secProject, duration: secProjectHeight, offset: 0 , tweenChanges: true})
     scene1.setTween(timeline);
-    scene1.addIndicators({name: "Project"}) // add indicators (requires plugin);
+    // scene1.addIndicators({name: "Project"}) // add indicators (requires plugin);
     scene1.addTo(controller);
   }());
 }
@@ -192,20 +195,15 @@ if(secProject){
 let secContacts  = document.querySelector(".contacts");
 
 if(secContacts){
+  let secContactsHeight = secContacts.offsetHeight;
   (function projectAnim(){
-    let grid = secContacts.querySelector(".grid");
     let map = secContacts.querySelector(".map__map")
-    let slider2 = secContacts.querySelector(".swiper-container2")
-    let slider3 = secContacts.querySelector(".swiper-container3")
     let timeline = gsap.timeline()
-    // .add(TweenLite.to(grid,1, { yPercent: -20}),0)
     .add(TweenLite.fromTo(map,1, {yPercent: -10}, {yPercent: -40}),0);
-    // .add(TweenLite.fromTo(slider2,0.4, {yPercent: 25}, {yPercent: -10}),0)
-    // .add(TweenLite.fromTo(slider3,0.3, {yPercent: 20}, {yPercent: 0}),0);
-    var scene1 = new ScrollMagic.Scene({triggerElement: secContacts, duration: secContacts.offsetHeight, offset: 0 , tweenChanges: true})
-    scene1.setTween(timeline);
-    scene1.addIndicators({name: "Contacts"}) // add indicators (requires plugin);
-    scene1.addTo(controller);
+    var sceneMap = new ScrollMagic.Scene({triggerElement: secContacts, duration: secContactsHeight, offset: 0 , tweenChanges: true})
+    sceneMap.setTween(timeline);
+    // sceneMap.addIndicators({name: "Contacts"}) // add indicators (requires plugin);
+    sceneMap.addTo(controller);
   }());
 }
 

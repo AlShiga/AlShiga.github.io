@@ -1,6 +1,6 @@
 var modelText;
 var sceneText = new THREE.Scene();
-
+let text3dWrap = document.querySelector(".text3dWrap ") 
 var frontSpotText = new THREE.SpotLight(0x2F80ED);
 frontSpotText.position.set(-300, -1000, 500);
 sceneText.add(frontSpotText);
@@ -9,7 +9,7 @@ var frontSpotText1 = new THREE.SpotLight(0x2F80ED);
 frontSpotText1.position.set(200, 200, 100);
 sceneText.add(frontSpotText1);
 
-var cameraText = new THREE.PerspectiveCamera(75, document.querySelector(".text3dWrap").offsetWidth / document.querySelector(".text3dWrap").offsetHeight, 0.1, 1000);
+var cameraText = new THREE.PerspectiveCamera(75, text3dWrap.offsetWidth / text3dWrap.offsetHeight, 0.1, 1000);
 cameraText.position.z = 25;
 if(innerWidth<1100){
     cameraText.position.z = 35;
@@ -20,8 +20,8 @@ if(innerWidth<550){
 
 var rendererText = new THREE.WebGLRenderer({alpha: true});
 
-rendererText.setSize(document.querySelector(".text3dWrap").offsetWidth, document.querySelector(".text3dWrap").offsetHeight);
-document.querySelector(".text3dWrap") .appendChild(rendererText.domElement);
+rendererText.setSize(text3dWrap.offsetWidth, text3dWrap.offsetHeight);
+text3dWrap.appendChild(rendererText.domElement);
 
 const loaderText = new THREE.OBJLoader();
 // load a resource
@@ -67,10 +67,12 @@ loaderText.load(
 render3dText();
 function render3dText(event) {
     requestAnimationFrame(render3dText);
-    if(modelTextLoaded){
-        ternModelText(modelText);
+    if (text3dWrap.getBoundingClientRect().y<innerHeight*1.2 && text3dWrap.getBoundingClientRect().y>-innerHeight*1.2 ){
+        if(modelTextLoaded){
+            ternModelText(modelText);
+        }
+        rendererText.render(sceneText, cameraText);
     }
-    rendererText.render(sceneText, cameraText);
 }
 
 function ternModelText(el) {

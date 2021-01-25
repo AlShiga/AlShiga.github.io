@@ -1,3 +1,6 @@
+.act{
+  color: $gray;
+} 
 .actSlider{
   color: $gray;
   // overflow: hidden;
@@ -51,8 +54,9 @@
     height: 600%;
     transition: 1s;
     & img{
-      opacity: 0.2;
+      opacity: 0.0;
       transition: 0.3s;
+      pointer-events: none;
       &:first-of-type{
         opacity: 1;
       }
@@ -103,5 +107,118 @@
     left: 66.6vw;
     width: 16vw;
     height: auto;
+  }
+}
+.actFloor{
+  color: $gray;
+  &__img1{
+    &::after{
+      padding-bottom: 350px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 250px;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 200px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 250px;
+      }
+    }
+  }
+  &__img2{
+    &::after{
+      padding-bottom: 350px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 250px;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 200px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 150px;
+      }
+    }
+  }
+  &__img3{
+    &::after{
+      padding-bottom: 350px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 250px;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 200px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 150px;
+      }
+    }
+  }
+}
+
+.actFloorB{
+  background-color: $gray;
+  background: url(../img/bgBp.jpg);
+  background-size: contain;
+  background-position: center;
+  color: $white;
+  margin-top: 250px;
+  @include media-breakpoint-down(lg) {
+    margin-top: 200px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 120px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 150px;
+  }
+  & > div{
+    transform: translateY( -250px);
+    @include media-breakpoint-down(lg) {
+      transform: translateY( -200px);
+    }
+    @include media-breakpoint-down(md) {
+      transform: translateY( -120px);
+    }
+    @include media-breakpoint-down(sm) {
+      transform: translateY( -200px);
+    }
+  }
+  &__img4{
+    transform: translateY(30%);
+    @include media-breakpoint-down(lg) {
+      transform: translateY(30%);
+    }
+    @include media-breakpoint-down(md) {
+      transform: translateY(30px);
+    }
+    @include media-breakpoint-down(sm) {
+      transform: translateY(0);
+    }
+    &::after{
+      padding-bottom: 500px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 400px;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 240px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 350px;
+      }
+    }
+  }
+  &__img5{
+    &::after{
+      padding-bottom: 500px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 400px;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 240px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 200px;
+      }
+    }
   }
 }
