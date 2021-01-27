@@ -53,6 +53,7 @@
 }
 .burger{
   & svg{
+    overflow: visible;
     stroke:$white;
   }
 }
@@ -106,7 +107,7 @@
 
 .menu{
   position: fixed;
-  z-index: 40;
+  z-index: 100;
   height: 100vh;
   width: 100%;
   color: $white;

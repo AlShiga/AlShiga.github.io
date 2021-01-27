@@ -61,13 +61,13 @@ span > a {
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
+  background-color: $white;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #929292;
+  background-color: $gray;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #b2b2b2;
+  background-color:$gray;
 }
 
 input::-webkit-outer-spin-button,
@@ -87,7 +87,9 @@ input[type="number"] {
 .overflow-hidden {
   overflow: hidden;
 }
-
+.noscroll { 
+  overflow: hidden;
+}
 .m-b-1 {
   margin-bottom: 20px;
 }
@@ -569,6 +571,7 @@ input[type="number"] {
 }
 
 .madeAva {
+  white-space: nowrap;
   color: $white;
   &:hover,
   &:focus,

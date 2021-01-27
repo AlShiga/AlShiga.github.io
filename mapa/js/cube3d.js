@@ -4,15 +4,19 @@ var modelCube;
 var sceneCube = new THREE.Scene();
 let modelCubePosY = 0;
 let modelCubeLoaded = false;
-
-var camera = new THREE.PerspectiveCamera(75, document.querySelector(".main3d").offsetWidth / document.querySelector(".main3d").offsetHeight, 1, 100000);
+let scrW =  document.querySelector(".main3d").offsetWidth;
+let scrH =  document.querySelector(".main3d").offsetHeight;
+let imgW 
+let imgH 
+// var camera = new THREE.PerspectiveCamera(75, scrW / scrH, 1, 100000);
+var camera = new THREE.OrthographicCamera(-scrW/2, scrW/2, scrH/2, -scrH/2, 1, 1000);
 
 var rendererCube = new THREE.WebGLRenderer({
     alpha: true,
     antialias: true
 });
 
-rendererCube.setSize(document.querySelector(".main3d").offsetWidth, document.querySelector(".main3d").offsetHeight);
+rendererCube.setSize(scrW, scrH);
 document.querySelector(".main3d").appendChild(rendererCube.domElement);
 
 const loaderCube = new THREE.OBJLoader();
@@ -37,12 +41,12 @@ loaderCube.load(
     window.location.href+'/img/cube.obj',
     // called when resource is loaded
     function(object) {
-        object.scale.x = 25;
-        object.scale.y = 25;
-        object.scale.z = 25;
+        object.scale.x = 450;
+        object.scale.y = 450;
+        object.scale.z = 450;
         object.position.x = 0;
         object.position.y = 0;
-        object.position.z = 0;
+        object.position.z = -650;
         object.rotation.x = Math.PI/15;
         object.rotation.z =  Math.PI/30;
         object.position.y =  modelCubePosY;
@@ -84,10 +88,7 @@ loaderCube.load(
 
   // FLOOR
   //
-  let scrW =  document.querySelector(".main3d").offsetWidth;
-  let scrH =  document.querySelector(".main3d").offsetHeight;
-  let imgW 
-  let imgH 
+
   if (scrW/scrH > 1.78){
     imgW = scrW;
     imgH = scrW * 1080 / 1920;
@@ -104,7 +105,7 @@ loaderCube.load(
   var floor = new THREE.Mesh(floorGeometry, floorMaterial);
   floor.position.x = -00;
   floor.position.y = -00;
-  floor.position.z = -540;
+  floor.position.z = -900;
   sceneCube.add(floor);
 
     // FLOOR Back
@@ -124,7 +125,7 @@ loaderCube.load(
   const floor1 = new THREE.Mesh( geometry, material );
   floor1.position.x = -0;
   floor1.position.x = -scrW;
-  floor1.position.z = -299;
+  floor1.position.z = -scrW;
   floor1.rotation.y = Math.PI/2;
   sceneCube.add( floor1 );
   const floor2 = new THREE.Mesh( geometry, material );
