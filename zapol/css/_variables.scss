@@ -36,7 +36,7 @@ body {
   background-color: $light-gray;
   color: $dark;
   overflow-x: hidden;
- 
+
 }
 li {
   list-style-type: none;
@@ -455,39 +455,14 @@ input[type="number"] {
 .btn2 {
   cursor: pointer;
   pointer-events: all;
-  &__cube g {
-    transform-origin: 50% 50%;
-    animation: rotate 36s linear infinite;
-  }
-  &__text g {
-    transform-origin: 50% 50%;
-    animation: rotate 26s linear infinite;
-  }
   & svg {
     width: 200px;
     height: 200px;
     will-change: transform;
     overflow: visible;
   }
-  & circle {
-    fill: $blue;
-  }
-  & path {
-    fill: $white;
-  }
-  &_transparent {
-    & circle {
-      fill: transparent;
-    }
-  }
-  &_blue {
-    & circle {
-      fill: transparent;
-    }
-    & path {
-      fill: $blue;
-    }
-  }
+
+
   @include media-breakpoint-down(lg) {
     & svg {
       width: 150px;

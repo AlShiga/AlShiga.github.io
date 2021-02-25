@@ -6921,45 +6921,11 @@ input[type="number"] {
   pointer-events: all;
 }
 
-.btn2__cube g {
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-animation: rotate 36s linear infinite;
-          animation: rotate 36s linear infinite;
-}
-
-.btn2__text g {
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-animation: rotate 26s linear infinite;
-          animation: rotate 26s linear infinite;
-}
-
 .btn2 svg {
   width: 200px;
   height: 200px;
   will-change: transform;
   overflow: visible;
-}
-
-.btn2 circle {
-  fill: #27515F;
-}
-
-.btn2 path {
-  fill: #F4F4F4;
-}
-
-.btn2_transparent circle {
-  fill: transparent;
-}
-
-.btn2_blue circle {
-  fill: transparent;
-}
-
-.btn2_blue path {
-  fill: #27515F;
 }
 
 @media (max-width: 1399.98px) {
