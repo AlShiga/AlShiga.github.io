@@ -1,0 +1,13 @@
+.footer{
+  background-color: $blue;
+  background-image: url(../img/pattern-footer.svg);
+  background-position: center;
+  background-size: cover;
+  color: $white;
+}
+
+.footerBottom{
+  &__line{
+    border-bottom: 1px solid $white;
+  }
+}

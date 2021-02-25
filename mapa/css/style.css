@@ -7188,7 +7188,8 @@ button {
 }
 
 p > a,
-span > a {
+span > a,
+.h5 > a {
   font: inherit;
   color: inherit;
 }
@@ -7196,7 +7197,10 @@ span > a {
 p > a:hover, p > a:focus, p > a:active,
 span > a:hover,
 span > a:focus,
-span > a:active {
+span > a:active,
+.h5 > a:hover,
+.h5 > a:focus,
+.h5 > a:active {
   font: inherit;
   color: inherit;
 }
@@ -8184,7 +8188,7 @@ body.white {
 
 .text3dWrap {
   width: 80vw;
-  height: 70vh;
+  height: 80vw;
   margin-left: auto;
 }
 
