@@ -460,6 +460,16 @@ input[type="number"] {
     height: 200px;
     will-change: transform;
     overflow: visible;
+    * {
+      stroke: $dark-green;
+    }
+  }
+  &_white{
+    & svg {
+      * {
+        stroke: $white;
+      }
+    }
   }
 
 
@@ -500,11 +510,11 @@ input[type="number"] {
 
 .madeAva {
   white-space: nowrap;
-  color: $white;
+  color: $blue;
   &:hover,
   &:focus,
   &:active {
-    color: $white;
+    color: $blue;
   }
 }
 

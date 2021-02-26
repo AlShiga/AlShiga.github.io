@@ -10,6 +10,29 @@
 </head>
 <body>
   <div class="siteWrap">
+    <div class="menu d-block d-md-none">
+      <div class="row h-100">
+        <div class="col-20 offset-2 h-100">
+          <div class="menu__inner h-100">
+            <nav class="menu__menu">
+              <ul>
+                <li><a href="">О поселке</a></li>
+                <li><a href="">Дома</a></li>
+                <li><a href="">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="">
+              <a href="tel:+78129437774" class="p1 p-b-1 d-block">+7 (812) 943-77-74</a>
+              <a href="mailto:info@np-house.ru" class="p1 p-b-1 d-block">info@np-house.ru</a>
+              <p class="p1 p-b-1">
+                Ленинградская область, Полянское сельское поселение, посёлок
+                Заполье
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <div class="row">
         <div
@@ -66,7 +89,7 @@
     </div>
     <section class="mSecond p-t-6 p-b-6">
       <div class="row">
-        <div class="mSecond__sloganWrap col-xl-16 offset-xl-8 col-lg-14 offset-lg-6 col-md-17 offset-md-5 col-sm-20 offset-sm-2 col-20 offset-2 m-b-3">
+        <div class="mSecond__sloganWrap col-xl-14 offset-xl-8 col-lg-14 offset-lg-6 col-md-17 offset-md-5 col-sm-20 offset-sm-2 col-20 offset-2 m-b-3">
           <h2 class="h2 mSecond__slogan">Рядом с домом только свежий воздух и нетронутая городом природа</h2>
           <img class="mSecond__img" src="img/mCir.svg" alt="">
         </div>
@@ -125,7 +148,14 @@
 
     </section>
     <section class="mInv">
-      <div class="textLine"></div>
+      <div class="textLine p-t-4">
+        <div class="textLine__top">
+          Совершенство в деталях / Совершенство в деталях / Совершенство в деталях / Совершенство в деталях
+        </div>
+        <div class="textLine__bottom">
+          коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок
+        </div>
+      </div>
       <div class="row p-t-5 p-b-6">
         <div class="col-xl-14 offset-xl-4 col-lg-14 offset-lg-5 col-md-16 offset-md-5 col-sm-20 offset-sm-2 col-20 offset-2 m-b-3">
           <h2 class="h2 mInv__slogan">Мы строим посёлки для жизни на природе с сохранением городского комфорта</h2>
@@ -139,7 +169,14 @@
       </div>
       <div class="cirkle">
         <div class="cirkleBg">
-          <div class="textLine"></div>
+          <div class="textLine p-t-4">
+            <div class="textLine__top">
+              Совершенство в деталях / Совершенство в деталях / Совершенство в деталях / Совершенство в деталях
+            </div>
+            <div class="textLine__bottom">
+              коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок / zapolie village / коттеджный посёлок
+            </div>
+          </div>
           <div class="row p-t-5 p-b-6">
             <div class="col-xl-14 offset-xl-4 col-lg-14 offset-lg-5 col-md-16 offset-md-5 col-sm-20 offset-sm-2 col-20 offset-2 m-b-3">
               <h2 class="h2 mInv__slogan" style="color: white;">Мы строим посёлки для жизни на природе с сохранением городского комфорта</h2>
@@ -155,37 +192,7 @@
     </div>
     </section>
     <script>
-          let elWr =  document.querySelector("section.mInv")
-          const el = document.querySelector(".cirkle");
-          const elBg = document.querySelector(".cirkleBg");
-          let scrW =  document.querySelector("section.mInv").offsetWidth;
-          let scrH =  document.querySelector("section.mInv").offsetHeight;
-          let halfX=scrW/2;
-          let halfY=scrH/2;
-          let mfX=0;
-          let mfY=0;
-          let mPosX=0;
-          let mPosY=0;
-          document.querySelector("section.mInv").addEventListener('mousemove', onWindowMouseMove);
 
-          function onWindowMouseMove(event) {
-           mPosX = event.pageX-elWr.offsetLeft ;
-           mPosY = event.pageY-elWr.offsetTop ;
-            // console.log(mPosX)
-            // console.log(mPosY)
-          }
-          function onScroll(event){
-
-          }
-          render();
-          function render(event) {
-              elBg.style.width= elWr.scrollWidth+"px"
-              elBg.style.offsetHeight= elWr.scrollHeight+"px"
-              requestAnimationFrame(render);
-              // console.log('z')
-              el.style.transform="translate("+ (-120 + mPosX) + "px, "+ (-120+mPosY) +"px)";
-              elBg.style.transform="translate("+ (120 - mPosX) + "px, "+ (120-mPosY) +"px)";
-          }
 
     </script>
 
@@ -199,12 +206,12 @@
       </div>
       <div class="row">
         <div
-          class="col-xl-5 offset-xl-7 col-lg-6 offset-lg-6 col-md-2 offset-md-5 col-sm-15 offset-sm-2 col-15 offset-2"
+          class="col-xl-5 offset-xl-7 col-lg-6 offset-lg-6 col-md-6 offset-md-5 col-sm-15 offset-sm-2 col-15 offset-2"
         >
           <input class="input1" placeholder="Имя" type="text" />
         </div>
         <div
-          class="col-xl-5 offset-xl-1 col-lg-6 offset-lg-1 col-md-2 offset-md-2 col-sm-15 offset-sm-2 col-15 offset-2"
+          class="col-xl-5 offset-xl-1 col-lg-6 offset-lg-1 col-md-6 offset-md-2 col-sm-15 offset-sm-2 col-15 offset-2"
         >
           <input class="input1" placeholder="Телефон" type="text" />
         </div>
@@ -213,7 +220,19 @@
         <div
           class="col-xl-5 offset-xl-17 col-lg-5 offset-lg-17 col-md-5 offset-md-17 col-sm-8 offset-sm-14 col-8 offset-14"
         >
-          <div class="btn">Кнопка</div>
+        <div class="hForm__btn2Wrap">
+          <a href="" class="btn2">
+            <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="btn2__c1" cx="119.418" cy="137.086" r="114"   stroke-width="2"/>
+              <circle class="btn2__c2" cx="130" cy="130" r="129.5"  />
+              <g class="btn2__arr" >
+                <path d="M89.1914 137.523L152.073 137.523"   stroke-width="2"/>
+                <path d="M129.993 111.016C131.544 123.27 137.285 132.327 151.967 137.526"   stroke-width="2"/>
+                <path d="M129.993 164.015C131.544 151.761 137.285 142.704 151.967 137.505"   stroke-width="2"/>
+              </g>
+            </svg>
+          </a>
+        </div>
 
         </div>
       </div>
@@ -301,7 +320,19 @@
       </div>
       <div class="row mProd__row ">
         <div class="col-xl-3 offset-xl-13 col-lg-3 offset-lg-13 col-md-5 offset-md-15 col-sm-10 offset-sm-14 col-10 offset-14">
-          <div class="">btn</div>
+          <div class="mProd__btn2Wrap ">
+            <a href="#" class="btn2">
+              <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="btn2__c1" cx="119.418" cy="137.086" r="114"   stroke-width="2"/>
+                <circle class="btn2__c2" cx="130" cy="130" r="129.5"  />
+                <g class="btn2__arr" >
+                  <path d="M89.1914 137.523L152.073 137.523"   stroke-width="2"/>
+                  <path d="M129.993 111.016C131.544 123.27 137.285 132.327 151.967 137.526"   stroke-width="2"/>
+                  <path d="M129.993 164.015C131.544 151.761 137.285 142.704 151.967 137.505"   stroke-width="2"/>
+                </g>
+              </svg>
+            </a>
+          </div>
         </div>
         <div class="col-xl-6 offset-xl-0 col-lg-6 offset-lg-0 col-md-11 offset-md-11 col-sm-20 offset-sm-2 col-20 offset-2">
           <div class="mProd__imgW m-b-2">
@@ -338,29 +369,31 @@
           <p class="p1 p-b-1">Мы не прекращаем обслуживание дома по истечении гарантийного срока. Вы всегда можете обратиться в компанию NP house, если дому требуется диагностика или ремонт. Мы делаем ваше проживание за городом комфортным.</p>
           <p class="p1">Даём гарантию на свои дома 5 лет. Исправляем возможные поломки, которые могут произойти в течение этого периода. Гарантия распространяется на сам дом, материалы, осуществленные в ходе строительства работы.
           </p>
-          <a href="" class="btn2">
-            <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle class="btn2__c1" cx="119.418" cy="137.086" r="114" stroke="#678061" stroke-width="2"/>
-              <circle class="btn2__c2" cx="130" cy="130" r="129.5" stroke="#678061"/>
-              <g class="btn2__arr" >
-                <path d="M89.1914 137.523L152.073 137.523" stroke="#678061" stroke-width="2"/>
-                <path d="M129.993 111.016C131.544 123.27 137.285 132.327 151.967 137.526" stroke="#678061" stroke-width="2"/>
-                <path d="M129.993 164.015C131.544 151.761 137.285 142.704 151.967 137.505" stroke="#678061" stroke-width="2"/>
-              </g>
-            </svg>
-          </a>
         </div>
       </div>
     </section>
-    <footer class="footer p-t-5 p-b-3">
+    <footer class="footer p-t-5">
       <div class="footerTop">
         <div class="row">
           <div class="col-xl-14 offset-xl-5 col-lg-14 offset-lg-5 col-md-18 offset-md-3 col-sm-20 offset-sm-2 col-20 offset-2 m-b-5">
             <h4 class="h2 text-center">Понравилось в заполье? свяжитесь с нами</h4>
+            <div class="footerTop__btn2Wrap">
+              <a href="" class="btn2 btn2_white">
+                <svg width="260" height="260" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="btn2__c1" cx="119.418" cy="137.086" r="114"   stroke-width="2"/>
+                  <circle class="btn2__c2" cx="130" cy="130" r="129.5"  />
+                  <g class="btn2__arr" >
+                    <path d="M89.1914 137.523L152.073 137.523"   stroke-width="2"/>
+                    <path d="M129.993 111.016C131.544 123.27 137.285 132.327 151.967 137.526" stroke-width="2"/>
+                    <path d="M129.993 164.015C131.544 151.761 137.285 142.704 151.967 137.505"  stroke-width="2"/>
+                  </g>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="footerBottom">
+      <div class="footerBottom p-b-3">
         <div class="row p-b-3">
           <div class="col-20 offset-2">
             <div class="footerBottom__line"></div>
@@ -370,7 +403,7 @@
           <div
             class="col-xl-3 offset-xl-2 col-lg-3 offset-lg-2 col-md-5 offset-md-2 col-sm-12 offset-sm-2 col-14 offset-2"
           >
-            <div class="footerBottom__logo">
+            <div class="footerBottom__logo m-b-3">
               <svg
                 width="157"
                 height="28"
@@ -400,9 +433,9 @@
           <div
             class="col-xl-5 offset-xl-5 col-lg-7 offset-lg-5 col-md-8 offset-md-2 col-sm-20 offset-sm-2 col-20 offset-2"
           >
-            <a href="tel:+78129437774" class="p1">+7 (812) 943-77-74</a>
-            <a href="mailto:info@np-house.ru" class="p1">info@np-house.ru</a>
-            <p class="p1">
+            <a href="tel:+78129437774" class="p1 p-b-1 d-block">+7 (812) 943-77-74</a>
+            <a href="mailto:info@np-house.ru" class="p1 p-b-1 d-block">info@np-house.ru</a>
+            <p class="p1 p-b-1">
               Ленинградская область, Полянское сельское поселение, посёлок
               Заполье
             </p>
@@ -419,6 +452,21 @@
             </nav>
           </div>
         </div>
+      </div>
+      <div class="footerAva p-t-2 p-b-3">
+        <div class="row">
+          <div class="col-20 offset-2">
+            <div class="footerAva__inner">
+              <p class="p1 mp">2021</p>
+              <a href="https://ava-digital.ru/" target="_blank" class="madeAva p1 d-flex align-items-center mp"><p class="p1 mp">Cделано в ava-digital</p>
+                <svg style="margin-left:20px" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 7.83146L9.6425 7.59901L11.8052 5.07579L11.127 4.36703L8.70277 6.62092L8.4794 0.00390625H7.5206L7.29723 6.62092L4.873 4.36703L4.19477 5.07579L6.3575 7.59901L0 7.83146V8.82939L6.3575 9.06187L4.19477 11.5851L4.873 12.291L7.29723 10.04L7.5206 16.657H8.4794L8.70277 10.04L11.127 12.291L11.8052 11.5851L9.6425 9.06187L16 8.82939V7.83146Z" fill="#ED2330"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>

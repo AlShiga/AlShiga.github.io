@@ -8,3 +8,51 @@
   width: 100%;
   z-index: 100;
 }
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $light-gray;
+  color: $dark;
+  z-index: 99;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  transform: translateX(110%);
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+  &__menu{
+    ul{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      padding-bottom: 30px;
+      padding-top: 20px;
+      border-top: 1px solid $gray;
+      &:last-of-type{
+        border-bottom: 1px solid $gray;
+
+      }
+    }
+    a{
+      font-family: GT Walsheim Pro;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+      @include media-breakpoint-down(lg) {
+          font-size: 14px;
+      }
+    }
+  }
+}
