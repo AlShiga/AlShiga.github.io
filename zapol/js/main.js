@@ -83,8 +83,8 @@ const invertEl = {
   elWr: document.querySelector("section.mInv"),
   el: document.querySelector(".cirkle"),
   elBg: document.querySelector(".cirkleBg"),
-  scrW:  document.querySelector("section.mInv").offsetWidth,
-  scrH:  document.querySelector("section.mInv").offsetHeight,
+  scrW:  0,
+  scrH:  0,
   mPosX: 0,
   mPosY: 0,
   onWindowMouseMove: function(event) {
@@ -92,17 +92,42 @@ const invertEl = {
     invertEl.mPosY = event.pageY-invertEl.elWr.offsetTop ;
   },
   render: function (event) {
-    invertEl.elBg.style.width= invertEl.elWr.scrollWidth+"px"
-    invertEl.elBg.style.offsetHeight= invertEl.elWr.scrollHeight+"px"
+    if(invertEl.mPosX<100 ||  invertEl.mPosY<100 || invertEl.mPosX > invertEl.scrW-100 ||  invertEl.mPosY > invertEl.scrH-250){
+      invertEl.el.style.width="0";
+      invertEl.el.style.height="0";
+    } else {
+      invertEl.el.style.width="";
+      invertEl.el.style.height="";
+      invertEl.el.style.transform="translate("+ (-120 + invertEl.mPosX) + "px, "+ (-120 + invertEl.mPosY) +"px)";
+      invertEl.elBg.style.transform="translate("+ (120 - invertEl.mPosX) + "px, "+ (120 - invertEl.mPosY) +"px)";
+    }
     requestAnimationFrame(invertEl.render);
     // console.log('z')
-    invertEl.el.style.transform="translate("+ (-120 + invertEl.mPosX) + "px, "+ (-120 + invertEl.mPosY) +"px)";
-    invertEl.elBg.style.transform="translate("+ (120 - invertEl.mPosX) + "px, "+ (120 - invertEl.mPosY) +"px)";
   },
   initInv: function (){
-    invertEl.elWr.addEventListener('mousemove', invertEl.onWindowMouseMove);
-    invertEl.render();
-  }
+    if(invertEl.elWr){
+      invertEl.scrW = document.querySelector("section.mInv").offsetWidth;
+      invertEl.scrH = document.querySelector("section.mInv").offsetHeight;
+      invertEl.elBg.style.width= invertEl.elWr.scrollWidth+"px"
+      invertEl.elBg.style.offsetHeight= invertEl.elWr.scrollHeight+"px"
+      invertEl.elWr.addEventListener('mousemove', invertEl.onWindowMouseMove);
+      window.addEventListener('resize', invertEl.reload);
+      invertEl.render();
+
+    }
+  },
+  reload: function (){
+    if(invertEl.elWr){
+      invertEl.scrW = document.querySelector("section.mInv").offsetWidth;
+      invertEl.scrH = document.querySelector("section.mInv").offsetHeight;
+      invertEl.elBg.style.width= invertEl.elWr.scrollWidth+"px"
+      invertEl.elBg.style.offsetHeight= invertEl.elWr.scrollHeight+"px"
+
+      invertEl.elWr.addEventListener('mousemove', invertEl.onWindowMouseMove);
+      invertEl.render();
+    }
+  },
+
 }
 invertEl.initInv();
 
@@ -112,7 +137,7 @@ invertEl.initInv();
   let controller = new ScrollMagic.Controller({addIndicators: true});
 
   let secVideo  = document.querySelector(".mVideo");
-  
+
   if(secVideo){
     let secVideoHeight = secVideo.offsetHeight;
     (function projectAnim(){
@@ -128,7 +153,7 @@ invertEl.initInv();
       scene1.addTo(controller);
     }());
   }
-  
+
   let lineText  = document.querySelectorAll(".textLine");
   if(lineText.length){
     lineText.forEach(el => {
@@ -146,7 +171,7 @@ invertEl.initInv();
       }());
     });
   }
-  
+
   let mImgPra  = document.querySelector(".mImgPra");
   if(mImgPra){
     let mImgPraHeihgt = mImgPra.offsetHeight;
@@ -163,3 +188,29 @@ invertEl.initInv();
 
 }());
 
+if(document.querySelector(".prel svg")){
+  const prelSvg = document.querySelector(".prel svg");
+  const prelBg = document.querySelector(".prel__bg");
+  const prelBgImg = document.querySelector(".prel__bgImg");
+  let prelImgOnLoad = false;
+  const prelInterval = setInterval(() => {
+    // prelSvg.classList.toggle("prel__logo_hide")
+    if(!prelSvg.classList.contains("prel__logo_hide")){
+      prelSvg.classList.add("prel__logo_hide");
+    } else{
+      prelSvg.classList.remove("prel__logo_hide");
+      if(true){
+        prelBg.classList.add("prel__bg_show");
+        clearTimeout(prelInterval);
+        setTimeout(() => {
+          prelSvg.classList.add("prel__logo_hide");
+          prelBg.classList.add("prel__bg_hide");
+        }, 2000);
+      }
+    }
+  }, 2000);
+
+  document.querySelector(".prel__bgImg").addEventListener('load', (e)=>{
+    prelImgOnLoad = true;
+  });
+}

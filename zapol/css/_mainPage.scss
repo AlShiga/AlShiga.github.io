@@ -111,6 +111,7 @@
   height: 240px;
   overflow:hidden;
   border-radius:50%;
+  transition: width 0.5s, height 0.5s;
 }
 .cirkleBg{
   position: absolute;
@@ -126,7 +127,7 @@
   & .mInv__slogan{
     color: $white;
   }
-  
+
 }
 
 
@@ -208,7 +209,7 @@
     @include media-breakpoint-down(sm) {
       transform: translateY(-90%);
     }
-   
+
   }
 }
 .mGuarant{

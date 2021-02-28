@@ -7122,6 +7122,109 @@ input[type="number"] {
   }
 }
 
+.prel {
+  position: fixed;
+  background-color: #F4F4F4;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.prel__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1001;
+  width: 100px;
+  height: auto;
+}
+
+.prel__logo g {
+  overflow: hidden;
+}
+
+.prel__logo g > * {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  fill: #678061;
+}
+
+.prel__logo g:nth-of-type(2) > * {
+  -webkit-transition-delay: 0.0s;
+          transition-delay: 0.0s;
+}
+
+.prel__logo g:nth-of-type(3) > * {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.prel__logo g:nth-of-type(1) > * {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.prel__logo_hide g > * {
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
+}
+
+.prel__logo_hide g > *:nth-of-type(2) > * {
+  -webkit-transition-delay: 0.0s;
+          transition-delay: 0.0s;
+}
+
+.prel__logo_hide g > *:nth-of-type(3) > * {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.prel__logo_hide g > *:nth-of-type(1) > * {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.prel__bg {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  height: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+.prel__bg_show {
+  height: 100%;
+}
+
+.prel__bg_hide {
+  width: 10vw;
+  height: 10vh;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.prel__bgImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+
 .footer {
   background-color: #27515F;
   background-image: url(../img/pattern-footer.svg);
@@ -7342,6 +7445,8 @@ input[type="number"] {
   height: 240px;
   overflow: hidden;
   border-radius: 50%;
+  -webkit-transition: width 0.5s, height 0.5s;
+  transition: width 0.5s, height 0.5s;
 }
 
 .cirkleBg {
