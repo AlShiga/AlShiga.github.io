@@ -197,8 +197,30 @@
           <div
             class="col-xl-18 offset-xl-4 col-lg-18 offset-lg-4 col-md-20 offset-md-2 col-sm-20 offset-sm-2 col-20 offset-2"
           >
-            <div class="swiper-container swiper-container_gal">
+            <!-- <div class="swiper-container swiper-container_gal">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+              </div>
               <div class="swiper-scrollbar"></div>
+            </div>  -->
+            <!-- <div class="swiper-container swiper-container_gal">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
+                <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>  -->
+
+            <div class="swiper-container swiper-container_gal">
               <div class="swiper-wrapper">
                 <div class="swiper-slide"><img class="hGallery__img" src="img/home/h4.jpg" alt="" /></div>
                 <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
@@ -208,10 +230,33 @@
                 <div class="swiper-slide"><img class="hGallery__img" src="img/home/h5.jpg" alt="" /></div>
               </div>
               <!-- Add Scrollbar -->
-            </div> 
+              <div class="swiper-scrollbar"></div>
+            </div>
           
-        
+            <!-- Swiper JS -->
+            <script src="../package/swiper-bundle.min.js"></script>
+          
+            <!-- Initialize Swiper -->
             <script>
+              var swiperGal = new Swiper('.swiper-container_gal', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                scrollbar: {
+                  el: '.swiper-scrollbar',
+                  hide: false,
+                },
+                breakpoints: {
+                  768: {
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    spaceBetween: 40,
+                  },
+                }
+              });
+            </script>
+        
+            <!-- <script>
               var swiperGal = new Swiper('.swiper-container_gal', {
                 slidesPerView: "3",
                 spaceBetween: 30,
@@ -222,7 +267,26 @@
                   // hide: true,
                 },
               });
-            </script>
+            </script> -->
+            <!-- <script>
+              var swiper1 = new Swiper('.swiper-container_gal', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                centeredSlides:false,
+                loop:false,
+                scrollbar: {
+                  el: '.swiper-scrollbar',
+                },
+                breakpoints: {
+                  768: {
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    spaceBetween: 40,
+                  },
+                }
+              });
+            </script> -->
           </div>
         </div>
       </div>
@@ -309,23 +373,6 @@
           </div>
         </div>
       </div>
-      <SCript>
-        const accordeon = {
-          init: function(){
-            accordeon.heads = document.querySelectorAll('.accordeon__head');
-            accordeon.heads.forEach((el)=>{
-              el.addEventListener('click', accordeon.showAcc);
-            })
-          },
-          showAcc: function(evt){
-              accordeon.heads.forEach((el)=>{
-                el.classList.remove('open');
-              })
-              evt.currentTarget.classList.add('open');
-          }
-        }
-        document.addEventListener('DOMContentLoaded', accordeon.init);
-      </SCript>
       <div class="hPlan p-t-4 p-b-5">
         <div class="row">
           <div
@@ -333,7 +380,6 @@
           >
             <div class="hPlan__inner">
               <div class="swiper-container swiper-container_plan">
-                <div class="swiper-scrollbar"></div>
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"><img class="hGallery__img" src="img/home/h6.jpg" alt="" /></div>
                   <div class="swiper-slide"><img class="hGallery__img" src="img/home/h7.jpg" alt="" /></div>
@@ -342,20 +388,26 @@
                   <div class="swiper-slide"><img class="hGallery__img" src="img/home/h6.jpg" alt="" /></div>
                   <div class="swiper-slide"><img class="hGallery__img" src="img/home/h7.jpg" alt="" /></div>
                 </div>
-                <!-- Add Scrollbar -->
+                <div class="swiper-scrollbar"></div>
               </div> 
             </div>
-
             <script>
               var swiperPl = new Swiper('.swiper-container_plan', {
-                slidesPerView: "3",
-                spaceBetween: 30,
-                freeMode: true,
-                // loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                centeredSlides:false,
+                loop:false,
                 scrollbar: {
-                  el: '.swiper-scrollbar',
-                  // hide: true,
+                el: '.swiper-scrollbar',
                 },
+                breakpoints: {
+                  768: {
+                    spaceBetween: 30,
+                  },
+                  1024: {
+                    spaceBetween: 40,
+                  },
+                }
               });
             </script>
           </div>

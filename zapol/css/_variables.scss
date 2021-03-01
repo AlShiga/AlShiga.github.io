@@ -12,7 +12,9 @@ $blue: #27515F;
   outline: none !important;
 }
 * {
-  font-family: Raleway;
+  font-family: GT Walsheim Pro;
+  font-style: normal;
+  font-weight: 300;
   font-style: normal;
   font-weight: normal;
 }
@@ -46,13 +48,17 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+.siteWrap{
+  overflow: hidden;
+}
 a,
 button {
   outline: none;
 }
 p > a,
 span > a,
+.p1 > a,
+.p2 > a,
 .h1 > a,
 .h2 > a,
 .h3 > a,
@@ -65,7 +71,23 @@ h2 > a,
 h3 > a,
 h4 > a,
 h5 > a,
-h6 > a {
+h6 > a,
+p > span,
+.p1 > span,
+.p2 > span,
+.h1 > span,
+.h2 > span,
+.h3 > span,
+.h4 > span,
+.h5 > span,
+.h6 > span,
+.h7 > span,
+h1 > span,
+h2 > span,
+h3 > span,
+h4 > span,
+h5 > span,
+h6 > span{
   font: inherit;
   color: inherit;
   &:hover,
@@ -75,7 +97,7 @@ h6 > a {
     color: inherit;
   }
 }
-
+ 
 ::-webkit-scrollbar {
   background-color: $white;
 }
@@ -392,21 +414,21 @@ input[type="number"] {
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
-  line-height: 27px;
+  line-height: 1.1;
 }
 .p1 {
   font-family: GT Walsheim Pro;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.1;
 }
 .p2 {
   font-family: GT Walsheim Pro;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.1;
   text-decoration-line: underline;
 }
 @include media-breakpoint-down(lg) {
@@ -437,7 +459,7 @@ input[type="number"] {
     font-size: 36px;
   }
   .h4 {
-    font-size: 48px;
+    font-size: 30px;
   }
 }
 @include media-breakpoint-down(sm) {

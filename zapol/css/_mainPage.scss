@@ -112,6 +112,7 @@
   overflow:hidden;
   border-radius:50%;
   transition: width 0.5s, height 0.5s;
+  display: none;
 }
 .cirkleBg{
   position: absolute;
@@ -317,5 +318,40 @@
     left: 0;
     width: 100%;
     height: auto;
+  }
+}
+
+.mapSvg{
+  width: 100%;
+  height: auto;
+  & #sale{
+    opacity: 0;
+  }
+  & #plan{
+    opacity: 0;
+  }
+  & #building{
+    opacity: 0;
+  }
+  & #ready{
+    // opacity: 0;
+  }
+  & #btn{
+    pointer-events: none;
+    & #circle{
+      opacity: 0;
+      pointer-events: none;
+    }
+    & #arrow{
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: 0.3s;
+    }
+  }
+  g:hover > #btn #arrow{
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 0.3s;
   }
 }

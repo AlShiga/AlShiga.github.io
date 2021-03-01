@@ -6444,7 +6444,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 * {
-  font-family: Raleway;
+  font-family: GT Walsheim Pro;
+  font-style: normal;
+  font-weight: 300;
   font-style: normal;
   font-weight: normal;
 }
@@ -6483,6 +6485,10 @@ a {
   color: inherit;
 }
 
+.siteWrap {
+  overflow: hidden;
+}
+
 a,
 button {
   outline: none;
@@ -6490,6 +6496,8 @@ button {
 
 p > a,
 span > a,
+.p1 > a,
+.p2 > a,
 .h1 > a,
 .h2 > a,
 .h3 > a,
@@ -6502,7 +6510,23 @@ h2 > a,
 h3 > a,
 h4 > a,
 h5 > a,
-h6 > a {
+h6 > a,
+p > span,
+.p1 > span,
+.p2 > span,
+.h1 > span,
+.h2 > span,
+.h3 > span,
+.h4 > span,
+.h5 > span,
+.h6 > span,
+.h7 > span,
+h1 > span,
+h2 > span,
+h3 > span,
+h4 > span,
+h5 > span,
+h6 > span {
   font: inherit;
   color: inherit;
 }
@@ -6511,6 +6535,12 @@ p > a:hover, p > a:focus, p > a:active,
 span > a:hover,
 span > a:focus,
 span > a:active,
+.p1 > a:hover,
+.p1 > a:focus,
+.p1 > a:active,
+.p2 > a:hover,
+.p2 > a:focus,
+.p2 > a:active,
 .h1 > a:hover,
 .h1 > a:focus,
 .h1 > a:active,
@@ -6549,7 +6579,55 @@ h5 > a:focus,
 h5 > a:active,
 h6 > a:hover,
 h6 > a:focus,
-h6 > a:active {
+h6 > a:active,
+p > span:hover,
+p > span:focus,
+p > span:active,
+.p1 > span:hover,
+.p1 > span:focus,
+.p1 > span:active,
+.p2 > span:hover,
+.p2 > span:focus,
+.p2 > span:active,
+.h1 > span:hover,
+.h1 > span:focus,
+.h1 > span:active,
+.h2 > span:hover,
+.h2 > span:focus,
+.h2 > span:active,
+.h3 > span:hover,
+.h3 > span:focus,
+.h3 > span:active,
+.h4 > span:hover,
+.h4 > span:focus,
+.h4 > span:active,
+.h5 > span:hover,
+.h5 > span:focus,
+.h5 > span:active,
+.h6 > span:hover,
+.h6 > span:focus,
+.h6 > span:active,
+.h7 > span:hover,
+.h7 > span:focus,
+.h7 > span:active,
+h1 > span:hover,
+h1 > span:focus,
+h1 > span:active,
+h2 > span:hover,
+h2 > span:focus,
+h2 > span:active,
+h3 > span:hover,
+h3 > span:focus,
+h3 > span:active,
+h4 > span:hover,
+h4 > span:focus,
+h4 > span:active,
+h5 > span:hover,
+h5 > span:focus,
+h5 > span:active,
+h6 > span:hover,
+h6 > span:focus,
+h6 > span:active {
   font: inherit;
   color: inherit;
 }
@@ -6859,7 +6937,7 @@ input[type="number"] {
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
-  line-height: 27px;
+  line-height: 1.1;
 }
 
 .p1 {
@@ -6867,7 +6945,7 @@ input[type="number"] {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.1;
 }
 
 .p2 {
@@ -6875,7 +6953,7 @@ input[type="number"] {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.1;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
@@ -6909,7 +6987,7 @@ input[type="number"] {
     font-size: 36px;
   }
   .h4 {
-    font-size: 48px;
+    font-size: 30px;
   }
 }
 
@@ -7447,6 +7525,7 @@ input[type="number"] {
   border-radius: 50%;
   -webkit-transition: width 0.5s, height 0.5s;
   transition: width 0.5s, height 0.5s;
+  display: none;
 }
 
 .cirkleBg {
@@ -7736,6 +7815,49 @@ input[type="number"] {
   height: auto;
 }
 
+.mapSvg {
+  width: 100%;
+  height: auto;
+}
+
+.mapSvg #sale {
+  opacity: 0;
+}
+
+.mapSvg #plan {
+  opacity: 0;
+}
+
+.mapSvg #building {
+  opacity: 0;
+}
+
+.mapSvg #btn {
+  pointer-events: none;
+}
+
+.mapSvg #btn #circle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mapSvg #btn #arrow {
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.mapSvg g:hover > #btn #arrow {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .hFirst {
   background-color: #F4F4F4;
 }
@@ -7814,16 +7936,32 @@ input[type="number"] {
   color: #678061;
 }
 
-.hGallery img {
-  margin-right: 4vw;
+.hGallery__img {
+  height: 400px;
 }
 
-.hGallery img:last-of-type {
-  margin-right: 0;
+@media (max-width: 1449.98px) {
+  .hGallery__img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .hGallery__img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hGallery__img {
+    height: 200px;
+  }
 }
 
 .hGallery .swiper-slide {
-  width: auto !important;
+  width: -webkit-min-content !important;
+  width: -moz-min-content !important;
+  width: min-content !important;
 }
 
 .hGallery .swiper-container {
@@ -7961,5 +8099,60 @@ input[type="number"] {
     font-size: 128px;
     padding: 15px 0;
   }
+}
+
+.filterBig {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.filterBig a {
+  margin-right: 40px;
+}
+
+.swiper-container_catH {
+  overflow: visible !important;
+}
+
+.cartHome {
+  width: 31vw !important;
+}
+
+@media (max-width: 1449.98px) {
+  .cartHome {
+    width: 35vw !important;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .cartHome {
+    width: 45vw !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cartHome {
+    width: 70vw !important;
+  }
+}
+
+.cartHome__imgW {
+  position: relative;
+  padding-bottom: 90%;
+}
+
+.cartHome__imgW img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.catH .swiper-scrollbar {
+  bottom: -20px !important;
 }
 /*# sourceMappingURL=style.css.map */

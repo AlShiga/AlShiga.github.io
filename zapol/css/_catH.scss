@@ -1,0 +1,38 @@
+.filterBig{
+  display: flex;
+  & a{
+    margin-right: 40px;
+  }
+}
+.swiper-container_catH{
+  overflow: visible !important;
+}
+.cartHome{
+  width: 31vw !important;
+  @include media-breakpoint-down(lg) {
+    width: 35vw !important;
+  }
+  @include media-breakpoint-down(md) {
+    width: 45vw !important;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 70vw !important;
+  }
+  &__imgW{
+    position: relative;
+    padding-bottom: 90%;
+    & img{
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;height: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
+
+.catH {
+  .swiper-scrollbar{
+    bottom: -20px !important;
+  }
+}
