@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Knauf</title>
 </head>
 <body>
@@ -11,10 +12,10 @@
     <div class="row">
       <div class="col-xl-3 offset-xl-2 col-lg-14 offset-lg-2 col-md-4 offset-md-2 col-sm-9 offset-sm-2 col-9 offset-2">
         <a href="/">
-          <img src="img/logo.jpg" class="w-100" alt="">
+          <img src="img/logo.jpg" class="header__logo" alt="">
         </a>
       </div>
-      <div class="col-xl-14 col-lg-14 d-none d-lg-block">
+      <div class="col-xl-14 col-lg-14 d-none d-lg-flex align-items-center justify-content-center">
         <menu class="headMenu">
           <ul>
             <li>
@@ -35,9 +36,9 @@
           </ul>
         </menu>
       </div>
-      <div class="col-xl-3 col-lg-3 offset-lg-0 col-md-2 offset-md-14 col-sm-2 offset-sm-9 col-2 offset-9">
-        <div class="selectCountry d-none d-lg-block ">
-          <p>Россия <svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98099 6.77807L16.6911 0.0145264L17.3505 0.766271L9.31072 7.81906L8.98099 8.10831L8.65127 7.81906L0.61145 0.766271L1.2709 0.0145264L8.98099 6.77807Z" fill="#00AEEF"/></svg></p>
+      <div class="col-xl-3 col-lg-3 offset-lg-0 col-md-2 offset-md-14 col-sm-2 offset-sm-9 col-2 offset-9 d-flex align-items-center justify-content-center">
+        <div class="selectCountry d-none d-lg-flex ">
+          <p class="mp0" >Россия&nbsp;&nbsp;<svg width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98099 6.77807L16.6911 0.0145264L17.3505 0.766271L9.31072 7.81906L8.98099 8.10831L8.65127 7.81906L0.61145 0.766271L1.2709 0.0145264L8.98099 6.77807Z" fill="#00AEEF"/></svg></p>
         </div>
         <div class="burger d-lg-none ">
           <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +51,8 @@
     </div>
   </header>
 
-  <div class="row">
-    <div class="col-xl-9 offset-xl-6 col-lg-10 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
+  <div class="aFirst row p-t-200 p-b-150">
+    <div class="col-xl-9 offset-xl-6 col-lg-10 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-b-100">
       <div class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
         <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
           <a href="http://mapa.avadev.ru" itemprop="item">
@@ -61,7 +62,7 @@
         <span class="kb_sep"> / </span>
         <span class="kb_title">О компании</span>
       </div>
-      <h1 class="h2">
+      <h1 class="h2 m-b-40">
         О КОМПАНИИ
       </h1>
       <p>
@@ -72,14 +73,14 @@
       </p>
     </div>
     <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <div class="imgW">
-        <img src="" alt="">
+      <div class="aFirst__imgW">
+        <img src="img/about/2.jpg" alt="">
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xl-9 offset-xl-6 col-lg-10 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <h2 class="h2">
+    <div class="col-xl-9 offset-xl-6 col-lg-10 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 p-b-150">
+      <h2 class="h2 m-b-40">
         CSR
       </h2>
       <p>Являясь частью группы KNAUF и представляя компанию KNAUF Industries в России, «КНАУФ Пенопласт» активно развивает концепцию CSR (eng. Corporate Social Responsibility).</p>
@@ -89,15 +90,20 @@
         в компании «КНАУФ Пенопласт» и глобально в KNAUF уделяется очень много внимания охране труда и безопасности сотрудников.</p>
     </div>
     <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <div class="">
-        <span>“</span>
-        <div class="">
+      <div class="aQuote">
+        <div class="aQuote__inner">
+          <span class="aQuote__q">“</span>
           <p class="p1">КНАУФ – одна большая семья, и каждый человек в ней может внести вклад не только в свое будущее, но и в будущее нашей планеты.Поэтому стабильность 
             и устойчивое развитие компаний поможет защитить наше общее будущее.</p>
-          <p class="p1">Alexander Knauf</p>
+          <p class="p1 ttu">Alexander Knauf</p>
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-xl-9 offset-xl-6 col-lg-10 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 p-t-100">
+    <h2 class="h2 m-b-100">
+      ТЕХНОЛОГИИ
+    </h2>
   </div>
   <div class="row">
     <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
@@ -131,9 +137,9 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <h2 class="h2">ПЕНОПОЛИПРОПИЛЕН (EPP)</h2>
+  <div class="aEPP row p-t-150 p-b-80">
+    <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-b-40">
+      <h2 class="h2 m-b-40">ПЕНОПОЛИПРОПИЛЕН (EPP)</h2>
       <p>Пенополипропилен  – это закрытопористый легкий материал, устойчивый к температурным перепадам. Вспененный полипропилен кардинально отличается от пенополистирола и поставляется к нам в предварительно расширенном виде. Обладает уникальной комбинацией свойств:</p>
       <ul>
         <li>
@@ -159,29 +165,28 @@
         </li>
       </ul>
     </div>
-    <div class="col-xl-9 offset-xl-2 col-lg-9 offset-lg-2 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0">
-      <div class="imgW">
-        <img src="" alt="">
-      </div>
+    <div class="col-xl-9 offset-xl-2 col-lg-9 offset-lg-2 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0 m-b-40">
+        <img class="w-100 h-100" src="img/about/1.jpg" alt="">
     </div>
+  </div>
+  <div class="row p-b-80">    
     <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
       <p>Пенополипропилен часто сравнивается с вспененным полиэтиленом, ближайшим конкурентом в своём классе. Однако EPP превосходит ППЭТ по нескольким важнейшим показателям. В частности, ППП обладает меньшим коэффициентом водопоглощения при высоких температурах, большим запасом прочности при деформации, а также хуже проводит тепло и в меньшей степени подвергается тепловой усадке.</p>
     </div>
     <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
       <p>Пенополипропилен широко применяется для производства многооборотной транспортной тары, корпусов в HVAC сегменте (отопление, вентиляция, кондиционирование), в сегменте HORECA (ресторанный и кейтеринговый бизнес), компонентов систем безопасности в автомобильной промышленности, а также для разработки индивидуальных решений.</p>
     </div>
-    <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
+    <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-t-80 m-b-40">
       <div class="video">
+        <img class="w-100" src="img/about/video.jpg" alt="">
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xl-8 offset-xl-6 col-lg-8 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <div class="imgW">
-        <img src="" alt="">
-      </div>
+  <div class="row aEPP__dark p-t-80">
+    <div class="col-xl-8 offset-xl-6 col-lg-8 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-b-80">
+        <img class="w-100 h-100" src="img/about/3.jpg" alt="">
     </div>
-    <div class="col-xl-7 offset-xl-1 col-lg-7 offset-lg-1 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
+    <div class="col-xl-7 offset-xl-1 col-lg-7 offset-lg-1 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-b-80">
       <p>
         Как и любой материал, пенополипропилен производится из сырья. 
         В отличие от гранул полистирола, сырье для пенополипропилена поступает на производство в предварительно вспененном виде. Гранулы полипропилена попадают в автоматизированные формовочные машины, где они смешиваются с антипиренами и другими агентами.Это необходимо для обеспечения безопасности и надежности производимого материала.
@@ -195,7 +200,7 @@
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row p-t-150 p-b-100">
     <div class="col-xl-11 offset-xl-11 col-lg-11 offset-lg-11 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
       <div class="accordeon">
         <h4 class="h6 accordeon__head">
@@ -278,7 +283,7 @@
   </div>
   <div class="row">
     <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <h2 class="h2">ПЕНОПОЛИПРОПИЛЕН (EPS)</h2>
+      <h2 class="aEPS h2 m-b-40">ПЕНОПОЛИСТИРОЛ (EPS)</h2>
     </div>
     <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
       <p>
@@ -300,16 +305,13 @@
         и медицинской тары. 
       </p>
     </div>
-    <div class="col-xl-18 offset-xl-6 col-lg-18 offset-lg-6 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0">
-      <div class="imgW">
-        <img src="" alt="">
-      </div>
+    <div class="col-xl-18 offset-xl-6 col-lg-18 offset-lg-6 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0 p-t-100 p-b-150">
+      <img src="img/about/4.jpg" alt="" class="w-100">
     </div>
   </div>
   <div class="row">
-    <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
+    <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2 m-b-150">
       <h2 class="h2">Сырье для продукции компании «КНАУФ Пенопласт»</h2>
-
     </div>
     <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
       <p>
@@ -337,25 +339,25 @@
       </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-2 col-20 offset-2">
-      <h2 class="h2">ряд характеристик, которые отличают пенополистирол от других материалов:</h2>
+  <div class="row aEPS__dark p-t-80 p-b-80">
+    <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-2 col-20 offset-2 m-b-40">
+      <h2 class="h3 ttu">ряд характеристик, которые отличают пенополистирол от других материалов:</h2>
     </div>
     <div class="col-xl-7 offset-xl-6 col-lg-7 offset-lg-6 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           Благодаря своей «воздушной» структуре пенополистирол хорошо удерживает тепло.<br>
           Его воздушная прослойка становится отличным термоизолятором. Эти качества также определяются плотностью материала.
         </p>
       </div>
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           Его нельзя растворить мылом, содой, цементом и гипсом, известью, грунтовыми водами. Структура нарушается только при воздействии ацетона, некоторых марок олифы, скипидара. Но вряд ли эти вещества доберутся до утеплителя при правильной эксплуатации.Стоит отметить, что на материал негативно воздействует ультрафиолет.
         </p>
       </div>
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           Теплопроводность пенополистирола составляет от 0,037Вт/мК до 0,043Вт/мК. Для сравнения: у дерева — 0,12Вт/мК, красного кирпича — 0,7Вт/мК.
@@ -364,19 +366,19 @@
 
     </div>
     <div class="col-xl-7 offset-xl-2 col-lg-7 offset-lg-2 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           Несмотря на визуальную хрупкость, вспененный пенополистирол — довольно прочный утеплитель. Маленькие шарики расположены рядом друг с другом настолько плотно, что материал становится устойчивым к воздействию механических факторов.
         </p>
       </div>
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           У этого материала низкая паропроницаемость. Пар, конечно, может проникать сквозь воздушные ячейки, но в минимальных количествах. То же касается и воды: если погрузить пенопласт в воду, он впитает не более 4 %.
         </p>
       </div>
-      <div class="list">
+      <div class="aEPS__list">
         <span>/</span>
         <p>
           Пенополистирол биологически устойчив: плесень на нем не приживается. 
@@ -384,9 +386,11 @@
         </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0">
+  </div>
+    <div class="row p-t-150 ">
+      <div class="col-xl-16 offset-xl-6 col-lg-16 offset-lg-6 col-md-24 offset-md-0 col-sm-24 offset-sm-0 col-24 offset-0 p-b-100">
         <div class="video">
+          <img src="img/about/video2.jpg" alt="">
         </div>
       </div>
       <div class="col-xl-11 offset-xl-11 col-lg-11 offset-lg-11 col-md-20 offset-md-2 col-sm-20 offset-sm-20 col-20 offset-2">
