@@ -1,0 +1,35 @@
+.news{
+  &__itemSm{
+    border-top: 1px solid $blue;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &:last-of-type{
+      border-bottom: 1px solid $blue;
+    } 
+  }
+  &__itemSmDate{
+    margin-right: 4.16vw;
+    flex: none;
+    order: 1;
+    padding: 20px 0;
+    opacity: 0.6;
+  }
+  &__itemSmArrow{
+    margin-left: auto;
+    flex: none;
+    order: 5;
+    padding: 20px 0;
+  }
+  &__itemSmTitle{
+    order: 3;
+    padding: 20px 0;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      order: 7;
+      padding: 0 0 20px 0;
+
+    }
+  }
+}

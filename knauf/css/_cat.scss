@@ -1,0 +1,125 @@
+.cbBodyCat{
+  counter-reset: section;
+
+}
+.cartBig{
+  position: relative;
+  width: 100%;
+  padding-bottom: 50%;
+  background-color: $gray;
+  color: $white;
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 60%;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: 450px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 360px;
+  }
+  &__title{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 70%;
+    display: flex;
+    align-items: start;
+    &::before{
+      counter-increment: section;          
+      content: "/ 0" counter(section) " ";
+      margin-right: 20px;
+      flex: none;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 30px;
+      left: 30px;
+    }
+  }
+  &__btn{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 65px;
+    height: auto;
+    @include media-breakpoint-down(md) {
+      width: 55px;
+      height: auto;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 40px;
+      height: auto;
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+  &__img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+.csmBodyCat{
+  counter-reset: section;
+
+}
+.cartSm{
+  position: relative;
+  width: 100%;
+  padding-bottom: 50%;
+  background-color: $gray;
+  color: $white;
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 70%;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: 450px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 360px;
+  }
+  &__title{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 70%;
+    display: flex;
+    align-items: start;
+    &::before{
+      counter-increment: section;          
+      content: "/ 0" counter(section) " ";
+      margin-right: 20px;
+      flex: none;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 30px;
+      left: 30px;
+    }
+  }
+  &__btn{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    @include media-breakpoint-down(md) {
+      width: 55px;
+      height: auto;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 40px;
+      height: auto;
+      bottom: 30px;
+      left: 30px;
+    }
+  }
+  &__img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    max-height: 100%;
+  }
+}

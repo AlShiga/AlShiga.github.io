@@ -1,0 +1,29 @@
+.docs{
+  &__item{
+    border-top: 1px solid $blue;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    &:last-of-type{
+      border-bottom: 1px solid $blue;
+    }
+  }
+  &__itemTitle{
+    margin-right: auto;
+  }
+  &__itemSize{
+    opacity: 0.6;
+    margin: 0;
+    padding: 0;
+    margin-right: 30px;
+  }
+
+}
+.addContent{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg{
+    margin-right: 20px;
+  }
+}
