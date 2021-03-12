@@ -1,0 +1,72 @@
+.prodHead{
+  background-color: $gray;
+  color: $white;
+}
+
+.prodTable{
+  &__head{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  &__headItem{
+    margin: 0;
+    padding: 10px 20px;
+    border-bottom: 1px solid $dark;
+    text-align: center;
+    flex-grow: 1;
+    cursor: pointer;
+    &.active{
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+  &__bodyRow{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #C4C4C4;
+    border-bottom: none;
+    p {
+      opacity: 0.9;
+    }
+    &:first-of-type{
+      p {
+        opacity: 1;
+      }
+    }
+    &:last-of-type{
+      border-bottom: 1px solid #C4C4C4;
+    }
+  }
+  &__bodyColName{
+    padding: 25px 25px 25px 50px;
+    & *{
+      margin: 0;
+      padding: 0;
+    }
+    @include media-breakpoint-down(sm) {
+
+      padding: 10px 20px 20px 15px;
+    }
+  }
+  &__bodyColVal{
+    display: flex;align-items: center;
+    padding: 25px 25px 25px 50px;
+    width: 300px;
+    min-width: 300px;
+    border-left: 1px solid #C4C4C4;
+    @include media-breakpoint-down(md) {
+      width: 200px;
+      min-width: 200px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 120px;
+      min-width: 120px;
+      padding: 10px 20px 20px 15px;
+    }
+    & *{
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

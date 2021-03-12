@@ -7093,7 +7093,7 @@ input[type="number"] {
   color: #00AEEF;
 }
 
-.p1, p, li {
+.p1, p, li, li > a {
   font-family: Futura PT;
   font-style: normal;
   font-weight: normal;
@@ -7111,7 +7111,7 @@ input[type="number"] {
   .h3 {
     font-size: 20px;
   }
-  .p1, p, li {
+  .p1, p, li, li > a {
     font-size: 18px;
   }
 }
@@ -7126,7 +7126,7 @@ input[type="number"] {
   .h3 {
     font-size: 20px;
   }
-  .p1, p, li {
+  .p1, p, li, li > a {
     font-size: 18px;
   }
 }
@@ -7141,7 +7141,7 @@ input[type="number"] {
   .h3 {
     font-size: 18px;
   }
-  .p1, p, li {
+  .p1, p, li, li > a {
     font-size: 16px;
   }
 }
@@ -7279,6 +7279,73 @@ input[type="number"] {
   .headMenu a {
     font-size: 16px;
   }
+}
+
+.footer__top {
+  padding-top: 80px;
+  border-top: 1px solid #00AEEF;
+}
+
+.footer__logo {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 80px;
+}
+
+.footer__mainMenu {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 767.98px) {
+  .footer__mainMenu {
+    margin-bottom: 40px;
+  }
+}
+
+.footer__mainMenu li {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767.98px) {
+  .footer__mainMenu li {
+    margin-bottom: 15px;
+  }
+}
+
+.footer__mainMenu li::before {
+  content: "";
+  display: none;
+}
+
+.footer__menu {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 767.98px) {
+  .footer__menu {
+    margin-bottom: 40px;
+  }
+}
+
+.footer__menu li {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767.98px) {
+  .footer__menu li {
+    margin-bottom: 15px;
+  }
+}
+
+.footer__menu li::before {
+  content: "";
+  display: none;
+}
+
+.footer__bottom {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-top: 1px solid #00AEEF;
 }
 
 .mFirst {
@@ -7643,6 +7710,24 @@ input[type="number"] {
   margin-right: 30px;
 }
 
+.contCity a span {
+  color: #00AEEF;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.map > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .cbBodyCat {
   counter-reset: section;
 }
@@ -7919,5 +8004,141 @@ input[type="number"] {
             order: 7;
     padding: 0 0 20px 0;
   }
+}
+
+.newsDFirst__gray {
+  background-color: #6C6D70;
+  color: #fff;
+}
+
+.newsDFirst__imgW {
+  position: relative;
+  padding-bottom: 700px;
+}
+
+.newsDFirst__imgW img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.newsBody__imgW {
+  position: relative;
+  padding-bottom: 550px;
+}
+
+.newsBody__imgW img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.prodHead {
+  background-color: #6C6D70;
+  color: #fff;
+}
+
+.prodTable__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.prodTable__headItem {
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid #2B2D30;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
+}
+
+.prodTable__headItem.active {
+  border-color: #00AEEF;
+  color: #00AEEF;
+}
+
+.prodTable__bodyRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #C4C4C4;
+  border-bottom: none;
+}
+
+.prodTable__bodyRow p {
+  opacity: 0.9;
+}
+
+.prodTable__bodyRow:first-of-type p {
+  opacity: 1;
+}
+
+.prodTable__bodyRow:last-of-type {
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.prodTable__bodyColName {
+  padding: 25px 25px 25px 50px;
+}
+
+.prodTable__bodyColName * {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 767.98px) {
+  .prodTable__bodyColName {
+    padding: 10px 20px 20px 15px;
+  }
+}
+
+.prodTable__bodyColVal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 25px 25px 50px;
+  width: 300px;
+  min-width: 300px;
+  border-left: 1px solid #C4C4C4;
+}
+
+@media (max-width: 1024.98px) {
+  .prodTable__bodyColVal {
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .prodTable__bodyColVal {
+    width: 120px;
+    min-width: 120px;
+    padding: 10px 20px 20px 15px;
+  }
+}
+
+.prodTable__bodyColVal * {
+  margin: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

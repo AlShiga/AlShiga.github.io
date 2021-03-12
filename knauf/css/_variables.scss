@@ -570,7 +570,7 @@ input[type="number"] {
     color: $blue;
   }
 }
-.p1, p, li {
+.p1, p, li, li>a {
   font-family: Futura PT;
   font-style: normal;
   font-weight: normal;
@@ -587,7 +587,7 @@ input[type="number"] {
   .h3 {
     font-size: 20px;
   }
-  .p1, p, li {
+  .p1, p, li, li>a {
     font-size: 18px;
   }
 }
@@ -601,7 +601,7 @@ input[type="number"] {
   .h3 {
     font-size: 20px;
   }
-  .p1, p, li {
+  .p1, p, li, li>a {
     font-size: 18px;
   }
 }
@@ -615,14 +615,12 @@ input[type="number"] {
   .h3 {
     font-size: 18px;
   }
-  .p1, p, li {
+  .p1, p, li, li>a {
     font-size: 16px;
   }
 }
 
-.btn2 {
-
-}
+// .btn2 {}
 
 .ttu {
   text-transform: uppercase;

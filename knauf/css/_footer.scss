@@ -1,0 +1,50 @@
+.footer{
+  &__top{
+    padding-top: 80px;
+    border-top: 1px solid $blue;
+  }
+  &__logo{
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 80px;
+  }
+  &__mainMenu{
+    margin-bottom: 80px;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
+    }
+    li{
+      margin-bottom: 20px;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 15px;
+      }
+    }
+    & li::before{
+      content: "";
+      display: none;
+    }
+  }
+  
+  &__menu{
+    margin-bottom: 80px;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
+    }
+    li{
+      margin-bottom: 20px;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 15px;
+      }
+    }
+    & li::before{
+      content: "";
+      display: none;
+
+    }
+  }
+  &__bottom{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 1px solid $blue;
+  }
+}
