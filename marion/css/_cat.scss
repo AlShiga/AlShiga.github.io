@@ -1,0 +1,48 @@
+.cat{
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $dark;
+    transition: 0.3s;
+    margin-bottom: 40px;
+    &:hover{
+      border-color: $orange;
+    }
+    .h5{
+      padding: 25px;
+    }
+    img{
+      width: 33%;
+      flex:none;
+    }
+  }
+}
+
+.catSmMenu{
+  li{
+    margin-bottom: 20px;
+  }
+  a{
+    transition: 0.3s;
+    &:hover{
+      color: $orange;
+    }
+  }
+}
+
+.cartProd{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  .h4{
+    padding: 20px;
+    background-color: $gray;
+    color: $white;
+    flex-grow: 1;
+    text-transform: uppercase;
+  }
+  img{
+    flex-shrink: 0;
+  }
+}

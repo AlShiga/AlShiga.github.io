@@ -1,0 +1,32 @@
+.detTitle{
+  &__imgW{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 70%;
+    img{
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+  }
+}
+.detTable{
+  background-color: $dark;
+  &__body{
+    background-color: $whiteBg;
+    overflow-x: scroll;
+    .row{
+      border-bottom: 1px solid $dark;
+      min-width: 700px;
+    }
+  }
+  &__col{
+    padding: 30px 10px;
+    &_gray{
+      background-color: #f0f0f0;
+    }
+    &_center{
+      text-align: center;
+    }
+  }
+}

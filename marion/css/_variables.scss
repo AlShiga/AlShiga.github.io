@@ -12,11 +12,11 @@ $gray: #969696;
 }
 
 * {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: 300;
+  font-family: Gotham Pro;
   font-style: normal;
   font-weight: normal;
+  // font-size: 16px;
+  line-height: 1.3;
 }
 
 button {
@@ -47,7 +47,7 @@ li {
   //   content: "\2022";
   //   color: $blue;
   //   font-weight: bold;
-  //   display: inline-block; 
+  //   display: inline-block;
   // }
 }
 
@@ -104,7 +104,7 @@ h6 > span{
     color: inherit;
   }
 }
- 
+
 ::-webkit-scrollbar {
   background-color: $white;
 }
@@ -118,7 +118,7 @@ h6 > span{
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0; 
+  margin: 0;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -241,7 +241,7 @@ input[type="number"] {
   .m-b-350{
     margin-bottom: 250px;
   }
-  
+
   .p-t-200{
     padding-top: 200px;
   }
@@ -254,7 +254,7 @@ input[type="number"] {
   .m-b-200{
     margin-bottom: 200px;
   }
-  
+
   .p-t-150{
     padding-top: 150px;
   }
@@ -267,7 +267,7 @@ input[type="number"] {
   .m-b-150{
     margin-bottom: 150px;
   }
-  
+
   .p-t-100{
     padding-top: 100px;
   }
@@ -280,7 +280,7 @@ input[type="number"] {
   .m-b-100{
     margin-bottom: 100px;
   }
-  
+
   .p-t-80{
     padding-top: 80px;
   }
@@ -293,7 +293,7 @@ input[type="number"] {
   .m-b-80{
     margin-bottom: 80px;
   }
-  
+
   .p-t-40{
     padding-top: 40px;
   }
@@ -306,7 +306,7 @@ input[type="number"] {
   .m-b-40{
     margin-bottom: 40px;
   }
-  
+
   .p-t-20{
     padding-top: 20px;
   }
@@ -333,7 +333,7 @@ input[type="number"] {
   .m-b-350{
     margin-bottom: 170px;
   }
-  
+
   .p-t-200{
     padding-top: 200px;
   }
@@ -346,7 +346,7 @@ input[type="number"] {
   .m-b-200{
     margin-bottom: 200px;
   }
-  
+
   .p-t-150{
     padding-top: 150px;
   }
@@ -359,7 +359,7 @@ input[type="number"] {
   .m-b-150{
     margin-bottom: 150px;
   }
-  
+
   .p-t-100{
     padding-top: 100px;
   }
@@ -372,7 +372,7 @@ input[type="number"] {
   .m-b-100{
     margin-bottom: 100px;
   }
-  
+
   .p-t-80{
     padding-top: 80px;
   }
@@ -385,7 +385,7 @@ input[type="number"] {
   .m-b-80{
     margin-bottom: 80px;
   }
-  
+
   .p-t-40{
     padding-top: 40px;
   }
@@ -398,7 +398,7 @@ input[type="number"] {
   .m-b-40{
     margin-bottom: 40px;
   }
-  
+
   .p-t-20{
     padding-top: 20px;
   }
@@ -425,7 +425,7 @@ input[type="number"] {
   .m-b-350{
     margin-bottom: 170px;
   }
-  
+
   .p-t-200{
     padding-top: 150px;
   }
@@ -438,7 +438,7 @@ input[type="number"] {
   .m-b-200{
     margin-bottom: 150px;
   }
-  
+
   .p-t-150{
     padding-top: 150px;
   }
@@ -451,7 +451,7 @@ input[type="number"] {
   .m-b-150{
     margin-bottom: 150px;
   }
-  
+
   .p-t-100{
     padding-top: 100px;
   }
@@ -464,7 +464,7 @@ input[type="number"] {
   .m-b-100{
     margin-bottom: 100px;
   }
-  
+
   .p-t-80{
     padding-top: 80px;
   }
@@ -477,7 +477,7 @@ input[type="number"] {
   .m-b-80{
     margin-bottom: 80px;
   }
-  
+
   .p-t-40{
     padding-top: 40px;
   }
@@ -490,7 +490,7 @@ input[type="number"] {
   .m-b-40{
     margin-bottom: 40px;
   }
-  
+
   .p-t-20{
     padding-top: 20px;
   }
@@ -678,3 +678,37 @@ input[type="number"] {
     color: $dark;
   }
 }
+
+input{
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: $gray;
+  border: none;
+  border-bottom:1px solid $gray;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-family: Gotham Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.3;
+
+  &::placeholder{
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+.btn2{
+  width: 100%;
+  padding: 17px 20px;
+  background-color: $orange;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+}
+

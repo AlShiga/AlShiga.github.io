@@ -1,0 +1,27 @@
+.footer{
+  background-color:$dark;
+  color: $white;
+  border-top: 1px solid $gray;
+  &__logo{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+
+  }
+  &__menuWrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__menu{
+    margin-right: 30px;
+    margin-bottom: 20px;
+    li{
+      margin-bottom: 20px;
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+}

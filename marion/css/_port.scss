@@ -1,0 +1,47 @@
+.port{
+  &__item{
+    display: block;
+  }
+}
+.portDet{
+  &__imgW1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // padding-bottom: 70%;
+    img{
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+  }
+  &__imgW2{
+    position: relative;
+    width: 100%;
+    // height: 100%;
+    padding-bottom: 100%;
+    img{
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+  }
+  &__imgW3{
+    position: relative;
+    width: 100%;
+    // height: 100%;
+    padding-bottom: 100%;
+    img{
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+  }
+  &__imgW4{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // padding-bottom: 100%;
+    img{
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+  }
+}
