@@ -1,0 +1,161 @@
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  &_hide{
+    transform: translateY(-120%);
+  }
+
+  &__inner{
+    position: relative;
+    padding: 30px 0 20px;
+  }
+  &__menu{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    ul{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      margin: 0 25px;
+      padding: 0;
+      @include media-breakpoint-down(lg) {
+        margin: 0 15px;
+      }
+    }
+    a{
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+      transition: 0.2s;
+      &:hover, &:focus {
+        color:$red;
+      }
+      &:active{
+        color: $redLight;
+      }
+    }
+  }
+  &__line{
+    width: 100%;
+    height: 1px;
+    background-color: $darkGray;
+  }
+  &__cont{
+    white-space: nowrap;
+    margin: 0 0 0 50px;
+    padding: 0;
+    @include media-breakpoint-down(lg) {
+      margin: 0 0 0 30px;
+    }
+    transition: 0.2s;
+    &:hover, &:focus {
+      color:$red;
+    }
+    &:active{
+      color: $redLight;
+    }
+  }
+}
+.burger{
+  stroke: $dark;
+  transition: 0.2s;
+  &:hover, &:focus {
+    stroke:$red;
+  }
+  &:active{
+    stroke: $redLight;
+  }
+}
+.logo{
+  position: fixed;
+  display: block;
+  top: 0;
+  left: calc(100vw / 24);
+  z-index: 101;
+  @include media-breakpoint-down(sm) {
+    position: absolute;
+  }
+  svg{
+    width: 120px;
+    height: auto;
+    @include media-breakpoint-down(lg) {
+      width: 90px;
+    }
+    @include media-breakpoint-down(md) {
+      width: 75px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 67px;
+      position: absolute;
+    }
+  }
+}
+
+.prel{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  overflow: hidden;
+  &__r1{
+
+  }
+  &__r2{
+    transform: translateY(100%);
+  }
+  &__r1{
+
+  }
+  &__r4{
+    transform: translateY(100%);
+  }
+}
+
+
+.show{
+  & .prel__r1{
+    transition: 1.5s cubic-bezier(.17,.67,.5,1) 1s;
+    // transition-delay: 1s;
+    transform: translateY(-100%);
+  }
+  & .prel__r2{
+  }
+  & .prel__r3{
+    transition: 1s cubic-bezier(.17,.67,.5,1);
+    transform: translateY(-100%);
+  }
+  & .prel__r4{
+  }
+}
+.hide{
+  & .prel__r1{
+  }
+  & .prel__r2{
+    transition: 1.5s cubic-bezier(.17,.67,.5,1);
+    transform: translateY(0%);
+  }
+  & .prel__r3{
+  }
+  & .prel__r4{
+    transition: 1s cubic-bezier(.17,.67,.5,1) 1s;
+    transform: translateY(0%);
+  }
+  height: 0;
+  transition: 2s cubic-bezier(.17,.67,.5,1) 2s;
+}

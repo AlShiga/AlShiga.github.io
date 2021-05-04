@@ -1,0 +1,21 @@
+.wpcf7-not-valid-tip{
+  display: none !important;
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form .wpcf7-response-output, .wpcf7 form .wpcf7-response-output {
+  border:none !important;
+  padding: 0 !important;
+  margin: 20px 0 !important;
+}
+
+
+.p404{
+  position: relative;
+  z-index: 1;
+  &__line{
+
+    height: 2px;
+    width: 100%;
+    background-color: $red;
+    margin: 10px 0;
+  }
+}
