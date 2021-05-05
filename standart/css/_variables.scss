@@ -125,369 +125,92 @@ input[type="number"] {
 .noscroll {
   overflow: hidden;
 }
-
-.p-t-220{
-  padding-top: 220px;
+@mixin pTop($mpXL,$mpLG,$mpMD,$mpSM) {       
+  padding-top: $mpXL;
+  @include media-breakpoint-down(lg) {
+    padding-top: $mpLG;
+  }
+  @include media-breakpoint-down(md) {
+    padding-top: $mpMD;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: $mpSM;
+  }
 }
-.p-b-220{
-  padding-bottom: 220px;
-}
-.m-t-220{
-  margin-top: 220px;
-}
-.m-b-220{
-  margin-bottom: 220px;
-}
-
-
-.p-t-180{
-  padding-top: 180px;
-}
-.p-b-180{
-  padding-bottom: 180px;
-}
-.m-t-180{
-  margin-top: 180px;
-}
-.m-b-180{
-  margin-bottom: 180px;
+@mixin pBot($mpXL,$mpLG,$mpMD,$mpSM) {       
+  padding-bottom: $mpXL;
+  @include media-breakpoint-down(lg) {
+    padding-bottom: $mpLG;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: $mpMD;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: $mpSM;
+  }
 }
 
-.p-t-160{
-  padding-top: 160px;
+@mixin mTop($mpXL,$mpLG,$mpMD,$mpSM) {       
+  margin-top: $mpXL;
+  @include media-breakpoint-down(lg) {
+    margin-top: $mpLG;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: $mpMD;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: $mpSM;
+  }
 }
-.p-b-160{
-  padding-bottom: 160px;
+@mixin mBot($mpXL,$mpLG,$mpMD,$mpSM) {       
+  margin-bottom: $mpXL;
+  @include media-breakpoint-down(lg) {
+    margin-bottom: $mpLG;
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: $mpMD;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: $mpSM;
+  }
 }
-.m-t-160{
-  margin-top: 160px;
-}
-.m-b-160{
-  margin-bottom: 160px;
-}
+.m-t-200{@include mTop(200px,180px,160px,160px)}
+.m-b-200{@include mBot(200px,180px,160px,160px)}
+.p-t-200{@include pTop(200px,180px,160px,160px)}
+.p-b-200{@include pBot(200px,180px,160px,160px)}
 
-.p-t-120{
-  padding-top: 120px;
-}
-.p-b-120{
-  padding-bottom: 120px;
-}
-.m-t-120{
-  margin-top: 120px;
-}
-.m-b-120{
-  margin-bottom: 120px;
-}
+.m-t-160{@include mTop(160px,140px,140px,100px)}
+.m-b-160{@include mBot(160px,140px,140px,100px)}
+.p-t-160{@include pTop(160px,140px,140px,100px)}
+.p-b-160{@include pBot(160px,140px,140px,100px)}
 
-.p-t-100{
-  padding-top: 100px;
-}
-.p-b-100{
-  padding-bottom: 100px;
-}
-.m-t-100{
-  margin-top: 100px;
-}
-.m-b-100{
-  margin-bottom: 100px;
-}
+.m-t-100{@include mTop(100px,80px,80px,60px)}
+.m-b-100{@include mBot(100px,80px,80px,60px)}
+.p-t-100{@include pTop(100px,80px,80px,60px)}
+.p-b-100{@include pBot(100px,80px,80px,60px)}
 
-.p-t-80{
-  padding-top: 80px;
-}
-.p-b-80{
-  padding-bottom: 80px;
-}
-.m-t-80{
-  margin-top: 80px;
-}
-.m-b-80{
-  margin-bottom: 80px;
-}
+.m-t-80{@include mTop(80px,60px,60px,60px)}
+.m-b-80{@include mBot(80px,60px,60px,60px)}
+.p-t-80{@include pTop(80px,60px,60px,60px)}
+.p-b-80{@include pBot(80px,60px,60px,60px)}
 
-.p-t-60{
-  padding-top: 60px;
-}
-.p-b-60{
-  padding-bottom: 60px;
-}
-.m-t-60{
-  margin-top: 60px;
-}
-.m-b-60{
-  margin-bottom: 60px;
-}
+.m-t-60{@include mTop(60px,60px,40px,40px)}
+.m-b-60{@include mBot(60px,60px,40px,40px)}
+.p-t-60{@include pTop(60px,60px,40px,40px)}
+.p-b-60{@include pBot(60px,60px,40px,40px)}
 
-.p-t-40{
-  padding-top: 40px;
-}
-.p-b-40{
-  padding-bottom: 40px;
-}
-.m-t-40{
-  margin-top: 40px;
-}
-.m-b-40{
-  margin-bottom: 40px;
-}
-
-.p-t-30{
-  padding-top: 30px;
-}
-.p-b-30{
-  padding-bottom: 30px;
-}
-.m-t-30{
-  margin-top: 30px;
-}
-.m-b-30{
-  margin-bottom: 30px;
-}
-
-.p-t-20{
-  padding-top: 20px;
-}
-.p-b-20{
-  padding-bottom: 20px;
-}
-.m-t-20{
-  margin-top: 20px;
-}
-.m-b-20{
-  margin-bottom: 20px;
-}
+.m-t-40{@include mTop(40px,30px,30px,30px)}
+.m-b-40{@include mBot(40px,30px,30px,30px)}
+.p-t-40{@include pTop(40px,30px,30px,30px)}
+.p-b-40{@include pBot(40px,30px,30px,30px)}
 
 
-@include media-breakpoint-down(lg) {
-  .p-t-220{
-    padding-top: 175px;
-  }
-  .p-b-220{
-    padding-bottom: 175px;
-  }
-  .m-t-220{
-    margin-top: 175px;
-  }
-  .m-b-220{
-    margin-bottom: 175px;
-  }
-  
-  .p-t-180{
-    padding-top: 160px;
-  }
-  .p-b-180{
-    padding-bottom: 160px;
-  }
-  .m-t-180{
-    margin-top: 160px;
-  }
-  .m-b-180{
-    margin-bottom: 160px;
-  }
-
-  .p-t-160{
-    padding-top: 140px;
-  }
-  .p-b-160{
-    padding-bottom: 140px;
-  }
-  .m-t-160{
-    margin-top: 140px;
-  }
-  .m-b-160{
-    margin-bottom: 140px;
-  }
-
-  .p-t-120{
-    padding-top: 120px;
-  }
-  .p-b-120{
-    padding-bottom: 120px;
-  }
-  .m-t-120{
-    margin-top: 120px;
-  }
-  .m-b-120{
-    margin-bottom: 120px;
-  }
-
-  .p-t-100{
-    padding-top: 80px;
-  }
-  .p-b-100{
-    padding-bottom: 80px;
-  }
-  .m-t-100{
-    margin-top: 80px;
-  }
-  .m-b-100{
-    margin-bottom: 80px;
-  }
-
-  .p-t-80{
-    padding-top: 80px;
-  }
-  .p-b-80{
-    padding-bottom: 80px;
-  }
-  .m-t-80{
-    margin-top: 80px;
-  }
-  .m-b-80{
-    margin-bottom: 80px;
-  }
-
-  .p-t-60{
-    padding-top: 40px;
-  }
-  .p-b-60{
-    padding-bottom: 40px;
-  }
-  .m-t-60{
-    margin-top: 40px;
-  }
-  .m-b-60{
-    margin-bottom: 40px;
-  }
-  
-  .p-t-30{
-    padding-top: 20px;
-  }
-  .p-b-30{
-    padding-bottom: 20px;
-  }
-  .m-t-30{
-    margin-top: 20px;
-  }
-  .m-b-30{
-    margin-bottom: 20px;
-  }
-  
-  
-}
-@include media-breakpoint-down(md) {
-  .p-t-180{
-    padding-top: 140px;
-  }
-  .p-b-180{
-    padding-bottom: 140px;
-  }
-  .m-t-180{
-    margin-top: 140px;
-  }
-  .m-b-180{
-    margin-bottom: 140px;
-  }
-
-  .p-t-160{
-    padding-top: 140px;
-  }
-  .p-b-160{
-    padding-bottom: 140px;
-  }
-  .m-t-160{
-    margin-top: 140px;
-  }
-  .m-b-160{
-    margin-bottom: 140px;
-  }
-
-  .p-t-120{
-    padding-top: 100px;
-  }
-  .p-b-120{
-    padding-bottom: 100px;
-  }
-  .m-t-120{
-    margin-top: 100px;
-  }
-  .m-b-120{
-    margin-bottom: 100px;
-  }
-  
-  .p-t-80{
-    padding-top: 60px;
-  }
-  .p-b-80{
-    padding-bottom: 60px;
-  }
-  .m-t-80{
-    margin-top: 60px;
-  }
-  .m-b-80{
-    margin-bottom: 60px;
-  }
+.m-t-20{@include mTop(20px,20px,20px,20px)}
+.m-b-20{@include mBot(20px,20px,20px,20px)}
+.p-t-20{@include pTop(20px,20px,20px,20px)}
+.p-b-20{@include pBot(20px,20px,20px,20px)}
 
 
-}
-@include media-breakpoint-down(sm) {
-  .p-t-180{
-    padding-top: 120px;
-  }
-  .p-b-180{
-    padding-bottom: 120px;
-  }
-  .m-t-180{
-    margin-top: 120px;
-  }
-  .m-b-180{
-    margin-bottom: 120px;
-  }
-
-  .p-t-160{
-    padding-top: 120px;
-  }
-  .p-b-160{
-    padding-bottom: 120px;
-  }
-  .m-t-160{
-    margin-top: 120px;
-  }
-  .m-b-160{
-    margin-bottom: 120px;
-  }
-
-  .p-t-120{
-    padding-top: 80px;
-  }
-  .p-b-120{
-    padding-bottom: 80px;
-  }
-  .m-t-120{
-    margin-top: 80px;
-  }
-  .m-b-120{
-    margin-bottom: 80px;
-  }
-  
-  .p-t-100{
-    padding-top: 60px;
-  }
-  .p-b-100{
-    padding-bottom: 60px;
-  }
-  .m-t-100{
-    margin-top: 60px;
-  }
-  .m-b-100{
-    margin-bottom: 60px;
-  }
-
-  .p-t-80{
-    padding-top: 60px;
-  }
-  .p-b-80{
-    padding-bottom: 60px;
-  }
-  .m-t-80{
-    margin-top: 60px;
-  }
-  .m-b-80{
-    margin-bottom: 60px;
-  }
-  
-
-}
 .p-t-0{
   padding-top: 0;
 }
@@ -694,8 +417,11 @@ input[type="number"] {
   color: $gray;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  width: 100%;
   svg{
     margin-left: 10px;
+    fill: $gray;
   }
   &:hover, &:focus {
     // color:$darkGray;
@@ -703,6 +429,9 @@ input[type="number"] {
   &:active{
     // color: $redDim;
   }
+  @include media-breakpoint-down(md) {margin-bottom: 60px;}
+  @include media-breakpoint-down(sm) {justify-content: flex-start;}
+
 }
 
 input{
@@ -767,3 +496,7 @@ input{
 //     }
 //   }
 // }
+
+.orange{
+  color: $orange;
+}

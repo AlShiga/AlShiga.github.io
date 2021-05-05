@@ -1,0 +1,52 @@
+.rFirst{
+  position: relative;
+  &__bg{
+    position: absolute;
+    top: 0;
+    left: 100%/24*11;
+    width:100%/24*13;
+    height: 100%;
+    background-image: url(../img/rem/1.svg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+}
+.rImages{
+  &__row1{
+    height: 27vw;
+  }
+  &__row2{
+    height: 20vw;
+  }
+  &__img1{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/rem/2.jpg);
+    background-size: cover;
+    background-position: center;
+
+  }
+  &__img2{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/rem/3.jpg);
+    background-size: cover;
+    background-position: center;
+    
+  }
+  &__img3{
+    width: 100%;
+    height: 100%;
+    background: $black;
+  }
+  &__col{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+.rSevr{
+  background-color: $bgDark;
+  color: $gray;
+}
