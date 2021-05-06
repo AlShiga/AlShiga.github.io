@@ -147,7 +147,7 @@
 .aVacation{
   &__wrap{
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "item1 item3"
       "item2 item3";
     grid-template-rows: 1fr 1fr;
@@ -155,7 +155,7 @@
     grid-gap: 30px;
     margin: 0;
     @include media-breakpoint-down(sm) {
-      grid-template-areas: 
+      grid-template-areas:
       "item1 item1"
       "item2 item2"
       "item3 item3"
@@ -262,4 +262,10 @@
   width: 100%;
   background-image: url(../img/about/Lines.svg);
   background-size: cover;
+}
+
+.cont{
+  &_white{
+    background-color: $white;
+  }
 }
