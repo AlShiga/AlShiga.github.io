@@ -165,7 +165,7 @@
     }
   }
   &__item1{
-    grid-area: item1;
+    grid-area: "item1";
     height: 220px;
     border:1px solid $darkGray;
     padding: 30px;
@@ -177,7 +177,7 @@
 
   }
   &__item2{
-    grid-area: item2;
+    grid-area: "item2";
     height: 220px;
     border:1px solid $darkGray;
     padding: 30px;
@@ -190,9 +190,9 @@
 
   }
   &__item3{
-    grid-area: item3;
+    grid-area: "item3";
     border:1px solid $darkGray;
-    padding: 30px;
+    padding: 30px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;

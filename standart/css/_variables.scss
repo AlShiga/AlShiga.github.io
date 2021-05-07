@@ -9,16 +9,10 @@
 }
 
 * {
-  font-family: Gotham Pro;
+  font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  // font-size: 16px;
-  line-height: 1.3;
-}
-
-button {
-  border: none;
-  background-color: transparent;
+  line-height: 1.2;
 }
 
 html {
@@ -34,7 +28,8 @@ body {
   background-color: $bg;
   color: $dark;
 }
-ul{
+
+ul {
   padding-left: 0;
 }
 li {
@@ -46,24 +41,18 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.siteWrap{
-  overflow: hidden;
+
+button {
+  border: none;
+  background-color: transparent;
 }
+
 a,
 button {
   outline: none;
 }
 p > a,
 span > a,
-.p1 > a,
-.p2 > a,
-.h1 > a,
-.h2 > a,
-.h3 > a,
-.h4 > a,
-.h5 > a,
-.h6 > a,
-.h7 > a,
 h1 > a,
 h2 > a,
 h3 > a,
@@ -71,21 +60,12 @@ h4 > a,
 h5 > a,
 h6 > a,
 p > span,
-.p1 > span,
-.p2 > span,
-.h1 > span,
-.h2 > span,
-.h3 > span,
-.h4 > span,
-.h5 > span,
-.h6 > span,
-.h7 > span,
 h1 > span,
 h2 > span,
 h3 > span,
 h4 > span,
 h5 > span,
-h6 > span{
+h6 > span {
   font: inherit;
   color: inherit;
   &:hover,
@@ -119,13 +99,16 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.siteWrap {
+  overflow: hidden;
+}
 .overflow-hidden {
   overflow: hidden;
 }
 .noscroll {
   overflow: hidden;
 }
-@mixin pTop($mpXL,$mpLG,$mpMD,$mpSM) {       
+@mixin pTop($mpXL, $mpLG, $mpMD, $mpSM) {
   padding-top: $mpXL;
   @include media-breakpoint-down(lg) {
     padding-top: $mpLG;
@@ -137,7 +120,7 @@ input[type="number"] {
     padding-top: $mpSM;
   }
 }
-@mixin pBot($mpXL,$mpLG,$mpMD,$mpSM) {       
+@mixin pBot($mpXL, $mpLG, $mpMD, $mpSM) {
   padding-bottom: $mpXL;
   @include media-breakpoint-down(lg) {
     padding-bottom: $mpLG;
@@ -150,7 +133,7 @@ input[type="number"] {
   }
 }
 
-@mixin mTop($mpXL,$mpLG,$mpMD,$mpSM) {       
+@mixin mTop($mpXL, $mpLG, $mpMD, $mpSM) {
   margin-top: $mpXL;
   @include media-breakpoint-down(lg) {
     margin-top: $mpLG;
@@ -162,7 +145,7 @@ input[type="number"] {
     margin-top: $mpSM;
   }
 }
-@mixin mBot($mpXL,$mpLG,$mpMD,$mpSM) {       
+@mixin mBot($mpXL, $mpLG, $mpMD, $mpSM) {
   margin-bottom: $mpXL;
   @include media-breakpoint-down(lg) {
     margin-bottom: $mpLG;
@@ -174,57 +157,111 @@ input[type="number"] {
     margin-bottom: $mpSM;
   }
 }
-.m-t-200{@include mTop(200px,180px,160px,160px)}
-.m-b-200{@include mBot(200px,180px,160px,160px)}
-.p-t-200{@include pTop(200px,180px,160px,160px)}
-.p-b-200{@include pBot(200px,180px,160px,160px)}
+.m-t-200 {
+  @include mTop(200px, 180px, 160px, 160px);
+}
+.m-b-200 {
+  @include mBot(200px, 180px, 160px, 160px);
+}
+.p-t-200 {
+  @include pTop(200px, 180px, 160px, 160px);
+}
+.p-b-200 {
+  @include pBot(200px, 180px, 160px, 160px);
+}
 
-.m-t-160{@include mTop(160px,140px,140px,100px)}
-.m-b-160{@include mBot(160px,140px,140px,100px)}
-.p-t-160{@include pTop(160px,140px,140px,100px)}
-.p-b-160{@include pBot(160px,140px,140px,100px)}
+.m-t-160 {
+  @include mTop(160px, 140px, 140px, 100px);
+}
+.m-b-160 {
+  @include mBot(160px, 140px, 140px, 100px);
+}
+.p-t-160 {
+  @include pTop(160px, 140px, 140px, 100px);
+}
+.p-b-160 {
+  @include pBot(160px, 140px, 140px, 100px);
+}
 
-.m-t-100{@include mTop(100px,80px,80px,60px)}
-.m-b-100{@include mBot(100px,80px,80px,60px)}
-.p-t-100{@include pTop(100px,80px,80px,60px)}
-.p-b-100{@include pBot(100px,80px,80px,60px)}
+.m-t-100 {
+  @include mTop(100px, 80px, 80px, 60px);
+}
+.m-b-100 {
+  @include mBot(100px, 80px, 80px, 60px);
+}
+.p-t-100 {
+  @include pTop(100px, 80px, 80px, 60px);
+}
+.p-b-100 {
+  @include pBot(100px, 80px, 80px, 60px);
+}
 
-.m-t-80{@include mTop(80px,60px,60px,60px)}
-.m-b-80{@include mBot(80px,60px,60px,60px)}
-.p-t-80{@include pTop(80px,60px,60px,60px)}
-.p-b-80{@include pBot(80px,60px,60px,60px)}
+.m-t-80 {
+  @include mTop(80px, 60px, 60px, 60px);
+}
+.m-b-80 {
+  @include mBot(80px, 60px, 60px, 60px);
+}
+.p-t-80 {
+  @include pTop(80px, 60px, 60px, 60px);
+}
+.p-b-80 {
+  @include pBot(80px, 60px, 60px, 60px);
+}
 
-.m-t-60{@include mTop(60px,60px,40px,40px)}
-.m-b-60{@include mBot(60px,60px,40px,40px)}
-.p-t-60{@include pTop(60px,60px,40px,40px)}
-.p-b-60{@include pBot(60px,60px,40px,40px)}
+.m-t-60 {
+  @include mTop(60px, 60px, 40px, 40px);
+}
+.m-b-60 {
+  @include mBot(60px, 60px, 40px, 40px);
+}
+.p-t-60 {
+  @include pTop(60px, 60px, 40px, 40px);
+}
+.p-b-60 {
+  @include pBot(60px, 60px, 40px, 40px);
+}
 
-.m-t-40{@include mTop(40px,30px,30px,30px)}
-.m-b-40{@include mBot(40px,30px,30px,30px)}
-.p-t-40{@include pTop(40px,30px,30px,30px)}
-.p-b-40{@include pBot(40px,30px,30px,30px)}
+.m-t-40 {
+  @include mTop(40px, 30px, 30px, 30px);
+}
+.m-b-40 {
+  @include mBot(40px, 30px, 30px, 30px);
+}
+.p-t-40 {
+  @include pTop(40px, 30px, 30px, 30px);
+}
+.p-b-40 {
+  @include pBot(40px, 30px, 30px, 30px);
+}
 
+.m-t-20 {
+  @include mTop(20px, 15px, 15px, 15px);
+}
+.m-b-20 {
+  @include mBot(20px, 15px, 15px, 15px);
+}
+.p-t-20 {
+  @include pTop(20px, 15px, 15px, 15px);
+}
+.p-b-20 {
+  @include pBot(20px, 15px, 15px, 15px);
+}
 
-.m-t-20{@include mTop(20px,20px,20px,20px)}
-.m-b-20{@include mBot(20px,20px,20px,20px)}
-.p-t-20{@include pTop(20px,20px,20px,20px)}
-.p-b-20{@include pBot(20px,20px,20px,20px)}
-
-
-.p-t-0{
+.p-t-0 {
   padding-top: 0;
 }
-.p-b-0{
+.p-b-0 {
   padding-bottom: 0;
 }
-.m-t-0{
+.m-t-0 {
   margin-top: 0;
 }
-.m-b-0{
+.m-b-0 {
   margin-bottom: 0;
 }
 
-.m-t-a{
+.m-t-a {
   margin-top: auto;
 }
 .mp0 {
@@ -248,6 +285,18 @@ input[type="number"] {
   z-index: 100;
 }
 
+@mixin fontS($fsXL, $fsLG, $fsMD, $fsSM) {
+  font-size: $fsXL;
+  @include media-breakpoint-down(lg) {
+    font-size: $fsLG;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: $fsMD;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: $fsSM;
+  }
+}
 // .h1 {
 //   font-family: Kelson Sans RU;
 //   font-style: normal;
@@ -260,124 +309,77 @@ input[type="number"] {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 68px;
+  // font-size: 68px;
   line-height: 110%;
   text-transform: uppercase;
+  @include fontS(68px, 48px, 36px, 28px);
 }
 .h3 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 48px;
+  // font-size: 48px;
   line-height: 110%;
   text-transform: uppercase;
+  @include fontS(48px, 36px, 30px, 30px);
 }
-.h4{
+.h4 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 28px;
+  // font-size: 28px;
   line-height: 140%;
+  @include fontS(28px, 20px, 20px, 16px);
 }
-.h5{
+.h5 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  // font-size: 20px;
   line-height: 140%;
+  @include fontS(20px, 16px, 16px, 16px);
 }
-.p1, p, li, li>a{
+.p1,
+p,
+li,
+li > a {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
   line-height: 140%;
+  @include fontS(16px, 14px, 14px, 14px);
 }
-.p2{
+.p2 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
+  // font-size: 14px;
   line-height: 14px;
+  @include fontS(14px, 12px, 12px, 12px);
 }
-.num1{
+.num1 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: 300;
-  font-size: 790px;
   line-height: 110%;
   letter-spacing: -0.1em;
   text-transform: uppercase;
+  @include fontS(790px, 550px, 450px, 250px);
 }
-.num2{
+.num2 {
   font-family: Neue Machina;
   font-style: normal;
   font-weight: 300;
-  font-size: 200px;
+  // font-size: 200px;
+  @include fontS(200px, 140px, 140px, 80px);
   line-height: 0.95;
   text-transform: uppercase;
-}
-
-@include media-breakpoint-down(lg) {
-  .h2 {
-    font-size: 48px;
-  }
-  .h3 {
-    font-size: 36px;
-  }
-  .h4{
-    font-size: 20px;
-  }
-  .h5{
-    font-size: 16px;
-  }
-  .p1, p, li, li>a{
-    font-size: 14px;
-  }
-  .p2{
-    font-size: 12px;
-  }
-  .num1{
-    font-size: 550px;
-  }
-  .num2{
-    font-size: 140px;
-  }
-}
-@include media-breakpoint-down(md) {
-
-  .h2 {
-    font-size: 36px;
-  }
-  .h3 {
-    font-size: 30px;
-  }
-  .num1{
-    font-size: 450px;
-  }
-}
-@include media-breakpoint-down(sm) {
-  .h2 {
-    font-size: 28px;
-  }
-  .h3 {
-    font-size: 30px;
-  }
-  .h4{
-    font-size: 16px;
-  }
-  .num1{
-    font-size: 250px;
-  }
-  .num2{
-    font-size: 80px;
-  }
 }
 
 .ttu {
   text-transform: uppercase;
 }
-.fwb{
+.fwb {
   font-weight: 900;
 }
 .w-100 {
@@ -419,28 +421,32 @@ input[type="number"] {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  svg{
+  svg {
     margin-left: 10px;
     fill: $gray;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     // color:$darkGray;
   }
-  &:active{
+  &:active {
     // color: $redDim;
   }
-  @include media-breakpoint-down(md) {margin-bottom: 60px;}
-  @include media-breakpoint-down(sm) {justify-content: flex-start;}
-
+  @include media-breakpoint-down(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-down(sm) {
+    justify-content: flex-start;
+  }
 }
 
-input{
+input {
   display: block;
   width: 100%;
   background: transparent;
   color: $dark;
   border: none;
-  border-bottom:1px solid $black;
+  border-bottom: 1px solid $black;
   padding: 15px 0;
   margin-bottom: 20px;
   font-family: Montserrat;
@@ -449,17 +455,14 @@ input{
   font-size: 14px;
   line-height: 140%;
 
-  &::placeholder{
+  &::placeholder {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
-    // text-transform: uppercase;
   }
 }
-
-
 
 // .btn2{
 //   color: $red;
@@ -497,6 +500,9 @@ input{
 //   }
 // }
 
-.orange{
+.orange {
   color: $orange;
+}
+.bg-o {
+  background-color: $orange;
 }

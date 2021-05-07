@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACG,AAAD,iBAAO,CAAA;EACL,MAAM,EAAE,GAAG;EAEX,aAAa,EAAE,IAAI;CACpB",
-    "sources": [
-        "typObj.scss"
-    ],
-    "names": [],
-    "file": "typObj.css"
-}

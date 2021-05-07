@@ -136,10 +136,16 @@
     border-right: 1px solid $darkWhite;
     border-bottom: 1px solid $darkWhite;
     transition: 0.5s;
+    @include media-breakpoint-down(md) {
+      width: 50%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
     &::after {
       content: "";
       display: block;
-      padding-bottom: 100%;
+      padding-bottom: 70%;
     }
     &>div{
       position: absolute;
@@ -165,8 +171,14 @@
     }
     &_big{
       width: 50%;
-      &::after {
-        padding-bottom: 50%;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+      @include media-breakpoint-down(sm) {
+        &::after {
+          padding-bottom: 70%;
+        }
       }
     }
     &:hover{
