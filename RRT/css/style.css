@@ -7693,6 +7693,28 @@ input::placeholder {
   padding-bottom: 100%;
 }
 
+.p404 {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.p404 a {
+  width: 80%;
+}
+
+.p404 a svg {
+  width: 100%;
+}
+
 .header {
   position: fixed;
   top: 0;
