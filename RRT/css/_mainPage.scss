@@ -1,266 +1,86 @@
-.mainFirst{
-  background-color: $bgDark;
-  color: $gray;
-  height: 100vh;
-  &__bg{
-    background-image: url(../img/1.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-  }
-  &__bg2{
-    background-image: url(../img/2.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-  }
-  &__logo{
-    max-width: 500px;
-  }
-  &__tel{
-    height: 30vh;
-    width: auto;
-  }
-}
-
-.mainNums{
-  &__title{
-
-  }
-  &__titleSmall{
-    display: inline-block;
-    padding-right: 20vw;
-    @include media-breakpoint-down(sm) {
-      display: block;
-      padding-right: 0;
-    }
-  }
-  &__nums{
-    position: absolute;
-    bottom: -40%;
-    right: 5%;
-    color: $orange;
-    z-index: -1;
-    pointer-events: none;
-  }
-  &__text{
-    max-width: 500px;
-    @include media-breakpoint-down(lg) {
-      max-width: 400px;
-    }
-  }
-}
-.mainAbout{
-  &__bg{
-    width: 100%;
-    height: 320px;
-    background-image: url(../img/4.jpg);
-    background-size: cover;
-    background-position: center;
-    @include media-breakpoint-down(lg) {
-      height: 170px;
-    }
-    @include media-breakpoint-down(md) {
-      height: 100px;
-    }
-    @include media-breakpoint-down(sm) {
-      height: 50px;
-    }
-  }
-}
-.mainAdvantages{
-  color: $gray;
-  background-color: $bgDark;
-  &__item{
-    position: relative;
-    svg{
-      width: 100%;
-      height: auto;
-      stroke: $gray;
-      transition: 0.4s;
-    }
-    .p1{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      padding: 4.16vw;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      transition: 0.6s;
-    }
-    &:hover{
-      svg{
-        width: 100%;
-        height: auto;
-        fill: $orange;
-        stroke: $orange;
-      }
-      .p1{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        padding: 4.16vw;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        color: $dark;
-      }
-    }
-  }
-}
-.mainCat{
-  &__title{
-
-  }
-  &__titleSmall{
-    display: inline-block;
-    padding-right: 8.33vw;
-    @include media-breakpoint-down(sm) {
-      display: block;
-      padding-right: 0;
-    }
-  }
-}
-.mainCat{
-  &__wrap{
+.mFirst{
+  &__head{
     display: flex;
     flex-wrap: wrap;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url(../img/6.jpg);
-    counter-reset: cat;
+    
   }
-  &__item{
-    width: 25%;
-    position: relative;
-    color: $darkWhite;
-    border-right: 1px solid $darkWhite;
-    border-bottom: 1px solid $darkWhite;
-    transition: 0.5s;
-    @include media-breakpoint-down(md) {
-      width: 50%;
+  &__head1{
+ 
+  }
+  &__head2{
+    margin-left: 4.16vw;
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
+    }
+  }
+  &__head3{
+    margin-left: 8.33vw;
+    min-width: 240px;
+    max-width: 320px;
+    @include media-breakpoint-only(md) {
+      margin-left: 100vw / 24 * 8;
     }
     @include media-breakpoint-down(sm) {
-      width: 100%;
-    }
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 70%;
-    }
-    &>div{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    svg{
-      fill: $darkWhite;
-      transition: 0.5s;
-    }
-    &_white{
-      background-color: $darkWhite;
-      color: $black;
-      svg{
-        fill: $black;
-      }
-    }
-    &_big{
-      width: 50%;
-
-      @include media-breakpoint-down(md) {
-        width: 100%;
-      }
-      @include media-breakpoint-down(sm) {
-        &::after {
-          padding-bottom: 70%;
-        }
-      }
-    }
-    &:hover{
-      background-color: $orange;
-      color: $black;
-      svg{
-        fill: $black;
-      }
+      margin-left: 100vw / 24 * 3;
     }
   }
-  &__itemName{
-    &::before {
-      display: block;
-      counter-increment: cat;
-      content: "0" counter(cat) "";
-    }
-  }
-}
-.mainRem{
-  position: relative;
-  background-color: $black;
-  color: $darkWhite;
-  &__orange{
-    background-color: $orange;
-    color: $black;
-    display: inline-block;
-    padding: 0px 15px;
-  }
-  &__bg{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
+  &__imgW{
+    width: 100%;
     height: 100%;
-    background-image: url(../img/9.jpg);
-    background-size: cover;
-    background-position: center;
-    @include media-breakpoint-down(sm) {
-      top: 0;
-      left: 75%;
-      width: 25%;
-      height: 100%;
-    }
-    // z-index: 1;
-  }
-  .h2{
-    line-height: 1;
-  }
-}
-.mainServ{
-  display: flex;
-  flex-wrap: wrap;
-  background-color: $gray;
-  &__item{
     position: relative;
-    width: 50%;
-    border-right: 1px solid $black;
-    border-bottom: 1px solid $black;
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 50%;
+    transform: translateX(-100vw/24*1);
+    min-height: 270px;
+    @include media-breakpoint-only(md) {
+      min-height: 270px;
+      transform: translateX(0);
+
     }
-    &>div{
+    @include media-breakpoint-down(sm) {
+      min-height: 130px;
+    }
+    img{
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    svg{
-      fill: $black;
-      transition: 0.5s;
+      object-fit: cover;
+      border-radius: 1000px;
     }
   }
 }
-.form{
-  &_white{
-    background-color: $white;
+
+.imgParalax{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 30%;
+    @include media-breakpoint-down(md) {
+      padding-bottom: 40%;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 120%;
+    }
   }
+  img{
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+  }
+}
+
+.mMission{
+  &__title{
+
+  }
+}
+.mNews{
+
 }

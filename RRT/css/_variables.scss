@@ -1,5 +1,6 @@
 @import "var/color";
 @import "var/font";
+@import "var/def";
 
 *,
 *:hover,
@@ -9,7 +10,7 @@
 }
 
 * {
-  font-family: Neue Machina;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.2;
@@ -25,65 +26,18 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: $bg;
-  color: $dark;
-}
-
-ul {
-  padding-left: 0;
-}
-li {
-  list-style-type: none;
-  margin-left: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-}
-
-a,
-button {
-  outline: none;
-}
-p > a,
-span > a,
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a,
-p > span,
-h1 > span,
-h2 > span,
-h3 > span,
-h4 > span,
-h5 > span,
-h6 > span {
-  font: inherit;
-  color: inherit;
-  &:hover,
-  &:focus,
-  &:active {
-    font: inherit;
-    color: inherit;
-  }
+  background-color: $white;
+  color: $black;
 }
 
 ::-webkit-scrollbar {
   background-color: $gray;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $bgDark;
+  background-color: $darkGray;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: $bgDark;
+  background-color: $darkGray;
 }
 
 input::-webkit-outer-spin-button,
@@ -99,15 +53,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.siteWrap {
-  overflow: hidden;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.noscroll {
-  overflow: hidden;
-}
 @mixin pTop($mpXL, $mpLG, $mpMD, $mpSM) {
   padding-top: $mpXL;
   @include media-breakpoint-down(lg) {
@@ -157,69 +102,72 @@ input[type="number"] {
     margin-bottom: $mpSM;
   }
 }
-.m-t-200 {
-  @include mTop(200px, 180px, 160px, 160px);
+
+.m-t-320 {
+  @include mTop(320px, 240px, 180px, 120px);
 }
-.m-b-200 {
-  @include mBot(200px, 180px, 160px, 160px);
+.m-b-320 {
+  @include mBot(320px, 240px, 180px, 120px);
 }
-.p-t-200 {
-  @include pTop(200px, 180px, 160px, 160px);
+.p-t-320 {
+  @include pTop(320px, 240px, 180px, 120px);
 }
-.p-b-200 {
-  @include pBot(200px, 180px, 160px, 160px);
+.p-b-320 {
+  @include pBot(320px, 240px, 180px, 120px);
 }
 
-.m-t-160 {
-  @include mTop(160px, 140px, 140px, 100px);
+
+.m-t-240 {
+  @include mTop(240px, 200px, 140px, 100px);
 }
-.m-b-160 {
-  @include mBot(160px, 140px, 140px, 100px);
+.m-b-240 {
+  @include mBot(240px, 200px, 140px, 100px);
 }
-.p-t-160 {
-  @include pTop(160px, 140px, 140px, 100px);
+.p-t-240 {
+  @include pTop(240px, 200px, 140px, 100px);
 }
-.p-b-160 {
-  @include pBot(160px, 140px, 140px, 100px);
+.p-b-240 {
+  @include pBot(240px, 200px, 140px, 100px);
 }
 
-.m-t-100 {
-  @include mTop(100px, 80px, 80px, 60px);
+
+.m-t-120 {
+  @include mTop(120px, 80px, 70px, 60px);
 }
-.m-b-100 {
-  @include mBot(100px, 80px, 80px, 60px);
+.m-b-120 {
+  @include mBot(120px, 80px, 70px, 60px);
 }
-.p-t-100 {
-  @include pTop(100px, 80px, 80px, 60px);
+.p-t-120 {
+  @include pTop(120px, 80px, 70px, 60px);
 }
-.p-b-100 {
-  @include pBot(100px, 80px, 80px, 60px);
+.p-b-120 {
+  @include pBot(120px, 80px, 70px, 60px);
 }
 
 .m-t-80 {
-  @include mTop(80px, 60px, 60px, 60px);
+  @include mTop(80px, 50px, 50px, 40px);
 }
 .m-b-80 {
-  @include mBot(80px, 60px, 60px, 60px);
+  @include mBot(80px, 50px, 50px, 40px);
 }
 .p-t-80 {
-  @include pTop(80px, 60px, 60px, 60px);
+  @include pTop(80px, 50px, 50px, 40px);
 }
 .p-b-80 {
-  @include pBot(80px, 60px, 60px, 60px);
+  @include pBot(80px, 50px, 50px, 40px);
 }
 
-.m-t-60 {
-  @include mTop(60px, 60px, 40px, 40px);
+.m-t-50 {
+  @include mTop(50px, 50px, 40px, 40px);
 }
-.m-b-60 {
-  @include mBot(60px, 60px, 40px, 40px);
+.m-b-50 {
+  @include mBot(50px, 50px, 40px, 40px);
 }
-.p-t-60 {
-  @include pTop(60px, 60px, 40px, 40px);
+.p-t-50 {
+  @include pTop(50px, 50px, 40px, 40px);
 }
-.p-b-60 {
-  @include pBot(60px, 60px, 40px, 40px);
+.p-b-50 {
+  @include pBot(50px, 50px, 40px, 40px);
 }
 
 .m-t-40 {
@@ -235,6 +183,19 @@ input[type="number"] {
   @include pBot(40px, 30px, 30px, 30px);
 }
 
+.m-t-30 {
+  @include mTop(30px, 15px, 25px, 15px);
+}
+.m-b-30 {
+  @include mBot(30px, 15px, 25px, 15px);
+}
+.p-t-30 {
+  @include pTop(30px, 15px, 25px, 15px);
+}
+.p-b-30 {
+  @include pBot(30px, 15px, 25px, 15px);
+}
+
 .m-t-20 {
   @include mTop(20px, 15px, 15px, 15px);
 }
@@ -246,6 +207,20 @@ input[type="number"] {
 }
 .p-b-20 {
   @include pBot(20px, 15px, 15px, 15px);
+}
+
+
+.m-t-10 {
+  @include mTop(10px, 10px, 5px, 5px);
+}
+.m-b-10 {
+  @include mBot(10px, 10px, 5px, 5px);
+}
+.p-t-10 {
+  @include pTop(10px, 10px, 5px, 5px);
+}
+.p-b-10 {
+  @include pBot(10px, 10px, 5px, 5px);
 }
 
 .p-t-0 {
@@ -269,21 +244,7 @@ input[type="number"] {
   padding: 0;
 }
 
-.z-1 {
-  z-index: 1;
-}
-.z-2 {
-  z-index: 2;
-}
-.z-5 {
-  z-index: 5;
-}
-.z-10 {
-  z-index: 10;
-}
-.z-100 {
-  z-index: 100;
-}
+
 
 @mixin fontS($fsXL, $fsLG, $fsMD, $fsSM) {
   font-size: $fsXL;
@@ -297,103 +258,80 @@ input[type="number"] {
     font-size: $fsSM;
   }
 }
-// .h1 {
-//   font-family: Kelson Sans RU;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 62px;
-//   line-height: 110%;
-//   text-transform: uppercase;
-// }
-.h2 {
-  font-family: Neue Machina;
+.h1 {
+  font-family: Nudla , Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: normal;
-  // font-size: 68px;
-  line-height: 110%;
+  font-weight: 100;
+  // font-size: 50px;
+  line-height: 100%;
   text-transform: uppercase;
-  @include fontS(68px, 48px, 36px, 28px);
+  @include fontS(50px, 40px, 40px, 24px);
+}
+.h2 {
+  font-family: Nudla, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  // font-size: 48px;
+  line-height: 105%;
+  @include fontS(48px, 36px, 28px, 22px);
+
 }
 .h3 {
-  font-family: Neue Machina;
+  font-family: Nudla, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: normal;
-  // font-size: 48px;
+  font-weight: 100;
+  // font-size: 32px;
   line-height: 110%;
-  text-transform: uppercase;
-  @include fontS(48px, 36px, 30px, 30px);
+  @include fontS(32px, 28px, 20px, 18px);
 }
 .h4 {
-  font-family: Neue Machina;
+  font-family: Nudla, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: normal;
-  // font-size: 28px;
-  line-height: 140%;
-  @include fontS(28px, 20px, 20px, 16px);
+  font-weight: 100;
+  // font-size: 24px;
+  line-height: 115%;
+  @include fontS(24px, 18px, 13px, 13px);
 }
-.h5 {
-  font-family: Neue Machina;
-  font-style: normal;
-  font-weight: normal;
-  // font-size: 20px;
-  line-height: 140%;
-  @include fontS(20px, 16px, 16px, 16px);
-}
+
 .p1,
 p,
 li,
 li > a {
-  font-family: Neue Machina;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 300;
-  line-height: 140%;
-  @include fontS(16px, 14px, 14px, 14px);
+  font-weight: normal;
+  // font-size: 16px;
+  line-height: 150%;
+  @include fontS(16px, 14px, 13px, 12px);
 }
 .p2 {
-  font-family: Neue Machina;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   // font-size: 14px;
-  line-height: 14px;
-  @include fontS(14px, 12px, 12px, 12px);
+  line-height: 150%;
+  @include fontS(14px, 12px, 12px, 11px);
 }
-.num1 {
-  font-family: Neue Machina;
+.button1 {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 300;
-  line-height: 110%;
-  letter-spacing: -0.1em;
-  text-transform: uppercase;
-  @include fontS(790px, 550px, 450px, 250px);
+  font-weight: normal;
+  // font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+
+  letter-spacing: 0.055em;
+  text-decoration-line: underline;
+  text-transform: lowercase;
+  @include fontS(14px, 12px, 12px, 11px);
 }
-.num2 {
-  font-family: Neue Machina;
+.span1 {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-weight: 300;
-  // font-size: 200px;
-  @include fontS(200px, 140px, 140px, 80px);
-  line-height: 0.95;
-  text-transform: uppercase;
-}
-
-.ttu {
-  text-transform: uppercase;
-}
-.fwb {
-  font-weight: 900;
-}
-.w-100 {
-  width: 100% !important;
-  height: auto;
-}
-.h-100 {
-  height: 100%;
-  object-fit: cover;
-}
-
-.w-80 {
-  width: 80% !important;
-  height: auto;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 155%;
+  @include fontS(12px, 10px, 10px, 10px);
 }
 
 .imgW {
@@ -416,14 +354,14 @@ li > a {
 
 .madeAva {
   white-space: nowrap;
-  color: $gray;
+  // color: $gray;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   width: 100%;
   svg {
     margin-left: 10px;
-    fill: $gray;
+    fill: $white;
   }
   &:hover,
   &:focus {
@@ -432,77 +370,53 @@ li > a {
   &:active {
     // color: $redDim;
   }
-  @include media-breakpoint-down(md) {
-    margin-bottom: 60px;
-  }
-  @include media-breakpoint-down(sm) {
-    justify-content: flex-start;
-  }
 }
 
 input {
   display: block;
   width: 100%;
   background: transparent;
-  color: $dark;
+  color: $darkGray;
   border: none;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid $darkGray;
   padding: 15px 0;
   margin-bottom: 20px;
-  font-family: Montserrat;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 140%;
 
   &::placeholder {
-    font-family: Montserrat;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 140%;
+    color: $gray;
   }
 }
-
-// .btn2{
-//   color: $red;
-//   text-transform: uppercase;
-//   position: relative;
-//   transition: 0.3s;
-//   &::before{
-//     content: "";
-//     position: absolute;
-//     top: calc(50% - 1px);
-//     left: calc(100% + 20px);
-//     width: 35px;
-//     height: 1px;
-//     background-color: $red;
-//     transform-origin: left;
-//     transition: 0.3s;
-//   }
-//   &:hover, &:focus{
-//     &::before{
-//       transform: scaleX(1.8);
-//     }
-//   }
-//   &:active{
-//     color: $dark;
-//     &::before{
-//       background-color: $dark;
-//       transform: scaleX(1.8);
-//     }
-//   }
-//   &_white{
-//     color: $white;
-//     &::before{
-//       background-color: $white;
-//     }
-//   }
-// }
-
-.orange {
-  color: $orange;
+.violetL{
+  color: $secondary;
 }
-.bg-o {
-  background-color: $orange;
+.line{
+  border-bottom: 1px solid $gray;
+}
+.lineV{
+  border-left: 1px solid $gray;
+  height: 100%;
+
+}
+.btn2 {
+  position: relative;
+  display: block;
+  border: 1px solid $gray ;
+  border-radius: 1000px;
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 }

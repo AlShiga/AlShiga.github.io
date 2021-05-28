@@ -1,10 +1,11 @@
-.linesFooter{
-  height: 150px;
-  width: 100%;
-  background-image: url(../img/about/Lines.svg);
-  background-size: cover;
-}
 .footer{
-  background-color: $bgDark;
-  color: $gray;
+  background-color: $black;
+  color: $white;
+  &__menu{
+    display: flex;
+    flex-wrap: wrap;
+    div{
+      margin-right: 4.14vw;
+    }
+  }
 }

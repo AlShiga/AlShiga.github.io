@@ -1,104 +1,21 @@
-.bgLeft{
-  position: relative;
-  overflow: hidden;
-  visibility: visible !important;
-  &::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $bg;
-    transition: 1s ease-out;
-  }
-  & img{
-    transform: scale(1.4);
-    transition: 2s ease-out;
-  }
-  &.animated{
-    &::after{
-      transform: translateX(-105%);
-    }
-    & img{
-      transform: scale(1);
-    }
+.fade-in {
+  opacity: 0;
+  &.is-inview{
+    opacity: 1;
   }
 }
-.bgBottom{
-  position: relative;
-  overflow: hidden;
-  visibility: visible !important;
-  &::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $bg;
-    transition: 1s ease-out;
-  }
-  & img{
-    transform: scale(1.4);
-    transition: 2s ease-out;
-  }
-  &.animated{
-    &::after{
-      transform: translateY(-105%);
-    }
-    & img{
-      transform: scale(1);
-    }
-  }
-}
-.textUp{
-  position: relative;
-  overflow: hidden;
-  &>*{
-    transform: translateY(120%);
-    transition: 0.5s;
-  }
-  &.animated{
-    &>*{
-      transform: translateX(0%);
-    }
-  }
-}
-.lineLeft{
-  transform: translateX(110%);
-  transition: 1.5s ease-out;
-  &.animated{
-    transform: translateX(0%);
-  }
-}
-.t-d-01{
-  &, &::after, &>*{
-    transition-delay: 0.1s;
-  }
-}
-.t-d-02{
-  &, &::after, &>*{
-    transition-delay: 0.2s;
-  }
-}
-.t-d-03{
-  &, &::after, &>*{
-    transition-delay: 0.3s;
-  }
-}
-.t-d-04{
-  &, &::after, &>*{
-    transition-delay: 0.4s;
-  }
-}
-.t-d-05{
-  &, &::after, &>*{
-    transition-delay: 0.5s;
-  }
-}
-.t-d-1{
-  &, &::after, &>*{
-    transition-delay: 1s;
-  }
-}
+.t-03{transition-duration: 0.3s;}
+.t-05{transition-duration: 0.5s;}
+.t-07{transition-duration: 0.7s;}
+.t-10{transition-duration: 1.0s;}
+
+.t-d-01{transition-delay: 0.1s;}
+.t-d-02{transition-delay: 0.2s;}
+.t-d-03{transition-delay: 0.3s;}
+.t-d-04{transition-delay: 0.4s;}
+.t-d-05{transition-delay: 0.5s;}
+.t-d-06{transition-delay: 0.6s;}
+.t-d-07{transition-delay: 0.7s;}
+.t-d-08{transition-delay: 0.8s;}
+.t-d-09{transition-delay: 0.9s;}
+.t-d-10{transition-delay: 1.0s;}
