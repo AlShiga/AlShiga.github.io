@@ -8,5 +8,15 @@
   &__menu{
     display: flex;
     flex-direction: column;
+    max-height: 0px;
+    transition: 1s;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  &_full &__menu{
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0%);
   }
 }

@@ -6310,7 +6310,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 @font-face {
   font-family: 'Nudla';
-  src: url("../font/Nudla-Thin.woff2") format("woff2"), url("../font/Nudla-Thin.woff") format("woff"), url("../font/Nudla-Thin.ttf") format("truetype");
+  src: url("../font/Nudla-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
@@ -6472,6 +6472,10 @@ input {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.ws-nw {
+  white-space: nowrap;
 }
 
 *,
@@ -7715,6 +7719,228 @@ input::placeholder {
   width: 100%;
 }
 
+ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+ul li::before {
+  content: "/ ";
+  color: #6C518B;
+  padding-right: 10px;
+}
+
+.btnW {
+  border: 1px solid;
+  margin: 200px;
+  width: 400px;
+}
+
+.btnSize {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.btnSize:before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.btn1 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.btn1__text {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 60%;
+  margin: 20%;
+  pointer-events: none;
+}
+
+.btn1__svg {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 20%;
+  height: 20%;
+  pointer-events: none;
+  stroke: #6C518B;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.btn1__cirkle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 60%;
+  margin: 20%;
+  border: 1px solid #CDCDCD;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn1__cirkle:hover {
+  background: #6C518B;
+  border: 1px solid #6C518B;
+}
+
+.btn1__cirkle:hover + .btn1__svg {
+  stroke: #FFFFFF;
+}
+
+.btn1__bg {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  border-radius: 50%;
+}
+
+.btn1_flex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ac .ac-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.ac .ac-trigger > * {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.ac .ac-trigger svg {
+  margin-left: 20px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  stroke: #CDCDCD;
+}
+
+.ac .ac-trigger:hover {
+  color: #6C518B;
+}
+
+.ac .ac-panel {
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
+
+.ac.is-active svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  stroke: #6C518B;
+}
+
+/*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  -webkit-transform: scaleX(1.45);
+          transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -7731,6 +7957,20 @@ input::placeholder {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-height: 0px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+}
+
+.header_full .header__menu {
+  max-height: 200px;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .footer {

@@ -1,0 +1,43 @@
+.ac {
+  & .ac-trigger {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
+    // padding: 0;
+    & > *{
+      transition: 0.3s;
+    }
+    svg{
+      margin-left: 20px;
+      transform-origin: center;
+      transition: 0.3s;
+      stroke: $gray;
+    }
+    &:hover{
+      color: $primary;
+    }
+  }
+  & .ac-panel {
+    overflow: hidden;
+    transition-property: height, visibility;
+    transition-timing-function: ease;
+    border-bottom: 1px solid $gray;
+  }
+  &.js-enabled .ac-panel {
+    // visibility: hidden;
+  }
+  &.is-active {
+    & .ac-panel {
+      visibility: visible;
+    }
+    & svg{
+      transform: rotate(180deg) ;
+      stroke: $primary;
+    }
+  }
+}
+
