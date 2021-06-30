@@ -146,7 +146,7 @@
       </div>
     </section>
     <div data-scroll-section class="imgParalax m-b-320">
-      <img data-scroll data-scroll-speed="5" src="/img/main/2.jpg" alt="">
+      <img data-scroll src="/img/main/2.jpg" alt="">
     </div>
 
     <section data-scroll-section class="aDet p-b-240">
@@ -331,12 +331,12 @@
       </div>
     </section>
    
-    <div data-scroll-section class="imgParalax m-b-320">
-      <img data-scroll data-scroll-speed="20%" src="/img/main/2.jpg" alt="">
+    <div data-scroll-section class="imgParalax m-b-240">
+      <img src="/img/main/2.jpg" alt="">
     </div>
 
     <section data-scroll-section class="aGal p-b-240" id="pin">
-      <div class="aGal__wrap" data-scroll data-scroll-sticky data-scroll-target="#pin" data-scroll-speed="3">
+      <div class="aGal__wrap p-t-80" data-scroll data-scroll-sticky data-scroll-target="#pin" data-scroll-speed="3">
           <div class="row align-items-end p-t-0" >
             <div class="col-xl-8 offset-xl-11 col-lg-8 offset-lg-11 col-md-7 offset-md-11 col-18 offset-2">
               <h3 class="h3">В нашей гимназии работают
@@ -349,7 +349,7 @@
               <div class="line"></div>
             </div>
           </div>
-          <div class="aGal__wrapInner" data-scroll data-scroll-speed="15%" data-scroll-offset="0%" data-scroll-direction="horizontal">
+          <div class="aGal__wrapInner">
             <img class="aGal__img1" src="/img/about/g1.jpg" alt="">
             <img class="aGal__img2" src="/img/about/g2.jpg" alt="">
             <img class="aGal__img3" src="/img/about/g3.jpg" alt="">
@@ -508,17 +508,8 @@
 
 </body>
 </html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-
-<script>
-  console.log("Ghbd")
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    repeat: true,
-    smooth: true,
-    lerp: 0.1,
-  });
-  console.log("Ghbd")
-
-</script>
+<script src="https://unpkg.com/accordion-js@3.1.1/dist/accordion.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js" ></script>
+<script src="js/main.js"></script>

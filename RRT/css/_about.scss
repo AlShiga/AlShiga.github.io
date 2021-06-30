@@ -30,7 +30,7 @@
 }
 
 .aGal{
-  height: 150vw/3*2;
+  min-height: 150vmax;
   overflow: hidden;
   &__wrap{
     // height: 100vw;
@@ -38,6 +38,7 @@
   &__wrapInner{
     width: 200vw/3*2;
     height: 50vw/3*2;
+    
     // display: flex;
     position: relative;
   }
