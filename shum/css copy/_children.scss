@@ -1,0 +1,39 @@
+.chFirst{
+  display: flex;
+  min-height: 100vh;
+  padding-top: 150px;
+  flex-direction: column;
+  position: relative;
+  &__main{
+    margin-top: auto;
+  }
+  &__img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__title{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  &__titleSmall{
+    display: inline-grid;
+    margin-left: 3vw;
+  }
+}
+.chMaster{
+  &__title{
+    margin-top: -2.4em;
+  }
+}
+.chInfo{
+  &__title{
+    @include media-breakpoint-up(md) {
+      margin-top: -3.4em;
+    }
+  }
+}
