@@ -6,8 +6,21 @@
   flex-direction: column;
   position: relative;
   &__main{
+    & h1, & h2{
+      min-width: 50vw;
+      width: 100%;
+    }
+
+
     @include media-breakpoint-up(md) {
       margin-top: auto;
+    }
+  }
+  &__title{
+    @include media-breakpoint-up(lg) {
+      max-width: 50vw;
+      width: 100%;
+      overflow: hidden;
     }
   }
   &__vid{

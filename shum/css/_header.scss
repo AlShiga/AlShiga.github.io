@@ -1,0 +1,31 @@
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  color: $white;
+}
+
+
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100vh;
+  background-color:$white;
+  &__content{
+    height: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  &__rowBig{
+    flex-grow: 1;
+  }
+  &__rowSm{
+    flex-shrink: 1;
+    overflow-y: scroll;
+  }
+}

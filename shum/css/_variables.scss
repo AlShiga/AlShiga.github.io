@@ -79,7 +79,7 @@ button {
 ::-webkit-scrollbar {
   background-color: $white;
   width: 10px;
-  
+
 }
 ::-webkit-scrollbar-thumb {
   background-color: $gray2;
@@ -651,6 +651,8 @@ input {
 .line{
   height: 1px;
   background-color: currentColor;
+  transform: translateX(100%);
+
   &_big{
     height: 1px;
   }
@@ -658,6 +660,7 @@ input {
     background-color: $secondary;
   }
 }
+.sdfP{}
 .d-inline-grid{
   display: inline-grid;
 }
@@ -668,7 +671,7 @@ input {
 
   &>*{
     z-index: 5;
-    
+
   }
   &::before{
     position: absolute;
@@ -688,4 +691,10 @@ input {
       transform: translateX(0);
     }
   }
+}
+
+.showDown{
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 0.5s;
 }
