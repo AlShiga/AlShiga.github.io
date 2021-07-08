@@ -83,5 +83,13 @@
     padding: 20px;
     background-color: rgba($color: $primary, $alpha: 0.6);
     color: $white;
+    opacity: 0;
+    transition: 0.4s ease-in-out ;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  &__pers:hover &__name{
+    opacity: 1;
   }
 }

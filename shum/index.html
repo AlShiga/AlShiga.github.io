@@ -8,42 +8,351 @@
   <title>Shum</title>
 </head>
 <body>
-  <header class="header">
+  <div class="overflow-hidden">
+  <div class="prel anim ">
+    <div class="">
+      <div class="prel__lineTop"></div>
+      <div class="prel__lineBottom"></div>
+      <div class="prel__logo">
+        <svg width="73" height="16" viewBox="0 0 73 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.39801 15.2988C3.84188 15.2988 2.55808 14.694 1.5466 13.4845C0.515662 12.2749 0.00019304 10.7532 0.0001932 8.91937L0.000193962 0.198828L2.1885 0.198828L2.1885 8.656C2.1885 9.9631 2.56781 11.0556 3.32642 11.9335C4.08503 12.8309 5.00898 13.2796 6.09827 13.2796C7.30427 13.2796 8.30602 12.8407 9.10354 11.9628C9.8816 11.0849 10.2706 9.98261 10.2706 8.656L10.2706 0.198829L12.4589 0.198829L12.4589 8.656C12.4589 9.9631 12.8382 11.0556 13.5969 11.9335C14.336 12.8309 15.2502 13.2796 16.3395 13.2796C17.5455 13.2796 18.5473 12.8407 19.3448 11.9628C20.1229 11.0849 20.5119 9.98261 20.5119 8.656L20.5119 0.198829L22.7002 0.19883L22.7002 15.0062L20.5119 15.0062L20.5119 11.319C20.1034 12.5285 19.4712 13.4942 18.6154 14.2161C17.74 14.9379 16.7383 15.2988 15.6101 15.2988C14.3846 15.2988 13.3245 14.9086 12.4298 14.1283C11.535 13.3479 10.9125 12.3139 10.5624 11.0263C10.2123 12.3139 9.5801 13.3479 8.66588 14.1283C7.7322 14.9086 6.64291 15.2988 5.39801 15.2988Z" fill="#C2F840"/>
+          <path d="M38.5656 0C40.6842 0 42.4529 0.736882 43.8717 2.21065C45.2906 3.66502 46 5.47814 46 7.65C46 9.82186 45.2906 11.6447 43.8717 13.1184C42.4529 14.5728 40.6842 15.3 38.5656 15.3C36.6025 15.3 34.931 14.6795 33.551 13.4384C32.171 12.1779 31.3741 10.5781 31.1603 8.63897H28.1866V15.0091H26L26 0.290874L28.1866 0.290874V6.66103L31.1603 6.66103C31.3741 4.72186 32.171 3.13175 33.551 1.89068C34.931 0.630228 36.6025 0 38.5656 0ZM34.7464 11.6641C35.757 12.7306 37.0107 13.2639 38.5073 13.2639C40.0039 13.2639 41.2575 12.7306 42.2682 11.6641C43.2789 10.5781 43.7843 9.24011 43.7843 7.65C43.7843 6.05989 43.2789 4.73156 42.2682 3.66502C41.2575 2.57909 40.0039 2.03612 38.5073 2.03612C37.0107 2.03612 35.757 2.57909 34.7464 3.66502C33.7551 4.73156 33.2595 6.05989 33.2595 7.65C33.2595 9.24011 33.7551 10.5781 34.7464 11.6641Z" fill="#C2F840"/>
+          <path d="M66.603 0.300781C68.1591 0.300781 69.4429 0.901556 70.4544 2.10311C71.4853 3.30466 72.0008 4.81629 72.0008 6.63799V15.3008H69.8125V6.89962C69.8125 5.60117 69.4332 4.5159 68.6746 3.6438C67.9159 2.75233 66.992 2.3066 65.9027 2.3066C64.6967 2.3066 63.695 2.74264 62.8974 3.61473C62.1194 4.48683 61.7303 5.58179 61.7303 6.89962V15.3008H59.542V6.89962C59.542 5.60117 59.1627 4.5159 58.4041 3.6438C57.665 2.75233 56.7507 2.3066 55.6614 2.3066C54.4555 2.3066 53.4537 2.74264 52.6562 3.61473C51.8781 4.48683 51.4891 5.58179 51.4891 6.89962V15.3008H49.3008V0.591479H51.4891V4.25427C51.8976 3.05272 52.5297 2.09342 53.3856 1.37636C54.2609 0.659309 55.2627 0.300781 56.3909 0.300781C57.6163 0.300781 58.6764 0.688379 59.5712 1.46357C60.466 2.23877 61.0884 3.2659 61.4386 4.54497C61.7887 3.2659 62.4209 2.23877 63.3351 1.46357C64.2688 0.688379 65.3581 0.300781 66.603 0.300781Z" fill="#C2F840"/>
+        </svg>
+      </div>
+    </div>
+    </div>
+    <script>
+      let pageLoad = false;
+      (!localStorage.getItem('show'))?initPrel():deletePrel();
+      function deletePrel(){
+        document.querySelector('.prel').style.display="none";
+        setTimeout(vidPlay, 2000);
+        setTimeout(showAnim, 200);
+      }
+      function initPrel(){
+        localStorage.setItem('show', true);
+        let intervaPrel =  setInterval(()=>{
+        console.log(pageLoad)
+        if (!pageLoad) return;
+        console.log("clear")
+        clearInterval(intervaPrel);
+        document.querySelector(".prel").style.display="none";
+        setTimeout(vidPlay, 2000);
+        setTimeout(showAnim, 200);
+
+      }, 3000)
+      }
+      function vidPlay(){
+        document.querySelectorAll('video').forEach((el)=>{
+          el.play
+        })
+      }
+      function showAnim(){
+        let el = document.querySelector('.mFirst');
+        let head = document.querySelector('.header_fix');
+        if(!el) return;
+        el.classList.add("anim")
+        head.classList.add("anim")
+      }
+    
+    </script>
+    <style>
+      .prel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#202020;
+        z-index: 100;
+      }
+      .prel > div{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .prel__lineTop{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color:greenyellow;
+        transform: translateX(-100%);
+      }
+      .prel__lineBottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color:greenyellow;
+        transform: translateX(100%);
+      }
+      .prel__logo svg{
+        width: 25vmin;
+        height: auto;
+      }
+    
+      .prel__logo svg path:nth-of-type(1){
+        transform: translateY(100%);
+      }
+      .prel__logo svg path:nth-of-type(2){
+        transform: translateY(100%);
+      }
+      .prel__logo svg path:nth-of-type(3){
+        transform: translateY(-100%);
+      }
+    
+      .anim .prel__lineTop {
+      animation-duration: 3s;
+      animation-name: lineTop;
+      animation-iteration-count: infinite;
+      }
+      .anim .prel__lineBottom {
+      animation-duration: 3s;
+      animation-name: lineBottom;
+      animation-iteration-count: infinite;
+    
+      }
+      .anim .prel__logo svg path:nth-of-type(1){
+        animation-duration:3s;
+        animation-name: logo1;
+        animation-timing-function: ease-in-out;
+    
+        animation-iteration-count: infinite;
+    
+    
+      }
+      .anim .prel__logo svg path:nth-of-type(2){
+        animation-duration:3s;
+        animation-name: logo2;
+        animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    
+      }
+      .anim .prel__logo svg path:nth-of-type(3){
+        animation-duration:3s;
+        animation-name: logo3;
+        animation-timing-function: ease-in-out;
+    
+      animation-iteration-count: infinite;
+    
+      }
+    
+      @keyframes lineTop {
+      0% {
+        transform: translateX(-100%);
+      }
+      10% {
+        transform: translateX(-100%);
+      }
+      40%{
+        transform: translateX(0%);
+      }
+    
+      60%{
+        transform: translateX(0%);
+      }
+      90% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    @keyframes lineBottom {
+      0% {
+        transform: translateX(100%);
+      }
+      10% {
+        transform: translateX(100%);
+      }
+      40%{
+        transform: translateX(0%);
+      }
+    
+      60%{
+        transform: translateX(0%);
+      }
+      90% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    @keyframes logo1 {
+      0% {
+        transform: translateY(-100%);
+      }
+      10% {
+        transform: translateY(-100%);
+      }
+      40%{
+        transform: translateY(0%);
+      }
+    
+      60%{
+        transform: translateY(0%);
+      }
+      90% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+    @keyframes logo2 {
+      0% {
+        transform: translateY(-100%);
+      }
+      15% {
+        transform: translateY(-100%);
+      }
+      50%{
+        transform: translateY(0%);
+      }
+    
+      70%{
+        transform: translateY(0%);
+      }
+      85% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+    @keyframes logo3 {
+      0% {
+        transform: translateY(100%);
+      }
+      10% {
+        transform: translateY(100%);
+      }
+      40%{
+        transform: translateY(0%);
+      }
+    
+      60%{
+        transform: translateY(0%);
+      }
+      90% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+    
+    </style>
+
+  <div class="menu">
+    <div class="menu__content p-t-80 p-b-25">
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">01</span></div>
+        <div class="col-15 offset-2"><a href="#" class="h6">О ШКОЛЕ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">02</span></div>
+        <div class="col-15 offset-4"><a href="#" class="h6">УЧЕБНЫЕ ПРОГРАММЫ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">03</span></div>
+        <div class="col-15 offset-4"><a href="#" class="h6">ДЕТЯМ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">04</span></div>
+        <div class="col-15 offset-5"><a href="#" class="h6">СОБЫТИЯ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">05</span></div>
+        <div class="col-15 offset-2"><a href="#" class="h6">ПОРТФОЛИО</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">06</span></div>
+        <div class="col-15 offset-5"><a href="#" class="h6">ОТЗЫВЫ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 offset-2"><span class="h6">07</span></div>
+        <div class="col-15 offset-4"><a href="#" class="h6">КОНТАКТЫ</a></div>
+        <div class="col-24">
+          <div class="line m-t-10 m-b-50"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menuBg"></div>
+  <header class="header header_fix">
     <div class="row">
       <div class="col-xl-17 offset-xl-7 col-lg-17 offset-lg-7 col-md-17 offset-md-7 col-16 offset-8">
-        <div class="line line_big line_green"></div>
+        <div class="line line_big line_green fadeInRight"></div>
       </div>
     </div>
     <div class="row align-items-center p-t-25 p-b-25">
       <div class="col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-3 offset-md-2 col-6 offset-2">
-        <a class="header__logo" href="/">
-          <svg width="73" height="16" viewBox="0 0 73 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="header__logo " href="/">
+          <svg class="fadeInUp" width="73" height="16" viewBox="0 0 73 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.39801 15.2988C3.84188 15.2988 2.55808 14.694 1.5466 13.4845C0.515662 12.2749 0.00019304 10.7532 0.0001932 8.91937L0.000193962 0.198828L2.1885 0.198828L2.1885 8.656C2.1885 9.9631 2.56781 11.0556 3.32642 11.9335C4.08503 12.8309 5.00898 13.2796 6.09827 13.2796C7.30427 13.2796 8.30602 12.8407 9.10354 11.9628C9.8816 11.0849 10.2706 9.98261 10.2706 8.656L10.2706 0.198829L12.4589 0.198829L12.4589 8.656C12.4589 9.9631 12.8382 11.0556 13.5969 11.9335C14.336 12.8309 15.2502 13.2796 16.3395 13.2796C17.5455 13.2796 18.5473 12.8407 19.3448 11.9628C20.1229 11.0849 20.5119 9.98261 20.5119 8.656L20.5119 0.198829L22.7002 0.19883L22.7002 15.0062L20.5119 15.0062L20.5119 11.319C20.1034 12.5285 19.4712 13.4942 18.6154 14.2161C17.74 14.9379 16.7383 15.2988 15.6101 15.2988C14.3846 15.2988 13.3245 14.9086 12.4298 14.1283C11.535 13.3479 10.9125 12.3139 10.5624 11.0263C10.2123 12.3139 9.5801 13.3479 8.66588 14.1283C7.7322 14.9086 6.64291 15.2988 5.39801 15.2988Z" fill="#C2F840"/>
             <path d="M38.5656 0C40.6842 0 42.4529 0.736882 43.8717 2.21065C45.2906 3.66502 46 5.47814 46 7.65C46 9.82186 45.2906 11.6447 43.8717 13.1184C42.4529 14.5728 40.6842 15.3 38.5656 15.3C36.6025 15.3 34.931 14.6795 33.551 13.4384C32.171 12.1779 31.3741 10.5781 31.1603 8.63897H28.1866V15.0091H26L26 0.290874L28.1866 0.290874V6.66103L31.1603 6.66103C31.3741 4.72186 32.171 3.13175 33.551 1.89068C34.931 0.630228 36.6025 0 38.5656 0ZM34.7464 11.6641C35.757 12.7306 37.0107 13.2639 38.5073 13.2639C40.0039 13.2639 41.2575 12.7306 42.2682 11.6641C43.2789 10.5781 43.7843 9.24011 43.7843 7.65C43.7843 6.05989 43.2789 4.73156 42.2682 3.66502C41.2575 2.57909 40.0039 2.03612 38.5073 2.03612C37.0107 2.03612 35.757 2.57909 34.7464 3.66502C33.7551 4.73156 33.2595 6.05989 33.2595 7.65C33.2595 9.24011 33.7551 10.5781 34.7464 11.6641Z" fill="#C2F840"/>
             <path d="M66.603 0.300781C68.1591 0.300781 69.4429 0.901556 70.4544 2.10311C71.4853 3.30466 72.0008 4.81629 72.0008 6.63799V15.3008H69.8125V6.89962C69.8125 5.60117 69.4332 4.5159 68.6746 3.6438C67.9159 2.75233 66.992 2.3066 65.9027 2.3066C64.6967 2.3066 63.695 2.74264 62.8974 3.61473C62.1194 4.48683 61.7303 5.58179 61.7303 6.89962V15.3008H59.542V6.89962C59.542 5.60117 59.1627 4.5159 58.4041 3.6438C57.665 2.75233 56.7507 2.3066 55.6614 2.3066C54.4555 2.3066 53.4537 2.74264 52.6562 3.61473C51.8781 4.48683 51.4891 5.58179 51.4891 6.89962V15.3008H49.3008V0.591479H51.4891V4.25427C51.8976 3.05272 52.5297 2.09342 53.3856 1.37636C54.2609 0.659309 55.2627 0.300781 56.3909 0.300781C57.6163 0.300781 58.6764 0.688379 59.5712 1.46357C60.466 2.23877 61.0884 3.2659 61.4386 4.54497C61.7887 3.2659 62.4209 2.23877 63.3351 1.46357C64.2688 0.688379 65.3581 0.300781 66.603 0.300781Z" fill="#C2F840"/>
           </svg>
         </a>
       </div>
-      <div class="col-xl-1 offset-xl-3 col-lg-1 offset-lg-3 col-md-3 offset-md-2 d-none d-md-block"><a href="#" class="cap">О&nbsp;&nbsp;школе</a></div>
-      <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-5 offset-md-1 d-none d-md-block"><a href="#" class="cap">Учебные&nbsp;&nbsp;программы</a></div>
-      <div class="col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-3 offset-md-1 d-none d-md-block"><a href="#" class="cap">ДЕТЯМ</a></div>
-      <div class="col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 d-none d-lg-block"><a href="#" class="cap">Контакты</a></div>
+      <div class="col-xl-1 offset-xl-3 col-lg-1 offset-lg-3 col-md-3 offset-md-2 d-none d-md-block fadeInUp"><a href="#" class="cap">О&nbsp;&nbsp;школе</a></div>
+      <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-5 offset-md-1 d-none d-md-block fadeInUp"><a href="#" class="cap">Учебные&nbsp;&nbsp;программы</a></div>
+      <div class="col-xl-2 offset-xl-2 col-lg-2 offset-lg-2 col-md-3 offset-md-1 d-none d-md-block fadeInUp"><a href="#" class="cap">ДЕТЯМ</a></div>
+      <div class="col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 d-none d-lg-block fadeInUp"><a href="#" class="cap">Контакты</a></div>
       <div class="col-xl-1 offset-xl-3 col-lg-1 offset-lg-3 col-md-1 offset-md-2 col-2 offset-13">
-        <svg width="22" height="8" viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg class="fadeInUp" width="22" height="8" viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 1H22" stroke="#C2F840"/>
           <path d="M0 7H22" stroke="#C2F840"/>
-        </svg>
+        </svg> -->
+        <div class="burger fadeInUp">
+          <div id="burger">
+            <div class="bar topBar"></div>
+            <div class="bar btmBar"></div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
-<div style="height: 300vh;" class="">
+<div  class="mFirstWrap">
   <section class="mFirst bg_b1">
     <div class="mFirst__main row m-b-80 z-5">
       <div class="col-xl-11 offset-xl-2 col-lg-11 offset-lg-2 col-md-17 offset-md-2 col-21 offset-2">
-        <h1 class="h1 mFirst__title">ШКОЛА <span class="p1">/ профильный образовательный центр </span></h1>
+        <div class="mFirst__title">
+          <h1 class="h1 ">ШКОЛА <span class="p1 d-none d-md-inline">/ профильный образовательный центр </span></h1>
+        </div>
       </div>
       <div class="col-xl-11 offset-xl-4 col-lg-11 offset-lg-2 col-md-17 offset-md-5 col-16 offset-7">
-        <h2 class="h1 mFirst__title green">ЮВЕЛИРНОГО</h2>
+        <div class="mFirst__title">
+          <h2 class="h1 mFirst__title green">ЮВЕЛИРНОГО</h2>
+        </div>
       </div>
       <div class="col-xl-11 offset-xl-3 col-lg-11 offset-lg-2 col-md-17 offset-md-3 col-20 offset-3">
         <div class="mFirst__title">
@@ -53,45 +362,47 @@
     </div>
     <div class="row z-5">
       <div class="col-24">
-        <div class="line m-b-25"></div>
+        <div class="line fadeInRight m-b-25"></div>
       </div>
       <div class="col-xl-2 offset-xl-9 col-lg-2 offset-lg-9 col-md-3 offset-md-7 col-6 offset-1">
-        <a href="#" class="cap ttu">ОТЗЫВЫ</a>
+        <a href="#" class="cap ttu fadeInUp">ОТЗЫВЫ</a>
       </div>
       <div class="col-xl-2 offset-xl-3 col-lg-2 offset-lg-3 col-md-3 offset-md-1 col-6 offset-3">
-        <a href="#" class="cap ttu">соБЫТИЯ</a>
+        <a href="#" class="cap ttu fadeInUp">соБЫТИЯ</a>
       </div>
       <div class="col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-3 offset-md-3 col-6 offset-1">
-        <a href="#" class="cap ttu">ПОРТФОЛИО</a>
+        <a href="#" class="cap ttu fadeInUp">ПОРТФОЛИО</a>
       </div>
       <div class="col-24">
-        <div class="line m-t-50 m-b-25"></div>
+        <div class="line fadeInRight m-t-50 m-b-25"></div>
       </div>
       <div class="col-xl-2 offset-xl-9 col-lg-2 offset-lg-9 col-md-3 offset-md-7 col-6 offset-1">
         <!-- <a href="#" class="cap ttu">ОТЗЫВЫ</a> -->
       </div>
       <div class="col-xl-2 offset-xl-3 col-lg-2 offset-lg-3 col-md-3 offset-md-1 col-6 offset-3">
-        <a href="#" class="cap ttu">соБЫТИЯ</a>
+        <a href="#" class="cap ttu fadeInUp">соБЫТИЯ</a>
       </div>
       <div class="col-xl-2 offset-xl-1 col-lg-2 offset-lg-1 col-md-3 offset-md-3 col-6 offset-1">
-        <a href="#" class="cap d-inline-block ttu p-b-15">ПОРТФОЛИО</a><br>
-        <a href="#" class="cap d-inline-block ttu">ПОРТФОЛИО</a>
+        <a href="#" class="cap d-inline-block ttu fadeInUp p-b-15">ПОРТФОЛИО</a><br>
+        <a href="#" class="cap d-inline-block ttu fadeInUp">ПОРТФОЛИО</a>
       </div>
       <div class="col-24">
-        <div class="line m-t-50 "></div>
+        <div class="line m-t-50 fadeInRight"></div>
       </div>
     </div>
-    <div class="row d-flex d-lg-none">
-      <video class="w-100" width="400" height="300" poster="img/bgM.jpg">
-        <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-        <source src="video/duel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-        <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'>
+    <div class="row d-flex d-lg-none fadeInRight">
+      <video class="w-100" autoplay loop width="400" height="300" poster="img/bgM.jpg">
+        <!-- <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
+        <source src="img/vid.mp4" type='video/mp4;'>
+        <!-- <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'> -->
       </video>
     </div>
-    <video class="mFirst__vid d-none d-lg-block" width="400" height="300" poster="img/bgM.jpg">
-      <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-      <source src="video/duel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-      <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'>
+    <video class="mFirst__vid d-none d-lg-block fadeInRight" autoplay loop width="400" height="300" poster="img/bgM.jpg">
+      <source src="img/vid.mp4" type='video/mp4;'>
+      
+      <!-- <source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
+      <!-- <source src="video/duel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> -->
+      <!-- <source src="video/duel.webm" type='video/webm; codecs="vp8, vorbis"'> -->
     </video>
   </section>
 </div>
@@ -111,7 +422,7 @@
         <h3 class="h1 ttu">образовательный</h3>
       </div>
       <div class="col-xl-16 offset-xl-5 col-lg-16 offset-lg-5 col-md-21 offset-md-2 col-21 offset-2">
-        <h3 class="h1 ttu mAdvantages__titleCol4">центр&nbsp;России <span class="p1 d-inline-grid">
+        <h3 class="h1 ttu mAdvantages__titleCol4">центр&nbsp;России <span class="cap d-inline-grid">
           куда приезжают учиться профессии<br>
           «Ювелир» со всех городов России и<br>
           стран ближнего и дальнего зарубежья
@@ -162,7 +473,7 @@
               <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
                 <p class="p1">02</p>
               </div>
-              <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-14 offset-md-4 col-14 offset-2">
+              <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-12 offset-md-4 col-14 offset-2">
                 <p class="p1">НЕТ ВОЗРАСТНЫХ ОГРАНИЧЕНИЙ</p>
               </div>
               <div class="col-24">
@@ -175,7 +486,7 @@
             <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
               <!-- <p class="p1">02</p> -->
             </div>
-            <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-14 offset-md-4 col-14 offset-2">
+            <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-12 offset-md-4 col-14 offset-2">
               <p class="p1">На сегодняшний день Школа ювелирного мастерства осуществляет подготовку по 28 учебным программам. Это мастер-классы, краткосрочные и долгосрочные курсы практически по всем ювелирным специализациям. Набор в группы ведется круглый год.</p>
 
             </div>
@@ -192,7 +503,7 @@
               <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
                 <p class="p1">03</p>
               </div>
-              <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-14 offset-md-4 col-14 offset-2">
+              <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-12 offset-md-4 col-14 offset-2">
                 <p class="p1">РАЗНЫЕ ФОРМЫ ОБУЧЕНИЯ</p>
               </div>
               <div class="col-24">
@@ -205,7 +516,7 @@
             <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
               <!-- <p class="p1">03</p> -->
             </div>
-            <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-14 offset-md-4 col-14 offset-2">
+            <div class="col-xl-7 offset-xl-4 col-lg-7 offset-lg-4 col-md-12 offset-md-4 col-14 offset-2">
               <p class="p1">На сегодняшний день Школа ювелирного мастерства осуществляет подготовку по 28 учебным программам. Это мастер-классы, краткосрочные и долгосрочные курсы практически по всем ювелирным специализациям. Набор в группы ведется круглый год.</p>
 
             </div>
@@ -222,7 +533,7 @@
               <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
                 <p class="p1">04</p>
               </div>
-              <div class="col-xl-7 offset-xl-10 col-lg-7 offset-lg-10 col-md-14 offset-md-10 col-14 offset-2">
+              <div class="col-xl-7 offset-xl-10 col-lg-7 offset-lg-10 col-md-10 offset-md-10 col-14 offset-2">
                 <p class="p1">НЕБОЛЬШИЕ ГРУППЫ</p>
               </div>
               <div class="col-24">
@@ -235,7 +546,7 @@
             <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
               <!-- <p class="p1">04</p> -->
             </div>
-            <div class="col-xl-7 offset-xl-10 col-lg-7 offset-lg-10 col-md-14 offset-md-10 col-14 offset-2">
+            <div class="col-xl-7 offset-xl-10 col-lg-7 offset-lg-10 col-md-10 offset-md-10 col-14 offset-2">
               <p class="p1">На сегодняшний день Школа ювелирного мастерства осуществляет подготовку по 28 учебным программам. Это мастер-классы, краткосрочные и долгосрочные курсы практически по всем ювелирным специализациям. Набор в группы ведется круглый год.</p>
 
             </div>
@@ -252,7 +563,7 @@
               <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
                 <p class="p1">05</p>
               </div>
-              <div class="col-xl-7 offset-xl-8 col-lg-7 offset-lg-8 col-md-14 offset-md-8 col-14 offset-2">
+              <div class="col-xl-7 offset-xl-8 col-lg-7 offset-lg-8 col-md-12 offset-md-8 col-14 offset-2">
                 <p class="p1">МАСТЕРСКИЕ И КЛАССЫ</p>
               </div>
               <div class="col-24">
@@ -265,7 +576,7 @@
             <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
               <!-- <p class="p1">05</p> -->
             </div>
-            <div class="col-xl-7 offset-xl-8 col-lg-7 offset-lg-8 col-md-14 offset-md-8 col-14 offset-2">
+            <div class="col-xl-7 offset-xl-8 col-lg-7 offset-lg-8 col-md-12 offset-md-8 col-14 offset-2">
               <p class="p1">На сегодняшний день Школа ювелирного мастерства осуществляет подготовку по 28 учебным программам. Это мастер-классы, краткосрочные и долгосрочные курсы практически по всем ювелирным специализациям. Набор в группы ведется круглый год.</p>
 
             </div>
@@ -282,7 +593,7 @@
               <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
                 <p class="p1">06</p>
               </div>
-              <div class="col-xl-7 offset-xl-12 col-lg-7 offset-lg-12 col-md-14 offset-md-12 col-14 offset-2">
+              <div class="col-xl-7 offset-xl-12 col-lg-7 offset-lg-12 col-md-10 offset-md-12 col-14 offset-2">
                 <p class="p1">ПРЕПОДАВАТЕЛИ</p>
               </div>
               <div class="col-24">
@@ -295,7 +606,7 @@
             <div class="col-xl-1 offset-xl-2 col-lg-1 offset-lg-2 col-md-1 offset-md-2 col-2 offset-2">
               <!-- <p class="p1">06</p> -->
             </div>
-            <div class="col-xl-7 offset-xl-12 col-lg-7 offset-lg-12 col-md-14 offset-md-12 col-14 offset-2">
+            <div class="col-xl-7 offset-xl-12 col-lg-7 offset-lg-12 col-md-10 offset-md-12 col-14 offset-2">
               <p class="p1">На сегодняшний день Школа ювелирного мастерства осуществляет подготовку по 28 учебным программам. Это мастер-классы, краткосрочные и долгосрочные курсы практически по всем ювелирным специализациям. Набор в группы ведется круглый год.</p>
 
             </div>
@@ -328,11 +639,8 @@
       </div>
     </div>
     <div class="row m-b-80">
-      <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-9 offset-md-2 col-20 offset-2">
-        <a href="#" class="cource__item m-b-80">
-          <span class="p1">01</span>
-          <p class="p1">Индивидуальные стажировки и повышение квалификации</p>
-        </a>
+      <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 d-none d-lg-block" >
+      
       </div>
       <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-9 offset-md-2 col-20 offset-2">
         <a href="#" class="cource__item m-b-80">
@@ -358,20 +666,47 @@
           <p class="p1">Индивидуальные стажировки и повышение квалификации</p>
         </a>
       </div>
+      <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-9 offset-md-2 d-none d-md-block">
+        <a href="#" class="cource__item m-b-80">
+          <span class="p1">01</span>
+          <p class="p1">Индивидуальные стажировки и повышение квалификации</p>
+        </a>
+      </div>
+      <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-9 offset-md-2 d-none d-md-block">
+        <a href="#" class="cource__item m-b-80">
+          <span class="p1">01</span>
+          <p class="p1">Курс 3D-моделирование ювелирных изделий в программе Phinoceros</p>
+        </a>
+      </div>
+      <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-9 offset-md-2 d-none d-lg-block">
+        <a href="#" class="cource__item m-b-80">
+          <span class="p1">01</span>
+          <p class="p1">Индивидуальные стажировки и повышение квалификации</p>
+        </a>
+      </div>
+      <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 d-none d-lg-block">
+
+      </div>
+      <div class="col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 d-none d-lg-block">
+        <a href="#" class="cource__item m-b-80">
+          <span class="p1">01</span>
+          <p class="p1">Индивидуальные стажировки и повышение квалификации</p>
+        </a>
+      </div>
     </div>
 
     <a href="#" class="btn1 row m-b-150 p-b-25">
       <div class="col-24 m-b-25">
         <div class="line line_big line_green"></div>
       </div>
-      <div class="col-xl-5 offset-xl-17 col-lg-5 offset-lg-17 col-md-5 offset-md-17 col-8 offset-14">
+      <div class="col-xl-5 offset-xl-17 col-lg-5 offset-lg-17 d-none d-lg-block">
         <span class="h6 ttu">все программы</span>
       </div>
     </a>
 
   </section>
   <section class="mPortfolio p-t-250 p-b-250 bg_b1">
-    <div class="row m-b-80">
+    <div class="row m-b-80 position-relative z-5 ">
       <div class="col-24 m-b-80">
         <div class="line"></div>
       </div>
@@ -385,7 +720,7 @@
         <div class="line"></div>
       </div>
     </div>
-    <div class="row ">
+    <div class="row  position-relative z-1 ">
       <div class="col-xl-5 offset-xl-2 col-lg-5 offset-lg-2 d-none d-lg-block">
         <div class="mPortfolio__col1">
           <div class="">
@@ -466,7 +801,7 @@
       <img src="img/m6.svg" alt="" class="w-100 d-none d-lg-block showDown">
     </div>
     <div class="row  m-b-80 p-t-250">
-      <div class="col-xl-10 offset-xl-7 col-lg-10 offset-lg-7 col-md-10 offset-md-7 col-18 offset-2">
+      <div class="col-xl-10 offset-xl-7 col-lg-10 offset-lg-7 col-md-14 offset-md-7 col-21 offset-2">
         <h4 class="h2 ttu">ОСТАЛИСЬ ВОПРОСЫ?</h4>
       </div>
       <div class="col-xl-10 offset-xl-11 col-lg-10 offset-lg-11 col-md-10 offset-md-11 col-16 offset-7">
@@ -612,5 +947,6 @@
   <script src="js/accordion.min.js"></script>
   <script src="js/v-modal.js"></script>
   <script src="js/main.js"></script>
+</div>
 </body>
 </html>

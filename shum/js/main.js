@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   if(document.querySelector(".modal")){
     let modal = new VanillaModal.default();
   }
+  initBurgerMenu()
 
 })
 
@@ -18,14 +19,26 @@ function initAccordeon(accord){
     duration: 400,
     showMultiple: false,
     onOpen: function() {
-
+      
     },
     onClose: function() {
-
+      
     }
   });
-
 }
+
+function initBurgerMenu(){
+  let burg = document.querySelector('.burger')
+  let menuBg = document.querySelector('.menuBg')
+  let body = document.querySelector('body')
+  burg.addEventListener("click", ()=>{
+    body.classList.toggle("menu-opened")
+  })
+  menuBg.addEventListener("click", ()=>{
+    body.classList.toggle("menu-opened")
+  })
+}
+
 
 function scrollTr(){
   document.querySelectorAll(".imgPar").forEach(el=>{
@@ -82,7 +95,7 @@ function scrollTr(){
 
 
   }
-  if(document.querySelector(".mFirst")){
+  if(document.querySelector(".mFirst") && innerWidth >1024){
     gsap.to(document.querySelector('.mFirst__vid '), {
       scrollTrigger: {
         trigger: document.querySelector('.mFirst'),
@@ -116,6 +129,7 @@ function scrollTr(){
         },
         onEnter: ({progress, direction, isActive}) => (console.log("start")),
         width: "0",
+        // className:  " box",
         transformOrigin: "center center",
         // markers: {startColor: "green", endColor: "red", fontSize: "12px"},
         // delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping

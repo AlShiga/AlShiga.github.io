@@ -1,3 +1,43 @@
+.fadeInUp{
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 0.8s;
+}
+.fadeInRight{
+  transform: translateX(100%) !important;
+  transition: 0.8s;
+}
+.mFirst__title{
+  position: relative;
+  overflow: hidden;
+  &::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.9s;
+    background-color: $black1;
+  }
+  // width: 0;
+  transition: 0.3s;
+}
+.anim{
+
+  .mFirst__title{
+    &::before{
+      transform: translateX(110%);
+    }
+  }
+  .fadeInUp{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .fadeInRight{
+    transform: translateX(0) !important;
+  }
+}
 .bgLeft{
   position: relative;
   overflow: hidden;
